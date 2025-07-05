@@ -170,17 +170,17 @@ const Portfolio = () => {
         <div className="flex w-[100vw] overflow-x-hidden flex-col">
             <Navigation navSelection={navSelection} onContactClick={onContactClick}/>
             <ContactModel onMessageSuccess={onMessageSuccess} showContactModel={showContactModel} onContactClick={onContactClick}/>
-            <div className="text-white bg-[url('./images/heroBackground6.png')] bg-contain bg-no-repeat bg-center space-y-[30px] bg-[#000] px-[10vw] flex flex-col items-center justify-center pt-[20vh] min-h-[100vh]">
-              <div className="w-[80%] text-center leading-[53px]  h-[100%]">
-                
-              <p className="text-[50px] bg-gradient-to-t  from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent portfolioTitle1 ">Explore </p>
-              <p className="text-[85px] bg-gradient-to-t leading-[95px]  from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] portfolioTitle2 bg-clip-text text-transparent" >My Projects</p>
+            <div className="text-white bg-[url('./images/heroBackground6.png')] bg-contain bg-no-repeat bg-center  sm:space-y-[30px] bg-[#000] px-[10vw] flex flex-col items-center justify-center sm:pt-[20vh] min-h-[100vh]">
+              <div className="w-[100vw]  text-center leading-[60px] sm:leading-[70px] h-[100%]">
+                <p className=" text-[40px] sm:text-[50px] md:text-[60px] aboutText4 aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Discover the</p>
+                <p className=" text-[65px] sm:text-[75px] md:text-[80px] aboutTitle2 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Service Provided</p>
               </div>
-              <div className="h-[25vh]">
+              <div className="w-[100%] md:w-[50%] text-center h-[10px] sm:h-[160px]">
 
               </div>
-              <div className="w-[100%] md:w-[70%] portfolioTitle3 text-center h-[100%]">
-                <p>Welcome to a showcase of my work, a curated collection of projects that reflect my passion for building smart, user-focused, and scalable digital solutions. </p>
+              
+              <div className="w-[100%]  md:w-[50%] text-center ">
+                <p className=" aboutTitle3">Welcome to a showcase of my work, a curated collection of projects that reflect my passion for building smart, user-focused, and scalable digital solutions.</p>
               </div>
             </div>
             <div className=" py-[15vh] min-h-[200vh] flex items-center justify-center w-screen ">
