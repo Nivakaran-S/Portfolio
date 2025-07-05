@@ -133,10 +133,10 @@ const About = () => {
             <div className="w-[80%]  flex  flex-col   ">
                 <div className="about1 text-[40px] leading-[40px]">
                     <p className="text-[24.72px] ">Turning Ideas into Intelligent</p>
-                    <p className="">Scalable, and Impactful Digital Solutions</p>
+                    <p className="text-[35px] sm:text-[40px]">Scalable, and Impactful Digital Solutions</p>
                 </div>
                 <div className="w-[60%] mt-[10px]">
-                    <p className="about2 text-[15.27px]">I'm currently pursuing a B.Sc in Information Technology, specializing in Data Science at 
+                    <p className="about2  w-[170%] sm:text-left text-[15.27px]">I'm currently pursuing a B.Sc in Information Technology, at 
                         Sri Lanka Institute of Information Technology(SLIIT). I am passionate about data science,
                         software engineering, and AI, constantly exploring innovative solutions and building Impactful
                         solutions.
