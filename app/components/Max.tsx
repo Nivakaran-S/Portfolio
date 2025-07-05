@@ -127,7 +127,7 @@ const Max = () => {
                 <p className="select-none text-white text-[20px]">Max</p>
             </div>
 
-            <div className={`${max ? 'scale-[100%] delay-200' : 'scale-0' } absolute bottom-[20px] right-[30px] origin-bottom-right transition-transform duration-500 ease-in-out flex flex-col bg-[#373435] ring-[0.5px] ring-[#727376] h-[600px] w-[350px] rounded-[10px] ring-[0.5px] justify-center mt-[5px]`}>
+            <div className={`${max ? 'scale-[100%] delay-200' : 'scale-0' } absolute bottom-[20px] right-[30px] origin-bottom-right transition-transform duration-500 ease-in-out flex flex-col bg-[#373435] ring-[0.5px] ring-[#727376] h-[580px] w-[350px] rounded-[10px] ring-[0.5px] justify-center mt-[5px]`}>
                 <div className="w-[100%] select-none px-[20px] bg-[#101010] text-white flex flex-row justify-between rounded-t-[10px] py-[10px] h-fit items-center">
                     <div>
                         <p className="text-[20px]">Max</p>
@@ -161,15 +161,15 @@ const Max = () => {
                             {typing==true?
                             <div className="flex mt-[5px] mx-[10px] justify-start">
                                 <div className=" w-fit px-[15px] py-[5px] rounded-[5px]" >
-                                    <p className="text-black text-[13px]" >Typing..</p>
+                                    <p className="text-white text-[13px]" >Typing..</p>
                                 </div>
                             </div>
                             : null}
                             
                         </div>
                         :
-                        <div className='h-[350px] '>
-                            <div className="mx-[30px] my-[20px] text-center">
+                        <div className='h-[430px] '>
+                            <div className="mx-[30px] text-gray-300 my-[20px] text-center">
                                 <p className="  text-[15px]" >Hello! I’m Max, an AI-powered assistant created by Nivakaran.</p>
                             
                                 <p className="text-[15px]">I’m here to guide you through Nivakaran’s projects and answer any questions you have along the way. Let’s explore together!</p>
