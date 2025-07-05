@@ -67,7 +67,7 @@ const Hero = () => {
       }, []);
     
     return(
-        <div className=" bg-[#000] w-[100vw] bg-[url('./images/heroBackground10.png')] bg-contain bg-no-repeat bg-center h-[100vh] flex items-center justify-center">
+        <div className=" bg-[#000] w-[100vw] sm:bg-[url('./images/heroBackground10.png')] bg-contain bg-no-repeat bg-center h-[100vh] flex items-center justify-center">
             <div className="flex flex-col text-center">
                 <p className="hero1">Hello there!</p>
                 <p className=" hero2  text-[30px]">This is</p>
