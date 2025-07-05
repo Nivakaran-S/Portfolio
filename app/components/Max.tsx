@@ -127,7 +127,7 @@ const Max = () => {
                 <p className="select-none text-white text-[20px]">Max</p>
             </div>
 
-            <div className={`${max ? 'scale-[100%] delay-200' : 'scale-0' } absolute bottom-[20px] right-[30px] origin-bottom-right transition-transform duration-500 ease-in-out flex flex-col bg-[#373435] ring-[0.5px] ring-[#727376] h-[500px] w-[350px] rounded-[10px] ring-[0.5px] justify-center mt-[5px]`}>
+            <div className={`${max ? 'scale-[100%] delay-200' : 'scale-0' } absolute bottom-[20px] right-[30px] origin-bottom-right transition-transform duration-500 ease-in-out flex flex-col bg-[#373435] ring-[0.5px] ring-[#727376] h-[600px] w-[350px] rounded-[10px] ring-[0.5px] justify-center mt-[5px]`}>
                 <div className="w-[100%] select-none px-[20px] bg-[#101010] text-white flex flex-row justify-between rounded-t-[10px] py-[10px] h-fit items-center">
                     <div>
                         <p className="text-[20px]">Max</p>
@@ -139,7 +139,7 @@ const Max = () => {
 
                 
                 {messageSubmitted ?
-                        <div className="h-[350px] overflow-y-scroll py-[10px] " ref={scrollContainerRef} >
+                        <div className="h-[430px] overflow-y-scroll py-[10px] " ref={scrollContainerRef} >
                             <div className="flex justify-center mt-[5px]">
                                 <div className="bg-[#8f8f8f] text-[12px] px-[8px] py-[2px] rounded-[5px] border-[1px] border-gray-500 box-shadow-lg w-fit"  >
                                     <p className="text-gray-800 ">Today</p>
