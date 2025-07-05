@@ -97,7 +97,7 @@ const Navigation : React.FC<ContactModelProps> = ({navSelection, onContactClick}
             </div>
             <div className={`${isMenuOpen ? 'translate-x-0' : 'translate-x-[-100vw]' }  duration-500 md:hidden flex flex-row items-center  w-[100vw]  absolute top-0 left-0   cursor-pointer`}>
                 
-                <div className="bg-[#373435] w-[100%] z-[9999] h-[100vh]">
+                <div className="bg-[#373435] w-[200%] z-[9999] h-[100vh]">
                     <div>
                         <div className="cursor-pointer text-[30px] flex items-center justify-center pt-[40px] pb-[10px] text-white">
                             <p className=" text-[35px] bg-gradient-to-t from-[#0000] ring-[0.5px]  via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">NivakaranS</p>
