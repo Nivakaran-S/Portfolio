@@ -87,11 +87,11 @@ const Blogs = () => {
                     <p className="text-[40px] sm:text-[55px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">with Latest Insights</p>
                 </div>
                 <div className="grid gap-[18px] grid-cols-1 sm:flex flex-row items-center justify-center sm:space-x-[20px] mt-[30px]">
-                    <div className="blogs2 flex flex-row items-center justify-center space-x-[5px] sm:space-x-[20px]">
+                    <div className="blogs2 flex flex-row items-center justify-center space-x-[10px] sm:space-x-[20px]">
                         <BlogCard text="Blog 1" text1="Blog Title" onClick={onBlog1Click}/>
                         <BlogCard text="Blog 1" text1="Blog Title" onClick={onBlog1Click}/>
                     </div>
-                    <div className="blogs3 flex flex-row items-center justify-center space-x-[5px] sm:space-x-[20px]">
+                    <div className="blogs3 flex flex-row items-center justify-center space-x-[10px] sm:space-x-[20px]">
                         <BlogCard text="Blog 1" text1=" Blog Title" onClick={onBlog1Click}/>
                         <BlogCard text="Blog 1" text1="Blog Title" onClick={onBlog1Click}/>
                     </div>
