@@ -137,20 +137,97 @@ const Blogs = () => {
           }
       }, [])
 
+        useEffect(() => {
+          if (typeof window !== 'undefined') {
+            import('scrollreveal').then((ScrollReveal) => {
+              ScrollReveal.default().reveal('.aboutTitle1', {
+                origin: 'bottom',
+                distance: '40px',
+                duration: 800,
+                delay: 400,
+                easing: 'ease-in-out',
+                reset: false
+              })
+            })
+          }
+        }, [])
+      
+        useEffect(() => {
+          if (typeof window !== 'undefined') {
+            import('scrollreveal').then((ScrollReveal) => {
+              ScrollReveal.default().reveal('.aboutTitle2', {
+                origin: 'bottom',
+                distance: '40px',
+                duration: 800,
+                delay: 600,
+                easing: 'ease-in-out',
+                reset: false
+              })
+            })
+          }
+        }, [])
+      
+        useEffect(() => {
+          if (typeof window !== 'undefined') {
+            import('scrollreveal').then((ScrollReveal) => {
+              ScrollReveal.default().reveal('.aboutTitle3', {
+                origin: 'bottom',
+                distance: '40px',
+                duration: 800,
+                delay: 800,
+                easing: 'ease-in-out',
+                reset: false
+              })
+            })
+          }
+        }, [])
+      
+      
+        useEffect(() => {
+          if (typeof window !== 'undefined') {
+            import('scrollreveal').then((ScrollReveal) => {
+              ScrollReveal.default().reveal('.aboutText4', {
+                origin: 'left',
+                distance: '40px',
+                duration: 800,
+                delay: 400,
+                easing: 'ease-in-out',
+                reset: false
+              })
+            })
+          }
+        }, [])
+      
+        useEffect(() => {
+          if (typeof window !== 'undefined') {
+            import('scrollreveal').then((ScrollReveal) => {
+              ScrollReveal.default().reveal('.aboutText5', {
+                origin: 'right',
+                distance: '40px',
+                duration: 800,
+                delay: 400,
+                easing: 'ease-in-out',
+                reset: false
+              })
+            })
+          }
+        }, [])
+
     return(
         <div className="flex w-[100vw] overflow-x-hidden flex-col">
             <Navigation navSelection={navSelection} onContactClick={onContactClick}/>
             <ContactModel onMessageSuccess={onMessageSuccess} showContactModel={showContactModel} onContactClick={onContactClick}/>
-            <div className="text-white bg-[url('./images/heroBackground6.png')] bg-contain bg-no-repeat bg-center space-y-[30px] bg-[#000] px-[10vw] flex flex-col items-center justify-center pt-[20vh] min-h-[100vh]">
-              <div className="w-[80%] text-center leading-[85px] md:leading-[100px] h-[100%]">
-                <p className=" text-[50px] md:text-[50px] aboutText4 aboutTitle1 leading-[50px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Look Into</p>
-                <p className=" text-[75px] md:text-[80px] bg-gradient-to-t blogsTitle1 from-[#433D3A] leading-[100px] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Blogs & Insights</p>
+            <div className="text-white bg-[url('./images/heroBackground6.png')] bg-contain bg-no-repeat bg-center  sm:space-y-[30px] bg-[#000] px-[10vw] flex flex-col items-center justify-center sm:pt-[20vh] min-h-[100vh]">
+              <div className="w-[100vw]  text-center leading-[63px] sm:leading-[70px] h-[100%]">
+                <p className=" text-[40px] sm:text-[50px] md:text-[60px] aboutText4 aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Look Into</p>
+                <p className=" text-[55px] sm:text-[75px] md:text-[80px] aboutTitle2 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Blogs & Insights</p>
               </div>
-              <div className="h-[30vh]">
+              <div className="w-[100%] md:w-[50%] text-center h-[10px] sm:h-[160px]">
 
               </div>
-              <div className="w-[100%] md:w-[70%] blogsTitle2 text-center h-[100%]">
-                <p>Welcome to my digital journal, a space where I share my thoughts, experiences, and learnings from the world of technology.</p>
+              
+              <div className="w-[100%]  md:w-[50%] text-center ">
+                <p className=" aboutTitle3">Welcome to my digital journal, a space where I share my thoughts, experiences, and learnings from the world of technology.</p>
               </div>
             </div>
 

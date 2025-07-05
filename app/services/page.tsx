@@ -139,6 +139,82 @@ useEffect(() => {
   }
 }, [])
 
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
+        ScrollReveal.default().reveal('.aboutTitle1', {
+          origin: 'bottom',
+          distance: '40px',
+          duration: 800,
+          delay: 400,
+          easing: 'ease-in-out',
+          reset: false
+        })
+      })
+    }
+  }, [])
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
+        ScrollReveal.default().reveal('.aboutTitle2', {
+          origin: 'bottom',
+          distance: '40px',
+          duration: 800,
+          delay: 600,
+          easing: 'ease-in-out',
+          reset: false
+        })
+      })
+    }
+  }, [])
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
+        ScrollReveal.default().reveal('.aboutTitle3', {
+          origin: 'bottom',
+          distance: '40px',
+          duration: 800,
+          delay: 800,
+          easing: 'ease-in-out',
+          reset: false
+        })
+      })
+    }
+  }, [])
+
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
+        ScrollReveal.default().reveal('.aboutText4', {
+          origin: 'left',
+          distance: '40px',
+          duration: 800,
+          delay: 400,
+          easing: 'ease-in-out',
+          reset: false
+        })
+      })
+    }
+  }, [])
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
+        ScrollReveal.default().reveal('.aboutText5', {
+          origin: 'right',
+          distance: '40px',
+          duration: 800,
+          delay: 400,
+          easing: 'ease-in-out',
+          reset: false
+        })
+      })
+    }
+  }, [])
+
     return(
         <div className="flex w-[100vw] overflow-x-hidden flex-col"> 
             <Navigation navSelection={navSelection} onContactClick={onContactClick}/>
