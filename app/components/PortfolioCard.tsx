@@ -16,8 +16,8 @@ interface PortfolioCardProps {
 
 const PortfolioCard: React.FC<PortfolioCardProps> = ({ text, lang1, lang2, lang3, lang4, lang5, lang6, text2, onClick }) => {
     return (
-        <div className="bg-[#373435] hover:scale-[105%] transition-transform duration-500 text-[15.27px] h-[350px] ring-[1px] ring-[#373435] w-[500px] cursor-pointer  flex flex-row pl-[10px]  rounded-[20px]" onClick={onClick}>
-            <div className="w-[38.2%] flex items-center justify-center">
+        <div className="bg-[#373435] hover:scale-[105%] transition-transform duration-500 text-[15.27px] sm:h-[350px] ring-[1px] ring-[#373435]  sm:w-[500px] cursor-pointer  flex flex-row pl-[10px]  rounded-[20px]" onClick={onClick}>
+            <div className="sm:w-[38.2%] px-[10px] flex items-center justify-center">
                 <div className="flex flex-col">
                     
                     
@@ -32,7 +32,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ text, lang1, lang2, lang3
                 </div>
                 
             </div>
-            <div className=" rounded-[20px] px-[8px]  w-[61.8%] flex flex-col items-center justify-center bg-[#101010]">
+            <div className=" rounded-[20px] py-[20px] sm:py-[0px] px-[8px]  sm:w-[61.8%] flex flex-col items-center justify-center bg-[#101010]">
             <p className="py-[5px] text-[24px] leading-[29px] pl-[10px] pr-[7px] ">{text}</p>
             <p className="text-[14px] leading-[19px] px-[10px]">{text2}</p>
             
