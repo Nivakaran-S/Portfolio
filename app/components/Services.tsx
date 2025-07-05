@@ -56,24 +56,24 @@ const Services = () => {
 
                 <div className="flex flex-col md:flex-row items-center justify-center space-y-[30px] md:space-y-[0px] md:space-x-[70px] mt-[30px]">
                     <div className=" services2 space-y-[20px] flex flex-col items-center justify-center">
-                        <div className="bg-[#000] w-[300px] sm:w-[400px] ring-[0.5px] ring-[#4d4d4d] h-[90px] rounded-[15px] flex items-center justify-center">
+                        <div className="bg-[#000] w-[340px] sm:w-[400px] ring-[0.5px] ring-[#4d4d4d] h-[90px] rounded-[15px] flex items-center justify-center">
                             <p className="text-[25px]">UI/UX Designing</p>
                         </div>
-                        <div className="bg-[#000] w-[300px] sm:w-[400px] ring-[0.5px] ring-[#4d4d4d] h-[90px] rounded-[15px] flex items-center justify-center">
+                        <div className="bg-[#000] w-[340px] sm:w-[400px] ring-[0.5px] ring-[#4d4d4d] h-[90px] rounded-[15px] flex items-center justify-center">
                             <p className="text-[25px]">Web App Development</p>
                         </div>
-                        <div className="bg-[#000] w-[300px] sm:w-[400px] ring-[0.5px] ring-[#4d4d4d] h-[90px] rounded-[15px] flex items-center justify-center">
+                        <div className="bg-[#000] w-[340px] sm:w-[400px] ring-[0.5px] ring-[#4d4d4d] h-[90px] rounded-[15px] flex items-center justify-center">
                             <p className="text-[21px] text-center leading-[30px] w-[80%]">Custom Software Development</p>
                         </div>
                     </div>
                     <div className=" services3 space-y-[20px] flex flex-col items-center justify-center">
-                        <div className="bg-[#000] w-[300px] sm:w-[400px] ring-[0.5px] ring-[#4d4d4d] h-[90px] rounded-[15px] flex items-center justify-center">
+                        <div className="bg-[#000] w-[340px] sm:w-[400px] ring-[0.5px] ring-[#4d4d4d] h-[90px] rounded-[15px] flex items-center justify-center">
                             <p className="text-[25px]">Mobile App Development</p>
                         </div>
-                        <div className="bg-[#000] w-[300px] sm:w-[400px] ring-[0.5px] ring-[#4d4d4d] h-[90px] rounded-[15px] flex items-center justify-center">
+                        <div className="bg-[#000] w-[340px] sm:w-[400px] ring-[0.5px] ring-[#4d4d4d] h-[90px] rounded-[15px] flex items-center justify-center">
                             <p className="text-[21px] text-center leading-[30px] w-[80%]">Data Analysis & Visualization</p>
                         </div>
-                        <div className="bg-[#000] w-[300px] sm:w-[400px] ring-[0.5px] ring-[#4d4d4d] h-[90px] rounded-[15px] flex items-center justify-center">
+                        <div className="bg-[#000] w-[340px] sm:w-[400px] ring-[0.5px] ring-[#4d4d4d] h-[90px] rounded-[15px] flex items-center justify-center">
                             <p className="text-[21px] text-center leading-[30px] w-[80%]">Machine Learning & AI Model Development</p>
                         </div>
                     </div>
