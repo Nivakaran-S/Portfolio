@@ -166,6 +166,83 @@ const Portfolio = () => {
         console.log("Portfolio Card 1 Clicked")
       }
 
+      useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
+        ScrollReveal.default().reveal('.aboutTitle1', {
+          origin: 'bottom',
+          distance: '40px',
+          duration: 800,
+          delay: 400,
+          easing: 'ease-in-out',
+          reset: false
+        })
+      })
+    }
+  }, [])
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
+        ScrollReveal.default().reveal('.aboutTitle2', {
+          origin: 'bottom',
+          distance: '40px',
+          duration: 800,
+          delay: 600,
+          easing: 'ease-in-out',
+          reset: false
+        })
+      })
+    }
+  }, [])
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
+        ScrollReveal.default().reveal('.aboutTitle3', {
+          origin: 'bottom',
+          distance: '40px',
+          duration: 800,
+          delay: 800,
+          easing: 'ease-in-out',
+          reset: false
+        })
+      })
+    }
+  }, [])
+
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
+        ScrollReveal.default().reveal('.aboutText4', {
+          origin: 'left',
+          distance: '40px',
+          duration: 800,
+          delay: 400,
+          easing: 'ease-in-out',
+          reset: false
+        })
+      })
+    }
+  }, [])
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
+        ScrollReveal.default().reveal('.aboutText5', {
+          origin: 'right',
+          distance: '40px',
+          duration: 800,
+          delay: 400,
+          easing: 'ease-in-out',
+          reset: false
+        })
+      })
+    }
+  }, [])
+
+
     return(
         <div className="flex w-[100vw] overflow-x-hidden flex-col">
             <Navigation navSelection={navSelection} onContactClick={onContactClick}/>
@@ -175,6 +252,7 @@ const Portfolio = () => {
                 <p className=" text-[40px] sm:text-[50px] md:text-[60px] aboutText4 aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Explore</p>
                 <p className=" text-[65px] sm:text-[75px] md:text-[80px] aboutTitle2 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >My Projects</p>
               </div>
+              
               <div className="w-[100%] md:w-[50%] text-center h-[10px] sm:h-[160px]">
 
               </div>
@@ -185,14 +263,14 @@ const Portfolio = () => {
             </div>
             <div className=" py-[15vh] min-h-[200vh] flex items-center justify-center w-screen ">
 
-            <div className=" w-[80%] ">
-                <div className=" portfolio1 leading-[67px] text-center">
-                    <p className="text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Explore the</p>
-                    <p className="text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Development Journey</p>
+            <div className="w-[90%] sm:w-[80%] ">
+                <div className=" portfolio1 leading-[40px] md:leading-[60px] text-center">
+                    <p className="text-[45px]  md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Explore the</p>
+                    <p className="text-[35px] sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Development Journey</p>
                 </div>
                 <p className="mt-[30px]">Please click on any project to explore a detailed overview.</p>
 
-                <p className=" portfolio2 text-[40px] mt-[40px]">Software Engineering</p>
+                <p className=" portfolio2 text-[30px] sm:text-[40px] mt-[40px]">Software Engineering</p>
                 <div className=" portfolio3 mt-[30px] flex md:flex-row flex-col space-y-[40px]  md:space-y-[0px] md:space-x-[20px] items-center justify-center">
                     <PortfolioCard lang1="Python" lang2="Next.js" lang3="Node.js" lang4="MongoDB" lang5="Express.js" lang6="Docker" text2="This project is a full-stack news web application built using the MENN (MongoDB, Express.js, Next.js, Node.js) stack. It features a dual-interface system, where regular users can browse, search, and bookmark news, while admins have a dedicated panel to manage news articles, categories, and user permissions. The integrated LLM chatbot provides real-time news summeries, making articles easier to digest and enhance user experience." text="News Web App" onClick={onPortfolioCard1Click}/>
                     <PortfolioCard lang1="Python" lang2="MongoDB" lang3="Next.js" lang4="Node.js" lang5="Express.js" lang6="Docker" text2="This project is a sustainable food resale platform built with MongoDB, Express.js, React, and Node.js, designed to reduce food waste by connecting businesses with surplus food to budget-conscious consumers. The app includes real-time inventory tracking, dynamic pricing based on expiry dates, and secure payment processing via Stripe." text="EcoHarvest" onClick={onPortfolioCard1Click}/>
@@ -209,7 +287,7 @@ const Portfolio = () => {
                    
                 </div>
                 <p className=" portfolio3 text-[33px] text-center md:text-[30px] mt-[40px]">Mini Projects</p>
-                <div className=" portfolio3 mt-[30px]  flex md:flex-row flex-col space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
+                <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[10px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
                         <div className=" w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
