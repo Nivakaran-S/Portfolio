@@ -71,7 +71,7 @@ const Hero = () => {
             <div className="flex flex-col text-center">
                 <p className="hero1">Hello there!</p>
                 <p className=" hero2  text-[30px]">This is</p>
-                <Image className="hero3 h-[50px] sm:h-[80px] sm:w-[100%]" alt="Nivakaran" src={Nivakaran} />
+                <Image className="hero3 h-[60px] w-[300px] sm:h-[80px]" alt="Nivakaran" src={Nivakaran} />
                 <p className="text-[35px] hero4">Developer</p>
             </div>
         </div>
