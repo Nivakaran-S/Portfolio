@@ -32,7 +32,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({ text, lang1, lang2, lang3
                 </div>
                 
             </div>
-            <div className=" rounded-[20px] py-[20px] sm:py-[0px] px-[8px]  sm:w-[61.8%] flex flex-col items-center justify-center bg-[#101010]">
+            <div className=" rounded-[20px] py-[20px] sm:py-[0px] px-[8px]  sm:w-[61.8%] flex flex-col items-center justify-center sm:bg-[#101010]">
             <p className="py-[5px] text-[24px] leading-[29px] pl-[10px] pr-[7px] ">{text}</p>
             <p className="text-[14px] leading-[19px] px-[10px]">{text2}</p>
             
