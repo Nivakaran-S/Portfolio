@@ -146,7 +146,7 @@ const About = () => {
                         <PrimaryBtn text="Learn more" onClick={onLearnMoreClick}  />
                     </div>
                 </div>
-                <div className="about4 flex flex-row justify-center space-x-[10px] sm:space-x-[80px] mt-[75px]">
+                <div className="about4 flex flex-row justify-center space-x-[40px] sm:space-x-[80px] mt-[75px]">
                     <div className="text-center flex leading-[155px] flex-col items-center">
                         <p className="text-[140px] sm:text-[169.43px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">{count}+</p>
                         <div className="text-[24.72px] leading-[30px] w-[50%] text-center  ">
