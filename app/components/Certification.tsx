@@ -14,7 +14,7 @@ import Certificate8 from '../certificates/UC-f40d10df-c93e-4d1e-af98-b8802f58431
 import Certificate9 from '../certificates/UC-6c12dce8-1750-4ff2-a4bc-a95f1992f3ea.jpg';
 import Certificate10 from '../certificates/UC-435cb559-6d32-4c0b-82ba-92e1d49a7b51.jpg';
 import Certificate11 from '../certificates/UC-5e929664-5636-40c0-bebe-9df2ad3a34af.jpg';
-
+import Certificate12 from '../certificates/UC-be4b3936-41fd-41e6-b867-1e358158d79a.jpg';
 
 const Certification = () => {
     useEffect(() => {
@@ -65,8 +65,8 @@ const Certification = () => {
     return(
         <div className="bg-[#101010] min-h-[100vh] py-[80px] w-screen flex items-center justify-center">
             <div className="w-[80%]  flex flex-col ">
-                <div className="leading-[64px] text-center">
-                    <p className="text-[55px] certification1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">My Certifications</p>
+                <div className="leading-[60px] sm:leading-[64px] text-center">
+                    <p className="text-[50px] sm:text-[55px] certification1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">My Certifications</p>
                     
                 </div>
 
@@ -74,6 +74,17 @@ const Certification = () => {
                     <div className=" grid grid-cols-1 sm:grid-cols-2  md:grid-cols-4 gap-[15px] items-center justify-center">
                         
 
+                        <div className="cursor-pointer certification2 relative group bg-[#000] overflow-hidden w-[100%] ring-[0.5px] ring-[#4d4d4d] h-[195px] rounded-[10px] flex items-center justify-center">
+                        <div className=' absolute transition-transform duration-500 group-hover:translate-y-0  translate-y-[200%] flex flex-col items-center justify-center'>
+                                <Image alt="" src={Certificate12} className='h-[100%] w-[100%]'  />
+                            </div>
+                            <div className=' transition-transform duration-500 group-hover:scale-0  flex flex-col px-[20px]'>
+                                <p>Complete Agentic AI Bootcamp with LangGraph and Langchain</p>
+                                <p className='text-[16px]'>Udemy</p>
+                                <p className='text-[14px] text-gray-400'>Date: Jun 26, 2025</p>
+                                <p className='text-[14px] text-gray-300 '>Instructors: Krish Naik</p>
+                            </div>
+                        </div>
 
                         <div className="cursor-pointer certification2 relative group bg-[#000] overflow-hidden w-[100%] ring-[0.5px] ring-[#4d4d4d] h-[195px] rounded-[10px] flex items-center justify-center">
                         <div className=' absolute transition-transform duration-500 group-hover:translate-y-0  translate-y-[200%] flex flex-col items-center justify-center'>
@@ -82,7 +93,7 @@ const Certification = () => {
                             <div className=' transition-transform duration-500 group-hover:scale-0  flex flex-col px-[20px]'>
                                 <p>Complete Generative AI Course With Langchain and Huggingface</p>
                                 <p className='text-[16px]'>Udemy</p>
-                                <p className='text-[14px] text-gray-400'>Date: Dec 07, 2023</p>
+                                <p className='text-[14px] text-gray-400'>Date: Dec 07, 2024</p>
                                 <p className='text-[14px] text-gray-300 '>Instructors: Krish Naik</p>
                             </div>
                         </div>
