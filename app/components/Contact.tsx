@@ -14,7 +14,7 @@ const Contact : React.FC<ContactModelProps> = ({onContactClick}) => {
 
     
     return(
-        <div className="bg-[#000] pb-[60px] pt-[40px] sm:h-[100vh] flex items-center justify-center w-screen">
+        <div className="bg-[#000] pb-[80px] pt-[60px] sm:h-[100vh] flex items-center justify-center w-screen">
             <div className="w-[75%] flex flex-row items-center justify-center">
                 <div className=" sm:w-[60%]">
                     <div className="w-[100%] flex sm:hidden py-[20px] items-center justify-center">
