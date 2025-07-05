@@ -60,7 +60,7 @@ const Footer = () => {
             </div>}
 
             <div className="relative flex justify-center py-[10px] overflow-hidden">
-                <p className="text-[100px] font-bold text-transparent bg-clip-text relative z-10 spotlight-text">
+                <p className="text-[80px] sm:text-[100px] font-bold text-transparent bg-clip-text relative z-10 spotlight-text">
                     Nivakaran
                 </p>
             </div>
@@ -70,8 +70,7 @@ const Footer = () => {
             <div className="grid grid-cols-1 gap-[20px] sm:grid-cols-2 md:grid-cols-4  pb-[40px] mb-[20px] justify-center mx-[7%] ">
                 <div className="w-[100%] ">
                     
-                    <p className="text-[13px] leading-[20px]">I'm currently pursuing a B.Sc in Information Technology, specializing in
-                        Data Science at Sri Lanka Institute of Information Technology (SLIIT). 
+                    <p className="text-[13px] leading-[20px]">I'm currently pursuing a B.Sc in Information Technology, at Sri Lanka Institute of Information Technology (SLIIT). 
                         I am passionate about data science, software engineering, and AI, 
                         constantly exploring innovative solutions and building impactful projects.
                     </p>
@@ -84,25 +83,27 @@ const Footer = () => {
                         <p>nivakaran@hotmail.com</p>
                     </div>
                 </div>
-                <div className="w-[100%] flex flex-col items-center  ">
-                    <p className="text-[24.72px] text-[#96989A]">Quick Links</p>
-                    <div className="flex flex-col space-y-[10px] mt-[10px]">
-                        <p>Home</p>
-                        <p>About</p>
-                        <p>Portfolio</p>
-                        <p>Services</p>
-                        <p>Contact</p>
+                <div className="flex flex-row">
+                    <div className="w-[100%] flex flex-col ">
+                        <p className="text-[24.72px] text-[#96989A]">Quick Links</p>
+                        <div className="flex flex-col space-y-[10px] mt-[10px]">
+                            <p>Home</p>
+                            <p>About</p>
+                            <p>Portfolio</p>
+                            <p>Services</p>
+                            <p>Contact</p>
+                        </div>
                     </div>
-                </div>
-                <div className="w-[100%] ">
-                    <p className="text-[24.72px] text-[#96989A]">Services</p>
-                    <div className="flex flex-col text-[15px] space-y-[10px] mt-[10px]">
-                        <p>UI/UX Designing</p>
-                        <p>Web App Development</p>
-                        <p>Custom Software Development</p>
-                        <p>Mobile App Development</p>
-                        <p>Data analysis & Visualization</p>
-                        <p>Machine Learning </p>
+                    <div className="w-[100%] ">
+                        <p className="text-[24.72px] text-[#96989A]">Services</p>
+                        <div className="flex flex-col text-[15px] space-y-[10px] mt-[10px]">
+                            <p>UI/UX Designing</p>
+                            <p>Web App Development</p>
+                            <p>Custom Software Development</p>
+                            <p>Mobile App Development</p>
+                            <p>Data analysis & Visualization</p>
+                            <p>Machine Learning </p>
+                        </div>
                     </div>
 
                 </div>
