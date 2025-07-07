@@ -13,7 +13,7 @@ const CaseStudyCard: React.FC<CaseStudyProps> = ({ text, text1 }) => {
             </div>
             <div className="w-[60%] px-[20px] h-[100%] bg-[#101010] rounded-r-[20px] flex flex-col items-center justify-center">
                 <p className="text-[23px]">{text1}</p>
-                <p className="text-[15px] leading-[19px] ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi non itaque officia eligendi sed at veniam eos quod tempora  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum beatae ut repellendus maxime excepturi suscipit. Recusandae ex culpa animi deleniti, quisquam voluptatem est aliquid suscipit, esse quaerat impedit? Officiis, tenetur!</p>
+                <p className="text-[15px] leading-[19px] ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi non itaque officia eligendi sed at veniam eos quod tempora  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum beatae ut repellendus maxime!</p>
             </div>
         </div>
     );
