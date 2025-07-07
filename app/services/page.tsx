@@ -8,7 +8,7 @@ import Image from "next/image";
 import NextImage from '../images/next.png';
 import Certification from "../components/Certification";
 import GroqImage from '../images/groq.png';
-import PythonImage from '../images/python.png';
+import Langgraph from '../images/python.png';
 import KotlinImage from '../images/kotlin.png';
 import JavaImage from '../images/java.png';
 import JavascriptImage from '../images/javascript.png';
@@ -39,6 +39,8 @@ import PhotoshopImage from '../images/photoshop2.png';
 import CorelDrawImage from '../images/coreldraw2.png';
 import Top from "../components/Top";
 import Max from "../components/Max";
+import Langchain from '../images/langchain2.png'
+import LanggraphImage from '../images/langgraph-logo-png_seeklogo-616429.png'
 
 
 
@@ -232,17 +234,17 @@ useEffect(() => {
               </div>
             </div>
 
-            <div className="flex items-center px-[10vw] justify-center  min-h-[100vh]">
-                <div className="w-[40%]  h-[100%]">
+            <div className="flex flex-col md:flex-row items-center px-[10vw] justify-center  min-h-[100vh]">
+                <div className="md:w-[40%] mb-[20px] md:mb-[0px] h-[100%]">
                     
-                      <p className="text-[70px] serviceLeft leading-[65px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Web Development</p>
+                      <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[70px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Web Development</p>
 
                 </div>
-                <div className="w-[60%] serviceRight flex flex-col items-end h-[100%]">
-                  <p className="w-[80%]">Crafting responsive, high-performance, and visually striking websites using the latest technologies. From landing pages to complex web apps, I build scalable solutions optimized for speed and usability.</p>
-                  <div className="w-[80%] mt-[20px]">
-                    <p>Tech stack</p>
-                    <div className="flex flex-row items-center  space-x-[13px] mt-[10px]">
+                <div className="md:w-[60%] serviceLeft flex flex-col items-start h-[100%]">
+                  <p className="md:w-[80%]">Crafting responsive, high-performance, and visually striking websites using latest technologies. From landing pages to complex web apps, I build scalable solutions optimized for speed and usability.</p>
+                  <div className="md:w-[80%] mt-[20px]">
+                    <p>Tools used </p>
+                    <div className="sm:flex grid grid-cols-5 gap-3 flex-row items-center  space-x-[13px] mt-[10px]">
                       <Image alt="" src={NextImage} height={50} width={50}/>
                       <Image alt="" src={ReactImage} height={50} width={50}/>
                       <Image alt="" src={ReduxImage} height={50} width={50}/>
@@ -251,18 +253,22 @@ useEffect(() => {
                       <Image alt="" src={MysqlImage} height={50} width={50}/>
                       <Image alt="" src={FirebaseImage} height={100} width={100}/>
                       <Image alt="" src={DjangoImage} height={50} width={50}/>
-                      <Image alt="" src={FlaskImage} height={50} width={50}/>
+                      <Image alt="" src={FlaskImage} className="bg-white px-[5px] py-[5px] rounded-[5px] " height={80} width={80}/>
+                      
                       
                     </div>
                   </div>
                 </div>
-            </div>
-            
-            <div className="flex items-center px-[10vw] bg-[#000] justify-center  min-h-[100vh]">
                 
-                <div className="w-[60%] serviceLeft flex flex-col items-start h-[100%]">
-                  <p className="w-[80%]">Delivering sleek, intuitive, and cross-platform mobile experiences. Whether it's iOS, Android, or both, I build mobile apps that users love.</p>
-                  <div className="w-[80%] mt-[20px]">
+            </div>
+
+            
+            
+            <div className="flex flex-col md:flex-row items-center px-[10vw] bg-[#000] justify-center  min-h-[100vh]">
+                
+                <div className="md:w-[60%] serviceLeft flex flex-col items-start h-[100%]">
+                  <p className="md:w-[80%]">Delivering sleek, intuitive, and cross-platform mobile experiences. Whether it's iOS, Android, or both, I build mobile apps that users love.</p>
+                  <div className="md:w-[80%] mt-[20px]">
                     <p>Tech stack</p>
                     <div className="flex flex-row items-center  space-x-[13px] mt-[10px]">
                       <Image alt="" src={KotlinImage} height={50} width={50}/>
@@ -272,66 +278,67 @@ useEffect(() => {
                     </div>
                   </div>
                 </div>
-                <div className="w-[40%]  h-[100%]">
+                <div className="md:w-[40%] mt-[20px] mt-[0px] h-[100%]">
                     
-                      <p className="text-[60px] serviceRight leading-[60px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Mobile Application Development</p>
+                      <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[60px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Mobile Application Development</p>
 
                 </div>
             </div>
 
-            <div className="flex items-center px-[10vw] justify-center  min-h-[100vh]">
-                <div className="w-[40%]  h-[100%]">
+            <div className="flex flex-col md:flex-row items-center px-[10vw] justify-center  min-h-[100vh]">
+                <div className="md:w-[40%] mb-[20px] md:mb-[0px] h-[100%]">
                     
-                      <p className="text-[70px] serviceLeft leading-[78px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">UI/UX Designing</p>
+                      <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[70px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">UI/UX Designing </p>
 
                 </div>
-                <div className="w-[60%] flex serviceRight flex-col items-end h-[100%]">
-                  <p className="w-[80%]">Designing user-first interfaces that are both beautiful and functional. I focus on seamless user experiences, intuitive navigation, and design systems that bring your brand to life.</p>
-                  <div className="w-[80%] mt-[20px]">
-                    <p>Tools used</p>
+                <div className="md:w-[60%] serviceLeft flex flex-col items-start h-[100%]">
+                  <p className="md:w-[80%]">Designing user-first interfaces that are both beautiful and functional. I focus on seamless user experiences, intuitive navigation, and design systems that bring your brand to life.</p>
+                  <div className="md:w-[80%] mt-[20px]">
+                    <p>Tools used </p>
                     <div className="flex flex-row items-center  space-x-[13px] mt-[10px]">
                       <Image alt="" src={FigmaImage} height={50} width={50}/>
                       <Image alt="" src={PhotoshopImage} height={50} width={50}/>
                       <Image alt="" src={CorelDrawImage} height={50} width={50}/>
                       
+                      
                     </div>
                   </div>
                 </div>
-            </div>
-            
-            <div className="flex items-center px-[10vw] bg-[#000] justify-center  min-h-[100vh]">
                 
-                <div className="w-[60%] flex serviceLeft flex-col items-start h-[100%]">
-                  <p className="w-[80%]">Solving real-world problems with tailor-made software solutions. From internal tools to full-scale systems, I develop software that fits your workflows and scales with your business.</p>
-                  <div className="w-[80%] mt-[20px]">
+            </div>
+            <div className="flex flex-col md:flex-row items-center px-[10vw] bg-[#000] justify-center  min-h-[100vh]">
+                
+                <div className="md:w-[60%] serviceLeft flex flex-col items-start h-[100%]">
+                  <p className="md:w-[80%]">Solving real-world problems with tailor-made software solutions. From internal tools to full scale system, I develop software that fits your workflows and scales with your business.</p>
+                  <div className="md:w-[80%] mt-[20px]">
                     <p>Tech stack</p>
                     <div className="flex flex-row items-center  space-x-[13px] mt-[10px]">
                       <Image alt="" src={JavaImage} height={50} width={50}/>
-                      <Image alt="" src={PythonImage} height={50} width={50}/>
-                     
+                      <Image alt="" src={Langgraph} height={50} width={50}/>
+                      
+                      
                     </div>
                   </div>
                 </div>
-                <div className="w-[40%]  h-[100%]">
+                <div className="md:w-[40%] mt-[20px] mt-[0px] h-[100%]">
                     
-                      <p className="text-[60px] serviceRight leading-[64px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Custom Software Development</p>
+                      <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[60px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Custom Software Development</p>
 
                 </div>
             </div>
-
-            <div className="flex items-center px-[10vw] justify-center  min-h-[100vh]">
-                <div className="w-[40%]  h-[100%]">
+            <div className="flex flex-col md:flex-row items-center px-[10vw] justify-center  min-h-[100vh]">
+                <div className="md:w-[40%] mb-[20px] md:mb-[0px] h-[100%]">
                     
-                      <p className="text-[60px] serviceLeft leading-[68px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Data Analysis & Visualization</p>
+                      <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[70px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Data Analysis & Visualization</p>
 
                 </div>
-                <div className="w-[60%] serviceRight flex flex-col items-end h-[100%]">
-                  <p className="w-[80%]">Unlocking insights from your data through analysis and compelling visual storytelling. I turn raw numbers into meaningful narratives that guide decision-making.</p>
-                  <div className="w-[80%] mt-[20px]">
-                    <p>Tools used</p>
+                <div className="md:w-[60%] serviceLeft flex flex-col items-start h-[100%]">
+                  <p className="md:w-[80%]">Unlocking insights from your data through analysis and compelling visual storytelling. I turn raw numbers into meaningful narratives that guide decision making.</p>
+                  <div className="md:w-[80%] mt-[20px]">
+                    <p>Tools used </p>
                     <div className="flex flex-row items-center  space-x-[13px] mt-[10px]">
                       <Image alt="" src={ScikitlearnImage} height={50} width={50}/>
-                      <Image alt="" src={PythonImage} height={50} width={50}/>
+                      <Image alt="" src={Langgraph} height={50} width={50}/>
                       <Image alt="" src={MatplotlibImage} height={50} width={50}/>
                       <Image alt="" src={RImage} height={50} width={50}/>
                       
@@ -339,59 +346,64 @@ useEffect(() => {
                     </div>
                   </div>
                 </div>
-            </div>
-
-            <div className="flex items-center px-[10vw] bg-[#000] justify-center  min-h-[100vh]">
                 
-                <div className="w-[60%] flex serviceLeft flex-col items-start h-[100%]">
-                  <p className="w-[80%]">Designing and training intelligent systems that can learn from data and make predictions or classifications.</p>
-                  <p>Use Cases: Recommendation engines, fraud detection, customer segmentation</p>
-                  <div className="w-[80%] mt-[20px]">
+            </div>
+
+            <div className="flex flex-col md:flex-row items-center px-[10vw] bg-[#000] justify-center  min-h-[100vh]">
+                
+                <div className="md:w-[60%] serviceLeft flex flex-col items-start h-[100%]">
+                  <p className="md:w-[80%]">Designing and training intelligent systems that can learn from data and make predictions or classifications.</p>
+                  <p className="md:w-[80%]">Use cases: Recommendation systems, fraud detection, customer segmentation</p>
+                  <div className="md:w-[80%] mt-[20px]">
                     <p>Tech stack</p>
-                    <div className="flex flex-row items-center  space-x-[13px] mt-[10px]">
+                    <div className="grid grid-cols-6 gap-3 sm:flex flex-row items-center  space-x-[13px] mt-[10px]">
                       <Image alt="" src={HuggingFaceImage} height={50} width={50}/>
-                      <Image alt="" src={FlaskImage} height={50} width={50}/>
+                      <Image alt="" src={FlaskImage} className="bg-white px-[5px] py-[5px] rounded-[5px] " height={80} width={80}/>
                       <Image alt="" src={DockerImage} height={50} width={50}/>
                       <Image alt="" src={GradioImage} height={50} width={50}/>
                       <Image alt="" src={PytorchImage} height={50} width={50}/>
                       <Image alt="" src={TensorFlowImage} height={50} width={50}/>
+                      <Image alt="" src={GradioImage} height={50} width={50}/>
                       
                       
                     </div>
                   </div>
                 </div>
-                <div className="w-[40%]  h-[100%]">
+                <div className="md:w-[40%] mt-[20px] mt-[0px] h-[100%]">
                     
-                      <p className="text-[70px] serviceRight leading-[78px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Machine Learning</p>
+                      <p className=" text-[46px] sm:text-[60px] text-center md:text-left serviceRight leading-[52px] sm:leading-[60px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Building Machine Learning Models</p>
 
                 </div>
             </div>
             
-            
-            <div className="flex items-center px-[10vw] justify-center  min-h-[100vh]">
-                <div className="w-[40%]  h-[100%]">
+            <div className="flex flex-col md:flex-row items-center px-[10vw] justify-center  min-h-[100vh]">
+                <div className="md:w-[40%] mb-[20px] md:mb-[0px] h-[100%]">
                     
-                      <p className="text-[60px] serviceLeft leading-[68px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">AI Model Development</p>
+                      <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[70px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">AI Agent Development</p>
 
                 </div>
-                <div className="w-[60%] flex serviceRight flex-col items-end h-[100%]">
-                  <p className="w-[80%]">Developing custom AI models for advanced use cases like natural language processing, computer vision, and conversational agents.</p>
-                  <p>Use Cases: Chatbots, image recognition, document understanding, generative AI</p>
-                  <div className="w-[80%] mt-[20px]">
-                    <p>Tools used</p>
+                <div className="md:w-[60%] serviceLeft flex flex-col items-start h-[100%]">
+                  <p className="md:w-[80%]">Developing custom AI agents for workflows with natural language processing, computer vision and conversational agents.</p>
+                  <p className="md:w-[80%]">Use cases: Chatbots</p>
+                  <div className="md:w-[80%] mt-[20px]">
+                    <p>Tools used </p>
                     <div className="flex flex-row items-center  space-x-[13px] mt-[10px]">
-                      <Image alt="" src={HuggingFaceImage} height={50} width={50}/>
-                      <Image alt="" src={FlaskImage} height={50} width={50}/>
-                      <Image alt="" src={DockerImage} height={50} width={50}/>
-                      <Image alt="" src={GradioImage} height={50} width={50}/>
-                      <Image alt="" src={PytorchImage} height={50} width={50}/>
-                      <Image alt="" src={TensorFlowImage} height={50} width={50}/>
+                      <Image alt="" src={Langchain} height={80} width={80}/>
+                      <Image alt="" src={LanggraphImage} height={100} width={100}/>
+                      <Image alt="" src={Langgraph} height={50} width={50}/>
                       
                       
                     </div>
                   </div>
                 </div>
+                
             </div>
+            
+
+            
+
+            
+            
             <Top/> 
             <Max/>
             <Contact onContactClick={onContactClick}/>
