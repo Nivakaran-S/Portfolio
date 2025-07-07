@@ -263,7 +263,7 @@ const Portfolio = () => {
             </div>
             <div className=" py-[15vh] min-h-[200vh] flex items-center justify-center w-screen ">
 
-            <div className="w-[90%] sm:w-[80%] ">
+            <div className="w-[95%] sm:w-[80%] ">
                 <div className=" portfolio1 leading-[40px] md:leading-[60px] text-center">
                     <p className="text-[45px]  md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Explore the</p>
                     <p className="text-[35px] sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Development Journey</p>
@@ -286,9 +286,9 @@ const Portfolio = () => {
                     <PortfolioCard lang1="Python" lang2="MongoDB" lang3="Next.js" lang4="Node.js" lang5="Express.js" lang6="Docker" text2="A cross-platform grocery e-commerce app developed with React Native" text="Selvah: Mobile App" onClick={onPortfolioCard1Click}/>
                    
                 </div>
-                <p className=" portfolio3 text-[33px] text-center md:text-[30px] mt-[40px]">Mini Projects</p>
+                <p className=" portfolio3 text-[33px] text-center md:text-[30px]  mt-[40px]">Mini Projects</p>
                 <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[10px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
-                        <div className=" w-[210px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        <div className=" w-[200px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -299,7 +299,7 @@ const Portfolio = () => {
                                 </div>
                             </div>
                         </div> 
-                        <div className=" w-[210px] sm:w-[220px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        <div className=" w-[200px] sm:w-[220px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -310,7 +310,7 @@ const Portfolio = () => {
                                 </div>
                             </div>
                         </div>  
-                        <div className=" w-[210px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        <div className=" w-[200px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -321,7 +321,7 @@ const Portfolio = () => {
                                 </div>
                             </div>
                         </div> 
-                        <div className=" w-[210px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        <div className=" w-[200px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
