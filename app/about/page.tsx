@@ -412,15 +412,15 @@ const About = () => {
       <div className="min-h-[100vh] bg-[#101010] flex flex-col items-center justify-center">
         <p className=" text-[70px] md:text-[85px] aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Education</p>
         <div className="flex flex-row  items-center min-h-[60vh] w-[100vw] justify-center">
-          <div className=" w-[45%] sm:w-[29%] flex text-[17px] sm:text-[18px] leading-[20px] sm:leading-[24px]  flex-col space-y-[90px] ">
+          <div className=" w-[45%] md:w-[29%] flex text-[17px] sm:text-[18px] leading-[20px] sm:leading-[24px]  flex-col space-y-[90px] ">
 
             <div className="flex aboutText4 flex-row items-center justify-end  ">
 
 
-              <div className="bg-[#373435] ring-[0.5px] ring-[#727376]  px-[20px] py-[15px] rounded-[10px] ">
+              <div className="bg-[#373435] ring-[0.5px] ring-[#727376]  px-[10px] sm:px-[20px] py-[10px] sm:py-[15px] rounded-[10px] ">
                 <p>B.Sc (Hons) in Information Technology</p>
                 <p>Sri Lanka Institute of Information Technology (SLIIT)</p>
-                <div className="flex flex-col mt-[5px] sm:mt-[0px] sm:flex-row px-[10px] justify-between">
+                <div className="flex flex-col mt-[5px] md:mt-[0px] md:flex-row px-[10px] justify-between">
                   <p className="text-[13px]">2023 - 2027</p>
                   <p className="text-[13px]">Current CGPA: 3.3</p>
                 </div>
@@ -434,7 +434,7 @@ const About = () => {
             <div className="flex aboutText4 flex-row items-center  justify-end  ">
 
 
-              <div className="bg-[#373435] ring-[0.5px] ring-[#727376]  px-[20px] py-[15px] rounded-[10px] ">
+              <div className="bg-[#373435] ring-[0.5px] ring-[#727376]  px-[10px] sm:px-[20px] py-[10px] sm:py-[15px] rounded-[10px] ">
                 <p>Diploma in Graphic Designing</p>
                 <p>IDM Nations Campus</p>
                 <div className="flex flex-row px-[10px] justify-between">
@@ -452,12 +452,12 @@ const About = () => {
           <div className="bg-white w-[7px] min-h-[70vh] rounded-full">
 
           </div>
-          <div className=" aboutText5 flex items-center w-[45%] sm:w-[29%] flex text-[17px] sm:text-[18px] leading-[20px] sm:leading-[24px] justify-cneter flex-row">
+          <div className=" aboutText5 flex items-center w-[45%] md:w-[29%] flex text-[17px] sm:text-[18px] leading-[20px] sm:leading-[24px] justify-cneter flex-row">
             <div className="w-[40px] bg-white h-[7px]">
 
             </div>
 
-            <div className="bg-[#373435] ring-[0.5px] ring-[#727376]  px-[20px] py-[15px] rounded-[10px] ">
+            <div className="bg-[#373435] ring-[0.5px] ring-[#727376]  px-[10px] sm:px-[20px] py-[10px] sm:py-[15px] rounded-[10px] ">
               <p>G.C.E. Advanced Level (Bio stream)</p>
               <p>St.Benedict's College</p>
               <div className="flex flex-row px-[10px] justify-between">
@@ -482,8 +482,8 @@ const About = () => {
 
 
           <div className="flex flex-col  space-y-[30px]  ">
-            <div className="flex flex-row  items-center justify-center space-x-[20px] ">
-              <div className="w-[6px] sm:w-[7px] min-h-[74vh] sm:min-h-[53vh] md:min-h-[46vh] rounded-full bg-white">
+            <div className="flex flex-row  items-center justify-center space-x-[13px] sm:space-x-[20px] ">
+              <div className="w-[5px] sm:w-[7px] min-h-[74vh] sm:min-h-[53vh] md:min-h-[46vh] rounded-full bg-white">
 
               </div>
 
@@ -515,8 +515,8 @@ const About = () => {
 
               </div>
             </div>
-            <div className="flex flex-row  items-center justify-center space-x-[20px] ">
-              <div className="w-[6px] sm:w-[7px] min-h-[48vh] sm:min-h-[28vh] rounded-full bg-white">
+            <div className="flex flex-row  items-center justify-center space-x-[13px] sm:space-x-[20px] ">
+              <div className="w-[5px] sm:w-[7px] min-h-[48vh] sm:min-h-[28vh] rounded-full bg-white">
 
               </div>
 
