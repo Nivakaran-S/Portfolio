@@ -475,7 +475,7 @@ const About = () => {
       </div>
 
       <div className="text-white bg-[#000] space-y-[30px] py-[80px]  px-[10vw] flex flex-col items-center justify-center min-h-[100vh]">
-        <div className="w-[80%] text-center leading-[55px] md:leading-[80px] h-[100%]">
+        <div className="w-[100%] text-center leading-[55px] md:leading-[80px] h-[100%]">
           <p className="text-[55px] md:text-[85px] aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Work Experience</p>
         </div>
         <div className="h-[100%]  md:px-[200px] space-x-[50px] flex flex-row items-center justify-center">
@@ -505,7 +505,7 @@ const About = () => {
                 <div>
                   <p className="text-[17px] md:text-[18px] text-gray-300">Responsibilities</p>
                   <ul className="pl-[10px] text-[16px] mt-[5px] space-y-[2px]">
-                    <li>- Was a primary scribe for a cardiologist, and have worked with multiple providers across multiple specialities, documenting real-time patient encounters, diagnoses, transcriptions and treatment plans.</li>
+                    <li>- Worked as the primary scribe for a cardiologist, and have worked with multiple providers across multiple specialities, documenting real-time patient encounters, diagnoses, transcriptions and treatment plans.</li>
                     <li>- Trained and supervised junior scribes in EHR systems, cardiology-specific terminology, and efficient content capturing protocols.</li>
                     <li>- Structured and managed high-volume clinical datasets(e.g., echocardiograms, medications, lab results)</li>
                     <li>- Collaborated with doctors to summerize complex medical histories into actionable clinical notes, improving data usability.</li>

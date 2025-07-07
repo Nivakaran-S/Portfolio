@@ -73,7 +73,7 @@ const ContactModel: React.FC<ContactModelProps> = ({ onMessageSuccess, onContact
       </div>
       <div className=" w-[100%] md:w-[50%] pt-[50px] md:h-[100%] flex flex-col items-center justify-center">
 
-        <p className="text-[40px] md:text-[45px]  md:leading-[45px] leading-[42px] w-[90%]">Let's Talk About <span className="text-[#101010]">Your Next Project</span></p>
+        <p className="text-[35px] md:text-[45px]  md:leading-[45px] leading-[38px] w-[90%]">Let's Talk About <span className="text-[#101010]">Your Next Project</span></p>
         <div className="hidden md:flex ml-[40px]">
           <p className="w-[80%] hidden md:flex md:mt-[5px]" >We'd love to hear from you whether it's a project inquiry, feedback, or just a friendly hello, don't hesitate to reach out: Let's create something amazing.</p>
         </div>
@@ -83,12 +83,12 @@ const ContactModel: React.FC<ContactModelProps> = ({ onMessageSuccess, onContact
             <p>Close</p>
         </div>
         <div className="text-[18px] flex flex-col px-[10px] items-center justify-center h-[100%] sm:h-[100%]">
-            <div className="flex flex-row items-center justify-center  w-[100%]  space-x-[20px]">
-                <div className="leading-[30px]">
+            <div className="flex mt-[10px] flex-col sm:flex-row items-center justify-center  w-[100%]  sm:space-x-[20px]">
+                <div className=" w-[100%] leading-[30px]">
                     <p>Name</p>
                     <input value={name} onChange={(e) => setName(e.target.value)} type="text" className="w-[100%] focus:outline-none px-[13px] h-[40px] bg-[#101010] text-[#96989A] border-[1px] border-[#96989A] rounded-[8px]"/>
                 </div>
-                <div className="leading-[30px]">
+                <div className="w-[100%] mt-[10px] sm:mt-[0px] leading-[30px]">
                     <p>Email</p>
                     <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" className="w-[100%] focus:outline-none px-[13px] h-[40px] bg-[#101010] text-[#96989A] border-[1px] border-[#96989A] rounded-[8px] "/>
                 </div>
