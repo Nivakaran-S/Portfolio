@@ -349,20 +349,9 @@ const Portfolio = () => {
                    <PortfolioCard lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="A machine learning-powered pricing optimization system that automatically adjusts product prices in real-time based on demand, competitor pricing, inventory levels, and customer behavior. Built for e-commerce platforms, this engine uses reinforcement learning (RL) and predictive modeling to maximize revenue while staying competitive." text="Dynamic Pricing Enging for E-Commerce" onClick={onPortfolioCard1Click}/>
                    
                 </div>
-                <p className=" portfolio3 text-[33px] text-center md:text-[30px] mt-[40px]">Mini Projects</p>
-                <div className=" portfolio3 mt-[30px]  flex md:flex-row flex-col space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
-                        <div className=" w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
-                            <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
-
-                            </div>
-                            <div className="flex flex-col h-[50%] rounded-b-[15px] bg-[#101010] w-full px-[15px] justify-center">
-                                <p className="leading-[25px]">Project Title Project Title Project Title</p>
-                                <div className="text-[10px] ">
-                                    <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
-                                </div>
-                            </div>
-                        </div>  
-                        <div className=" w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                <p className=" portfolio3 text-[33px] text-center md:text-[30px]  mt-[40px]">Mini Projects</p>
+                <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[10px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
+                        <div className=" w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -373,18 +362,7 @@ const Portfolio = () => {
                                 </div>
                             </div>
                         </div> 
-                        <div className=" w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
-                            <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
-
-                            </div>
-                            <div className="flex flex-col h-[50%] rounded-b-[15px] bg-[#101010] w-full px-[15px] justify-center">
-                                <p className="leading-[25px]">Project Title Project Title Project Title</p>
-                                <div className="text-[10px] ">
-                                    <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
-                                </div>
-                            </div>
-                        </div> 
-                        <div className=" w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        <div className=" w-[190px] sm:w-[220px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -395,8 +373,29 @@ const Portfolio = () => {
                                 </div>
                             </div>
                         </div>  
+                        <div className=" w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                            <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
+
+                            </div>
+                            <div className="flex flex-col h-[50%] rounded-b-[15px] bg-[#101010] w-full px-[15px] justify-center">
+                                <p className="leading-[25px]">Project Title Project Title Project Title</p>
+                                <div className="text-[10px] ">
+                                    <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
+                                </div>
+                            </div>
+                        </div> 
+                        <div className=" w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                            <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
+
+                            </div>
+                            <div className="flex flex-col h-[50%] rounded-b-[15px] bg-[#101010] w-full px-[15px] justify-center">
+                                <p className="leading-[25px]">Project Title Project Title Project Title</p>
+                                <div className="text-[10px] ">
+                                    <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
+                                </div>
+                            </div>
+                        </div> 
                     </div>
-
                 <p className=" portfolio3 text-[33px] md:text-[40px] mt-[40px]">Computer Vision</p>
                <div className=" portfolio3 mt-[30px] flex md:flex-row flex-col space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
                     <PortfolioCard lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="A real-time sign language translation tool powered by a hybrid CNN-LSTM model, achieving 92% accuracy in converting ASL/ISL gestures to text. Deployed via Flask, the system serves as an assistive tool for the hearing-impaired community." text="AI Sign Language Interpretater" onClick={onPortfolioCard1Click}/>
@@ -413,9 +412,9 @@ const Portfolio = () => {
                     <PortfolioCard lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="An intelligent traffic enforcement solution that identifies red-light running, speeding, and unregistered vehicles in real-time. Processes 50+ camera feeds simultaneously with 92% accuracy, generating evidence packages for law enforcement. Pilot implementation reduced intersection accidents by 35%." text="Real-Time Traffic Violation System" onClick={onPortfolioCard1Click}/>
                     
                 </div>
-                <p className=" portfolio3 text-[33px] text-center md:text-[30px] mt-[40px]">Mini Projects</p>
-                <div className=" portfolio3 mt-[30px]  flex md:flex-row flex-col space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
-                        <div className=" w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                <p className=" portfolio3 text-[33px] text-center md:text-[30px]  mt-[40px]">Mini Projects</p>
+                <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[10px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
+                        <div className=" w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -426,7 +425,18 @@ const Portfolio = () => {
                                 </div>
                             </div>
                         </div> 
-                       <div className=" w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        <div className=" w-[190px] sm:w-[220px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                            <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
+
+                            </div>
+                            <div className="flex flex-col h-[50%] rounded-b-[15px] bg-[#101010] w-full px-[15px] justify-center">
+                                <p className="leading-[25px]">Project Title Project Title Project Title</p>
+                                <div className="text-[10px] ">
+                                    <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
+                                </div>
+                            </div>
+                        </div>  
+                        <div className=" w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -437,18 +447,7 @@ const Portfolio = () => {
                                 </div>
                             </div>
                         </div> 
-                        <div className=" w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
-                            <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
-
-                            </div>
-                            <div className="flex flex-col h-[50%] rounded-b-[15px] bg-[#101010] w-full px-[15px] justify-center">
-                                <p className="leading-[25px]">Project Title Project Title Project Title</p>
-                                <div className="text-[10px] ">
-                                    <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
-                                </div>
-                            </div>
-                        </div> 
-                        <div className=" w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        <div className=" w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -467,9 +466,9 @@ const Portfolio = () => {
                     <PortfolioCard lang1="FastApi" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="Agent that collects symptoms, interprets radiology reports (e.g., X-rays), suggest actions or raise alarms" text="Medical Diagnosis + Assistant Agent" onClick={onPortfolioCard1Click}/>
                     
                 </div>
-                <p className=" portfolio3 text-[33px] text-center md:text-[30px] mt-[40px]">Mini Projects</p>
-                <div className=" portfolio3 mt-[30px]  flex md:flex-row flex-col space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
-                        <div className=" w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                <p className=" portfolio3 text-[33px] text-center md:text-[30px]  mt-[40px]">Mini Projects</p>
+                <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[10px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
+                        <div className=" w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -480,18 +479,7 @@ const Portfolio = () => {
                                 </div>
                             </div>
                         </div> 
-                        <div className=" w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
-                            <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
-
-                            </div>
-                            <div className="flex flex-col h-[50%] rounded-b-[15px] bg-[#101010] w-full px-[15px] justify-center">
-                                <p className="leading-[25px]">Project Title Project Title Project Title</p>
-                                <div className="text-[10px] ">
-                                    <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
-                                </div>
-                            </div>
-                        </div> 
-                        <div className=" w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        <div className=" w-[190px] sm:w-[220px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -502,7 +490,18 @@ const Portfolio = () => {
                                 </div>
                             </div>
                         </div>  
-                        <div className=" w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        <div className=" w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                            <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
+
+                            </div>
+                            <div className="flex flex-col h-[50%] rounded-b-[15px] bg-[#101010] w-full px-[15px] justify-center">
+                                <p className="leading-[25px]">Project Title Project Title Project Title</p>
+                                <div className="text-[10px] ">
+                                    <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
+                                </div>
+                            </div>
+                        </div> 
+                        <div className=" w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -514,7 +513,6 @@ const Portfolio = () => {
                             </div>
                         </div> 
                     </div>
-
                 
                
 

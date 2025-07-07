@@ -9,6 +9,7 @@ import PrimaryBtn from "../components/PrimaryBtn";
 import { useRouter } from "next/navigation";
 import Top from "../components/Top";
 import Max from "../components/Max";
+import CaseStudyCard from "../components/CaseStudyCard";
 
 
 const Blogs = () => {
@@ -220,7 +221,7 @@ const Blogs = () => {
             <div className="text-white bg-[url('./images/heroBackground6.png')] bg-contain bg-no-repeat bg-center  sm:space-y-[30px] bg-[#000] px-[10vw] flex flex-col items-center justify-center sm:pt-[20vh] min-h-[100vh]">
               <div className="w-[100vw]  text-center leading-[63px] sm:leading-[70px] h-[100%]">
                 <p className=" text-[40px] sm:text-[50px] md:text-[60px] aboutText4 aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Look Into</p>
-                <p className=" text-[55px] sm:text-[75px] md:text-[80px] aboutTitle2 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Blogs & Insights</p>
+                <p className=" text-[49px] sm:text-[75px] px-[20px] md:text-[80px] aboutTitle2 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Blogs & Insights</p>
               </div>
               <div className="w-[100%] md:w-[50%] text-center h-[10px] sm:h-[160px]">
 
@@ -234,79 +235,38 @@ const Blogs = () => {
 
 
             <div className=" min-h-[120vh] py-[10vh] w-screen flex items-center justify-center">
-                <div className="w-[80%] flex  flex-col">
-                    <div className="leading-[64px] blogs1 text-center">
-                        <p className="text-[55px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Stay Updated</p>
-                        <p className="text-[55px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">with Latest Insights</p>
+                <div className="  flex  flex-col">
+                    <div className="leading-[55px] sm:leading-[64px] blogs1 text-center">
+                        <p className="text-[45px] sm:text-[55px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Stay Updated</p>
+                        <p className="text-[45px] sm:text-[55px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">with Latest Insights</p>
                     </div>
-                    <div className="flex flex-row items-center justify-center space-x-[20px] mt-[30px]">
-                        <div className="blogs2 flex flex-row items-center justify-center space-x-[20px]">
-                        <BlogCard text="Blog 1" text1="Blog Title" onClick={onBlog1Click}/>
-                        <BlogCard text="Blog 1" text1="Blog Title" onClick={onBlog1Click}/>
-                        </div>
-                        <div className="blogs3 flex flex-row items-center justify-center space-x-[20px]">
-                        <BlogCard text="Blog 1" text1=" Blog Title" onClick={onBlog1Click}/>
-                        <BlogCard text="Blog 1" text1="Blog Title" onClick={onBlog1Click}/>
-                        </div>
-                        
-                        
+                    <div className="flex items-center justify-center">
+                      <div className="grid grid-cols-2  sm:grid-cols-4 gap-[10px] mt-[30px]">
+                          
+                            <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
+                            <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
+                          
+                            <BlogCard text="Blog 1" text1=" Blog Title Blog Title" onClick={onBlog1Click}/>
+                            <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
 
-                    </div>
-                    <div className="flex flex-row items-center justify-center space-x-[20px] mt-[30px]">
-                        <div className="blogs2 flex flex-row items-center justify-center space-x-[20px]">
-                        <BlogCard text="Blog 1" text1="Blog Title" onClick={onBlog1Click}/>
-                        <BlogCard text="Blog 1" text1="Blog Title" onClick={onBlog1Click}/>
-                        </div>
-                        <div className="blogs3 flex flex-row items-center justify-center space-x-[20px]">
-                        <BlogCard text="Blog 1" text1=" Blog Title" onClick={onBlog1Click}/>
-                        <BlogCard text="Blog 1" text1="Blog Title" onClick={onBlog1Click}/>
-                        </div>
-                        
-                        
-                    </div>
-                    <div className="flex flex-row items-center justify-center space-x-[20px] mt-[30px]">
-                        <div className="blogs2 flex flex-row items-center justify-center space-x-[20px]">
-                        <BlogCard text="Blog 1" text1="Blog Title" onClick={onBlog1Click}/>
-                        <BlogCard text="Blog 1" text1="Blog Title" onClick={onBlog1Click}/>
-                        </div>
-                        <div className="blogs3 flex flex-row items-center justify-center space-x-[20px]">
-                        <BlogCard text="Blog 1" text1=" Blog Title" onClick={onBlog1Click}/>
-                        <BlogCard text="Blog 1" text1="Blog Title" onClick={onBlog1Click}/>
-                        </div>
-                        
-                        
+                            <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
+                            <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
+                          
+                            <BlogCard text="Blog 1" text1=" Blog Title Blog Title" onClick={onBlog1Click}/>
+                            <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
+                            
+                          
+                          
+                          
+                      </div>
                     </div>
                     <div className="flex flex-row items-center justify-center space-x-[20px] mt-[30px]">
                         <div className="w-[90%]">
                             <p className="text-[50px] font-bold">Case Studies</p>
-                            <div className="grid px-[15px] grid-cols-2 gap-[20px] items-center justify-center space-x-[20px] mt-[30px]">
-                                <div className="h-[350px] hover:scale-[105%] transition duration-300 ease-in-out    flex flex-row items-center justify-center cursor-pointer ring-[#5F5F62] ring-[1.5px] rounded-[20px] w-[100%] bg-[#373435]" >
-                                    <div className="w-[40%] h-[100%] rounded-l-[20px] ">
-
-                                    </div>
-                                    <div className="w-[60%] px-[20px] h-[100%] bg-[#101010] rounded-r-[20px] flex flex-col items-center justify-center">
-                                        <p className="text-[23px]">Title Number Main</p>
-                                        <p className="text-[15px] leading-[19px] ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi non itaque officia eligendi sed at veniam eos quod tempora  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum beatae ut repellendus maxime excepturi suscipit. Recusandae ex culpa animi deleniti, quisquam voluptatem est aliquid suscipit, esse quaerat impedit? Officiis, tenetur!</p>
-                                    </div>
-                                </div>
-                                <div className="h-[350px] hover:scale-[105%] transition duration-300 ease-in-out    flex flex-row items-center justify-center cursor-pointer ring-[#5F5F62] ring-[1.5px] rounded-[20px] w-[100%] bg-[#373435]" >
-                                    <div className="w-[40%] h-[100%] rounded-l-[20px] ">
-
-                                    </div>
-                                    <div className="w-[60%] px-[20px] h-[100%] bg-[#101010] rounded-r-[20px] flex flex-col items-center justify-center">
-                                        <p className="text-[23px]">Title Number Main</p>
-                                        <p className="text-[15px] leading-[19px] ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi non itaque officia eligendi sed at veniam eos quod tempora  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum beatae ut repellendus maxime excepturi suscipit. Recusandae ex culpa animi deleniti, quisquam voluptatem est aliquid suscipit, esse quaerat impedit? Officiis, tenetur!</p>
-                                    </div>
-                                </div>
-                                <div className="h-[350px] hover:scale-[105%] transition duration-300 ease-in-out    flex flex-row items-center justify-center cursor-pointer ring-[#5F5F62] ring-[1.5px] rounded-[20px] w-[100%] bg-[#373435]" >
-                                    <div className="w-[40%] h-[100%] rounded-l-[20px] ">
-
-                                    </div>
-                                    <div className="w-[60%] px-[20px] h-[100%] bg-[#101010] rounded-r-[20px] flex flex-col items-center justify-center">
-                                        <p className="text-[23px]">Title Number Main</p>
-                                        <p className="text-[15px] leading-[19px] ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Excepturi non itaque officia eligendi sed at veniam eos quod tempora  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum beatae ut repellendus maxime excepturi suscipit. Recusandae ex culpa animi deleniti, quisquam voluptatem est aliquid suscipit, esse quaerat impedit? Officiis, tenetur!</p>
-                                    </div>
-                                </div>
+                            <div className="grid px-[15px] sm:grid-cols-2 gap-[20px] items-center justify-center space-x-[20px] mt-[30px]">
+                                
+                                <CaseStudyCard text1="Case study title 01" text="test" />
+                                <CaseStudyCard  text1="Case study title 02" text=""/>
                             </div>
                         </div>
                     </div>
