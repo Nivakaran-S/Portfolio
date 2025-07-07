@@ -288,7 +288,7 @@ const Portfolio = () => {
                 </div>
                 <p className=" portfolio3 text-[33px] text-center md:text-[30px] mt-[40px]">Mini Projects</p>
                 <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[10px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
-                        <div className=" w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        <div className=" w-[210px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -299,7 +299,7 @@ const Portfolio = () => {
                                 </div>
                             </div>
                         </div> 
-                        <div className=" w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        <div className=" w-[210px] sm:w-[220px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -310,7 +310,7 @@ const Portfolio = () => {
                                 </div>
                             </div>
                         </div>  
-                        <div className=" w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        <div className=" w-[210px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -321,7 +321,7 @@ const Portfolio = () => {
                                 </div>
                             </div>
                         </div> 
-                        <div className=" w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        <div className=" w-[210px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>

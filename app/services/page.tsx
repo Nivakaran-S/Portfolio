@@ -235,16 +235,16 @@ useEffect(() => {
             </div>
 
             <div className="flex flex-col md:flex-row items-center px-[10vw] justify-center  min-h-[100vh]">
-                <div className="md:w-[40%] mb-[20px] md:mb-[0px] h-[100%]">
+                <div className="md:w-[60%] mb-[20px] md:mb-[0px] h-[100%]">
                     
                       <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[70px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Web Development</p>
 
                 </div>
                 <div className="md:w-[60%] serviceLeft flex flex-col items-start h-[100%]">
-                  <p className="md:w-[80%]">Crafting responsive, high-performance, and visually striking websites using latest technologies. From landing pages to complex web apps, I build scalable solutions optimized for speed and usability.</p>
+                  <p className="md:w-[90%]">Crafting responsive, high-performance, and visually striking websites using latest technologies. From landing pages to complex web apps, I build scalable solutions optimized for speed and usability.</p>
                   <div className="md:w-[80%] mt-[20px]">
                     <p>Tools used </p>
-                    <div className="sm:flex grid grid-cols-5 gap-3 flex-row items-center  space-x-[13px] mt-[10px]">
+                    <div className=" grid grid-cols-5 gap-3 flex-row items-center  space-x-[13px] mt-[10px]">
                       <Image alt="" src={NextImage} height={50} width={50}/>
                       <Image alt="" src={ReactImage} height={50} width={50}/>
                       <Image alt="" src={ReduxImage} height={50} width={50}/>
@@ -286,13 +286,13 @@ useEffect(() => {
             </div>
 
             <div className="flex flex-col md:flex-row items-center px-[10vw] justify-center  min-h-[100vh]">
-                <div className="md:w-[40%] mb-[20px] md:mb-[0px] h-[100%]">
+                <div className="md:w-[60%] mb-[20px] md:mb-[0px] h-[100%]">
                     
                       <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[70px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">UI/UX Designing </p>
 
                 </div>
                 <div className="md:w-[60%] serviceLeft flex flex-col items-start h-[100%]">
-                  <p className="md:w-[80%]">Designing user-first interfaces that are both beautiful and functional. I focus on seamless user experiences, intuitive navigation, and design systems that bring your brand to life.</p>
+                  <p className="md:w-[90%]">Designing user-first interfaces that are both beautiful and functional. I focus on seamless user experiences, intuitive navigation, and design systems that bring your brand to life.</p>
                   <div className="md:w-[80%] mt-[20px]">
                     <p>Tools used </p>
                     <div className="flex flex-row items-center  space-x-[13px] mt-[10px]">
@@ -327,13 +327,13 @@ useEffect(() => {
                 </div>
             </div>
             <div className="flex flex-col md:flex-row items-center px-[10vw] justify-center  min-h-[100vh]">
-                <div className="md:w-[40%] mb-[20px] md:mb-[0px] h-[100%]">
+                <div className="md:w-[60%] mb-[20px] md:mb-[0px] h-[100%]">
                     
                       <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[70px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Data Analysis & Visualization</p>
 
                 </div>
                 <div className="md:w-[60%] serviceLeft flex flex-col items-start h-[100%]">
-                  <p className="md:w-[80%]">Unlocking insights from your data through analysis and compelling visual storytelling. I turn raw numbers into meaningful narratives that guide decision making.</p>
+                  <p className="md:w-[90%]">Unlocking insights from your data through analysis and compelling visual storytelling. I turn raw numbers into meaningful narratives that guide decision making.</p>
                   <div className="md:w-[80%] mt-[20px]">
                     <p>Tools used </p>
                     <div className="flex flex-row items-center  space-x-[13px] mt-[10px]">
@@ -377,13 +377,13 @@ useEffect(() => {
             </div>
             
             <div className="flex flex-col md:flex-row items-center px-[10vw] justify-center  min-h-[100vh]">
-                <div className="md:w-[40%] mb-[20px] md:mb-[0px] h-[100%]">
+                <div className="md:w-[60%]  mb-[20px] md:mb-[0px] h-[100%]">
                     
                       <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[70px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">AI Agent Development</p>
 
                 </div>
-                <div className="md:w-[60%] serviceLeft flex flex-col items-start h-[100%]">
-                  <p className="md:w-[80%]">Developing custom AI agents for workflows with natural language processing, computer vision and conversational agents.</p>
+                <div className="md:w-[60%]  serviceLeft flex flex-col items-start h-[100%]">
+                  <p className="md:w-[90%]">Developing custom AI agents for workflows with natural language processing, computer vision and conversational agents.</p>
                   <p className="md:w-[80%]">Use cases: Chatbots</p>
                   <div className="md:w-[80%] mt-[20px]">
                     <p>Tools used </p>
