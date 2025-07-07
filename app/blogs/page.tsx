@@ -261,7 +261,7 @@ const Blogs = () => {
                       </div>
                     </div>
                     <div className="flex flex-row items-center justify-center space-x-[20px] mt-[30px]">
-                        <div className="w-[90%]">
+                        <div className="w-[96%]">
                             <p className="text-[50px] font-bold">Case Studies</p>
                             <div className="grid px-[15px] sm:grid-cols-2 gap-[20px] items-center justify-center space-x-[20px] mt-[30px]">
                                 

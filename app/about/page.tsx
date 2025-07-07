@@ -475,15 +475,15 @@ const About = () => {
       </div>
 
       <div className="text-white bg-[#000] space-y-[30px] py-[80px]  px-[10vw] flex flex-col items-center justify-center min-h-[100vh]">
-        <div className="w-[80%] text-center leading-[60px] md:leading-[80px] h-[100%]">
-          <p className="text-[60px] md:text-[85px] aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Work Experience</p>
+        <div className="w-[80%] text-center leading-[55px] md:leading-[80px] h-[100%]">
+          <p className="text-[55px] md:text-[85px] aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Work Experience</p>
         </div>
         <div className="h-[100%]  md:px-[200px] space-x-[50px] flex flex-row items-center justify-center">
 
 
           <div className="flex flex-col  space-y-[30px]  ">
             <div className="flex flex-row  items-center justify-center space-x-[13px] sm:space-x-[20px] ">
-              <div className="w-[5px] sm:w-[7px] min-h-[74vh] sm:min-h-[53vh] md:min-h-[46vh] rounded-full bg-white">
+              <div className="w-[5px] sm:w-[7px] min-h-[70vh] sm:min-h-[53vh] md:min-h-[46vh] rounded-full bg-white">
 
               </div>
 
@@ -516,7 +516,7 @@ const About = () => {
               </div>
             </div>
             <div className="flex flex-row  items-center justify-center space-x-[13px] sm:space-x-[20px] ">
-              <div className="w-[5px] sm:w-[7px] min-h-[48vh] sm:min-h-[28vh] rounded-full bg-white">
+              <div className="w-[5px] sm:w-[7px] min-h-[45vh] sm:min-h-[28vh] rounded-full bg-white">
 
               </div>
 
