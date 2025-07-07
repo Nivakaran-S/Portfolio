@@ -371,7 +371,7 @@ useEffect(() => {
                 </div>
                 <div className="md:w-[40%] mt-[20px] mt-[0px] h-[100%]">
                     
-                      <p className=" text-[46px] sm:text-[60px] text-center md:text-left serviceRight leading-[52px] sm:leading-[60px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Building Machine Learning Models</p>
+                      <p className=" text-[46px] sm:text-[60px] text-center md:text-left serviceRight leading-[52px] sm:leading-[66px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Building Machine Learning Models</p>
 
                 </div>
             </div>
