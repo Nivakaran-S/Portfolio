@@ -171,12 +171,12 @@ const About = () => {
       <div className="flex items-center justify-center py-[50px]  min-h-[100vh]">
         <div className="w-[85%] h-[100%] flex flex-col md:flex-row items-center justify-center space-x-[20px] about2">
           <div className="w-[100%] md:w-[50%] h-[100%]  flex flex-col items-center justify-center">
-            <p className=" text-[65px] sm:text-[80px] text-center md:text-left aboutText4 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >About Me</p>
+            <p className=" text-[60px] sm:text-[80px] text-center md:text-left aboutText4 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >About Me</p>
           </div>
-          <div className="w-[100%] md:w-[50%] aboutText5 h-[100%] flex flex-col space-y-[20px] items-center justify-center">
+          <div className="w-[100%] text-[17px] sm:text-[18px] md:w-[50%] aboutText5 h-[100%] flex flex-col space-y-[20px] items-center justify-center">
             <p>
               Hello! I am Nivakaran, currently pursuing a B.Sc. in Information
-              Technology with a specialization in Data Science at the Sri Lanka
+              Technology at the Sri Lanka
               Institute of Information Technology (SLIIT). My academic journey
               driven by a passion for exploring the dynamic intersection of data
               science and software engineering.
@@ -201,7 +201,7 @@ const About = () => {
       </div>
       <div className="text-white space-y-[30px] bg-[#000] px-[10vw] flex flex-col py-[60px] py-[0px] md:flex-row items-center justify-center  min-h-[50vh]">
 
-        <div className="aboutText4 w-[100%] md:w-[55%] text-center h-[100%]">
+        <div className="aboutText4 w-[100%] md:w-[55%] text-[17px] sm:text-[18px] text-center h-[100%]">
           <p>To become a leading force in shaping the future of technology by blending curiosity with creativity. I envision a world where data and software empower people to solve real-world challenges, drive innovation, and unlock boundless possibilities for the generations to come.</p>
         </div>
         <div className=" w-[100%] sm:w-[45%] aboutText5 text-center leading-[60px] md:leading-[70px] h-[100%]">
@@ -214,7 +214,7 @@ const About = () => {
           <p className="text-[40px] md:text-[50px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >The</p>
           <p className="text-[68px] md:text-[100px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Mission</p>
         </div>
-        <div className=" w-[100%] md:w-[55%] aboutText5 text-center h-[100%]">
+        <div className=" w-[100%] text-[17px] sm:text-[18px] md:w-[55%] aboutText5 text-center h-[100%]">
           <p>To leverage the power of data science and software engineering to build intelligent, impactful, and user-centric digital solutions. I strive to continuously learn, innovate, and collaborate, transforming ideas into reality through thoughtful design, clean code, and data-driven insights.</p>
         </div>
 
@@ -412,7 +412,7 @@ const About = () => {
       <div className="min-h-[100vh] bg-[#101010] flex flex-col items-center justify-center">
         <p className=" text-[70px] md:text-[85px] aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Education</p>
         <div className="flex flex-row  items-center min-h-[60vh] w-[100vw] justify-center">
-          <div className="w-[29%] flex  flex-col space-y-[90px] ">
+          <div className=" w-[45%] sm:w-[29%] flex text-[17px] sm:text-[18px] leading-[20px] sm:leading-[24px]  flex-col space-y-[90px] ">
 
             <div className="flex aboutText4 flex-row items-center justify-end  ">
 
@@ -420,7 +420,7 @@ const About = () => {
               <div className="bg-[#373435] ring-[0.5px] ring-[#727376]  px-[20px] py-[15px] rounded-[10px] ">
                 <p>B.Sc (Hons) in Information Technology</p>
                 <p>Sri Lanka Institute of Information Technology (SLIIT)</p>
-                <div className="flex flex-row px-[10px] justify-between">
+                <div className="flex flex-col mt-[5px] sm:mt-[0px] sm:flex-row px-[10px] justify-between">
                   <p className="text-[13px]">2023 - 2027</p>
                   <p className="text-[13px]">Current CGPA: 3.3</p>
                 </div>
@@ -452,7 +452,7 @@ const About = () => {
           <div className="bg-white w-[7px] min-h-[70vh] rounded-full">
 
           </div>
-          <div className="w-[30%] aboutText5 flex items-center justify-cneter flex-row">
+          <div className=" aboutText5 flex items-center w-[45%] sm:w-[29%] flex text-[17px] sm:text-[18px] leading-[20px] sm:leading-[24px] justify-cneter flex-row">
             <div className="w-[40px] bg-white h-[7px]">
 
             </div>
@@ -476,14 +476,14 @@ const About = () => {
 
       <div className="text-white bg-[#000] space-y-[30px] py-[80px]  px-[10vw] flex flex-col items-center justify-center min-h-[100vh]">
         <div className="w-[80%] text-center leading-[60px] md:leading-[80px] h-[100%]">
-          <p className="text-[65px] md:text-[85px] aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Work Experience</p>
+          <p className="text-[60px] md:text-[85px] aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Work Experience</p>
         </div>
-        <div className="h-[100%]  px-[200px] space-x-[50px] flex flex-row items-center justify-center">
+        <div className="h-[100%]  md:px-[200px] space-x-[50px] flex flex-row items-center justify-center">
 
 
-          <div className="flex flex-col space-y-[30px]  ">
-            <div className="flex flex-row items-center justify-center space-x-[20px] ">
-              <div className="w-[7px] min-h-[65vh] rounded-full bg-white">
+          <div className="flex flex-col  space-y-[30px]  ">
+            <div className="flex flex-row  items-center justify-center space-x-[20px] ">
+              <div className="w-[6px] sm:w-[7px] min-h-[74vh] sm:min-h-[53vh] md:min-h-[46vh] rounded-full bg-white">
 
               </div>
 
@@ -491,13 +491,13 @@ const About = () => {
               <div className="w-[100%] flex flex-col  items-center justify-center aboutTitle2 h-[100%]">
 
 
-                <div className="flex flex-row items-center w-[100%]  space-x-[100px]">
-                  <div className="leading-[30px]">
-                    <p className=" text-[20px]  md:text-[23px]">+ Medical Documentation Specialist (Medical Scribe)</p>
-                    <p className="text-[17px] md:text-[19px]">Medsource Healthcare LLC</p>
+                <div className="flex  flex-col sm:flex-row sm:items-center  w-[100%]  sm:space-x-[100px]">
+                  <div className="leading-[28px] sm:leading-[30px]">
+                    <p className=" text-[23px]  md:text-[23px]">+ Medical Documentation Specialist (Medical Scribe)</p>
+                    <p className="text-[18px] md:text-[19px]">Medsource Healthcare LLC</p>
                   </div>
 
-                  <div>
+                  <div className="">
                     <p>2022 July - 2024 December</p>
                   </div>
 
@@ -515,32 +515,32 @@ const About = () => {
 
               </div>
             </div>
-            <div className="flex flex-row items-center justify-center space-x-[20px] ">
-              <div className="w-[7px] min-h-[40vh] rounded-full bg-white">
+            <div className="flex flex-row  items-center justify-center space-x-[20px] ">
+              <div className="w-[6px] sm:w-[7px] min-h-[48vh] sm:min-h-[28vh] rounded-full bg-white">
 
               </div>
 
 
-              <div className="w-[100%] flex flex-col items-center justify-center aboutTitle2 h-[100%]">
+              <div className="w-[100%] flex flex-col  items-center justify-center aboutTitle2 h-[100%]">
 
-                <div className="flex flex-row items-center justify-between w-[100%] ">
-                  <div className="leading-[30px]">
-                    <p className="text-[20px] md:text-[23px]">+ Customer Service Executive</p>
-                    <p className="text-[17px] md:text-[19px]">Startek - Commercial bank PLC process</p>
+
+                <div className="flex  flex-col sm:flex-row sm:items-center  w-[100%]  sm:space-x-[100px]">
+                  <div className="leading-[28px] sm:leading-[30px]">
+                    <p className=" text-[23px]  md:text-[23px]">+ Customer Service Executive</p>
+                    <p className="text-[18px] md:text-[19px]">Startek - Commercial bank PLC</p>
                   </div>
 
-                  <div className="w-[150px]">
+                  <div className="">
                     <p>2022 February - 2022 June</p>
                   </div>
 
                 </div>
-
                 <div>
-                  <p className="text-[18px] text-gray-300">Responsibilities</p>
+                  <p className="text-[17px] md:text-[18px] text-gray-300">Responsibilities</p>
                   <ul className="pl-[10px] text-[16px] mt-[5px] space-y-[2px]">
                     <li>- Managed high-volume customer interactions, ensuring efficient query resolution and data accuracy.</li>
-                    <li>- Processed financial transactions and account inquiries, demostrated structured problem-solving and attention to detail</li>
-                    <li>- Communicated with the clients to ensure clarity and compliance strenghtening analytical documentation skills.</li>
+                    <li>- Processed financial transactions and account inquiries, demostrated structured problem-solving and attention to detail.</li>
+                    <li>- Communicated with the clients to ensure clarity and compliance strengthening analytical documentation skills</li>
                   </ul>
                 </div>
 
