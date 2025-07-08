@@ -220,195 +220,240 @@ const About = () => {
 
       </div>
       <div>
-        <div className="text-white space-y-[20px] py-[25px] bg-[#000] px-[10vw] flex flex-col items-center justify-center  min-h-[100vh]">
+            <div className="text-white space-y-4 sm:space-y-6 py-6 sm:py-8 bg-[#000] px-4 sm:px-8 md:px-[10vw] flex flex-col items-center justify-center min-h-screen">
+                {/* Title Section */}
+                <div className="w-full md:w-3/4 lg:w-1/2 pt-8 sm:pt-12 text-center">
+                    <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] to-[#CAC8C6] bg-clip-text text-transparent leading-tight">
+                        Tech Stack
+                    </p>
+                </div>
 
-          <div className="md:w-[50%]  pt-[50px] w-[100%] text-center leading-[85px] h-[100%]">
+                {/* Tabs Section */}
+                <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 py-4 sm:py-6">
+                    <div
+                        onClick={() => setTechStack(1)}
+                        className={`${
+                            techStack === 1 ? 'ring-1 ring-gray-500' : ''
+                        } bg-[#101010] text-sm sm:text-base px-4 sm:px-6 py-2 rounded-lg cursor-pointer text-center`}
+                    >
+                        <p>Core Programming Languages</p>
+                    </div>
+                    <div
+                        onClick={() => setTechStack(2)}
+                        className={`${
+                            techStack === 2 ? 'ring-1 ring-gray-500' : ''
+                        } bg-[#101010] text-sm sm:text-base px-4 sm:px-6 py-2 rounded-lg cursor-pointer text-center`}
+                    >
+                        <p>Data Science, Machine Learning & AI</p>
+                    </div>
+                    <div
+                        onClick={() => setTechStack(3)}
+                        className={`${
+                            techStack === 3 ? 'ring-1 ring-gray-500' : ''
+                        } bg-[#101010] text-sm sm:text-base px-4 sm:px-6 py-2 rounded-lg cursor-pointer text-center`}
+                    >
+                        <p>Frontend, Backend & Mobile Development</p>
+                    </div>
+                    <div
+                        onClick={() => setTechStack(4)}
+                        className={`${
+                            techStack === 4 ? 'ring-1 ring-gray-500' : ''
+                        } bg-[#101010] text-sm sm:text-base px-4 sm:px-6 py-2 rounded-lg cursor-pointer text-center`}
+                    >
+                        <p>Data Engineering & Analytics</p>
+                    </div>
+                    <div
+                        onClick={() => setTechStack(5)}
+                        className={`${
+                            techStack === 5 ? 'ring-1 ring-gray-500' : ''
+                        } bg-[#101010] text-sm sm:text-base px-4 sm:px-6 py-2 rounded-lg cursor-pointer text-center`}
+                    >
+                        <p>DevOps, Cloud & Developer Tools</p>
+                    </div>
+                </div>
 
-            <p className=" text-[53px] sm:text-[70px] md:text-[80px] aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Tech Stack</p>
-          </div>
-          <div className="flex flex-row py-[10px] space-x-[18px]">
-            <div onClick={() => setTechStack(1)} className={`${techStack == 1 ? 'ring-[0.5px] ring-gray-500' : ''} bg-[#101010] text-[15px] px-[10px] text-center rounded-[10px] cursor-pointer py-[8px] `}>
-              <p>Core Programming Languages</p>
+                {/* Tech Icons Section */}
+                <div className="w-full md:w-3/4 lg:w-2/3 text-center  min-h-[25vh] flex justify-center">
+                    <div
+                        className={`${
+                            techStack === 1 ? 'grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4' : 'hidden'
+                        }`}
+                    >
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={PythonImage} height={60} width={60} alt="Python" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={JavaImage} height={60} width={60} alt="Java" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={JavascriptImage} height={60} width={60} alt="JavaScript" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={R} height={60} width={60} alt="R" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={CPlus} height={80} width={80} alt="C++" className="sm:h-24 sm:w-24" />
+                        </div>
+                    </div>
+                    <div
+                        className={`${
+                            techStack === 2 ? 'grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 py-[30px] gap-5 sm:gap-4' : 'hidden'
+                        }`}
+                    >
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={Seaborn} height={60} width={60} alt="Seaborn" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={PytorchImage} height={60} width={60} alt="PyTorch" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={HuggingFaceImage} height={60} width={60} alt="Hugging Face" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={KerasImage} height={60} width={60} alt="Keras" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={ScikitlearnImage} height={60} width={60} alt="Scikit-learn" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={TensorFlowImage} height={60} width={60} alt="TensorFlow" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={LangchainImage} height={60} width={60} alt="LangChain" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={Langgraph} height={80} width={80} alt="LangGraph" className="bg-white rounded-lg sm:h-24 sm:w-24" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={Pandas} height={80} width={80} alt="Pandas" className="sm:h-24 sm:w-24" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={OpenCV} height={80} width={80} alt="OpenCV" className="sm:h-24 sm:w-24" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={Matplotlib} height={80} width={80} alt="Matplotlib" className="sm:h-24 sm:w-24" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={MlFlow} height={80} width={80} alt="MLflow" className="sm:h-24 sm:w-24" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={Airflow} height={80} width={80} alt="Airflow" className="sm:h-24 sm:w-24" />
+                        </div>
+                    </div>
+                    <div
+                        className={`${
+                            techStack === 3 ? 'grid py-[30px] grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-6 sm:gap-4' : 'hidden'
+                        }`}
+                    >
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={NextImage} height={60} width={60} alt="Next.js" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={TypescriptImage} height={60} width={60} alt="TypeScript" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={DjangoImage} height={60} width={60} alt="Django" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={DockerImage} height={60} width={60} alt="Docker" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={ReactImage} height={60} width={60} alt="React" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={ReactNativeImage} height={60} width={60} alt="React Native" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={ReduxImage} height={60} width={60} alt="Redux" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={MongoDbImage} height={60} width={60} alt="MongoDB" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={MysqlImage} height={60} width={60} alt="MySQL" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={NodeImage} height={60} width={60} alt="Node.js" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={KotlinImage} height={60} width={60} alt="Kotlin" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={PostgresqlImage} height={60} width={60} alt="PostgreSQL" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={GradioImage} height={60} width={60} alt="Gradio" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center rounded-lg bg-white">
+                            <Image src={FlaskImage} height={60} width={60} alt="Flask" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={ExpressImage} height={60} width={60} alt="Express" className="sm:h-20 sm:w-20" />
+                        </div>
+                    </div>
+                    <div
+                        className={`${
+                            techStack === 4 ? 'grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4' : 'hidden'
+                        }`}
+                    >
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={TensorFlowImage} height={70} width={70} alt="TensorFlow" className="sm:h-22 sm:w-22" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={ApacheImage} height={75} width={75} alt="Apache" className="sm:h-24 sm:w-24" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={HadoopImage} height={80} width={80} alt="Hadoop" className="sm:h-24 sm:w-24" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={Kafka} height={80} width={80} alt="Kafka" className="sm:h-24 sm:w-24" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={R} height={80} width={80} alt="R" className="sm:h-24 sm:w-24" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={PySpark} height={80} width={80} alt="PySpark" className="sm:h-24 sm:w-24" />
+                        </div>
+                    </div>
+                    <div
+                        className={`${
+                            techStack === 5 ? 'grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 py-[20px] lg:grid-cols-6 gap-3 sm:gap-4' : 'hidden'
+                        }`}
+                    >
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={GroqImage} height={60} width={60} alt="Groq" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={HuggingFaceImage} height={60} width={60} alt="Hugging Face" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={FirebaseImage} height={60} width={60} alt="Firebase" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={DockerImage} height={60} width={60} alt="Docker" className="sm:h-20 sm:w-20" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={aws} height={80} width={80} alt="AWS" className="sm:h-24 sm:w-24" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={gcp} height={80} width={80} alt="GCP" className="sm:h-24 sm:w-24" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={GradioImage} height={80} width={80} alt="Gradio" className="sm:h-24 sm:w-24" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={Figma} height={80} width={80} alt="Figma" className="sm:h-24 sm:w-24" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={Coreldraw} height={80} width={80} alt="CorelDRAW" className="sm:h-24 sm:w-24" />
+                        </div>
+                        <div className="flex flex-col items-center justify-center">
+                            <Image src={Photoshop} height={80} width={80} alt="Photoshop" className="sm:h-24 sm:w-24" />
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div onClick={() => setTechStack(2)} className={`${techStack == 2 ? 'ring-[0.5px] ring-gray-500' : ''} bg-[#101010] text-[15px] px-[10px] text-center rounded-[10px] cursor-pointer py-[8px] `}>
-              <p>Data Science, Machine Learning & AI</p>
-            </div>
-
-            <div onClick={() => setTechStack(3)} className={`${techStack == 3 ? 'ring-[0.5px] ring-gray-500' : ''} bg-[#101010] text-[15px] px-[10px] text-center rounded-[10px] cursor-pointer py-[8px] `}>
-              <p>Frontend, Backend & Mobile Development</p>
-            </div>
-            <div onClick={() => setTechStack(4)} className={`${techStack == 4 ? 'ring-[0.5px] ring-gray-500' : ''} bg-[#101010] text-[15px] px-[10px] text-center rounded-[10px] cursor-pointer py-[8px] `}>
-              <p>Data Engineering & Analytics</p>
-            </div>
-            <div onClick={() => setTechStack(5)} className={`${techStack == 5 ? 'ring-[0.5px] ring-gray-500' : ''} bg-[#101010] text-[15px] px-[10px] text-center rounded-[10px] cursor-pointer py-[8px] `}>
-              <p>DevOps, Cloud & Developer Tools</p>
-            </div>
-          </div>
-          <div className="md:w-[55%] aboutTitle2  text-center h-[50vh]">
-            <div className={`${techStack == 1 ? 'grid grid-cols-3 sm:grid-cols-6 gap-[10px] sm:gap-[5px] space-x-[15px]' : 'hidden'}`}>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={PythonImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={JavaImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={JavascriptImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={R} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={CPlus} height={100} width={100} alt="" />
-              </div>
-
-            </div>
-            <div className={`${techStack == 2 ? 'grid grid-cols-3 sm:grid-cols-6 gap-[10px] sm:gap-[5px] space-x-[15px]' : 'hidden'}`}>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={Seaborn} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={PytorchImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={HuggingFaceImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={KerasImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={ScikitlearnImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={TensorFlowImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={LangchainImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={Langgraph} className="bg-white rounded-[10px] " height={100} width={100} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={Pandas} height={100} width={100} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={OpenCV} height={100} width={100} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={Matplotlib} height={100} width={100} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={MlFlow} height={100} width={100} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={Airflow} height={100} width={100} alt="" />
-              </div>
-
-            </div>
-            <div className={`${techStack == 3 ? 'grid grid-cols-3 sm:grid-cols-6 gap-[10px] sm:gap-[5px] space-x-[15px]' : 'hidden'}`}>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={NextImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={TypescriptImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={DjangoImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={DockerImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={ReactImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={ReactNativeImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={ReduxImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={MongoDbImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={MysqlImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={NodeImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={KotlinImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={PostgresqlImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={GradioImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col rounded-[10px] bg-white items-center justify-center">
-                <Image src={FlaskImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={ExpressImage} height={75} width={75} alt="" />
-              </div>
-            </div>
-            <div className={`${techStack == 4 ? 'grid grid-cols-3 sm:grid-cols-6 gap-[10px] sm:gap-[5px] space-x-[15px]' : 'hidden'}`}>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={TensorFlowImage} height={85} width={85} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={ApacheImage} height={90} width={90} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={HadoopImage} height={100} width={100} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={Kafka} height={100} width={100} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={R} height={100} width={100} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={PySpark} height={100} width={100} alt="" />
-              </div>
-            </div>
-            <div className={`${techStack == 5 ? 'grid grid-cols-3 sm:grid-cols-6 gap-[10px] sm:gap-[5px] space-x-[15px]' : 'hidden'}`}>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={GroqImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={HuggingFaceImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={FirebaseImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={DockerImage} height={75} width={75} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={aws} height={100} width={100} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={gcp} height={100} width={100} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={Gradio} height={100} width={100} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={Figma} height={100} width={100} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={Coreldraw} height={100} width={100} alt="" />
-              </div>
-              <div className="flex flex-col items-center justify-center">
-                <Image src={Photoshop} height={100} width={100} alt="" />
-              </div>
-            </div>
-          </div>
-
         </div>
-
-      </div>
       <div className="min-h-[100vh] bg-[#101010] flex flex-col items-center justify-center">
         <p className=" text-[70px] md:text-[85px] aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Education</p>
         <div className="flex flex-row  items-center min-h-[60vh] w-[100vw] justify-center">

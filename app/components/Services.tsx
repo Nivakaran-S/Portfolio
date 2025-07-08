@@ -51,8 +51,8 @@ const Services = () => {
 
     return(
         <div className="bg-[#101010] min-h-[100vh] py-[80px] w-screen flex items-center justify-center">
-            <div className="w-[80%]  flex flex-col ">
-                <p className="text-[40px] leading-[48px] services1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] to-[#CAC8C6] bg-clip-text text-transparent">Discover the Services Provided</p>
+            <div className="w-[80%] md:space-y-[50px]  flex flex-col ">
+                <p className="text-[40px] sm:text-[55px] leading-[48px] services1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] to-[#CAC8C6] bg-clip-text text-transparent">Discover the Services Provided</p>
 
                 <div className="flex flex-col md:flex-row items-center justify-center space-y-[30px] md:space-y-[0px] md:space-x-[70px] mt-[30px]">
                     <div className=" services2 space-y-[20px] flex flex-col items-center justify-center">
