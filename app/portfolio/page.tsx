@@ -248,7 +248,7 @@ const Portfolio = () => {
             <Navigation navSelection={navSelection} onContactClick={onContactClick}/>
             <ContactModel onMessageSuccess={onMessageSuccess} showContactModel={showContactModel} onContactClick={onContactClick}/>
             <div className="text-white bg-[url('./images/heroBackground6.png')] bg-contain bg-no-repeat bg-center  sm:space-y-[30px] bg-[#000] px-[10vw] flex flex-col items-center justify-center sm:pt-[20vh] min-h-[100vh]">
-              <div className="w-[100vw]  text-center leading-[71px] sm:leading-[70px] h-[100%]">
+              <div className="w-[100vw]  text-center leading-[71px] sm:leading-[90px] h-[100%]">
                 <p className=" text-[40px] sm:text-[50px] md:text-[60px] aboutText4 aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Explore</p>
                 <p className=" text-[65px] sm:text-[75px] md:text-[80px] aboutTitle2 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >My Projects</p>
               </div>
@@ -268,7 +268,7 @@ const Portfolio = () => {
                     <p className="text-[45px]  md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Explore the</p>
                     <p className="text-[35px] sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Development Journey</p>
                 </div>
-                <p className="mt-[30px]">Please click on any project to explore a detailed overview.</p>
+                <p className="mt-[30px] aboutTitle3">Please click on any project to explore a detailed overview.</p>
 
                 <p className=" portfolio2 text-[30px] sm:text-[40px] mt-[40px]">Software Engineering</p>
                 <div className=" portfolio3 mt-[30px] flex md:flex-row flex-col space-y-[40px]  md:space-y-[0px] md:space-x-[20px] items-center justify-center">
@@ -288,7 +288,7 @@ const Portfolio = () => {
                 </div>
                 <p className=" portfolio3 text-[33px] text-center md:text-[30px]  mt-[40px]">Mini Projects</p>
                 <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[10px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
-                        <div className=" w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        <div className="hover:scale-[108%] transition-transform duration-500  w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -298,8 +298,8 @@ const Portfolio = () => {
                                     <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
                                 </div>
                             </div>
-                        </div> 
-                        <div className=" w-[190px] sm:w-[220px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        </div>
+                        <div className="hover:scale-[108%] transition-transform duration-500 w-[190px] sm:w-[220px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -310,7 +310,7 @@ const Portfolio = () => {
                                 </div>
                             </div>
                         </div>  
-                        <div className=" w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        <div className="hover:scale-[108%] transition-transform duration-500 w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -321,7 +321,7 @@ const Portfolio = () => {
                                 </div>
                             </div>
                         </div> 
-                        <div className=" w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        <div className="hover:scale-[108%] transition-transform duration-500 w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -349,9 +349,10 @@ const Portfolio = () => {
                    <PortfolioCard lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="A machine learning-powered pricing optimization system that automatically adjusts product prices in real-time based on demand, competitor pricing, inventory levels, and customer behavior. Built for e-commerce platforms, this engine uses reinforcement learning (RL) and predictive modeling to maximize revenue while staying competitive." text="Dynamic Pricing Enging for E-Commerce" onClick={onPortfolioCard1Click}/>
                    
                 </div>
+                
                 <p className=" portfolio3 text-[33px] text-center md:text-[30px]  mt-[40px]">Mini Projects</p>
                 <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[10px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
-                        <div className=" w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        <div className="hover:scale-[108%] transition-transform duration-500  w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -361,8 +362,8 @@ const Portfolio = () => {
                                     <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
                                 </div>
                             </div>
-                        </div> 
-                        <div className=" w-[190px] sm:w-[220px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        </div>
+                        <div className="hover:scale-[108%] transition-transform duration-500 w-[190px] sm:w-[220px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -373,7 +374,7 @@ const Portfolio = () => {
                                 </div>
                             </div>
                         </div>  
-                        <div className=" w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        <div className="hover:scale-[108%] transition-transform duration-500 w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -384,7 +385,7 @@ const Portfolio = () => {
                                 </div>
                             </div>
                         </div> 
-                        <div className=" w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        <div className="hover:scale-[108%] transition-transform duration-500 w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -414,7 +415,7 @@ const Portfolio = () => {
                 </div>
                 <p className=" portfolio3 text-[33px] text-center md:text-[30px]  mt-[40px]">Mini Projects</p>
                 <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[10px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
-                        <div className=" w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        <div className="hover:scale-[108%] transition-transform duration-500  w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -424,8 +425,8 @@ const Portfolio = () => {
                                     <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
                                 </div>
                             </div>
-                        </div> 
-                        <div className=" w-[190px] sm:w-[220px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        </div>
+                        <div className="hover:scale-[108%] transition-transform duration-500 w-[190px] sm:w-[220px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -436,7 +437,7 @@ const Portfolio = () => {
                                 </div>
                             </div>
                         </div>  
-                        <div className=" w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        <div className="hover:scale-[108%] transition-transform duration-500 w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -447,7 +448,7 @@ const Portfolio = () => {
                                 </div>
                             </div>
                         </div> 
-                        <div className=" w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        <div className="hover:scale-[108%] transition-transform duration-500 w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -459,7 +460,6 @@ const Portfolio = () => {
                             </div>
                         </div> 
                     </div>
-                
                 <p className=" portfolio3 text-[33px] md:text-[40px] mt-[40px]">AI Agents</p>
                <div className=" portfolio3 mt-[30px] flex md:flex-row flex-col space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
                     <PortfolioCard lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="An AI that responds to user queries using text, images or voice in real-time" text="Autonomous Customer Support Agent" onClick={onPortfolioCard1Click}/>
@@ -468,7 +468,7 @@ const Portfolio = () => {
                 </div>
                 <p className=" portfolio3 text-[33px] text-center md:text-[30px]  mt-[40px]">Mini Projects</p>
                 <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[10px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
-                        <div className=" w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        <div className="hover:scale-[108%] transition-transform duration-500  w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -478,8 +478,8 @@ const Portfolio = () => {
                                     <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
                                 </div>
                             </div>
-                        </div> 
-                        <div className=" w-[190px] sm:w-[220px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        </div>
+                        <div className="hover:scale-[108%] transition-transform duration-500 w-[190px] sm:w-[220px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -490,7 +490,7 @@ const Portfolio = () => {
                                 </div>
                             </div>
                         </div>  
-                        <div className=" w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        <div className="hover:scale-[108%] transition-transform duration-500 w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>
@@ -501,7 +501,7 @@ const Portfolio = () => {
                                 </div>
                             </div>
                         </div> 
-                        <div className=" w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+                        <div className="hover:scale-[108%] transition-transform duration-500 w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
                             </div>

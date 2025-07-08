@@ -47,7 +47,7 @@ const Footer = () => {
     }
 
     return(
-        <div className="overflow-x-hidden bg-[#101010]  w-screen">
+        <div className="overflow-x-hidden bg-[#101010]   w-screen">
 
             {showSubcriptionSuccess && <div className="flex bg-green-500 text-green-950 ring-green-300 ring-[1px] pl-[15px] opacity-75 pr-[20px] rounded-[5px] py-[10px]  fixed flex-row items-center justify-center mt-[20px] absolute bottom-[20px] left-[30px] ">
                 <div className="h-[30px] mr-[10px] w-[5px] bg-green-950"></div>
@@ -67,7 +67,7 @@ const Footer = () => {
 
 
         
-            <div className="grid grid-cols-1 gap-[20px] sm:grid-cols-2 md:grid-cols-4  pb-[40px] mb-[20px] justify-center mx-[7%] ">
+            <div className="grid grid-cols-1  gap-[20px]  sm:grid-cols-1 md:grid-cols-3  pb-[40px] mb-[20px] justify-center mx-[8%] ">
                 <div className="w-[100%] ">
                     
                     <p className="text-[13px] leading-[20px]">I'm currently pursuing a B.Sc in Information Technology, at Sri Lanka Institute of Information Technology (SLIIT). 
@@ -83,7 +83,7 @@ const Footer = () => {
                         <p>nivakaran@hotmail.com</p>
                     </div>
                 </div>
-                <div className="flex flex-row">
+                <div className="flex flex-row pl-[4%] sm:pl-[10%]">
                     <div className="w-[100%] flex flex-col ">
                         <p className="text-[24.72px] text-[#96989A]">Quick Links</p>
                         <div className="flex flex-col space-y-[10px] mt-[10px]">
@@ -107,7 +107,7 @@ const Footer = () => {
                     </div>
 
                 </div>
-                <div className="w-[100%] ">
+                <div className="w-[100%] px-[20px]">
                     <div className="bg-[#101010] mb-[20px] rounded-[15px] py-[20px] px-[20px] ring-[0.5px] ring-[#4d4d4d]">
                         <p>Subscribe to our newsletter</p>
                         <div className="flex flex-row items-center  justify-center">

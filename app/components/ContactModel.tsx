@@ -73,7 +73,7 @@ const ContactModel: React.FC<ContactModelProps> = ({ onMessageSuccess, onContact
       </div>
       <div className=" w-[100%] md:w-[50%] pt-[50px] md:h-[100%] flex flex-col items-center justify-center">
 
-        <p className="text-[35px] md:text-[45px]  md:leading-[45px] leading-[38px] w-[90%]">Let's Talk About <span className="text-[#101010]">Your Next Project</span></p>
+        <p className="text-[35px] md:text-[45px]  md:leading-[45px] leading-[35px] w-[90%]">Let's Talk About <span className="text-[30px] md:text-[45px] text-[#101010]">Your Next Project</span></p>
         <div className="hidden md:flex ml-[40px]">
           <p className="w-[80%] hidden md:flex md:mt-[5px]" >We'd love to hear from you whether it's a project inquiry, feedback, or just a friendly hello, don't hesitate to reach out: Let's create something amazing.</p>
         </div>
