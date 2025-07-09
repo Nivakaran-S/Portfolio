@@ -243,7 +243,7 @@ const Blogs = () => {
                     <p className="mt-[30px] mb-[20px] font-bold text-[45px]">Data Science</p>
 
                     <div className="flex items-center justify-center">
-                      <div className="grid grid-cols-2 md:grid-cols-4 gap-[20px] ">
+                      <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[13px] sm:gap-[20px] ">
                           
                             <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
                             <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
