@@ -222,14 +222,14 @@ const About = () => {
       <div>
             <div className="text-white space-y-4 sm:space-y-6 py-6 sm:py-8 bg-[#000] px-4 sm:px-8 md:px-[10vw] flex flex-col items-center justify-center min-h-screen">
                 {/* Title Section */}
-                <div className="w-full md:w-3/4 lg:w-1/2 pt-8 sm:pt-12 text-center">
-                    <p className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] to-[#CAC8C6] bg-clip-text text-transparent leading-tight">
+                <div className="w-full aboutText4 md:w-3/4 lg:w-1/2 pt-8 sm:pt-12 text-center">
+                    <p className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] to-[#CAC8C6] bg-clip-text text-transparent ">
                         Tech Stack
                     </p>
                 </div>
 
                 {/* Tabs Section */}
-                <div className="flex flex-col sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 py-4 sm:py-6">
+                <div className="flex flex-col aboutTitle3 sm:flex-row flex-wrap justify-center gap-3 sm:gap-4 py-4 sm:py-6">
                     <div
                         onClick={() => setTechStack(1)}
                         className={`${
@@ -273,10 +273,10 @@ const About = () => {
                 </div>
 
                 {/* Tech Icons Section */}
-                <div className="w-full md:w-3/4 lg:w-2/3 text-center  min-h-[25vh] flex justify-center">
+                <div className="w-full aboutText4 md:w-3/4 lg:w-2/3 text-center  h-[63vh] flex justify-center">
                     <div
                         className={`${
-                            techStack === 1 ? 'grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4' : 'hidden'
+                            techStack === 1 ? 'grid grid-cols-3 h-[40%] sm:h-[100%] sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4' : 'hidden'
                         }`}
                     >
                         <div className="flex flex-col items-center justify-center">
@@ -393,7 +393,7 @@ const About = () => {
                     </div>
                     <div
                         className={`${
-                            techStack === 4 ? 'grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4' : 'hidden'
+                            techStack === 4 ? 'grid grid-cols-3 h-[40%] sm:h-[100%] sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4' : 'hidden'
                         }`}
                     >
                         <div className="flex flex-col items-center justify-center">
@@ -417,7 +417,7 @@ const About = () => {
                     </div>
                     <div
                         className={`${
-                            techStack === 5 ? 'grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 py-[20px] lg:grid-cols-6 gap-3 sm:gap-4' : 'hidden'
+                            techStack === 5 ? 'grid grid-cols-3 h-[50%] sm:h-[100%] sm:grid-cols-4 md:grid-cols-5 py-[20px] lg:grid-cols-6 gap-3 sm:gap-4' : 'hidden'
                         }`}
                     >
                         <div className="flex flex-col items-center justify-center">
