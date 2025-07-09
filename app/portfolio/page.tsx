@@ -263,14 +263,15 @@ const Portfolio = () => {
             </div>
             <div className=" py-[15vh] min-h-[200vh] flex items-center justify-center w-screen ">
 
-            <div className="w-[95%] sm:w-[80%] ">
+            <div className="w-[93%] sm:w-[80%] ">
                 <div className=" portfolio1 leading-[40px] md:leading-[60px] text-center">
                     <p className="text-[45px]  md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Explore the</p>
                     <p className="text-[35px] sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Development Journey</p>
                 </div>
                 <p className="mt-[30px] aboutTitle3">Please click on any project to explore a detailed overview.</p>
 
-                <p className=" portfolio2 text-[30px] sm:text-[40px] mt-[40px]">Software Engineering</p>
+            
+                <p className="mt-[30px] portfolio2 ml-[10px] font-bold text-[35px] sm:text-[45px]">Software Engineering</p>
                 <div className=" portfolio3 mt-[30px] flex md:flex-row flex-col space-y-[40px]  md:space-y-[0px] md:space-x-[20px] items-center justify-center">
                     <PortfolioCard lang1="Python" lang2="Next.js" lang3="Node.js" lang4="MongoDB" lang5="Express.js" lang6="Docker" text2="This project is a full-stack news web application built using the MENN (MongoDB, Express.js, Next.js, Node.js) stack. It features a dual-interface system, where regular users can browse, search, and bookmark news, while admins have a dedicated panel to manage news articles, categories, and user permissions. The integrated LLM chatbot provides real-time news summeries, making articles easier to digest and enhance user experience." text="News Web App" onClick={onPortfolioCard1Click}/>
                     <PortfolioCard lang1="Python" lang2="MongoDB" lang3="Next.js" lang4="Node.js" lang5="Express.js" lang6="Docker" text2="This project is a sustainable food resale platform built with MongoDB, Express.js, React, and Node.js, designed to reduce food waste by connecting businesses with surplus food to budget-conscious consumers. The app includes real-time inventory tracking, dynamic pricing based on expiry dates, and secure payment processing via Stripe." text="EcoHarvest" onClick={onPortfolioCard1Click}/>
@@ -286,8 +287,8 @@ const Portfolio = () => {
                     <PortfolioCard lang1="Python" lang2="MongoDB" lang3="Next.js" lang4="Node.js" lang5="Express.js" lang6="Docker" text2="A cross-platform grocery e-commerce app developed with React Native" text="Selvah: Mobile App" onClick={onPortfolioCard1Click}/>
                    
                 </div>
-                <p className=" portfolio3 text-[33px] text-center md:text-[30px]  mt-[40px]">Mini Projects</p>
-                <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[10px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
+                <p className=" portfolio3 text-[33px] text-center md:text-[30px] mt-[40px]">Mini Projects</p>
+                <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[15px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
                         <div className="hover:scale-[108%] transition-transform duration-500  w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
@@ -333,7 +334,8 @@ const Portfolio = () => {
                             </div>
                         </div> 
                     </div>
-                <p className=" portfolio3 text-[33px] md:text-[40px] mt-[40px]">Data Science</p>
+                
+                <p className="mt-[30px] portfolio3 ml-[10px] font-bold text-[35px] sm:text-[45px]">Data Science</p>
                 <div className=" portfolio3 mt-[30px] flex md:flex-row flex-col space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
                     <PortfolioCard lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="This AI-powered hybrid recommendation system is designed to provide personalized book and movie suggestions by intelligently combining collaborative filterinng (user-based preferences) and content-based filtering. Built with Python Flask for the backend and frontend, by leveraging Machine Learning and Natural Language Processing techniques. " text="Book / Movie Recommendation System" onClick={onPortfolioCard1Click}/>
                     <PortfolioCard lang1="FastApi" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="This project focuses on predicting stock prices using Machine Learning & Deep Learning models. The goal is to analyze historical stock market data, identify trends, and forecast future stock prices with high accuracy. The model can be used by traders and investors to make data-driven investment decisions." text="Stock Market Prediction" onClick={onPortfolioCard1Click}/>
@@ -351,7 +353,7 @@ const Portfolio = () => {
                 </div>
                 
                 <p className=" portfolio3 text-[33px] text-center md:text-[30px]  mt-[40px]">Mini Projects</p>
-                <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[10px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
+                <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[15px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
                         <div className="hover:scale-[108%] transition-transform duration-500  w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
@@ -397,7 +399,8 @@ const Portfolio = () => {
                             </div>
                         </div> 
                     </div>
-                <p className=" portfolio3 text-[33px] md:text-[40px] mt-[40px]">Computer Vision</p>
+                
+                <p className="mt-[30px] portfolio3 ml-[10px] font-bold text-[35px] sm:text-[45px]">Computer Vision</p>
                <div className=" portfolio3 mt-[30px] flex md:flex-row flex-col space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
                     <PortfolioCard lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="A real-time sign language translation tool powered by a hybrid CNN-LSTM model, achieving 92% accuracy in converting ASL/ISL gestures to text. Deployed via Flask, the system serves as an assistive tool for the hearing-impaired community." text="AI Sign Language Interpretater" onClick={onPortfolioCard1Click}/>
                     <PortfolioCard lang1="FastApi" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="A multi-modal AI system that analyzes chest X-rays (DenseNet) and EKGs (1D-CNN) to detect conditions like pneumonia and arrhythmia, achieving 94% AUC. Includes Grad-CAM visualizations to explain predictions to medical professionals." text="Disease Diagnosis Assistant" onClick={onPortfolioCard1Click}/>
@@ -413,8 +416,8 @@ const Portfolio = () => {
                     <PortfolioCard lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="An intelligent traffic enforcement solution that identifies red-light running, speeding, and unregistered vehicles in real-time. Processes 50+ camera feeds simultaneously with 92% accuracy, generating evidence packages for law enforcement. Pilot implementation reduced intersection accidents by 35%." text="Real-Time Traffic Violation System" onClick={onPortfolioCard1Click}/>
                     
                 </div>
-                <p className=" portfolio3 text-[33px] text-center md:text-[30px]  mt-[40px]">Mini Projects</p>
-                <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[10px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
+                <p className=" portfolio3 text-[33px] text-center md:text-[30px] mt-[40px]">Mini Projects</p>
+                <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[15px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
                         <div className="hover:scale-[108%] transition-transform duration-500  w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
@@ -460,14 +463,15 @@ const Portfolio = () => {
                             </div>
                         </div> 
                     </div>
-                <p className=" portfolio3 text-[33px] md:text-[40px] mt-[40px]">AI Agents</p>
+                
+                <p className="mt-[30px] portfolio3 ml-[10px] font-bold text-[35px] sm:text-[45px]">AI Agents</p>
                <div className=" portfolio3 mt-[30px] flex md:flex-row flex-col space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
                     <PortfolioCard lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="An AI that responds to user queries using text, images or voice in real-time" text="Autonomous Customer Support Agent" onClick={onPortfolioCard1Click}/>
                     <PortfolioCard lang1="FastApi" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="Agent that collects symptoms, interprets radiology reports (e.g., X-rays), suggest actions or raise alarms" text="Medical Diagnosis + Assistant Agent" onClick={onPortfolioCard1Click}/>
                     
                 </div>
                 <p className=" portfolio3 text-[33px] text-center md:text-[30px]  mt-[40px]">Mini Projects</p>
-                <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[10px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
+                <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[15px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
                         <div className="hover:scale-[108%] transition-transform duration-500  w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
                             <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
 
