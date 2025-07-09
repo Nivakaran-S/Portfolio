@@ -242,7 +242,7 @@ const Blogs = () => {
                     </div>
                     <p className="mt-[30px] blogs3 mb-[20px] font-bold text-[35px] sm:text-[45px]">Data Science</p>
 
-                    <div className="flex items-center blogs1 justify-center">
+                    <div className="flex items-center blogs4 justify-center">
                       <div className="grid w-[95%]  sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px] ">
                           
                             <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
@@ -255,7 +255,7 @@ const Blogs = () => {
                     </div>
                     <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Computer Vision</p>
 
-                    <div className="flex items-center blogs1 justify-center">
+                    <div className="flex items-center blogs4 justify-center">
                       <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px] ">
                           
                             <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
@@ -268,7 +268,7 @@ const Blogs = () => {
                     </div>
                     <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Generative AI</p>
 
-                    <div className="flex items-center blogs1 justify-center">
+                    <div className="flex items-center blogs4 justify-center">
                       <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px] ">
                           
                             <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
@@ -282,7 +282,7 @@ const Blogs = () => {
 
                     <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Agentic AI</p>
 
-                    <div className="flex items-center blogs1 justify-center">
+                    <div className="flex items-center blogs4 justify-center">
                       <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px] ">
                           
                             <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
@@ -296,7 +296,7 @@ const Blogs = () => {
 
                     <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Data Engineering</p>
 
-                    <div className="flex items-center blogs1 justify-center">
+                    <div className="flex items-center blogs4 justify-center">
                       <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px] ">
                           
                             <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
@@ -310,7 +310,7 @@ const Blogs = () => {
 
                     <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Behind the Scenes</p>
 
-                    <div className="flex items-center blogs1 justify-center">
+                    <div className="flex items-center blogs4 justify-center">
                       <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px] ">
                           
                             <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
@@ -324,7 +324,7 @@ const Blogs = () => {
                     <div className="w-[95%] sm:w-[80%] flex items-center justify-center">
                       <div className="flex flex-row items-center justify-center space-x-[20px] mt-[30px]">
                           <div className="w-[96%]">
-                              <p className="text-[50px] font-bold">Case Studies</p>
+                              <p className="text-[40px] ml-[10px] sm:text-[50px] font-bold">Case Studies</p>
                               <div className="grid px-[15px] sm:grid-cols-2 gap-[25px] sm:gap-[50px] items-center justify-center space-x-[20px] mt-[30px]">
                                   
                                   <CaseStudyCard text1="Case study title 01" text="test" />
