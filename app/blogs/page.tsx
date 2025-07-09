@@ -240,9 +240,22 @@ const Blogs = () => {
                         <p className="text-[45px] sm:text-[55px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Stay Updated</p>
                         <p className="text-[45px] sm:text-[55px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">with Latest Insights</p>
                     </div>
-                    <p className="mt-[30px] mb-[20px] font-bold text-[45px]">Data Science</p>
+                    <p className="mt-[30px] blogs3 mb-[20px] font-bold text-[35px] sm:text-[45px]">Data Science</p>
 
-                    <div className="flex items-center justify-center">
+                    <div className="flex items-center blogs1 justify-center">
+                      <div className="grid w-[95%]  sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px] ">
+                          
+                            <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
+                            <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
+                          
+                            <BlogCard text="Blog 1" text1=" Blog Title Blog Title" onClick={onBlog1Click}/>
+                            <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
+
+                      </div>
+                    </div>
+                    <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Computer Vision</p>
+
+                    <div className="flex items-center blogs1 justify-center">
                       <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px] ">
                           
                             <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
@@ -253,36 +266,9 @@ const Blogs = () => {
 
                       </div>
                     </div>
-                    <p className="mt-[30px] mb-[20px] font-bold text-[45px]">Computer Vision</p>
+                    <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Generative AI</p>
 
-                    <div className="flex items-center justify-center">
-                      <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px] ">
-                          
-                            <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
-                            <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
-                          
-                            <BlogCard text="Blog 1" text1=" Blog Title Blog Title" onClick={onBlog1Click}/>
-                            <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
-
-                      </div>
-                    </div>
-                    <p className="mt-[30px] mb-[20px] font-bold text-[45px]">Generative AI</p>
-
-                    <div className="flex items-center justify-center">
-                      <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px] ">
-                          
-                            <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
-                            <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
-                          
-                            <BlogCard text="Blog 1" text1=" Blog Title Blog Title" onClick={onBlog1Click}/>
-                            <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
-
-                      </div>
-                    </div>
-
-                    <p className="mt-[30px] mb-[20px] font-bold text-[45px]">Agentic AI</p>
-
-                    <div className="flex items-center justify-center">
+                    <div className="flex items-center blogs1 justify-center">
                       <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px] ">
                           
                             <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
@@ -294,9 +280,9 @@ const Blogs = () => {
                       </div>
                     </div>
 
-                    <p className="mt-[30px] mb-[20px] font-bold text-[45px]">Data Engineering</p>
+                    <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Agentic AI</p>
 
-                    <div className="flex items-center justify-center">
+                    <div className="flex items-center blogs1 justify-center">
                       <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px] ">
                           
                             <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
@@ -308,9 +294,23 @@ const Blogs = () => {
                       </div>
                     </div>
 
-                    <p className="mt-[30px] mb-[20px] font-bold text-[45px]">Behind the Scenes</p>
+                    <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Data Engineering</p>
 
-                    <div className="flex items-center justify-center">
+                    <div className="flex items-center blogs1 justify-center">
+                      <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px] ">
+                          
+                            <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
+                            <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
+                          
+                            <BlogCard text="Blog 1" text1=" Blog Title Blog Title" onClick={onBlog1Click}/>
+                            <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
+
+                      </div>
+                    </div>
+
+                    <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Behind the Scenes</p>
+
+                    <div className="flex items-center blogs1 justify-center">
                       <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px] ">
                           
                             <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
