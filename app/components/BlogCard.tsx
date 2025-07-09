@@ -8,7 +8,7 @@ interface BlogCardProps {
 
 const BlogCard: React.FC<BlogCardProps> = ({ text, text1, onClick }) => {
     return (
-        <div className="bg-[#4b4b4d] hover:scale-[107%] transition-transform duration-500 ring-[0.5px] ring-[#4b4b4d] text-[15.27px] cursor-pointer h-[280px] sm:h-[360px] w-[190px] sm:w-[230px] flex flex-col rounded-[10px] sm:rounded-[20px]" onClick={onClick}>
+        <div className="bg-[#4b4b4d] hover:scale-[107%] transition-transform duration-500 ring-[0.5px] ring-[#4b4b4d] text-[15.27px] cursor-pointer h-[270px] sm:h-[360px] w-[180px] sm:w-[230px] flex flex-col rounded-[10px] sm:rounded-[20px]" onClick={onClick}>
             <div className="sm:h-[61.80%] h-[55%] bg-[#373435] rounded-t-[20px] hidden sm:flex items-center justify-center">
                 <p className="py-[5px] pr-[7px]">{text}</p>
             </div>
