@@ -327,7 +327,7 @@ const Blogs = () => {
                       <div className="flex flex-row items-center justify-center space-x-[20px] mt-[30px]">
                           <div className="w-[96%]">
                               <p className="text-[40px] ml-[10px] sm:text-[50px] blogs3 font-bold">Case Studies</p>
-                              <div className="grid blogs2 px-[15px] sm:grid-cols-2 gap-[25px] sm:gap-[50px] items-center justify-center space-x-[20px] mt-[30px]">
+                              <div className="grid blogs2 px-[15px] md:px-[85px] md:grid-cols-2 gap-[25px] sm:gap-[30px] items-center justify-center space-x-[20px] mt-[30px]">
                                   
                                   <CaseStudyCard onClick={()=>setOnPortfolioClick(true)} text1="Case study title 01" text="test" />
                                   <CaseStudyCard onClick={()=>setOnPortfolioClick(true)} text1="Case study title 02" text=""/>
