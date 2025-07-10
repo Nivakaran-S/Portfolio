@@ -220,9 +220,9 @@ const About = () => {
 
       </div>
       <div>
-            <div className="text-white space-y-4 sm:space-y-6 py-6 sm:py-8 bg-[#000] px-4 sm:px-8 md:px-[10vw] flex flex-col items-center justify-center min-h-screen">
+            <div className="text-white  space-y-4 sm:space-y-6 py-6 sm:py-8 bg-[#000] px-4 sm:px-8 md:px-[10vw] flex flex-col items-center justify-center md:h-[100vh] min-h-screen">
                 {/* Title Section */}
-                <div className="w-full aboutText4 md:w-3/4 lg:w-1/2 pt-8 sm:pt-12 text-center">
+                <div className="w-full  aboutText4 md:w-3/4 lg:w-1/2 pt-8 sm:pt-50 text-center">
                     <p className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] to-[#CAC8C6] bg-clip-text text-transparent ">
                         Tech Stack
                     </p>
