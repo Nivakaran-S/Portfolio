@@ -276,7 +276,7 @@ const About = () => {
                 <div className="w-full aboutText4 md:w-3/4 lg:w-2/3 text-center  h-[63vh] flex justify-center">
                     <div
                         className={`${
-                            techStack === 1 ? 'grid grid-cols-3 h-[40%] sm:h-[100%] sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4' : 'hidden'
+                            techStack === 1 ? 'grid grid-cols-3 h-[40%] sm:h-[100%] py-[30px] sm:py-[0px] sm:pb-[300px] sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4' : 'hidden'
                         }`}
                     >
                         <div className="flex flex-col items-center justify-center">
@@ -297,32 +297,32 @@ const About = () => {
                     </div>
                     <div
                         className={`${
-                            techStack === 2 ? 'grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 py-[30px] gap-5 sm:gap-4' : 'hidden'
+                            techStack === 2 ? 'grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 py-[30px] sm:py-[0px] sm:pb-[200px] gap-5 sm:gap-4' : 'hidden'
                         }`}
                     >
                         <div className="flex flex-col items-center justify-center">
                             <Image src={Seaborn} height={60} width={60} alt="Seaborn" className="sm:h-20 sm:w-20" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={PytorchImage} height={60} width={60} alt="PyTorch" className="sm:h-20 sm:w-20" />
+                            <Image src={PytorchImage} height={60} width={60} alt="PyTorch" className="sm:h-20 sm:w-50" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={HuggingFaceImage} height={60} width={60} alt="Hugging Face" className="sm:h-20 sm:w-20" />
+                            <Image src={HuggingFaceImage} height={60} width={60} alt="Hugging Face" className="sm:h-16 sm:w-100" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={KerasImage} height={60} width={60} alt="Keras" className="sm:h-20 sm:w-20" />
+                            <Image src={KerasImage} height={60} width={60} alt="Keras" className="sm:h-10 sm:w-40" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={ScikitlearnImage} height={60} width={60} alt="Scikit-learn" className="sm:h-20 sm:w-20" />
+                            <Image src={ScikitlearnImage} height={60} width={60} alt="Scikit-learn" className="sm:h-20 sm:w-25" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={TensorFlowImage} height={60} width={60} alt="TensorFlow" className="sm:h-20 sm:w-20" />
+                            <Image src={TensorFlowImage} height={60} width={60} alt="TensorFlow" className="sm:h-20 sm:w-25" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={LangchainImage} height={60} width={60} alt="LangChain" className="sm:h-20 sm:w-20" />
+                            <Image src={LangchainImage} height={60} width={60} alt="LangChain" className="sm:h-30 sm:w-25" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={Langgraph} height={80} width={80} alt="LangGraph" className="bg-white rounded-lg sm:h-24 sm:w-24" />
+                            <Image src={Langgraph} height={80} width={80} alt="LangGraph" className="bg-white rounded-lg sm:h-25 sm:w-25" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
                             <Image src={Pandas} height={80} width={80} alt="Pandas" className="sm:h-24 sm:w-24" />
@@ -337,12 +337,12 @@ const About = () => {
                             <Image src={MlFlow} height={80} width={80} alt="MLflow" className="sm:h-24 sm:w-24" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={Airflow} height={80} width={80} alt="Airflow" className="sm:h-24 sm:w-24" />
+                            <Image src={Airflow} height={80} width={80} alt="Airflow" className="sm:h-15 sm:w-50" />
                         </div>
                     </div>
                     <div
                         className={`${
-                            techStack === 3 ? 'grid py-[30px] grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-6 sm:gap-4' : 'hidden'
+                            techStack === 3 ? 'grid py-[30px] grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 py-[30px] sm:py-[0px] sm:pb-[180px] gap-6 sm:gap-4' : 'hidden'
                         }`}
                     >
                         <div className="flex flex-col items-center justify-center">
@@ -382,10 +382,10 @@ const About = () => {
                             <Image src={PostgresqlImage} height={60} width={60} alt="PostgreSQL" className="sm:h-20 sm:w-20" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={GradioImage} height={60} width={60} alt="Gradio" className="sm:h-20 sm:w-20" />
+                            <Image src={GradioImage} height={60} width={60} alt="Gradio" className="sm:h-13 sm:w-60" />
                         </div>
                         <div className="flex flex-col items-center justify-center rounded-lg bg-white">
-                            <Image src={FlaskImage} height={60} width={60} alt="Flask" className="sm:h-20 sm:w-20" />
+                            <Image src={FlaskImage} height={60} width={60} alt="Flask" className="sm:h-15 sm:w-60" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
                             <Image src={ExpressImage} height={60} width={60} alt="Express" className="sm:h-20 sm:w-20" />
@@ -393,23 +393,23 @@ const About = () => {
                     </div>
                     <div
                         className={`${
-                            techStack === 4 ? 'grid grid-cols-3 h-[40%] sm:h-[100%] sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4' : 'hidden'
+                            techStack === 4 ? 'grid grid-cols-3 h-[40%] sm:h-[100%] py-[30px] sm:py-[0px] sm:pb-[300px] sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4' : 'hidden'
                         }`}
                     >
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={TensorFlowImage} height={70} width={70} alt="TensorFlow" className="sm:h-22 sm:w-22" />
+                            <Image src={TensorFlowImage} height={70} width={70} alt="TensorFlow" className="sm:h-22 sm:w-27" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={ApacheImage} height={75} width={75} alt="Apache" className="sm:h-24 sm:w-24" />
+                            <Image src={ApacheImage} height={75} width={75} alt="Apache" className="sm:h-20 sm:w-30" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={HadoopImage} height={80} width={80} alt="Hadoop" className="sm:h-24 sm:w-24" />
+                            <Image src={HadoopImage} height={80} width={80} alt="Hadoop" className="sm:h-18 sm:w-40" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={Kafka} height={80} width={80} alt="Kafka" className="sm:h-24 sm:w-24" />
+                            <Image src={Kafka} height={80} width={80} alt="Kafka" className="sm:h-20 sm:w-30" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={R} height={80} width={80} alt="R" className="sm:h-24 sm:w-24" />
+                            <Image src={R} height={80} width={80} alt="R" className="sm:h-24 sm:w-20" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
                             <Image src={PySpark} height={80} width={80} alt="PySpark" className="sm:h-24 sm:w-24" />
@@ -417,17 +417,17 @@ const About = () => {
                     </div>
                     <div
                         className={`${
-                            techStack === 5 ? 'grid grid-cols-3 h-[50%] sm:h-[100%] sm:grid-cols-4 md:grid-cols-5 py-[20px] lg:grid-cols-6 gap-3 sm:gap-4' : 'hidden'
+                            techStack === 5 ? 'grid grid-cols-3 h-[50%] sm:h-[100%] sm:grid-cols-4 py-[30px] sm:py-[0px] sm:pb-[240px] md:grid-cols-5 py-[20px] lg:grid-cols-6 gap-3 sm:gap-4' : 'hidden'
                         }`}
                     >
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={GroqImage} height={60} width={60} alt="Groq" className="sm:h-20 sm:w-20" />
+                            <Image src={GroqImage} height={60} width={60} alt="Groq" className="sm:h-12 sm:w-25" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={HuggingFaceImage} height={60} width={60} alt="Hugging Face" className="sm:h-20 sm:w-20" />
+                            <Image src={HuggingFaceImage} height={60} width={60} alt="Hugging Face" className="sm:h-15 sm:w-28" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={FirebaseImage} height={60} width={60} alt="Firebase" className="sm:h-20 sm:w-20" />
+                            <Image src={FirebaseImage} height={60} width={60} alt="Firebase" className="sm:h-10 sm:w-40" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
                             <Image src={DockerImage} height={60} width={60} alt="Docker" className="sm:h-20 sm:w-20" />
@@ -439,7 +439,7 @@ const About = () => {
                             <Image src={gcp} height={80} width={80} alt="GCP" className="sm:h-24 sm:w-24" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={GradioImage} height={80} width={80} alt="Gradio" className="sm:h-24 sm:w-24" />
+                            <Image src={GradioImage} height={80} width={80} alt="Gradio" className="sm:h-14 sm:w-30" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
                             <Image src={Figma} height={80} width={80} alt="Figma" className="sm:h-24 sm:w-24" />
@@ -448,7 +448,7 @@ const About = () => {
                             <Image src={Coreldraw} height={80} width={80} alt="CorelDRAW" className="sm:h-24 sm:w-24" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={Photoshop} height={80} width={80} alt="Photoshop" className="sm:h-24 sm:w-24" />
+                            <Image src={Photoshop} height={80} width={80} alt="Photoshop" className="sm:h-24 sm:w-30" />
                         </div>
                     </div>
                 </div>
