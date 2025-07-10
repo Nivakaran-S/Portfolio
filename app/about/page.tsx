@@ -528,7 +528,42 @@ const About = () => {
 
           <div className="flex flex-col  space-y-[30px]  ">
             <div className="flex flex-row  items-center justify-center space-x-[13px] sm:space-x-[20px] ">
-              <div className="w-[5px] sm:w-[7px] min-h-[70vh] sm:min-h-[53vh] md:min-h-[46vh] rounded-full bg-white">
+              <div className="w-[5px] sm:w-[7px] min-h-[39vh] sm:min-h-[36vh] md:min-h-[27vh] rounded-full bg-white">
+
+              </div>
+
+
+              <div className="w-[100%] flex flex-col  items-center justify-center aboutTitle2 h-[100%]">
+
+
+              
+                <div className="flex  flex-col sm:flex-row sm:items-center  w-[100%]  sm:space-x-[200px]">
+                  <div className="leading-[28px] sm:leading-[30px]">
+                    <p className=" text-[23px]  md:text-[23px]">+ Career Break - Self Directed Learning</p>
+                    
+                  </div>
+
+                  <div className="">
+                    <p>2025 January - 2025 July</p>
+                  </div>
+
+                </div>
+                
+
+                <div className="mt-2 w-[100%]">
+                  <p className="text-[17px] md:text-[18px] text-gray-300 font-medium">Highlights</p>
+                  <ul className="pl-[18px] text-[16px] mt-[5px] list-disc space-y-[2px] text-gray-200">
+                    <li>Completed full stack development, Machine Learning and AI related courses on Udemy (Hands-on projects included)</li>
+                    <li>Sharpened problem-solving skills through consistent LeetCode and HackerRank practice</li>
+                    <li>Built multiple full-stack portfolio projects to solidify knowledge in React, Node.js, and Python</li>
+                  </ul>
+                </div>
+
+
+              </div>
+            </div>
+            <div className="flex flex-row  items-center justify-center space-x-[13px] sm:space-x-[20px] ">
+              <div className="w-[5px] sm:w-[7px] min-h-[71vh] sm:min-h-[53vh] md:min-h-[46vh] rounded-full bg-white">
 
               </div>
 
@@ -549,19 +584,19 @@ const About = () => {
                 </div>
                 <div>
                   <p className="text-[17px] md:text-[18px] text-gray-300">Responsibilities</p>
-                  <ul className="pl-[10px] text-[16px] mt-[5px] space-y-[2px]">
-                    <li>- Worked as the primary scribe for a cardiologist, and have worked with multiple providers across multiple specialities, documenting real-time patient encounters, diagnoses, transcriptions and treatment plans.</li>
-                    <li>- Trained and supervised junior scribes in EHR systems, cardiology-specific terminology, and efficient content capturing protocols.</li>
-                    <li>- Structured and managed high-volume clinical datasets(e.g., echocardiograms, medications, lab results)</li>
-                    <li>- Collaborated with doctors to summerize complex medical histories into actionable clinical notes, improving data usability.</li>
-                    <li>- Optimized clinical workflow by reducing documentation time.</li>
+                  <ul className="pl-[18px] text-[16px] mt-[5px] list-disc space-y-[2px] text-gray-200">
+                    <li>Worked as the primary scribe for a cardiologist, and have worked with multiple providers across multiple specialities, documenting real-time patient encounters, diagnoses, transcriptions and treatment plans.</li>
+                    <li>Trained and supervised junior scribes in EHR systems, cardiology-specific terminology, and efficient content capturing protocols.</li>
+                    <li>Structured and managed high-volume clinical datasets(e.g., echocardiograms, medications, lab results)</li>
+                    <li>Collaborated with doctors to summerize complex medical histories into actionable clinical notes, improving data usability.</li>
+                    <li>Optimized clinical workflow by reducing documentation time.</li>
                   </ul>
                 </div>
 
               </div>
             </div>
             <div className="flex flex-row  items-center justify-center space-x-[13px] sm:space-x-[20px] ">
-              <div className="w-[5px] sm:w-[7px] min-h-[45vh] sm:min-h-[28vh] rounded-full bg-white">
+              <div className="w-[5px] sm:w-[7px] min-h-[45vh] sm:min-h-[30vh] rounded-full bg-white">
 
               </div>
 
@@ -569,7 +604,7 @@ const About = () => {
               <div className="w-[100%] flex flex-col  items-center justify-center aboutTitle2 h-[100%]">
 
 
-                <div className="flex  flex-col sm:flex-row sm:items-center  w-[100%]  sm:space-x-[100px]">
+                <div className="flex  flex-col sm:flex-row sm:items-center  w-[100%]  sm:space-x-[100px] md:space-x-[300px]">
                   <div className="leading-[28px] sm:leading-[30px]">
                     <p className=" text-[23px]  md:text-[23px]">+ Customer Service Executive</p>
                     <p className="text-[18px] md:text-[19px]">Startek - Commercial bank PLC</p>
@@ -582,10 +617,10 @@ const About = () => {
                 </div>
                 <div>
                   <p className="text-[17px] md:text-[18px] text-gray-300">Responsibilities</p>
-                  <ul className="pl-[10px] text-[16px] mt-[5px] space-y-[2px]">
-                    <li>- Managed high-volume customer interactions, ensuring efficient query resolution and data accuracy.</li>
-                    <li>- Processed financial transactions and account inquiries, demostrated structured problem-solving and attention to detail.</li>
-                    <li>- Communicated with the clients to ensure clarity and compliance strengthening analytical documentation skills</li>
+                  <ul className="pl-[18px] text-[16px] mt-[5px] list-disc space-y-[2px] text-gray-200">
+                    <li>Managed high-volume customer interactions, ensuring efficient query resolution and data accuracy.</li>
+                    <li>Processed financial transactions and account inquiries, demostrated structured problem-solving and attention to detail.</li>
+                    <li>Communicated with the clients to ensure clarity and compliance strengthening analytical documentation skills</li>
                   </ul>
                 </div>
 
