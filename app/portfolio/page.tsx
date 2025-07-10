@@ -157,6 +157,10 @@ const Portfolio = () => {
             }
         }, [])
 
+        const [onPortfolioClick, setOnPortfolioClick] = useState(false)
+            
+        
+
     
       const onContactClick = () => {
         setShowContactModel(!showContactModel);
@@ -273,18 +277,18 @@ const Portfolio = () => {
             
                 <p className="mt-[30px] portfolio2 ml-[10px] font-bold text-[35px] sm:text-[45px]">Software Engineering</p>
                 <div className=" portfolio3 mt-[30px] flex md:flex-row flex-col space-y-[40px]  md:space-y-[0px] md:space-x-[20px] items-center justify-center">
-                    <PortfolioCard lang1="Python" lang2="Next.js" lang3="Node.js" lang4="MongoDB" lang5="Express.js" lang6="Docker" text2="This project is a full-stack news web application built using the MENN (MongoDB, Express.js, Next.js, Node.js) stack. It features a dual-interface system, where regular users can browse, search, and bookmark news, while admins have a dedicated panel to manage news articles, categories, and user permissions. The integrated LLM chatbot provides real-time news summeries, making articles easier to digest and enhance user experience." text="News Web App" onClick={onPortfolioCard1Click}/>
-                    <PortfolioCard lang1="Python" lang2="MongoDB" lang3="Next.js" lang4="Node.js" lang5="Express.js" lang6="Docker" text2="This project is a sustainable food resale platform built with MongoDB, Express.js, React, and Node.js, designed to reduce food waste by connecting businesses with surplus food to budget-conscious consumers. The app includes real-time inventory tracking, dynamic pricing based on expiry dates, and secure payment processing via Stripe." text="EcoHarvest" onClick={onPortfolioCard1Click}/>
+                    <PortfolioCard onClick={()=>setOnPortfolioClick(true)} lang1="Python" lang2="Next.js" lang3="Node.js" lang4="MongoDB" lang5="Express.js" lang6="Docker" text2="This project is a full-stack news web application built using the MENN (MongoDB, Express.js, Next.js, Node.js) stack. It features a dual-interface system, where regular users can browse, search, and bookmark news, while admins have a dedicated panel to manage news articles, categories, and user permissions. The integrated LLM chatbot provides real-time news summeries, making articles easier to digest and enhance user experience." text="News Web App" />
+                    <PortfolioCard onClick={()=>setOnPortfolioClick(true)} lang1="Python" lang2="MongoDB" lang3="Next.js" lang4="Node.js" lang5="Express.js" lang6="Docker" text2="This project is a sustainable food resale platform built with MongoDB, Express.js, React, and Node.js, designed to reduce food waste by connecting businesses with surplus food to budget-conscious consumers. The app includes real-time inventory tracking, dynamic pricing based on expiry dates, and secure payment processing via Stripe." text="EcoHarvest" />
                    
                 </div>
                 <div className=" portfolio3 mt-[30px] flex md:flex-row flex-col space-y-[40px]  md:space-y-[0px] md:space-x-[20px] items-center justify-center">
-                    <PortfolioCard lang1="Python" lang2="Next.js" lang3="Node.js" lang4="MongoDB" lang5="Express.js" lang6="Docker" text2="This dynamic full-stack portfolio platform, built with MongoDB, Express.js, Next.js, and Node.js, serves as both a professional showcase and a content management system. Featuring an admin dashboard for easy blog updates, and a responsive UI with dark/light mode, it demonstrates my expertise in modern web development while providing an interactive experience for visitors. The app leverages Next.js for SEO-friendly performance and includes automated GitHub integration." text="Portfolio" onClick={onPortfolioCard1Click}/>
-                    <PortfolioCard lang1="Python" lang2="MongoDB" lang3="Next.js" lang4="Node.js" lang5="Express.js" lang6="Docker" text2="A robust online examination system developed with Java, featuring automated grading, anti-cheating proctoring tools, and role-based access control for admins, teachers, and students." text="Java Examination System" onClick={onPortfolioCard1Click}/>
+                    <PortfolioCard onClick={()=>setOnPortfolioClick(true)} lang1="Python" lang2="Next.js" lang3="Node.js" lang4="MongoDB" lang5="Express.js" lang6="Docker" text2="This dynamic full-stack portfolio platform, built with MongoDB, Express.js, Next.js, and Node.js, serves as both a professional showcase and a content management system. Featuring an admin dashboard for easy blog updates, and a responsive UI with dark/light mode, it demonstrates my expertise in modern web development while providing an interactive experience for visitors. The app leverages Next.js for SEO-friendly performance and includes automated GitHub integration." text="Portfolio" />
+                    <PortfolioCard onClick={()=>setOnPortfolioClick(true)} lang1="Python" lang2="MongoDB" lang3="Next.js" lang4="Node.js" lang5="Express.js" lang6="Docker" text2="A robust online examination system developed with Java, featuring automated grading, anti-cheating proctoring tools, and role-based access control for admins, teachers, and students." text="Java Examination System" />
                    
                 </div>
                 <div className=" portfolio3 mt-[30px] flex md:flex-row flex-col space-y-[40px]  md:space-y-[0px] md:space-x-[20px] items-center justify-center">
-                    <PortfolioCard lang1="Python" lang2="Next.js" lang3="Node.js" lang4="MongoDB" lang5="Express.js" lang6="Docker" text2="An intuitive personal finance manager for Android, built with Kotlin, offering expense tracking, budget alerts, and interactive financial dashboards. The app syncs data across devices using Firebase" text="Finance Tracker App" onClick={onPortfolioCard1Click}/>
-                    <PortfolioCard lang1="Python" lang2="MongoDB" lang3="Next.js" lang4="Node.js" lang5="Express.js" lang6="Docker" text2="A cross-platform grocery e-commerce app developed with React Native" text="Selvah: Mobile App" onClick={onPortfolioCard1Click}/>
+                    <PortfolioCard onClick={()=>setOnPortfolioClick(true)} lang1="Python" lang2="Next.js" lang3="Node.js" lang4="MongoDB" lang5="Express.js" lang6="Docker" text2="An intuitive personal finance manager for Android, built with Kotlin, offering expense tracking, budget alerts, and interactive financial dashboards. The app syncs data across devices using Firebase" text="Finance Tracker App" />
+                    <PortfolioCard onClick={()=>setOnPortfolioClick(true)} lang1="Python" lang2="MongoDB" lang3="Next.js" lang4="Node.js" lang5="Express.js" lang6="Docker" text2="A cross-platform grocery e-commerce app developed with React Native" text="Selvah: Mobile App" />
                    
                 </div>
                 <p className=" portfolio3 text-[33px] text-center md:text-[30px] mt-[40px]">Mini Projects</p>
@@ -337,18 +341,18 @@ const Portfolio = () => {
                 
                 <p className="mt-[30px] portfolio3 ml-[10px] font-bold text-[35px] sm:text-[45px]">Data Science</p>
                 <div className=" portfolio3 mt-[30px] flex md:flex-row flex-col space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
-                    <PortfolioCard lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="This AI-powered hybrid recommendation system is designed to provide personalized book and movie suggestions by intelligently combining collaborative filterinng (user-based preferences) and content-based filtering. Built with Python Flask for the backend and frontend, by leveraging Machine Learning and Natural Language Processing techniques. " text="Book / Movie Recommendation System" onClick={onPortfolioCard1Click}/>
-                    <PortfolioCard lang1="FastApi" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="This project focuses on predicting stock prices using Machine Learning & Deep Learning models. The goal is to analyze historical stock market data, identify trends, and forecast future stock prices with high accuracy. The model can be used by traders and investors to make data-driven investment decisions." text="Stock Market Prediction" onClick={onPortfolioCard1Click}/>
+                    <PortfolioCard onClick={()=>setOnPortfolioClick(true)} lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="This AI-powered hybrid recommendation system is designed to provide personalized book and movie suggestions by intelligently combining collaborative filterinng (user-based preferences) and content-based filtering. Built with Python Flask for the backend and frontend, by leveraging Machine Learning and Natural Language Processing techniques. " text="Book / Movie Recommendation System" />
+                    <PortfolioCard onClick={()=>setOnPortfolioClick(true)} lang1="FastApi" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="This project focuses on predicting stock prices using Machine Learning & Deep Learning models. The goal is to analyze historical stock market data, identify trends, and forecast future stock prices with high accuracy. The model can be used by traders and investors to make data-driven investment decisions." text="Stock Market Prediction" />
                     
                 </div>
                 <div className=" portfolio3 mt-[30px] flex md:flex-row flex-col space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
-                    <PortfolioCard lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="An ensemble model (XGBoost + Isolation Forest) trained to identify fraudulent financial transactions with 0.95 precision, preventing an estimated $250K+ in losses for simulated datasets." text="Fraud Detection in Transactions" onClick={onPortfolioCard1Click}/>
-                    <PortfolioCard lang1="FastApi" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="A time-series forecasting model (SARIMA) that predicts package delivery ETAs with 90% accuracy using traffic and weather data, reducing late deliveries by 30% for logistics partners." text="Delivery Time Prediction (Last-Mile ETA)" onClick={onPortfolioCard1Click}/>
+                    <PortfolioCard onClick={()=>setOnPortfolioClick(true)} lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="An ensemble model (XGBoost + Isolation Forest) trained to identify fraudulent financial transactions with 0.95 precision, preventing an estimated $250K+ in losses for simulated datasets." text="Fraud Detection in Transactions" />
+                    <PortfolioCard onClick={()=>setOnPortfolioClick(true)} lang1="FastApi" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="A time-series forecasting model (SARIMA) that predicts package delivery ETAs with 90% accuracy using traffic and weather data, reducing late deliveries by 30% for logistics partners." text="Delivery Time Prediction (Last-Mile ETA)" />
                     
                 </div>
                   <div className=" portfolio3 mt-[30px] flex md:flex-row flex-col space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
-                    <PortfolioCard lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="A demand prediction system (Facebook Prophet) that minimizes retail stockouts by forecasting inventory needs at specific locations, cutting lost sales by 20% in pilot deployments." text="Inventory Stock-Out" onClick={onPortfolioCard1Click}/>
-                   <PortfolioCard lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="A machine learning-powered pricing optimization system that automatically adjusts product prices in real-time based on demand, competitor pricing, inventory levels, and customer behavior. Built for e-commerce platforms, this engine uses reinforcement learning (RL) and predictive modeling to maximize revenue while staying competitive." text="Dynamic Pricing Enging for E-Commerce" onClick={onPortfolioCard1Click}/>
+                    <PortfolioCard onClick={()=>setOnPortfolioClick(true)} lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="A demand prediction system (Facebook Prophet) that minimizes retail stockouts by forecasting inventory needs at specific locations, cutting lost sales by 20% in pilot deployments." text="Inventory Stock-Out" />
+                   <PortfolioCard onClick={()=>setOnPortfolioClick(true)} lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="A machine learning-powered pricing optimization system that automatically adjusts product prices in real-time based on demand, competitor pricing, inventory levels, and customer behavior. Built for e-commerce platforms, this engine uses reinforcement learning (RL) and predictive modeling to maximize revenue while staying competitive." text="Dynamic Pricing Enging for E-Commerce"/>
                    
                 </div>
                 
@@ -402,18 +406,18 @@ const Portfolio = () => {
                 
                 <p className="mt-[30px] portfolio3 ml-[10px] font-bold text-[35px] sm:text-[45px]">Computer Vision</p>
                <div className=" portfolio3 mt-[30px] flex md:flex-row flex-col space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
-                    <PortfolioCard lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="A real-time sign language translation tool powered by a hybrid CNN-LSTM model, achieving 92% accuracy in converting ASL/ISL gestures to text. Deployed via Flask, the system serves as an assistive tool for the hearing-impaired community." text="AI Sign Language Interpretater" onClick={onPortfolioCard1Click}/>
-                    <PortfolioCard lang1="FastApi" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="A multi-modal AI system that analyzes chest X-rays (DenseNet) and EKGs (1D-CNN) to detect conditions like pneumonia and arrhythmia, achieving 94% AUC. Includes Grad-CAM visualizations to explain predictions to medical professionals." text="Disease Diagnosis Assistant" onClick={onPortfolioCard1Click}/>
+                    <PortfolioCard onClick={()=>setOnPortfolioClick(true)} lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="A real-time sign language translation tool powered by a hybrid CNN-LSTM model, achieving 92% accuracy in converting ASL/ISL gestures to text. Deployed via Flask, the system serves as an assistive tool for the hearing-impaired community." text="AI Sign Language Interpretater"/>
+                    <PortfolioCard onClick={()=>setOnPortfolioClick(true)} lang1="FastApi" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="A multi-modal AI system that analyzes chest X-rays (DenseNet) and EKGs (1D-CNN) to detect conditions like pneumonia and arrhythmia, achieving 94% AUC. Includes Grad-CAM visualizations to explain predictions to medical professionals." text="Disease Diagnosis Assistant" />
                     
                 </div>
                 <div className=" portfolio3 mt-[30px] flex md:flex-row flex-col space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
-                    <PortfolioCard lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="A deep learning model (ResNet50) trained on the Food-101 dataset to classify food images into 101 categories with 88% accuracy. The system integrates with nutrition APIs to estimate calorie content from user-uploaded meal photos." text="Food Image Classification" onClick={onPortfolioCard1Click}/>
-                    <PortfolioCard lang1="FastApi" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="A transformer-based model (LipNet) trained to transcribe silent speech from video clips, achieving 80% word-level accuracy on the LRW dataset. Potential applications include security and assistive technology." text="Lip Reading from Silent Videos" onClick={onPortfolioCard1Click}/>
+                    <PortfolioCard onClick={()=>setOnPortfolioClick(true)} lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="A deep learning model (ResNet50) trained on the Food-101 dataset to classify food images into 101 categories with 88% accuracy. The system integrates with nutrition APIs to estimate calorie content from user-uploaded meal photos." text="Food Image Classification" />
+                    <PortfolioCard onClick={()=>setOnPortfolioClick(true)} lang1="FastApi" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="A transformer-based model (LipNet) trained to transcribe silent speech from video clips, achieving 80% word-level accuracy on the LRW dataset. Potential applications include security and assistive technology." text="Lip Reading from Silent Videos" />
                     
                 </div>
                 <div className=" portfolio3 mt-[30px] flex md:flex-row flex-col space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
-                    <PortfolioCard lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="A real-time AI system that detects PPE violations (missing hardhats/vests) and hazardous zone intrusions at construction sites using CCTV feeds. Achieves 94% accuracy with edge-optimized models, reducing workplace accidents by 40% in pilot deployments. Features automated alerts and compliance reporting." text="Real-Time Construction Site Safety Monitor" onClick={onPortfolioCard1Click}/>
-                    <PortfolioCard lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="An intelligent traffic enforcement solution that identifies red-light running, speeding, and unregistered vehicles in real-time. Processes 50+ camera feeds simultaneously with 92% accuracy, generating evidence packages for law enforcement. Pilot implementation reduced intersection accidents by 35%." text="Real-Time Traffic Violation System" onClick={onPortfolioCard1Click}/>
+                    <PortfolioCard onClick={()=>setOnPortfolioClick(true)} lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="A real-time AI system that detects PPE violations (missing hardhats/vests) and hazardous zone intrusions at construction sites using CCTV feeds. Achieves 94% accuracy with edge-optimized models, reducing workplace accidents by 40% in pilot deployments. Features automated alerts and compliance reporting." text="Real-Time Construction Site Safety Monitor"/>
+                    <PortfolioCard onClick={()=>setOnPortfolioClick(true)} lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="An intelligent traffic enforcement solution that identifies red-light running, speeding, and unregistered vehicles in real-time. Processes 50+ camera feeds simultaneously with 92% accuracy, generating evidence packages for law enforcement. Pilot implementation reduced intersection accidents by 35%." text="Real-Time Traffic Violation System" />
                     
                 </div>
                 <p className=" portfolio3 text-[33px] text-center md:text-[30px] mt-[40px]">Mini Projects</p>
@@ -466,8 +470,8 @@ const Portfolio = () => {
                 
                 <p className="mt-[30px] portfolio3 ml-[10px] font-bold text-[35px] sm:text-[45px]">AI Agents</p>
                <div className=" portfolio3 mt-[30px] flex md:flex-row flex-col space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
-                    <PortfolioCard lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="An AI that responds to user queries using text, images or voice in real-time" text="Autonomous Customer Support Agent" onClick={onPortfolioCard1Click}/>
-                    <PortfolioCard lang1="FastApi" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="Agent that collects symptoms, interprets radiology reports (e.g., X-rays), suggest actions or raise alarms" text="Medical Diagnosis + Assistant Agent" onClick={onPortfolioCard1Click}/>
+                    <PortfolioCard onClick={()=>setOnPortfolioClick(true)} lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="An AI that responds to user queries using text, images or voice in real-time" text="Autonomous Customer Support Agent" />
+                    <PortfolioCard onClick={()=>setOnPortfolioClick(true)} lang1="FastApi" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="Agent that collects symptoms, interprets radiology reports (e.g., X-rays), suggest actions or raise alarms" text="Medical Diagnosis + Assistant Agent" />
                     
                 </div>
                 <p className=" portfolio3 text-[33px] text-center md:text-[30px]  mt-[40px]">Mini Projects</p>
@@ -521,6 +525,43 @@ const Portfolio = () => {
                
 
             </div>
+            <div
+  className={`fixed top-0 left-0 z-[9999] h-[100vh] w-[100vw] flex flex-col items-center justify-center
+    
+    transition-opacity duration-500 ease-in-out
+    ${onPortfolioClick ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
+  `}
+>
+  {/* Backdrop */}
+  <div
+    onClick={() => setOnPortfolioClick(false)}
+    className={`bg-[#101010] h-full w-full opacity-50 transition-opacity duration-500 ease-in-out
+      ${onPortfolioClick ? 'opacity-60' : 'opacity-0 pointer-events-none'}
+    `}
+  ></div>
+
+  {/* Modal content */}
+  <div
+    className={`absolute lg:rounded-[20px] md:rounded-[10px] text-white bg-[#101010] ring-[1.5px] ring-[#373435]  h-[95vh] w-[85vw] z-20
+      transform transition-transform duration-500 ease-in-out
+      ${onPortfolioClick ? 'scale-100 opacity-100' : 'scale-95 opacity-0 pointer-events-none'}
+    `}
+  >
+    <div className="flex flex-row items-center justify-center">
+        <p className="text-[40px] sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent p-6">
+        Project Overview
+        </p>
+
+        <button
+        className="cursor-pointer absolute right-0 top-0 pr-[40px] pt-[30px] text-[20px] font-semibold"
+        onClick={() => setOnPortfolioClick(false)}
+        aria-label="Close modal"
+        >
+        Close
+        </button>
+    </div>
+  </div>
+</div>
         </div>
         <Top/>
         <Max/>
