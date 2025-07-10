@@ -214,6 +214,8 @@ const Blogs = () => {
           }
         }, [])
 
+        const [onPortfolioClick, setOnPortfolioClick] = useState(false)
+        
     return(
         <div className="flex w-[100vw] overflow-x-hidden flex-col">
             <Navigation navSelection={navSelection} onContactClick={onContactClick}/>
@@ -324,17 +326,54 @@ const Blogs = () => {
                     <div className="w-[95%] sm:w-[80%] flex items-center justify-center">
                       <div className="flex flex-row items-center justify-center space-x-[20px] mt-[30px]">
                           <div className="w-[96%]">
-                              <p className="text-[40px] ml-[10px] sm:text-[50px] font-bold">Case Studies</p>
-                              <div className="grid px-[15px] sm:grid-cols-2 gap-[25px] sm:gap-[50px] items-center justify-center space-x-[20px] mt-[30px]">
+                              <p className="text-[40px] ml-[10px] sm:text-[50px] blogs3 font-bold">Case Studies</p>
+                              <div className="grid blogs2 px-[15px] sm:grid-cols-2 gap-[25px] sm:gap-[50px] items-center justify-center space-x-[20px] mt-[30px]">
                                   
-                                  <CaseStudyCard text1="Case study title 01" text="test" />
-                                  <CaseStudyCard  text1="Case study title 02" text=""/>
+                                  <CaseStudyCard onClick={()=>setOnPortfolioClick(true)} text1="Case study title 01" text="test" />
+                                  <CaseStudyCard onClick={()=>setOnPortfolioClick(true)} text1="Case study title 02" text=""/>
                               </div>
                           </div>
                       </div>
                     </div>
                     
                 </div>
+                <div
+  className={`fixed top-0 left-0 z-[9999] h-[100vh] w-[100vw] flex flex-col items-center justify-center
+    
+    transition-opacity duration-500 ease-in-out
+    ${onPortfolioClick ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
+  `}
+>
+  {/* Backdrop */}
+  <div
+    onClick={() => setOnPortfolioClick(false)}
+    className={`bg-[#101010] h-full w-full opacity-50 transition-opacity duration-500 ease-in-out
+      ${onPortfolioClick ? 'opacity-60' : 'opacity-0 pointer-events-none'}
+    `}
+  ></div>
+
+  {/* Modal content */}
+  <div
+    className={`absolute lg:rounded-[20px] md:rounded-[10px] text-white bg-[#101010] ring-[1.5px] ring-[#373435]  h-[95vh] w-[85vw] z-20
+      transform transition-transform duration-500 ease-in-out
+      ${onPortfolioClick ? 'scale-100 opacity-100' : 'scale-95 opacity-0 pointer-events-none'}
+    `}
+  >
+    <div className="flex flex-row items-center justify-center">
+        <p className="text-[40px] sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent p-6">
+        Case Overview
+        </p>
+
+        <button
+        className="cursor-pointer absolute right-0 top-0 pr-[40px] pt-[30px] text-[20px] font-semibold"
+        onClick={() => setOnPortfolioClick(false)}
+        aria-label="Close modal"
+        >
+        Close
+        </button>
+    </div>
+  </div>
+</div>
             </div>
             <Top/>
             <Max/>

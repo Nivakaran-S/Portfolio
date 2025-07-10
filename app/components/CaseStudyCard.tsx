@@ -3,11 +3,12 @@
 interface CaseStudyProps {
     text: string;
     text1: string;
+    onClick: () => void;
 }
 
-const CaseStudyCard: React.FC<CaseStudyProps> = ({ text, text1 }) => {
+const CaseStudyCard: React.FC<CaseStudyProps> = ({ text, text1, onClick }) => {
     return (
-        <div className="h-[350px] hover:scale-[105%] transition duration-300 ease-in-out    flex flex-row items-center justify-center cursor-pointer ring-[#5F5F62] ring-[1.5px] rounded-[20px] w-[100%] bg-[#373435]" >
+        <div onClick={onClick} className="h-[350px] hover:scale-[105%] transition duration-300 ease-in-out    flex flex-row items-center justify-center cursor-pointer ring-[#5F5F62] ring-[1.5px] rounded-[20px] w-[100%] bg-[#373435]" >
             <div className="hidden sm:flex  w-[40%] h-[100%] rounded-l-[20px] ">
 
             </div>
