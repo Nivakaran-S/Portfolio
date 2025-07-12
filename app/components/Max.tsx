@@ -118,6 +118,18 @@ const Max = () => {
     const onMaxFalseClick = () => {
         setMax(false);
     }
+
+    const parseMessageToJSX = (text: string) => {
+    const parts = text.split(/(\*\*.*?\*\*)/g); // Split by **text** pattern
+    return parts.map((part, index) => {
+        if (part.startsWith('**') && part.endsWith('**')) {
+            // Remove ** from start and end, and wrap in <strong>
+            const boldText = part.slice(2, -2);
+            return <strong key={index}>{boldText}</strong>;
+        }
+        return <span className="flex" key={index}>{part}</span>;
+    });
+};
     
     return (
         <div className={`${max? 'h-[100vh] w-[100vw]' : '' } fixed z-[9999] text-black bottom-[0px] right-[0px]  `}>
@@ -150,18 +162,16 @@ const Max = () => {
                                 </div>
                             </div>
                             {messageCollection
-                            .sort((a, b) => a.timestamp - b.timestamp) // Sort messages by timestamp
-                            .map((msg, index) => (
-                                <div className={`${msg.type === 'sender' ? 'justify-end' : 'justify-start'} flex `} key={index}>
-                                    <div 
-                                    className={`${msg.type === 'sender' ? 'border-[1px] border-[#1D1D1D] self-end bg-[#808080] text-black' : 'border-[1px]  border-gray-500 self-start bg-white text-black '} flex  box-shadow-lg max-w-[60%] text-left mt-[10px] mx-[10px] rounded-[5px] py-[5px] px-[13px] text-[14px] `}
-                                        
-                                    
-                                    >
-                                        {msg.content}
-                                    </div>
-                                </div>
-                            ))}
+    .sort((a, b) => a.timestamp - b.timestamp)
+    .map((msg, index) => (
+        <div className={`${msg.type === 'sender' ? 'justify-end' : 'justify-start'} flex`} key={index}>
+            <div
+                className={`${msg.type === 'sender' ? 'border-[1px] border-[#1D1D1D] self-end bg-[#808080] text-black' : 'border-[1px] flex-col border-gray-500 self-start bg-white text-black'} flex box-shadow-lg max-w-[80%] text-left mt-[10px] mx-[10px] rounded-[5px] py-[5px] px-[13px] text-[14px]`}
+            >
+                {parseMessageToJSX(msg.content)}
+            </div>
+        </div>
+    ))}
                             {typing==true?
                             <div className="flex h-[80px] justify-start mb-3 px-5">
                                 <div className=" rounded-lg p-3 flex items-center">
@@ -183,7 +193,7 @@ const Max = () => {
 
                 
                 <div className="w-[100%] ring-[1px] ring-[#373435] relative rounded-b-[10px] p-[10px] h-[130px] bg-[#000000]">
-                    <textarea onKeyDown={handleKeyDown} onChange={(e) => setMessage(e.target.value)} value={message} className="w-[100%] focus:outline-none h-[100%] leading-[19px] rounded-[5px] bg-[#101010] text-black py-[5px] px-[8px] bg-white resize-none" placeholder="Ask Max"></textarea>
+                    <textarea onKeyDown={handleKeyDown} onChange={(e) => setMessage(e.target.value)} value={message} className="w-[100%] focus:outline-none h-[100%] leading-[19px] rounded-[5px] bg-[#101010] text-black py-[8px] px-[8px] bg-white resize-none" placeholder="Ask Max"></textarea>
                     <div onClick={() => onMessageSubmit(message)} className="w-[70px] ring-[0.5px] ring-[0.5px] ring-[#727376] cursor-pointer hover:bg-black absolute top-[5px] right-[-20px] h-[70px] rounded-full bg-[#373435] flex items-center justify-center cursor-pointer mt-[10px]">
                         <Image alt="" className="ml-[7px]" src={Send} height={35}  />
                     </div>
