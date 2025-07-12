@@ -13,6 +13,7 @@ import ContactModel from "./components/ContactModel";
 import React, {useState} from "react";
 import Certification from "./components/Certification";
 import Max from "./components/Max";
+import Loader from "./components/Loader";
 
 export default function Home() {
   const [showContactModel, setShowContactModel] = useState(false);
@@ -29,6 +30,16 @@ export default function Home() {
   const onContactClick = () => {
     setShowContactModel(!showContactModel);
   }
+
+  const [loading, setLoading] = useState(false);
+
+  const handleClick = () => {
+    setLoading(true);
+    setTimeout(() => {
+      setLoading(true);
+      // window.location.href = '/next'; // Replace with real navigation
+    }, 2500);
+  };
 
 
  
@@ -52,6 +63,7 @@ export default function Home() {
       {showMessageSuccess && <div className="bg-[#101010] z-[40] w-[250px] fixed text-[13px] mb-[20px] ml-[30px] px-[20px] py-[20px] ring-white ring-[0.5px] rounded-[10px] text-white absolute left-0 bottom-0">
         <p>Message saved successfully. Will get back to you soon:)</p>
       </div>}
+      <Loader active={loading}/>
     </div>
   );
 }

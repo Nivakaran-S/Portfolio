@@ -16,8 +16,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nivakaran S.",
-  description: "Nivakaran Shanmugabavan",
+  title: "Nivakaran S. | Turning Code & Data Into Impactful Products",
+  description: "Portfolio of Nivakaran Shanmugabavan — building impactful software with full-stack engineering, data science, and AI. Explore projects, blog posts, and technical skills.",
 };
 
 export default function RootLayout({

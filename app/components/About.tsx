@@ -129,7 +129,7 @@ const About = () => {
 
 
     return(
-        <div ref={counterRef} className="bg-[#101010]  min-h-[110vh] w-screen flex flex-col items-center py-[115px] ">
+        <div id="about" ref={counterRef} className="bg-[#101010]  min-h-[110vh] w-screen flex flex-col items-center py-[115px] ">
             <div className="w-[80%]  flex  flex-col   ">
                 <div className="about1 text-[40px] leading-[40px]">
                     <p className="text-[24.72px] ">Turning Ideas into Intelligent</p>
