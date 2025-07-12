@@ -172,8 +172,8 @@ const Max = () => {
                             
                         </div>
                         :
-                        <div className='h-[430px] '>
-                            <div className="mx-[30px] text-gray-300 my-[20px] text-center">
+                        <div className='h-[430px] ring-[1px] ring-[#373435] flex flex-col justify-center  items-center bg-[#101010] '>
+                            <div className="mx-[30px] text-gray-300 px-[10px]  my-[20px] text-center">
                                 <p className="  text-[15px]" >Hello! I’m Max, an AI-powered assistant created by Nivakaran.</p>
                             
                                 <p className="text-[15px]">I’m here to guide you through Nivakaran’s projects and answer any questions you have along the way. Let’s explore together!</p>
