@@ -3,6 +3,7 @@ import Contact from "@/app/components/Contact";
 import ContactModel from "@/app/components/ContactModel";
 import Footer from "@/app/components/Footer";
 import Navigation from "@/app/components/Navigation";
+import StarBackground from "@/app/components/StarBackground";
 import { useRouter } from "next/navigation";
 import React, { useState } from 'react'
 
@@ -30,23 +31,28 @@ const Blog1 = () => {
             <ContactModel onMessageSuccess={onMessageSuccess} showContactModel={showContactModel} onContactClick={onContactClick}/>
             
             {/* Hero Section */}
-            <div className="min-h-[80vh] sm:min-h-[100vh] flex items-end justify-center  px-4 pb-[20px] sm:px-6 lg:px-8">
-                <div className="w-full max-w-6xl flex  flex-col justify-end  py-10 sm:py-7 ">
-                    <h1 className="text-3xl sm:text-4xl md:text-xl lg:text-6xl w-full sm:w-[90%] lg:leading-[67px] font-bold">
-                        How to improve your UI design skills: Quickly develop an "eye" for great design
-                    </h1>
-                    <p className="text-base sm:text-lg md:text-xl w-full sm:w-[80%] mt-4 sm:mt-2">
-                        The design industry is constantly evolving, but design is timeless. Learn how to quickly develop an "eye" for UI design and improve your design skills in 2023.
-                    </p>
-                    <div className="flex flex-row flex-wrap gap-4 sm:gap-6 ml-2 sm:ml-4 mt-6 sm:mt-8 w-full sm:w-[60%] lg:w-[60%]">
-                        <div className="bg-white text-black px-4 py-1.5 rounded text-sm sm:text-base">
-                            <p>Design</p>
-                        </div>
-                        <div className="bg-white text-black px-4 py-1.5 rounded text-sm sm:text-base">
-                            <p>Product</p>
-                        </div>
-                        <div className="ring-1 ring-white text-white px-4 py-1.5 rounded text-sm sm:text-base">
-                            <p>12 min read</p>
+            <div>
+                <StarBackground/>
+            
+                <div className="min-h-[80vh] sm:min-h-[100vh] flex items-end justify-center  px-4 pb-[20px] sm:px-6 lg:px-8">
+                    
+                    <div className="w-full max-w-6xl flex  flex-col justify-end  py-10 sm:py-7 ">
+                        <h1 className="text-3xl sm:text-4xl md:text-xl lg:text-6xl w-full sm:w-[90%] lg:leading-[67px] font-bold">
+                            How to improve your UI design skills: Quickly develop an "eye" for great design
+                        </h1>
+                        <p className="text-base sm:text-lg md:text-xl w-full sm:w-[80%] mt-4 sm:mt-2">
+                            The design industry is constantly evolving, but design is timeless. Learn how to quickly develop an "eye" for UI design and improve your design skills in 2023.
+                        </p>
+                        <div className="flex flex-row flex-wrap gap-4 sm:gap-6 ml-2 sm:ml-4 mt-6 sm:mt-8 w-full sm:w-[60%] lg:w-[60%]">
+                            <div className="bg-white text-black px-4 py-1.5 rounded text-sm sm:text-base">
+                                <p>Design</p>
+                            </div>
+                            <div className="bg-white text-black px-4 py-1.5 rounded text-sm sm:text-base">
+                                <p>Product</p>
+                            </div>
+                            <div className="ring-1 ring-white text-white px-4 py-1.5 rounded text-sm sm:text-base">
+                                <p>12 min read</p>
+                            </div>
                         </div>
                     </div>
                 </div>

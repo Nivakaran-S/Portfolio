@@ -31,7 +31,7 @@ const Blogs = () => {
       const router = useRouter();
 
       const onBlog1Click = () => {
-        router.push('/blogs/blog1')
+        router.push('/blogs/blogpage')
       }
 
       useEffect(() => {
