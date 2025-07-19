@@ -431,7 +431,7 @@ const About = () => {
                             <Image src={gcp} height={80} width={80} alt="GCP" className="sm:h-24 sm:w-24" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={GradioImage} height={80} width={80} alt="Gradio" className="sm:h-14 sm:w-30" />
+                            <Image src={GradioImage} height={80} width={80} alt="Gradio" className="sm:h-10 sm:w-30" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
                             <Image src={Figma} height={80} width={80} alt="Figma" className="sm:h-24 sm:w-24" />
