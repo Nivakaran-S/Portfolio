@@ -9,6 +9,7 @@ import PrimaryBtn from "../components/PrimaryBtn";
 import Top from "../components/Top";
 import Max from "../components/Max";
 import StarBackground from "../components/StarBackground";
+import MiniProject from "../components/MiniProject";
 
 
 const Portfolio = () => {
@@ -296,52 +297,12 @@ const Portfolio = () => {
                    
                 </div>
                 <p className=" portfolio3 text-[33px] text-center md:text-[30px] mt-[40px]">Mini Projects</p>
-                <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[15px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
-                        <div className="hover:scale-[108%] transition-transform duration-500  w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
-                            <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
-
-                            </div>
-                            <div className="flex flex-col h-[50%] rounded-b-[15px] bg-[#101010] w-full px-[15px] justify-center">
-                                <p className="leading-[25px]">Project Title Project Title Project Title</p>
-                                <div className="text-[10px] ">
-                                    <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="hover:scale-[108%] transition-transform duration-500 w-[190px] sm:w-[220px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
-                            <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
-
-                            </div>
-                            <div className="flex flex-col h-[50%] rounded-b-[15px] bg-[#101010] w-full px-[15px] justify-center">
-                                <p className="leading-[25px]">Project Title Project Title Project Title</p>
-                                <div className="text-[10px] ">
-                                    <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
-                                </div>
-                            </div>
-                        </div>  
-                        <div className="hover:scale-[108%] transition-transform duration-500 w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
-                            <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
-
-                            </div>
-                            <div className="flex flex-col h-[50%] rounded-b-[15px] bg-[#101010] w-full px-[15px] justify-center">
-                                <p className="leading-[25px]">Project Title Project Title Project Title</p>
-                                <div className="text-[10px] ">
-                                    <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
-                                </div>
-                            </div>
-                        </div> 
-                        <div className="hover:scale-[108%] transition-transform duration-500 w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
-                            <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
-
-                            </div>
-                            <div className="flex flex-col h-[50%] rounded-b-[15px] bg-[#101010] w-full px-[15px] justify-center">
-                                <p className="leading-[25px]">Project Title Project Title Project Title</p>
-                                <div className="text-[10px] ">
-                                    <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
+                <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[10px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
+                    <MiniProject />
+                    <MiniProject />
+                    <MiniProject />
+                    <MiniProject />    
+                </div>
                 
                 <p className="mt-[30px] portfolio3 ml-[10px] font-bold text-[35px] sm:text-[45px]">Data Science</p>
                 <div className=" portfolio3 mt-[30px] flex md:flex-row flex-col space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
@@ -361,52 +322,12 @@ const Portfolio = () => {
                 </div>
                 
                 <p className=" portfolio3 text-[33px] text-center md:text-[30px]  mt-[40px]">Mini Projects</p>
-                <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[15px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
-                        <div className="hover:scale-[108%] transition-transform duration-500  w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
-                            <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
-
-                            </div>
-                            <div className="flex flex-col h-[50%] rounded-b-[15px] bg-[#101010] w-full px-[15px] justify-center">
-                                <p className="leading-[25px]">Project Title Project Title Project Title</p>
-                                <div className="text-[10px] ">
-                                    <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="hover:scale-[108%] transition-transform duration-500 w-[190px] sm:w-[220px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
-                            <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
-
-                            </div>
-                            <div className="flex flex-col h-[50%] rounded-b-[15px] bg-[#101010] w-full px-[15px] justify-center">
-                                <p className="leading-[25px]">Project Title Project Title Project Title</p>
-                                <div className="text-[10px] ">
-                                    <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
-                                </div>
-                            </div>
-                        </div>  
-                        <div className="hover:scale-[108%] transition-transform duration-500 w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
-                            <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
-
-                            </div>
-                            <div className="flex flex-col h-[50%] rounded-b-[15px] bg-[#101010] w-full px-[15px] justify-center">
-                                <p className="leading-[25px]">Project Title Project Title Project Title</p>
-                                <div className="text-[10px] ">
-                                    <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
-                                </div>
-                            </div>
-                        </div> 
-                        <div className="hover:scale-[108%] transition-transform duration-500 w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
-                            <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
-
-                            </div>
-                            <div className="flex flex-col h-[50%] rounded-b-[15px] bg-[#101010] w-full px-[15px] justify-center">
-                                <p className="leading-[25px]">Project Title Project Title Project Title</p>
-                                <div className="text-[10px] ">
-                                    <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
+                <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[10px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
+                    <MiniProject />
+                    <MiniProject />
+                    <MiniProject />
+                    <MiniProject />    
+                </div>
                 
                 <p className="mt-[30px] portfolio3 ml-[10px] font-bold text-[35px] sm:text-[45px]">Computer Vision</p>
                <div className=" portfolio3 mt-[30px] flex md:flex-row flex-col space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
@@ -425,53 +346,12 @@ const Portfolio = () => {
                     
                 </div>
                 <p className=" portfolio3 text-[33px] text-center md:text-[30px] mt-[40px]">Mini Projects</p>
-                <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[15px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
-                        <div className="hover:scale-[108%] transition-transform duration-500  w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
-                            <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
-
-                            </div>
-                            <div className="flex flex-col h-[50%] rounded-b-[15px] bg-[#101010] w-full px-[15px] justify-center">
-                                <p className="leading-[25px]">Project Title Project Title Project Title</p>
-                                <div className="text-[10px] ">
-                                    <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="hover:scale-[108%] transition-transform duration-500 w-[190px] sm:w-[220px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
-                            <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
-
-                            </div>
-                            <div className="flex flex-col h-[50%] rounded-b-[15px] bg-[#101010] w-full px-[15px] justify-center">
-                                <p className="leading-[25px]">Project Title Project Title Project Title</p>
-                                <div className="text-[10px] ">
-                                    <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
-                                </div>
-                            </div>
-                        </div>  
-                        <div className="hover:scale-[108%] transition-transform duration-500 w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
-                            <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
-
-                            </div>
-                            <div className="flex flex-col h-[50%] rounded-b-[15px] bg-[#101010] w-full px-[15px] justify-center">
-                                <p className="leading-[25px]">Project Title Project Title Project Title</p>
-                                <div className="text-[10px] ">
-                                    <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
-                                </div>
-                            </div>
-                        </div> 
-                        <div className="hover:scale-[108%] transition-transform duration-500 w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
-                            <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
-
-                            </div>
-                            <div className="flex flex-col h-[50%] rounded-b-[15px] bg-[#101010] w-full px-[15px] justify-center">
-                                <p className="leading-[25px]">Project Title Project Title Project Title</p>
-                                <div className="text-[10px] ">
-                                    <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
-                
+                <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[10px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
+                    <MiniProject />
+                    <MiniProject />
+                    <MiniProject />
+                    <MiniProject />    
+                </div>
                 <p className="mt-[30px] portfolio3 ml-[10px] font-bold text-[35px] sm:text-[45px]">AI Agents</p>
                <div className=" portfolio3 mt-[30px] flex md:flex-row flex-col space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
                     <PortfolioCard onClick={()=>setOnPortfolioClick(true)} lang1="Django" lang2="Matplotlib" lang3="Tensorflow" lang4="Pandas" lang5="" lang6="" text2="An AI that responds to user queries using text, images or voice in real-time" text="Autonomous Customer Support Agent" />
@@ -479,52 +359,12 @@ const Portfolio = () => {
                     
                 </div>
                 <p className=" portfolio3 text-[33px] text-center md:text-[30px]  mt-[40px]">Mini Projects</p>
-                <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[15px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
-                        <div className="hover:scale-[108%] transition-transform duration-500  w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
-                            <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
-
-                            </div>
-                            <div className="flex flex-col h-[50%] rounded-b-[15px] bg-[#101010] w-full px-[15px] justify-center">
-                                <p className="leading-[25px]">Project Title Project Title Project Title</p>
-                                <div className="text-[10px] ">
-                                    <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="hover:scale-[108%] transition-transform duration-500 w-[190px] sm:w-[220px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
-                            <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
-
-                            </div>
-                            <div className="flex flex-col h-[50%] rounded-b-[15px] bg-[#101010] w-full px-[15px] justify-center">
-                                <p className="leading-[25px]">Project Title Project Title Project Title</p>
-                                <div className="text-[10px] ">
-                                    <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
-                                </div>
-                            </div>
-                        </div>  
-                        <div className="hover:scale-[108%] transition-transform duration-500 w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
-                            <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
-
-                            </div>
-                            <div className="flex flex-col h-[50%] rounded-b-[15px] bg-[#101010] w-full px-[15px] justify-center">
-                                <p className="leading-[25px]">Project Title Project Title Project Title</p>
-                                <div className="text-[10px] ">
-                                    <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
-                                </div>
-                            </div>
-                        </div> 
-                        <div className="hover:scale-[108%] transition-transform duration-500 w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
-                            <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
-
-                            </div>
-                            <div className="flex flex-col h-[50%] rounded-b-[15px] bg-[#101010] w-full px-[15px] justify-center">
-                                <p className="leading-[25px]">Project Title Project Title Project Title</p>
-                                <div className="text-[10px] ">
-                                    <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
+                <div className=" portfolio3 mt-[30px] grid grid-cols-2 gap-[10px] sm:flex md:flex-row flex-col sm:space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
+                    <MiniProject />
+                    <MiniProject />
+                    <MiniProject />
+                    <MiniProject />    
+                </div>
                 
                
 
