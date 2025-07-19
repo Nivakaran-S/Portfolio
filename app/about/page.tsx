@@ -17,7 +17,7 @@ import FlaskImage from '../images/flask.png';
 import FirebaseImage from '../images/firebase2.png';
 import GradioImage from '../images/gradio.png';
 import GraphqlImage from '../images/graphql.png';
-import HuggingFaceImage from '../images/huggingface.png';
+import HuggingFaceImage from '../images/hf-logo.svg';
 import KerasImage from '../images/keras.png';
 import MongoDbImage from '../images/mongodb.png';
 import MysqlImage from '../images/mysql.png';
@@ -47,15 +47,15 @@ import Airflow from '../images/AirflowLogo.png'
 import Matplotlib from '../images/matplotlib2.png'
 import R from '../images/R.png'
 import Tensorboard from '../images/tensorboard.png'
-import PySpark from '../images/PySpark-logo-1.jpeg'
-import OpenCV from '../images/opencv.png'
+import PySpark from '../images/PySpark-logo-2.png'
+import OpenCV from '../images/opencv2.png'
 import Photoshop from '../images/photoshop2.png'
 import Pandas from '../images/Pandas.png'
 import Gradio from '../images/gradio.png'
 import Figma from '../images/figma.png'
 import Coreldraw from '../images/coreldraw2.png'
 import Langgraph from '../images/langgraph-logo-png_seeklogo-616429.png'
-import CPlus from '../images/images (1).png'
+import CPlus from '../images/C_Logo2.png'
 import C from '../images/C_Logo.png'
 import StarBackground from "../components/StarBackground";
 import AboutHeroComponent from "./AboutHeroComponent";
@@ -284,7 +284,7 @@ const About = () => {
                             <Image src={R} height={60} width={60} alt="R" className="sm:h-20 sm:w-20" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={CPlus} height={80} width={80} alt="C++" className="sm:h-24 sm:w-24" />
+                            <Image src={CPlus} height={80} width={80} alt="C++" className="sm:h-24 sm:w-22" />
                         </div>
                     </div>
                     <div
@@ -299,7 +299,7 @@ const About = () => {
                             <Image src={PytorchImage} height={60} width={60} alt="PyTorch" className="sm:h-20 sm:w-50" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={HuggingFaceImage} height={60} width={60} alt="Hugging Face" className="sm:h-16 sm:w-100" />
+                            <Image src={HuggingFaceImage} height={60} width={60} alt="Hugging Face" className="sm:h-22 sm:w-100" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
                             <Image src={KerasImage} height={60} width={60} alt="Keras" className="sm:h-10 sm:w-40" />
@@ -368,13 +368,13 @@ const About = () => {
                             <Image src={NodeImage} height={60} width={60} alt="Node.js" className="sm:h-20 sm:w-20" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={KotlinImage} height={60} width={60} alt="Kotlin" className="sm:h-20 sm:w-20" />
+                            <Image src={KotlinImage} height={60} width={60} alt="Kotlin" className="sm:h-15 sm:w-20" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
                             <Image src={PostgresqlImage} height={60} width={60} alt="PostgreSQL" className="sm:h-20 sm:w-20" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={GradioImage} height={60} width={60} alt="Gradio" className="sm:h-13 sm:w-60" />
+                            <Image src={GradioImage} height={60} width={60} alt="Gradio" className="sm:h-10 sm:w-30" />
                         </div>
                         <div className="flex flex-col items-center justify-center rounded-lg bg-white">
                             <Image src={FlaskImage} height={60} width={60} alt="Flask" className="sm:h-15 sm:w-60" />
@@ -389,22 +389,22 @@ const About = () => {
                         }`}
                     >
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={TensorFlowImage} height={70} width={70} alt="TensorFlow" className="sm:h-22 sm:w-27" />
+                            <Image src={TensorFlowImage} height={70} width={70} alt="TensorFlow" className="sm:h-21 sm:w-27" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={ApacheImage} height={75} width={75} alt="Apache" className="sm:h-20 sm:w-30" />
+                            <Image src={ApacheImage} height={75} width={75} alt="Apache" className="sm:h-18 sm:w-30" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={HadoopImage} height={80} width={80} alt="Hadoop" className="sm:h-18 sm:w-40" />
+                            <Image src={HadoopImage} height={80} width={80} alt="Hadoop" className="sm:h-15 sm:w-40" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={Kafka} height={80} width={80} alt="Kafka" className="sm:h-20 sm:w-30" />
+                            <Image src={Kafka} height={80} width={80} alt="Kafka" className="sm:h-17 sm:w-30" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
                             <Image src={R} height={80} width={80} alt="R" className="sm:h-24 sm:w-20" />
                         </div>
-                        <div className="flex flex-col items-center justify-center">
-                            <Image src={PySpark} height={80} width={80} alt="PySpark" className="sm:h-24 sm:w-24" />
+                        <div className="flex  flex-col items-center justify-center">
+                            <Image src={PySpark} height={80} width={200} alt="PySpark" className="sm:h-15 sm:w-200" />
                         </div>
                     </div>
                     <div
@@ -416,7 +416,7 @@ const About = () => {
                             <Image src={GroqImage} height={60} width={60} alt="Groq" className="sm:h-12 sm:w-25" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
-                            <Image src={HuggingFaceImage} height={60} width={60} alt="Hugging Face" className="sm:h-15 sm:w-28" />
+                            <Image src={HuggingFaceImage} height={60} width={60} alt="Hugging Face" className="sm:h-22 sm:w-28" />
                         </div>
                         <div className="flex flex-col items-center justify-center">
                             <Image src={FirebaseImage} height={60} width={60} alt="Firebase" className="sm:h-10 sm:w-40" />
