@@ -240,7 +240,7 @@ const Blogs = () => {
 
 
 
-            <div className=" min-h-[120vh] bg-[#101010] py-[10vh] w-screen flex items-center justify-center">
+            <div className=" min-h-[120vh] bg-[#0A0A0A] py-[10vh] w-screen flex items-center justify-center">
                 <div className="  flex items-center justify-center flex-col">
                     <div className="leading-[55px] sm:leading-[64px] blogs1 text-center">
                         <p className="text-[45px] sm:text-[55px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Stay Updated</p>
