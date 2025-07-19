@@ -155,7 +155,7 @@ const About = () => {
   }, [])
 
   return (
-    <div className="flex w-[100vw] overflow-x-hidden flex-col">
+    <div className="flex text-white w-[100vw] overflow-x-hidden flex-col">
       <Navigation navSelection={navSelection} onContactClick={onContactClick} />
       <ContactModel onMessageSuccess={onMessageSuccess} showContactModel={showContactModel} onContactClick={onContactClick} />
       
