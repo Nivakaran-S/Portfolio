@@ -8,6 +8,7 @@ import PortfolioCard from "../components/PortfolioCard";
 import PrimaryBtn from "../components/PrimaryBtn";
 import Top from "../components/Top";
 import Max from "../components/Max";
+import StarBackground from "../components/StarBackground";
 
 
 const Portfolio = () => {
@@ -251,21 +252,24 @@ const Portfolio = () => {
         <div className="flex w-[100vw] overflow-x-hidden flex-col">
             <Navigation navSelection={navSelection} onContactClick={onContactClick}/>
             <ContactModel onMessageSuccess={onMessageSuccess} showContactModel={showContactModel} onContactClick={onContactClick}/>
-            <div className="text-white bg-[url('./images/heroBackground6.png')] bg-contain bg-no-repeat bg-center  sm:space-y-[30px] bg-[#000] px-[10vw] flex flex-col items-center justify-center sm:pt-[20vh] min-h-[100vh]">
-              <div className="w-[100vw]  text-center leading-[71px] sm:leading-[90px] h-[100%]">
-                <p className=" text-[40px] sm:text-[50px] md:text-[60px] aboutText4 aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Explore</p>
-                <p className=" text-[65px] sm:text-[75px] md:text-[80px] aboutTitle2 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >My Projects</p>
-              </div>
-              
-              <div className="w-[100%] md:w-[50%] text-center h-[10px] sm:h-[160px]">
+            <div>
+                <StarBackground/>
+                <div className="text-white bg-contain bg-no-repeat bg-center  sm:space-y-[30px] px-[10vw] flex flex-col items-center justify-center sm:pt-[20vh] min-h-[100vh]">
+                <div className="w-[100vw]  text-center leading-[71px] sm:leading-[90px] h-[100%]">
+                    <p className=" text-[40px] sm:text-[50px] md:text-[60px] aboutText4 aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Explore</p>
+                    <p className=" text-[65px] sm:text-[75px] md:text-[80px] aboutTitle2 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >My Projects</p>
+                </div>
+                
+                <div className="w-[100%] md:w-[50%] text-center h-[10px] sm:h-[160px]">
 
-              </div>
+                </div>
 
-              <div className="w-[100%]  md:w-[50%] text-center ">
-                <p className=" aboutTitle3">Welcome to a showcase of my work, a curated collection of projects that reflect my passion for building smart, user-focused, and scalable digital solutions.</p>
-              </div>
+                <div className="w-[100%]  md:w-[50%] text-center ">
+                    <p className=" aboutTitle3">Welcome to a showcase of my work, a curated collection of projects that reflect my passion for building smart, user-focused, and scalable digital solutions.</p>
+                </div>
+                </div>
             </div>
-            <div className=" py-[15vh] min-h-[200vh] flex items-center justify-center w-screen ">
+            <div className=" bg-[#101010] py-[15vh] min-h-[200vh] flex items-center justify-center w-screen ">
 
             <div className="w-[93%] sm:w-[80%] ">
                 <div className=" portfolio1 leading-[40px] md:leading-[60px] text-center">

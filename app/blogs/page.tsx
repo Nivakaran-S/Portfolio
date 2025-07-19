@@ -10,6 +10,7 @@ import { useRouter } from "next/navigation";
 import Top from "../components/Top";
 import Max from "../components/Max";
 import CaseStudyCard from "../components/CaseStudyCard";
+import StarBackground from "../components/StarBackground";
 
 
 const Blogs = () => {
@@ -220,23 +221,26 @@ const Blogs = () => {
         <div className="flex w-[100vw] overflow-x-hidden flex-col">
             <Navigation navSelection={navSelection} onContactClick={onContactClick}/>
             <ContactModel onMessageSuccess={onMessageSuccess} showContactModel={showContactModel} onContactClick={onContactClick}/>
-            <div className="text-white bg-[url('./images/heroBackground6.png')] bg-contain bg-no-repeat bg-center  sm:space-y-[30px] bg-[#000] px-[10vw] flex flex-col items-center justify-center sm:pt-[20vh] min-h-[100vh]">
-              <div className="w-[100vw]  text-center leading-[63px] sm:leading-[90px] h-[100%]">
-                <p className=" text-[40px] sm:text-[50px] md:text-[60px] aboutText4 aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Look Into</p>
-                <p className=" text-[49px] sm:text-[75px] px-[20px] md:text-[80px] aboutTitle2 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Blogs & Insights</p>
-              </div>
-              <div className="w-[100%] md:w-[50%] text-center h-[10px] sm:h-[160px]">
+            <div>
+              <StarBackground/>
+              <div className="text-white  bg-contain bg-no-repeat bg-center  sm:space-y-[30px] px-[10vw] flex flex-col items-center justify-center sm:pt-[20vh] min-h-[100vh]">
+                <div className="w-[100vw]  text-center leading-[63px] sm:leading-[90px] h-[100%]">
+                  <p className=" text-[40px] sm:text-[50px] md:text-[60px] aboutText4 aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Look Into</p>
+                  <p className=" text-[49px] sm:text-[75px] px-[20px] md:text-[80px] aboutTitle2 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Blogs & Insights</p>
+                </div>
+                <div className="w-[100%] md:w-[50%] text-center h-[10px] sm:h-[160px]">
 
-              </div>
-              
-              <div className="w-[100%]  md:w-[50%] text-center ">
-                <p className=" aboutTitle3">Welcome to my digital journal, a space where I share my thoughts, experiences, and learnings from the world of technology.</p>
+                </div>
+                
+                <div className="w-[100%]  md:w-[50%] text-center ">
+                  <p className=" aboutTitle3">Welcome to my digital journal, a space where I share my thoughts, experiences, and learnings from the world of technology.</p>
+                </div>
               </div>
             </div>
 
 
 
-            <div className=" min-h-[120vh] py-[10vh] w-screen flex items-center justify-center">
+            <div className=" min-h-[120vh] bg-[#101010] py-[10vh] w-screen flex items-center justify-center">
                 <div className="  flex items-center justify-center flex-col">
                     <div className="leading-[55px] sm:leading-[64px] blogs1 text-center">
                         <p className="text-[45px] sm:text-[55px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Stay Updated</p>

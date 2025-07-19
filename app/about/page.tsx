@@ -57,6 +57,8 @@ import Coreldraw from '../images/coreldraw2.png'
 import Langgraph from '../images/langgraph-logo-png_seeklogo-616429.png'
 import CPlus from '../images/images (1).png'
 import C from '../images/C_Logo.png'
+import StarBackground from "../components/StarBackground";
+import AboutHeroComponent from "./AboutHeroComponent";
 
 
 const About = () => {
@@ -156,19 +158,9 @@ const About = () => {
     <div className="flex w-[100vw] overflow-x-hidden flex-col">
       <Navigation navSelection={navSelection} onContactClick={onContactClick} />
       <ContactModel onMessageSuccess={onMessageSuccess} showContactModel={showContactModel} onContactClick={onContactClick} />
-      <div className="text-white bg-[url('./images/heroBackground6.png')] bg-contain bg-no-repeat bg-center  sm:space-y-[30px] bg-[#000] px-[10vw] flex flex-col items-center justify-center sm:pt-[20vh] min-h-[100vh]">
-        <div className="w-[100vw]  text-center leading-[60px] sm:leading-[70px] h-[100%]">
-          <p className=" text-[40px] sm:text-[50px] md:text-[60px] aboutText4 aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">About Me</p>
-          <p className=" text-[65px] sm:text-[75px] md:text-[80px] aboutTitle2 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >An Introduction</p>
-        </div>
-        <div className="w-[100%] md:w-[50%] text-center h-[10px] sm:h-[160px]">
-
-        </div>
-        <div className="w-[100%]  md:w-[50%] text-center ">
-          <p className=" aboutTitle3">Welcome to the story behind the code. </p>
-        </div>
-      </div>
-      <div className="flex items-center justify-center py-[50px]  min-h-[100vh]">
+      
+      <AboutHeroComponent/>
+      <div className="flex bg-[#101010] items-center justify-center py-[50px]  min-h-[100vh]">
         <div className="w-[85%] h-[100%] flex flex-col md:flex-row items-center justify-center space-x-[20px] about2">
           <div className="w-[100%] md:w-[50%] h-[100%]  flex flex-col items-center justify-center">
             <p className=" text-[60px] sm:text-[80px] text-center md:text-left aboutText4 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >About Me</p>
@@ -209,7 +201,7 @@ const About = () => {
           <p className=" text-[80px] md:text-[100px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Vision</p>
         </div>
       </div>
-      <div className="text-white space-y-[30px]  px-[10vw] flex flex-col py-[50px] md:py-[0px] md:flex-row items-center justify-center  min-h-[50vh]">
+      <div className="text-white bg-[#101010] space-y-[30px]  px-[10vw] flex flex-col py-[50px] md:py-[0px] md:flex-row items-center justify-center  min-h-[50vh]">
         <div className="w-[100%] sm:w-[45%] aboutText4 text-center leading-[50px] md:leading-[70px] h-[100%]">
           <p className="text-[40px] md:text-[50px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >The</p>
           <p className="text-[68px] md:text-[100px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Mission</p>
