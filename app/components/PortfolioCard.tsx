@@ -1,6 +1,7 @@
 'use client';
 
-import { useState } from "react";
+import Image from "next/image";
+import Newspaper from '../images/news.jpeg';
 
 interface PortfolioCardProps {
     text: string;
@@ -27,23 +28,22 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
 }) => {
 
     return (
-        <div>
-            <div
-                onClick={onClick} 
-                className="bg-[#373435] hover:ring-[1.5px] hover:ring-gray-300 hover:scale-[105%] transition-transform duration-500 text-[15.27px] sm:h-[350px] ring-[1px] ring-[#373435] sm:w-[500px] cursor-pointer flex flex-col sm:flex-row sm:pl-[10px] rounded-[20px]"
-            >
-                <div className="sm:w-[38.2%] px-[10px] hidden sm:flex items-center justify-center">
-                    <div className="flex flex-col">
-                        <p>{lang1}</p>
-                        <p>{lang2}</p>
-                        <p>{lang3}</p>
-                        <p>{lang4}</p>
-                        <p>{lang5}</p>
-                        <p>{lang6}</p>
-                    </div>
+        <div onClick={onClick}>
+            <div className="bg-[#373435] hover:ring-[1.5px] hover:ring-gray-300 hover:scale-[105%] transition-transform duration-500 text-[15.27px] sm:h-[350px] ring-[1px] ring-[#373435] sm:w-[500px] cursor-pointer flex flex-col sm:flex-row rounded-[20px] overflow-hidden">
+
+                {/* Image wrapper for proper scaling */}
+                <div className="sm:w-[40%] w-full h-[200px] sm:h-auto overflow-hidden">
+                    <Image 
+                        src={Newspaper} 
+                        alt="Project Image" 
+                        className="w-full h-full object-cover transition-transform duration-500 hover:scale-110 " 
+                        width={500}
+                        height={350}
+                    />
                 </div>
 
-                <div className="rounded-[20px] py-[20px] sm:py-[0px] px-[8px] sm:w-[61.8%] flex flex-col items-center justify-center sm:bg-[#101010]">
+                {/* Text content */}
+                <div className="rounded-r-[20px] z-[10] py-[20px] sm:py-[0px] px-[8px] sm:w-[60%] flex flex-col items-center justify-center sm:bg-[#1D1D1D]">
                     <p className="py-[5px] text-[24px] leading-[29px] pl-[10px] pr-[7px]">{text}</p>
                     <p className="text-[14px] leading-[19px] px-[10px]">{text2}</p>
 
