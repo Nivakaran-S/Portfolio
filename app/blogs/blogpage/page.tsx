@@ -2,8 +2,10 @@
 import Contact from "@/app/components/Contact";
 import ContactModel from "@/app/components/ContactModel";
 import Footer from "@/app/components/Footer";
+import Max from "@/app/components/Max";
 import Navigation from "@/app/components/Navigation";
 import StarBackground from "@/app/components/StarBackground";
+import Top from "@/app/components/Top";
 import { useRouter } from "next/navigation";
 import React, { useState } from 'react'
 
@@ -113,6 +115,8 @@ const Blog1 = () => {
                 <Contact onContactClick={onContactClick}/>
                 <Footer/>
             </div>
+            <Max/>
+            <Top/>
 
             {/* Success Message */}
             {showMessageSuccess && (
@@ -120,6 +124,7 @@ const Blog1 = () => {
                     <p>Message saved successfully. Will get back to you soon:)</p>
                 </div>
             )}
+
         </div>
     )
 }
