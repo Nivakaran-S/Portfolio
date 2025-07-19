@@ -409,7 +409,7 @@ useEffect(() => {
             
             
             <Top/> 
-            <Max/>
+   
             <Contact onContactClick={onContactClick}/>
             <Footer/>
         </div>

@@ -380,7 +380,7 @@ const Blogs = () => {
 </div>
             </div>
             <Top/>
-            <Max/>
+          
             <Contact onContactClick={onContactClick}/>
             <Footer/>
             {showMessageSuccess && <div className="bg-[#101010] z-[40] w-[250px] fixed text-[13px] mb-[20px] ml-[30px] px-[20px] py-[20px] ring-white ring-[0.5px] rounded-[10px] text-white absolute left-0 bottom-0">

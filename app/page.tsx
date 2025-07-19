@@ -56,7 +56,7 @@ export default function Home() {
       <Services/>
       <Blogs/>
       <Certification/>
-      <Max/>
+      
       <Contact onContactClick={onContactClick}/>
       <Footer/>
       

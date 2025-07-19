@@ -408,7 +408,7 @@ const Portfolio = () => {
 </div>
         </div>
         <Top/>
-        <Max/>
+        
             <Contact onContactClick={onContactClick}/>
             <Footer/>
         </div>

@@ -115,7 +115,7 @@ const Blog1 = () => {
                 <Contact onContactClick={onContactClick}/>
                 <Footer/>
             </div>
-            <Max/>
+        
             <Top/>
 
             {/* Success Message */}
