@@ -251,7 +251,7 @@ const Portfolio = () => {
 
 
     return(
-        <div className="flex text-white w-[100vw] overflow-x-hidden flex-col">
+        <div className={`flex text-white w-[100vw] overflow-x-hidden flex-col ${onPortfolioClick ? 'fixed overflow-hidden' : ''}`}>
             <Navigation navSelection={navSelection} onContactClick={onContactClick}/>
             <ContactModel onMessageSuccess={onMessageSuccess} showContactModel={showContactModel} onContactClick={onContactClick}/>
             <div>
@@ -377,18 +377,10 @@ const Portfolio = () => {
     ${onPortfolioClick ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
   `}
 >
-  {/* Backdrop */}
-  <div
-    onClick={() => setOnPortfolioClick(false)}
-    className={`bg-[#101010] h-full w-full opacity-50 transition-opacity scrollbar-thin scrollbar-thumb-white scrollbar-track-gray-800 duration-500 ease-in-out
-      ${onPortfolioClick ? 'opacity-60' : 'opacity-0 pointer-events-none'}
-    `}
-  ></div>
+  
 
-  {/* Modal content */}
-  <div className="absolute">
   <PortfolioModel onPortfolioClick={onPortfolioClick} setOnPortfolioClick={setOnPortfolioClick} />
-    </div>
+    
 </div>
         </div>
         <Top/>
