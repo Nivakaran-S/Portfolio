@@ -12,7 +12,7 @@ interface PortfolioCardProps {
     lang4: string;
     lang5: string;
     lang6: string;
-    onClick: () => void;
+    onClick: (e: React.MouseEvent) => void; // Updated type
 }
 
 const PortfolioCard: React.FC<PortfolioCardProps> = ({

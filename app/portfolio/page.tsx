@@ -167,20 +167,20 @@ const Portfolio = () => {
         }
 
         const onPortfolioCard1Click = (e: React.MouseEvent) => {
-            e.preventDefault(); // Prevent default behavior
-            e.stopPropagation(); // Stop event bubbling
-            setScrollPosition(window.scrollY); // Save current scroll position
+            e.preventDefault();
+            e.stopPropagation();
+            setScrollPosition(window.scrollY);
             setOnPortfolioClick(true);
-            document.body.style.position = 'fixed'; // Lock body scroll
-            document.body.style.top = `-${window.scrollY}px`; // Preserve position
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${window.scrollY}px`;
         }
 
         useEffect(() => {
             if (!onPortfolioClick) {
                 const scrollY = scrollPosition;
-                document.body.style.position = ''; // Restore body scroll
+                document.body.style.position = '';
                 document.body.style.top = '';
-                window.scrollTo(0, scrollY); // Restore scroll position
+                window.scrollTo(0, scrollY);
             }
         }, [onPortfolioClick, scrollPosition]);
 
