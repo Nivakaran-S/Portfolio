@@ -10,6 +10,7 @@ import Top from "../components/Top";
 import Max from "../components/Max";
 import StarBackground from "../components/StarBackground";
 import MiniProject from "../components/MiniProject";
+import PortfolioModel from "./PortfolioModel";
 
 
 const Portfolio = () => {
@@ -379,32 +380,15 @@ const Portfolio = () => {
   {/* Backdrop */}
   <div
     onClick={() => setOnPortfolioClick(false)}
-    className={`bg-[#101010] h-full w-full opacity-50 transition-opacity duration-500 ease-in-out
+    className={`bg-[#101010] h-full w-full opacity-50 transition-opacity scrollbar-thin scrollbar-thumb-white scrollbar-track-gray-800 duration-500 ease-in-out
       ${onPortfolioClick ? 'opacity-60' : 'opacity-0 pointer-events-none'}
     `}
   ></div>
 
   {/* Modal content */}
-  <div
-    className={`absolute lg:rounded-[20px] md:rounded-[10px] text-white bg-[#101010] ring-[1.5px] ring-[#373435]  h-[95vh] w-[85vw] z-20
-      transform transition-transform duration-500 ease-in-out
-      ${onPortfolioClick ? 'scale-100 opacity-100' : 'scale-95 opacity-0 pointer-events-none'}
-    `}
-  >
-    <div className="flex flex-row items-center justify-center">
-        <p className="text-[40px] sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent p-6">
-        Project Overview
-        </p>
-
-        <button
-        className="cursor-pointer absolute right-0 top-0 pr-[40px] pt-[30px] text-[20px] font-semibold"
-        onClick={() => setOnPortfolioClick(false)}
-        aria-label="Close modal"
-        >
-        Close
-        </button>
+  <div className="absolute">
+  <PortfolioModel onPortfolioClick={onPortfolioClick} setOnPortfolioClick={setOnPortfolioClick} />
     </div>
-  </div>
 </div>
         </div>
         <Top/>
