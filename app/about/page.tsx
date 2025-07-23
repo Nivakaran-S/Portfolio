@@ -520,23 +520,20 @@ const About = () => {
 
           <div className="flex flex-col  space-y-[30px]  ">
             <div className="flex flex-row  items-center justify-center space-x-[13px] sm:space-x-[20px] ">
-              <div className="w-[5px] sm:w-[7px] min-h-[39vh] sm:min-h-[36vh] md:min-h-[27vh] rounded-full bg-white">
+              <div className="w-[5px] sm:w-[7px] min-h-[39vh] sm:min-h-[36vh] md:min-h-[30vh] rounded-full bg-white">
 
               </div>
 
 
               <div className="w-[100%] flex flex-col  items-center justify-center aboutTitle2 h-[100%]">
-
-
-              
-                <div className="flex  flex-col sm:flex-row sm:items-center  w-[100%]  sm:space-x-[200px]">
+                <div className="flex  flex-col sm:flex-row sm:items-center  w-[100%]  sm:space-x-[130px]">
                   <div className="leading-[28px] sm:leading-[30px]">
-                    <p className=" text-[23px]  md:text-[23px]">+ Career Break - Self Directed Learning</p>
-                    
+                    <p className=" text-[23px]  md:text-[23px]">+ Career Break - Freelancing and  Self Directed <br/>Learning </p>
+                    <p className="text-[18px] md:text-[19px]">CoDebug.lk</p>
                   </div>
 
                   <div className="">
-                    <p>2025 January - 2025 July</p>
+                    <p>2025 January - Present</p>
                   </div>
 
                 </div>

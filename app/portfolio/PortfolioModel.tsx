@@ -35,7 +35,7 @@ const PortfolioModel: React.FC<ScrollContainerProps> = ({
   }, []);
 
   return (
-    <div className="fixed flex custom-scrollbar flex-col overflow-y-auto h-[100vh] py-[5vh] inset-0 z-[9999] items-center justify-start">
+    <div className="fixed  flex custom-scrollbar flex-col overflow-y-auto h-[100vh] py-[5vh] inset-0 z-[9999] items-center justify-start">
       {/* Backdrop */}
       <div
         onClick={() => setOnPortfolioClick?.(false)}
@@ -53,7 +53,7 @@ const PortfolioModel: React.FC<ScrollContainerProps> = ({
             : ' opacity-0 pointer-events-none'
         }`}
       >
-        <div className="relative flex px-[75px] w-[100%] flex-col space-y-[20px] py-[30px] items-center justify-center">
+        <div className="relative  flex px-[75px] w-[100%] flex-col space-y-[20px] py-[30px] items-center justify-center">
           <div className='w-[100%]'>
             
             <div className="flex w-[100%] flex-row items-center justify-center pt-[50px] space-x-[20px]">
