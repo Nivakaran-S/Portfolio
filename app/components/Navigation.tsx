@@ -55,7 +55,7 @@ const Navigation : React.FC<ContactModelProps> = ({navSelection, onContactClick}
                         <p>NivakaranS</p>
                     </div>
                 </a>
-                <div className="flex flex-row items-center text-[17px] justify-between text-white  w-[35%]">
+                <div className="flex flex-row items-center text-[18.5px] justify-between text-white  w-[35%]">
                     <div onClick={onHomeClick} className={`${navSelection=='Home' ? 'text-[#FFD700] ' : ''} cursor-pointer hover:text-[#FFD700]`}>
                         <p>Home</p>
                     </div>
