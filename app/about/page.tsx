@@ -59,6 +59,11 @@ import CPlus from '../images/C_Logo2.png'
 import C from '../images/C_Logo.png'
 import StarBackground from "../components/StarBackground";
 import AboutHeroComponent from "./AboutHeroComponent";
+import Startek from '../images/Startek_Logo-removebg-preview.png'
+import Medsource from '../images/download-removebg-preview.png'
+import Codebug from '../images/codebug.png';
+import Codebug2 from '../images/codebugfinal7.16115110.png'
+import CommercialBank from '../images/Commercial_Bank_logo.svg.png'
 
 
 const About = () => {
@@ -499,7 +504,7 @@ const About = () => {
               <p>St.Benedict's College</p>
               <div className="flex flex-row px-[10px] justify-between">
                 <p className="text-[13px]">2021(2022)</p>
-                <p className="text-[13px]">3C's</p>
+                
 
               </div>
             </div>
@@ -520,16 +525,19 @@ const About = () => {
 
           <div className="flex flex-col  space-y-[30px]  ">
             <div className="flex flex-row  items-center justify-center space-x-[13px] sm:space-x-[20px] ">
-              <div className="w-[5px] sm:w-[7px] min-h-[39vh] sm:min-h-[36vh] md:min-h-[30vh] rounded-full bg-white">
+              <div className="w-[5px] sm:w-[7px] min-h-[39vh] sm:min-h-[36vh] md:min-h-[32vh] rounded-full bg-white">
 
               </div>
 
 
               <div className="w-[100%] flex flex-col  items-center justify-center aboutTitle2 h-[100%]">
                 <div className="flex  flex-col sm:flex-row sm:items-center  w-[100%]  sm:space-x-[130px]">
-                  <div className="leading-[28px] sm:leading-[30px]">
+                  <div className="leading-[28px] sm:leading-[28px]">
                     <p className=" text-[23px]  md:text-[23px]">+ Career Break - Freelancing and  Self Directed <br/>Learning </p>
-                    <p className="text-[18px] md:text-[19px]">CoDebug.lk</p>
+                    <div className="py-[7px]">
+                      <Image alt="codebug" src={Codebug2} height={30}/>
+                    </div>
+                    
                   </div>
 
                   <div className="">
@@ -552,7 +560,7 @@ const About = () => {
               </div>
             </div>
             <div className="flex flex-row  items-center justify-center space-x-[13px] sm:space-x-[20px] ">
-              <div className="w-[5px] sm:w-[7px] min-h-[71vh] sm:min-h-[53vh] md:min-h-[46vh] rounded-full bg-white">
+              <div className="w-[5px] sm:w-[7px] min-h-[71vh] sm:min-h-[53vh] md:min-h-[47vh] rounded-full bg-white">
 
               </div>
 
@@ -562,8 +570,13 @@ const About = () => {
 
                 <div className="flex  flex-col sm:flex-row sm:items-center  w-[100%]  sm:space-x-[100px]">
                   <div className="leading-[28px] sm:leading-[30px]">
-                    <p className=" text-[23px]  md:text-[23px]">+ Medical Documentation Specialist (Medical Scribe)</p>
-                    <p className="text-[18px] md:text-[19px]">Medsource Healthcare LLC</p>
+                    <p className=" text-[23px]  md:text-[23px]">+ Medical Documentation Specialist<br/> (Medical Scribe)</p>
+                    <div className="">
+                      <div className="h-[30px] flex items-center  overflow-hidden">
+                        <Image height={65} className="" src={Medsource} alt=''/>
+                      </div>
+                      <p className="text-[18px] md:text-[19px]">Medsource Healthcare LLC</p>
+                    </div>
                   </div>
 
                   <div className="">
@@ -585,7 +598,7 @@ const About = () => {
               </div>
             </div>
             <div className="flex flex-row  items-center justify-center space-x-[13px] sm:space-x-[20px] ">
-              <div className="w-[5px] sm:w-[7px] min-h-[45vh] sm:min-h-[30vh] rounded-full bg-white">
+              <div className="w-[5px] sm:w-[7px] min-h-[45vh] sm:min-h-[33vh] rounded-full bg-white">
 
               </div>
 
@@ -596,7 +609,11 @@ const About = () => {
                 <div className="flex  flex-col sm:flex-row sm:items-center  w-[100%]  sm:space-x-[100px] md:space-x-[300px]">
                   <div className="leading-[28px] sm:leading-[30px]">
                     <p className=" text-[23px]  md:text-[23px]">+ Customer Service Executive</p>
-                    <p className="text-[18px] md:text-[19px]">Startek - Commercial bank PLC</p>
+                    <div className="flex flex-row">
+                        <Image src={CommercialBank} alt="commercialback" height={30} />
+                        <Image src={Startek} height={30} className=""  alt="Startek" />
+                    </div>
+                    <p className="text-[18px] md:text-[19px]">Startek - Commercial bank PLC </p>
                   </div>
 
                   <div className="">

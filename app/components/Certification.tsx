@@ -16,6 +16,8 @@ import Certificate10 from '../certificates/UC-435cb559-6d32-4c0b-82ba-92e1d49a7b
 import Certificate11 from '../certificates/UC-5e929664-5636-40c0-bebe-9df2ad3a34af.jpg';
 import Certificate12 from '../certificates/UC-be4b3936-41fd-41e6-b867-1e358158d79a.jpg';
 
+import Certificate13 from '../certificates/UC-22248617-9b8b-477b-9eed-28815bc63a3e.jpg'
+
 const Certification = () => {
     useEffect(() => {
         if(typeof window !== 'undefined'){
@@ -73,6 +75,17 @@ const Certification = () => {
                 <div className=" mt-[30px]">
                     <div className=" grid grid-cols-1 sm:grid-cols-2  md:grid-cols-4 gap-[15px] items-center justify-center">
                         
+                        <div className="cursor-pointer certification2 relative group bg-[#000] overflow-hidden w-[100%] ring-[0.5px] ring-[#4d4d4d] h-[195px] rounded-[10px] flex items-center justify-center">
+                        <div className=' absolute transition-transform duration-500 group-hover:translate-y-0  translate-y-[200%] flex flex-col items-center justify-center'>
+                                <Image alt="" src={Certificate13} className='h-[100%] w-[100%]'  />
+                            </div>
+                            <div className=' transition-transform duration-500 group-hover:scale-0  flex flex-col px-[20px]'>
+                                <p>Big Data Engineering Bootcamp with GCP, and Azure Cloud</p>
+                                <p className='text-[16px]'>Udemy</p>
+                                <p className='text-[14px] text-gray-400'>Date: Jul 23, 2025</p>
+                                <p className='text-[14px] text-gray-300 '>Instructors: Krish Naik, Mayank Aggarwal</p>
+                            </div>
+                        </div>
 
                         <div className="cursor-pointer certification2 relative group bg-[#000] overflow-hidden w-[100%] ring-[0.5px] ring-[#4d4d4d] h-[195px] rounded-[10px] flex items-center justify-center">
                         <div className=' absolute transition-transform duration-500 group-hover:translate-y-0  translate-y-[200%] flex flex-col items-center justify-center'>
