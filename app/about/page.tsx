@@ -568,7 +568,7 @@ const About = () => {
               <div className="w-[100%] flex flex-col  items-center justify-center aboutTitle2 h-[100%]">
 
 
-                <div className="flex  flex-col sm:flex-row sm:items-center  w-[100%]  sm:space-x-[100px]">
+                <div className="flex  flex-col sm:flex-row sm:items-center  w-[100%]  justtify-between sm:space-x-[100px] md:space-x-[210px]">
                   <div className="leading-[28px] sm:leading-[30px]">
                     <p className=" text-[23px]  md:text-[23px]">+ Medical Documentation Specialist<br/> (Medical Scribe)</p>
                     <div className="">
@@ -606,7 +606,7 @@ const About = () => {
               <div className="w-[100%] flex flex-col  items-center justify-center aboutTitle2 h-[100%]">
 
 
-                <div className="flex  flex-col sm:flex-row sm:items-center  w-[100%]  sm:space-x-[100px] md:space-x-[300px]">
+                <div className="flex  flex-col sm:flex-row sm:items-center  w-[100%]  sm:space-x-[100px] md:space-x-[250px]">
                   <div className="leading-[28px] sm:leading-[30px]">
                     <p className=" text-[23px]  md:text-[23px]">+ Customer Service Executive</p>
                     <div className="flex flex-row">

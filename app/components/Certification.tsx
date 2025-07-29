@@ -67,8 +67,8 @@ const Certification = () => {
     return(
         <div className="bg-[#101010] min-h-[100vh] py-[80px] w-screen flex items-center justify-center">
             <div className="w-[80%]  flex flex-col ">
-                <div className="leading-[60px] sm:leading-[64px] text-center">
-                    <p className="text-[50px] sm:text-[55px] certification1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">My Certifications</p>
+                <div className="leading-[60px] sm:leading-[70px] text-center">
+                    <p className="text-[50px] sm:text-[65px] certification1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">My Certifications</p>
                     
                 </div>
 
