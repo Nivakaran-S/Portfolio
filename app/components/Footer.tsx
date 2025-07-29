@@ -8,6 +8,7 @@ import Mail from '../images/mail.png';
 import Phone from '../images/phone.png';
 import axios from "axios";
 import { useState } from "react";
+import StarBackground from "./StarBackground";
 
 
 const Footer = () => {
@@ -47,8 +48,8 @@ const Footer = () => {
     }
 
     return(
-        <div className="overflow-x-hidden ring-[1px] ring-[#808080] bg-[#101010]   w-screen">
-
+        <div className="overflow-x-hidden ring-[2px] ring-[#808080] bg-[#101010]   w-screen">
+            
             {showSubcriptionSuccess && <div className="flex bg-green-500 text-green-950 ring-green-300 ring-[1px] pl-[15px] opacity-75 pr-[20px] rounded-[5px] py-[10px]  fixed flex-row items-center justify-center mt-[20px] absolute bottom-[20px] left-[30px] ">
                 <div className="h-[30px] mr-[10px] w-[5px] bg-green-950"></div>
                     <p>Subcription Successful</p>
