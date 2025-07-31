@@ -50,13 +50,13 @@ const BlogsManagement = () => {
     // Fetch blog posts and categories asynchronously
     const fetchData = async () => {
       try {
-        const blogsResponse = await axios.get("https://new-portfolio-backend-roan.vercel.app/blog", {
+        const blogsResponse = await axios.get("https://portfolio-backend-new-2.vercel.app/blog", {
           withCredentials: true,
         });
         setBlogPosts(blogsResponse.data);
         console.log("Fetched blog posts:", blogsResponse.data);
 
-        const categoriesResponse = await axios.get("https://new-portfolio-backend-roan.vercel.app/blogCategory", {
+        const categoriesResponse = await axios.get("https://portfolio-backend-new-2.vercel.app/blogCategory", {
           withCredentials: true,
         });
         setBlogCategories(categoriesResponse.data);
@@ -85,7 +85,7 @@ const BlogsManagement = () => {
     
     // Send request to server
     const response = await axios.post(
-      "https://new-portfolio-backend-roan.vercel.app/blogCategory",
+      "https://portfolio-backend-new-2.vercel.app/blogCategory",
       {
         name: newCategoryTitle,
         
@@ -120,7 +120,7 @@ const BlogsManagement = () => {
 
   try {
     const response = await axios.post(
-      "https://new-portfolio-backend-roan.vercel.app/blog",
+      "https://portfolio-backend-new-2.vercel.app/blog",
       {
         title: blogTitle,
         subtitle: blogSubtitle,
@@ -191,7 +191,7 @@ const BlogsManagement = () => {
   // Delete blog post
   const handleDeleteBlog = (id: string) => {
     try {
-      axios.delete(`https://new-portfolio-backend-roan.vercel.app/blog/${id}`, {
+      axios.delete(`https://portfolio-backend-new-2.vercel.app/blog/${id}`, {
         withCredentials: true,
       });
       setBlogPosts(blogPosts.filter(post => post._id !== id));
@@ -213,7 +213,7 @@ const BlogsManagement = () => {
         const categoryObj = blogCategories.find((cat) => cat.name === categoryName);
         if (categoryObj) {
           await axios.delete(
-            `https://new-portfolio-backend-roan.vercel.app/blogCategory/${categoryObj._id}`,
+            `https://portfolio-backend-new-2.vercel.app/blogCategory/${categoryObj._id}`,
             { withCredentials: true }
           );
         }

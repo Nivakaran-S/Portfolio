@@ -62,8 +62,8 @@ const CaseStudies = () => {
         setError(null);
         
         const [categoriesResponse, caseStudiesResponse] = await Promise.all([
-          axios.get("https://new-portfolio-backend-roan.vercel.app/industry", { withCredentials: true }),
-          axios.get("https://new-portfolio-backend-roan.vercel.app/caseStudies", { withCredentials: true })
+          axios.get("https://portfolio-backend-new-2.vercel.app/industry", { withCredentials: true }),
+          axios.get("https://portfolio-backend-new-2.vercel.app/caseStudies", { withCredentials: true })
         ]);
 
         setCategories(categoriesResponse.data);
@@ -88,7 +88,7 @@ const CaseStudies = () => {
 
     try {
       const response = await axios.post(
-        "https://new-portfolio-backend-roan.vercel.app/industry",
+        "https://portfolio-backend-new-2.vercel.app/industry",
         { name: newCategoryTitle },
         { withCredentials: true }
       );
@@ -131,13 +131,13 @@ const CaseStudies = () => {
       let response;
       if (editingId) {
         response = await axios.put(
-          `https://new-portfolio-backend-roan.vercel.app/caseStudies/${editingId}`,
+          `https://portfolio-backend-new-2.vercel.app/caseStudies/${editingId}`,
           payload,
           { withCredentials: true }
         );
       } else {
         response = await axios.post(
-          "https://new-portfolio-backend-roan.vercel.app/caseStudies",
+          "https://portfolio-backend-new-2.vercel.app/caseStudies",
           payload,
           { withCredentials: true }
         );
@@ -224,7 +224,7 @@ const CaseStudies = () => {
 
     try {
       await axios.delete(
-        `https://new-portfolio-backend-roan.vercel.app/caseStudies/${id}`,
+        `https://portfolio-backend-new-2.vercel.app/caseStudies/${id}`,
         { withCredentials: true }
       );
       setCaseStudies(prev => prev.filter(cs => cs._id !== id));
@@ -240,7 +240,7 @@ const CaseStudies = () => {
 
     try {
       await axios.delete(
-        `https://new-portfolio-backend-roan.vercel.app/industry/${id}`,
+        `https://portfolio-backend-new-2.vercel.app/industry/${id}`,
         { withCredentials: true }
       );
       setCategories(prev => prev.filter(cat => cat._id !== id));

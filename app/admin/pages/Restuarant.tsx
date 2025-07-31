@@ -26,7 +26,7 @@ const Restuarant = () => {
 
     const handleCreateBlog = async () => {
         try {
-            const response = await axios.post('https://new-portfolio-backend-roan.vercel.app/blog', {
+            const response = await axios.post('https://portfolio-backend-new-2.vercel.app/blog', {
                 title,
                 description,
                 content,

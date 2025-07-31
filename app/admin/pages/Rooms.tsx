@@ -52,12 +52,12 @@ const Rooms = () => {
         setIsLoading(true);
         
         // Fetch projects
-        const projectsResponse = await axios.get('https://new-portfolio-backend-roan.vercel.app/project');
+        const projectsResponse = await axios.get('https://portfolio-backend-new-2.vercel.app/project');
         setProjects(projectsResponse.data);
         console.log("Projects fetched:", projectsResponse.data);
         
         // Fetch categories
-        const categoriesResponse = await axios.get('https://new-portfolio-backend-roan.vercel.app/projectCategory');
+        const categoriesResponse = await axios.get('https://portfolio-backend-new-2.vercel.app/projectCategory');
         setProjectCategories(categoriesResponse.data);
         
       } catch (error) {
@@ -122,11 +122,11 @@ const Rooms = () => {
 
       if (editingId) {
         // Update existing project
-        await axios.put(`https://new-portfolio-backend-roan.vercel.app/project/${editingId}`, projectData);
+        await axios.put(`https://portfolio-backend-new-2.vercel.app/project/${editingId}`, projectData);
         setProjects(projects.map(proj => proj._id === editingId ? {...proj, ...projectData} : proj));
       } else {
         // Add new project
-        const response = await axios.post('https://new-portfolio-backend-roan.vercel.app/project', projectData);
+        const response = await axios.post('https://portfolio-backend-new-2.vercel.app/project', projectData);
         setProjects([...projects, response.data]);
       }
 
@@ -161,7 +161,7 @@ const Rooms = () => {
   const handleDeleteProject = async (id: string) => {
     if (window.confirm("Are you sure you want to delete this project?")) {
       try {
-        await axios.delete(`https://new-portfolio-backend-roan.vercel.app/project/${id}`);
+        await axios.delete(`https://portfolio-backend-new-2.vercel.app/project/${id}`);
         setProjects(projects.filter(project => project._id !== id));
       } catch (error) {
         console.error("Error deleting project:", error);
@@ -174,7 +174,7 @@ const Rooms = () => {
     if (!newCategoryName.trim()) return;
 
     try {
-      const response = await axios.post('https://new-portfolio-backend-roan.vercel.app/projectCategory', {
+      const response = await axios.post('https://portfolio-backend-new-2.vercel.app/projectCategory', {
         name: newCategoryName
       });
       
@@ -195,7 +195,7 @@ const Rooms = () => {
   const handleDeleteCategory = async (id: string) => {
     if (window.confirm("Are you sure you want to delete this category? Projects using it will need to be updated.")) {
       try {
-        await axios.delete(`https://new-portfolio-backend-roan.vercel.app/projectCategory/${id}`);
+        await axios.delete(`https://portfolio-backend-new-2.vercel.app/projectCategory/${id}`);
         setProjectCategories(projectCategories.filter(cat => cat._id !== id));
       } catch (error) {
         console.error("Error deleting category:", error);

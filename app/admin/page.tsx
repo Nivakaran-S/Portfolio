@@ -26,7 +26,7 @@ export default function Home() {
             
 
             const response = await axios.get(
-                "https://new-portfolio-backend-roan.vercel.app/check-cookie",
+                "https://portfolio-backend-new-2.vercel.app/check-cookie",
             { 
                 withCredentials: true,
             })

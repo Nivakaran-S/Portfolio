@@ -49,7 +49,7 @@ const MiniProjects = () => {
   // Define fetch functions
   const fetchProjects = async () => {
     try {
-      const response = await axios.get('https://new-portfolio-backend-roan.vercel.app/miniProject');
+      const response = await axios.get('https://portfolio-backend-new-2.vercel.app/miniProject');
       setProjects(response.data);
       console.log("Projects fetched successfully:", response.data);
     } catch (error) {
@@ -60,7 +60,7 @@ const MiniProjects = () => {
 
   const fetchCategories = async () => {
     try {
-      const response = await axios.get('https://new-portfolio-backend-roan.vercel.app/projectCategory');
+      const response = await axios.get('https://portfolio-backend-new-2.vercel.app/projectCategory');
       setProjectCategories(response.data);
     } catch (error) {
       console.error("Error fetching categories:", error);
@@ -85,7 +85,7 @@ const MiniProjects = () => {
   try {
     // First send data to server
     const response = await axios.post(
-      'https://new-portfolio-backend-roan.vercel.app/projectCategory', 
+      'https://portfolio-backend-new-2.vercel.app/projectCategory', 
       {
         name: newCategoryTitle,
       },
@@ -122,7 +122,7 @@ const MiniProjects = () => {
   try {
     // Make API request
     await axios.post(
-      'https://new-portfolio-backend-roan.vercel.app/miniProject',
+      'https://portfolio-backend-new-2.vercel.app/miniProject',
       {
         title: projectTitle,
         description: projectDescription,
@@ -184,7 +184,7 @@ const MiniProjects = () => {
   // Delete project
   const handleDeleteProject = (id: string) => {
     try {
-        axios.delete(`https://new-portfolio-backend-roan.vercel.app/miniProject/${id}`, { withCredentials: true })
+        axios.delete(`https://portfolio-backend-new-2.vercel.app/miniProject/${id}`, { withCredentials: true })
             .then(() => {
             setProjects(prev => prev.filter(project => project._id !== id));
             alert("Project deleted successfully");
@@ -201,7 +201,7 @@ const MiniProjects = () => {
     const handleDeleteCategories = async (id: string) => {
     if (window.confirm("Are you sure you want to delete this category? Projects using it will need to be updated.")) {
       try {
-        await axios.delete(`https://new-portfolio-backend-roan.vercel.app/projectCategory/${id}`);
+        await axios.delete(`https://portfolio-backend-new-2.vercel.app/projectCategory/${id}`);
         setProjectCategories(projectCategories.filter(cat => String(cat._id) !== id));
       } catch (error) {
         console.error("Error deleting category:", error);

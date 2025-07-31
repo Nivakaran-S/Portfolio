@@ -16,7 +16,7 @@ const LoginPage = () => {
             
 
             const response = await axios.get(
-                "https://new-portfolio-backend-roan.vercel.app/check-cookie",
+                "https://portfolio-backend-new-2.vercel.app/check-cookie",
             { 
                 withCredentials: true,
             })
@@ -42,8 +42,8 @@ const LoginPage = () => {
         console.log("username", username)
         console.log("password", password)
         try {
-            const response = await axios.post('https://new-portfolio-backend-roan.vercel.app/api/auth/login', {
-                userName: username,
+            const response = await axios.post('https://portfolio-backend-new-2.vercel.app/api/auth/login', {
+                email: username,
                 password: password
             }, {
                 withCredentials: true,
