@@ -55,6 +55,18 @@ export default function Home() {
     }
   };
 
+  const resetPortfolioClick = () => {
+  if (typeof window !== 'undefined') {
+    setOnPortfolioClick(false); // Hide modal or overlay
+    document.body.style.position = '';
+    document.body.style.top = '';
+
+    const scrollY = scrollPosition; // From your useState
+    window.scrollTo(0, scrollY);
+  }
+};
+
+
   return (
     <div className="flex text-white w-[100vw] overflow-x-hidden flex-col">
       <Navigation navSelection={navSelection} onContactClick={onContactClick} />
@@ -80,6 +92,7 @@ export default function Home() {
         }`}
       >
         <PortfolioModel
+          resetPortfolioClick={resetPortfolioClick}
           onPortfolioClick={onPortfolioClick}
           setOnPortfolioClick={setOnPortfolioClick}
         />

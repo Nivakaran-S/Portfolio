@@ -48,7 +48,7 @@ const Navigation : React.FC<ContactModelProps> = ({navSelection, onContactClick}
     return(
         <div className="flex items-center z-[47] fixed top-0 w-[100vw] justify-center">
             
-            <div className="md:flex hidden flex-row z-[47] justify-between items-center px-[20px] h-[60px] 2xl:h-[55px] rounded-[8px] ring-[0.5px] ring-[#727376] w-[90vw] mt-[13px]  bg-[#373435] text-black ">
+            <div className="md:flex hidden flex-row  justify-between items-center px-[20px] h-[60px] 2xl:h-[55px] rounded-[8px] ring-[0.5px] ring-[#727376] w-[90vw] mt-[13px]  bg-[#373435] text-black ">
                 <a href="https://www.nivakaran.dev">
                     <div className="cursor-pointer flex flex-row items-center justify-center space-x-[5px]  text-[20px] text-white">
                         <Image alt="test" src={Logo} height={23} width={38} />
@@ -95,9 +95,9 @@ const Navigation : React.FC<ContactModelProps> = ({navSelection, onContactClick}
                     </div>
                 </div>
             </div>
-            <div className={`${isMenuOpen ? 'translate-x-0' : 'translate-x-[-100vw]' }  duration-500 md:hidden flex flex-row items-center  w-[100vw]  absolute top-0 left-0   cursor-pointer`}>
+            <div className={`${isMenuOpen ? 'translate-x-0' : 'translate-x-[-100vw]' }  duration-500 md:hidden z-[50] flex flex-row items-center  w-[100vw]  absolute top-0 left-0   cursor-pointer`}>
                 
-                <div className="bg-[#373435] w-[200%] z-[9999] h-[100vh]">
+                <div className="bg-[#373435] w-[100%] z-[9999] h-[100vh]">
                     <div>
                         <div className="cursor-pointer text-[30px] flex items-center justify-center pt-[40px] pb-[10px] text-white">
                             <p className=" text-[35px] bg-gradient-to-t from-[#0000] ring-[0.5px]  via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">NivakaranS</p>

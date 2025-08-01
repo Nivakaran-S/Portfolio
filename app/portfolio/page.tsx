@@ -259,6 +259,17 @@ const Portfolio = () => {
             }
         }, [])
 
+        const resetPortfolioClick = () => {
+  if (typeof window !== 'undefined') {
+    setOnPortfolioClick(false); // Hide modal or overlay
+    document.body.style.position = '';
+    document.body.style.top = '';
+
+    const scrollY = scrollPosition; // From your useState
+    window.scrollTo(0, scrollY);
+  }
+};
+
     return(
         <div className={`flex text-white w-[100vw] overflow-x-hidden flex-col ${onPortfolioClick ? 'fixed overflow-hidden' : ''}`}>
             <Navigation navSelection={navSelection} onContactClick={onContactClick}/>
@@ -288,7 +299,7 @@ const Portfolio = () => {
 
                     <p className="mt-[30px] portfolio2 ml-[10px] font-bold text-[35px] sm:text-[45px]">Software Engineering</p>
                     <div className="portfolio3 mt-[30px] flex md:flex-row flex-col space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
-                        <PortfolioCard onClick={onPortfolioCard1Click} lang1="Python" lang2="Next.js" lang3="Node.js" lang4="MongoDB" lang5="Express.js" lang6="Docker" text2="This project is a full-stack news web application built using the MENN (MongoDB, Express.js, Next.js, Node.js) stack. It features a dual-interface system, where regular users can browse, search, and bookmark news, while admins have a dedicated panel to manage news articles, categories, and user permissions. The integrated LLM chatbot provides real-time news summaries, making articles easier to digest and enhance user experience." text="News Web App" />
+                        <PortfolioCard  onClick={onPortfolioCard1Click} lang1="Python" lang2="Next.js" lang3="Node.js" lang4="MongoDB" lang5="Express.js" lang6="Docker" text2="This project is a full-stack news web application built using the MENN (MongoDB, Express.js, Next.js, Node.js) stack. It features a dual-interface system, where regular users can browse, search, and bookmark news, while admins have a dedicated panel to manage news articles, categories, and user permissions. The integrated LLM chatbot provides real-time news summaries, making articles easier to digest and enhance user experience." text="News Web App" />
                         <PortfolioCard onClick={onPortfolioCard1Click} lang1="Python" lang2="MongoDB" lang3="Next.js" lang4="Node.js" lang5="Express.js" lang6="Docker" text2="This project is a sustainable food resale platform built with MongoDB, Express.js, React, and Node.js, designed to reduce food waste by connecting businesses with surplus food to budget-conscious consumers. The app includes real-time inventory tracking, dynamic pricing based on expiry dates, and secure payment processing via Stripe." text="EcoHarvest" />
                     </div>
                     <div className="portfolio3 mt-[30px] flex md:flex-row flex-col space-y-[40px] md:space-y-[0px] md:space-x-[20px] items-center justify-center">
@@ -367,7 +378,7 @@ const Portfolio = () => {
                         onPortfolioClick ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
                     }`}
                 >
-                    <PortfolioModel onPortfolioClick={onPortfolioClick} setOnPortfolioClick={setOnPortfolioClick} />
+                    <PortfolioModel resetPortfolioClick={resetPortfolioClick} onPortfolioClick={onPortfolioClick} setOnPortfolioClick={setOnPortfolioClick} />
                 </div>
             </div>
             <Top/>
