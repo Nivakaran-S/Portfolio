@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 
 interface BlogPost {
   _id: string;
@@ -200,7 +200,7 @@ const BlogsManagement = () => {
         blogsCategory: blogCategory,
         imageUrl: blogImageUrl,
       };
-      let response;
+      let response: AxiosResponse<any, any>;
       if (editingPostId) {
         response = await axios.put(
           `${API_BASE_URL}/blogs/${editingPostId}`,

@@ -2,9 +2,7 @@
 
 import Navigation from "./components/Navigation";
 import TopNavigation from "./components/TopNavigation";
-import Rooms from "./pages/Rooms";
 import Restuarant from "./pages/Restuarant";
-import Guests from "./pages/Guests";
 
 
 import { useState, useEffect } from "react";
@@ -14,6 +12,9 @@ import axios from "axios";
 import ContactAdmin from "./pages/Contact";
 import CaseStudies from "./pages/CaseStudies";
 import MiniProjects from "./pages/MiniProjects";
+import Blogs from "../components/Blogs";
+import Projects from "./pages/Projects";
+import BlogsManagement from "./pages/Blogs";
 
 export default function Home() {
   const [navClick, setNavClick] = useState("Portfolio Management");
@@ -56,11 +57,11 @@ export default function Home() {
   const renderContent = () => {
     switch (navClick) {
       case "Portfolio Management":
-        return <Rooms />;
+        return <Projects />;
       case "Blogs Management":
         return <Restuarant />;
       case "Blogs Organization":
-        return <Guests />;
+        return <BlogsManagement />;
       case "Contact":
         return <ContactAdmin/>
       case "Case Studies":
