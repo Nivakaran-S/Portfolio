@@ -31,17 +31,40 @@ const Contact = () => {
   const [activeTab, setActiveTab] = useState<"messages" | "subscribers">("messages");
   const [searchTerm, setSearchTerm] = useState<string>("");
 
+  // Base URL for API requests
+  const API_BASE_URL = "https://portfolio-backend-new-2.vercel.app";
+
   // Fetch contact messages from API
   const fetchContactMessages = async () => {
     try {
       setLoadingMessages(true);
-      const response = await axios.get("https://portfolio-backend-new-2.vercel.app/contact");
+      const response = await axios.get(`${API_BASE_URL}/contact`, {
+        withCredentials: true,
+      });
       setMessages(response.data);
-        console.log("Fetched contact messages:", response.data);
+      console.log("Fetched contact messages:", response.data);
       setMessageError("");
-    } catch (err) {
-      console.error("Failed to fetch contact messages:", err);
+    } catch (err: any) {
+      console.error("Failed to fetch contact messages:", err.response ? err.response.data : err.message);
       setMessageError("Failed to load contact messages. Please try again.");
+    } finally {
+      setLoadingMessages(false);
+    }
+  };
+
+  // Search contact messages
+  const searchContactMessages = async (query: string) => {
+    try {
+      setLoadingMessages(true);
+      const response = await axios.get(`${API_BASE_URL}/contact/search?query=${encodeURIComponent(query)}`, {
+        withCredentials: true,
+      });
+      setMessages(response.data);
+      console.log("Searched contact messages:", response.data);
+      setMessageError("");
+    } catch (err: any) {
+      console.error("Failed to search contact messages:", err.response ? err.response.data : err.message);
+      setMessageError("Failed to search contact messages. Please try again.");
     } finally {
       setLoadingMessages(false);
     }
@@ -51,13 +74,33 @@ const Contact = () => {
   const fetchSubscribers = async () => {
     try {
       setLoadingSubscribers(true);
-      const response = await axios.get("https://portfolio-backend-new-2.vercel.app/newsletter");
+      const response = await axios.get(`${API_BASE_URL}/subscription`, {
+        withCredentials: true,
+      });
       setSubscribers(response.data);
       console.log("Fetched subscribers:", response.data);
       setSubscriberError("");
-    } catch (err) {
-      console.error("Failed to fetch subscribers:", err);
+    } catch (err: any) {
+      console.error("Failed to fetch subscribers:", err.response ? err.response.data : err.message);
       setSubscriberError("Failed to load subscribers. Please try again.");
+    } finally {
+      setLoadingSubscribers(false);
+    }
+  };
+
+  // Search newsletter subscribers
+  const searchSubscribers = async (query: string) => {
+    try {
+      setLoadingSubscribers(true);
+      const response = await axios.get(`${API_BASE_URL}/subscription/search?query=${encodeURIComponent(query)}`, {
+        withCredentials: true,
+      });
+      setSubscribers(response.data);
+      console.log("Searched subscribers:", response.data);
+      setSubscriberError("");
+    } catch (err: any) {
+      console.error("Failed to search subscribers:", err.response ? err.response.data : err.message);
+      setSubscriberError("Failed to search subscribers. Please try again.");
     } finally {
       setLoadingSubscribers(false);
     }
@@ -66,10 +109,12 @@ const Contact = () => {
   // Delete a contact message
   const deleteMessage = async (id: string) => {
     try {
-      await axios.delete(`https://portfolio-backend-new-2.vercel.app/contact/${id}`);
+      await axios.delete(`${API_BASE_URL}/contact/${id}`, {
+        withCredentials: true,
+      });
       setMessages(messages.filter(message => message._id !== id));
-    } catch (err) {
-      console.error("Failed to delete message:", err);
+    } catch (err: any) {
+      console.error("Failed to delete message:", err.response ? err.response.data : err.message);
       alert("Failed to delete message. Please try again.");
     }
   };
@@ -77,10 +122,12 @@ const Contact = () => {
   // Delete a subscriber
   const deleteSubscriber = async (id: string) => {
     try {
-      await axios.delete(`https://portfolio-backend-new-2.vercel.app/newsletter/${id}`);
+      await axios.delete(`${API_BASE_URL}/subscription/${id}`, {
+        withCredentials: true,
+      });
       setSubscribers(subscribers.filter(subscriber => subscriber._id !== id));
-    } catch (err) {
-      console.error("Failed to delete subscriber:", err);
+    } catch (err: any) {
+      console.error("Failed to delete subscriber:", err.response ? err.response.data : err.message);
       alert("Failed to delete subscriber. Please try again.");
     }
   };
@@ -91,17 +138,25 @@ const Contact = () => {
     fetchSubscribers();
   }, []);
 
-  // Filter messages based on search term
-  const filteredMessages = messages.filter(message =>
-    message.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    message.email.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    message.title.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
-  // Filter subscribers based on search term
-  const filteredSubscribers = subscribers.filter(subscriber =>
-    subscriber.email.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+  // Handle search with debounce
+  useEffect(() => {
+    if (searchTerm) {
+      const delayDebounceFn = setTimeout(() => {
+        if (activeTab === "messages") {
+          searchContactMessages(searchTerm);
+        } else {
+          searchSubscribers(searchTerm);
+        }
+      }, 500);
+      return () => clearTimeout(delayDebounceFn);
+    } else {
+      if (activeTab === "messages") {
+        fetchContactMessages();
+      } else {
+        fetchSubscribers();
+      }
+    }
+  }, [searchTerm, activeTab]);
 
   // Format date
   const formatDate = (dateString: string) => {
@@ -110,7 +165,7 @@ const Contact = () => {
       month: 'short',
       day: 'numeric',
       hour: '2-digit',
-      minute: '2-digit'
+      minute: '2-digit',
     });
   };
 
@@ -174,7 +229,7 @@ const Contact = () => {
                     </div>
                   </div>
                 </div>
-              ) : filteredMessages.length === 0 ? (
+              ) : messages.length === 0 ? (
                 <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4">
                   <div className="flex">
                     <div className="flex-shrink-0">
@@ -191,7 +246,7 @@ const Contact = () => {
                 </div>
               ) : (
                 <div className="space-y-4">
-                  {filteredMessages.map((message) => (
+                  {messages.map((message) => (
                     <div key={message._id} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
                       <div className="flex justify-between items-start">
                         <div>
@@ -238,7 +293,7 @@ const Contact = () => {
                     </div>
                   </div>
                 </div>
-              ) : filteredSubscribers.length === 0 ? (
+              ) : subscribers.length === 0 ? (
                 <div className="bg-yellow-50 border-l-4 border-yellow-400 p-4">
                   <div className="flex">
                     <div className="flex-shrink-0">
@@ -256,7 +311,7 @@ const Contact = () => {
               ) : (
                 <div className="bg-white shadow overflow-hidden sm:rounded-md">
                   <ul className="divide-y divide-gray-200">
-                    {filteredSubscribers.map((subscriber) => (
+                    {subscribers.map((subscriber) => (
                       <li key={subscriber._id}>
                         <div className="px-4 py-4 sm:px-6">
                           <div className="flex items-center justify-between">
