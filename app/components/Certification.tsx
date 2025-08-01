@@ -73,10 +73,10 @@ const Certification = () => {
                 </div>
 
                 <div className=" mt-[30px]">
-                    <div className=" grid grid-cols-1 sm:grid-cols-2  md:grid-cols-4 gap-[15px] items-center justify-center">
+                    <div className=" grid grid-cols-1 place-items-center sm:grid-cols-2  md:grid-cols-4 gap-[15px] items-center justify-center">
                         
-                        <div className="cursor-pointer certification2 relative group bg-[#000] overflow-hidden w-[100%] ring-[0.5px] ring-[#4d4d4d] h-[195px] rounded-[10px] flex items-center justify-center">
-                        <div className=' absolute transition-transform duration-500 group-hover:translate-y-0  translate-y-[200%] flex flex-col items-center justify-center'>
+                        <div className="cursor-pointer certification2 relative group bg-[#000] overflow-hidden w-[320px] ring-[0.5px] ring-[#4d4d4d] h-[230px] md:h-[210px] md:w-[100%] rounded-[10px] flex items-center justify-center">
+                            <div className=' absolute transition-transform duration-500 group-hover:translate-y-0  translate-y-[200%] flex flex-col items-center justify-center'>
                                 <Image alt="" src={Certificate13} className='h-[100%] w-[100%]'  />
                             </div>
                             <div className=' transition-transform duration-500 group-hover:scale-0  flex flex-col px-[20px]'>
@@ -87,7 +87,7 @@ const Certification = () => {
                             </div>
                         </div>
 
-                        <div className="cursor-pointer certification2 relative group bg-[#000] overflow-hidden w-[100%] ring-[0.5px] ring-[#4d4d4d] h-[195px] rounded-[10px] flex items-center justify-center">
+                        <div className="cursor-pointer certification2 relative group bg-[#000] overflow-hidden w-[320px] ring-[0.5px] ring-[#4d4d4d] h-[230px] md:h-[210px] md:w-[100%] rounded-[10px] flex items-center justify-center">
                         <div className=' absolute transition-transform duration-500 group-hover:translate-y-0  translate-y-[200%] flex flex-col items-center justify-center'>
                                 <Image alt="" src={Certificate12} className='h-[100%] w-[100%]'  />
                             </div>
@@ -99,7 +99,7 @@ const Certification = () => {
                             </div>
                         </div>
 
-                        <div className="cursor-pointer certification2 relative group bg-[#000] overflow-hidden w-[100%] ring-[0.5px] ring-[#4d4d4d] h-[195px] rounded-[10px] flex items-center justify-center">
+                        <div className="cursor-pointer certification2 relative group bg-[#000] overflow-hidden w-[320px] ring-[0.5px] ring-[#4d4d4d] h-[230px] md:h-[210px] md:w-[100%] rounded-[10px] flex items-center justify-center">
                         <div className=' absolute transition-transform duration-500 group-hover:translate-y-0  translate-y-[200%] flex flex-col items-center justify-center'>
                                 <Image alt="" src={Certificate6} className='h-[100%] w-[100%]'  />
                             </div>
@@ -111,7 +111,7 @@ const Certification = () => {
                             </div>
                         </div>
 
-                        <div className="cursor-pointer certification3 relative group bg-[#000] overflow-hidden w-[100%] ring-[0.5px] ring-[#4d4d4d] h-[195px] rounded-[10px] flex items-center justify-center">
+                        <div className="cursor-pointer certification3 relative group bg-[#000] overflow-hidden w-[320px] ring-[0.5px] ring-[#4d4d4d] h-[230px] md:h-[210px] md:w-[100%] rounded-[10px] flex items-center justify-center">
                         <div className=' absolute transition-transform duration-500 group-hover:translate-y-0  translate-y-[200%] flex flex-col items-center justify-center'>
                                 <Image alt="" src={Certificate9} className='h-[100%] w-[100%]'  />
                             </div>
@@ -123,7 +123,7 @@ const Certification = () => {
                             </div>
                         </div>
 
-                        <div className="cursor-pointer certification3 relative group bg-[#000] overflow-hidden w-[100%] ring-[0.5px] ring-[#4d4d4d] h-[195px] rounded-[10px] flex items-center justify-center">
+                        <div className="cursor-pointer certification3 relative group bg-[#000] overflow-hidden w-[320px] ring-[0.5px] ring-[#4d4d4d] h-[230px] md:h-[210px] md:w-[100%] rounded-[10px] flex items-center justify-center">
                         <div className=' absolute transition-transform duration-500 group-hover:translate-y-0  translate-y-[200%] flex flex-col items-center justify-center'>
                                 <Image alt="" src={Certificate10} className='h-[100%] w-[100%]'  />
                             </div>
@@ -140,7 +140,7 @@ const Certification = () => {
 
 
 
-                        <div className="cursor-pointer certification3 relative group bg-[#000] overflow-hidden w-[100%] ring-[0.5px] ring-[#4d4d4d] h-[195px] rounded-[10px] flex items-center justify-center">
+                        <div className="cursor-pointer certification3 relative group bg-[#000] overflow-hidden w-[320px] ring-[0.5px] ring-[#4d4d4d] h-[230px] md:h-[210px] md:w-[100%] rounded-[10px] flex items-center justify-center">
                         <div className=' absolute transition-transform duration-500 group-hover:translate-y-0  translate-y-[200%] flex flex-col items-center justify-center'>
                                 <Image alt="" src={Certificate8} className='h-[100%] w-[100%]'  />
                             </div>
@@ -152,7 +152,7 @@ const Certification = () => {
                             </div>
                         </div>
 
-                        <div className="cursor-pointer  certification2 relative group bg-[#000] overflow-hidden w-[100%] ring-[0.5px] ring-[#4d4d4d] h-[195px] rounded-[10px] flex items-center justify-center">
+                        <div className="cursor-pointer certification2 relative group bg-[#000] overflow-hidden w-[320px] ring-[0.5px] ring-[#4d4d4d] h-[230px] md:h-[210px] md:w-[100%] rounded-[10px] flex items-center justify-center">
                             <div className=' absolute transition-transform duration-500 group-hover:translate-y-0  translate-y-[200%] flex flex-col items-center justify-center'>
                                 <Image alt="" src={Certificate1} className='h-[100%] w-[100%]'  />
                             </div>
@@ -164,7 +164,7 @@ const Certification = () => {
                             </div>
                         </div>
 
-                        <div className="cursor-pointer  certification2 relative group bg-[#000] overflow-hidden w-[100%] ring-[0.5px] ring-[#4d4d4d] h-[195px] rounded-[10px] flex items-center justify-center">
+                        <div className="cursor-pointer certification2 relative group bg-[#000] overflow-hidden w-[320px] ring-[0.5px] ring-[#4d4d4d] h-[230px] md:h-[210px] md:w-[100%] rounded-[10px] flex items-center justify-center">
                             <div className=' absolute transition-transform duration-500 group-hover:translate-y-0  translate-y-[200%] flex flex-col items-center justify-center'>
                                 <Image alt="" src={Certificate11} className='h-[100%] w-[100%]'  />
                             </div>
@@ -176,7 +176,7 @@ const Certification = () => {
                             </div>
                         </div>
 
-                        <div className="cursor-pointer certification2 relative group bg-[#000] overflow-hidden w-[100%] ring-[0.5px] ring-[#4d4d4d] h-[195px] rounded-[10px] flex items-center justify-center">
+                        <div className="cursor-pointer certification2 relative group bg-[#000] overflow-hidden w-[320px] ring-[0.5px] ring-[#4d4d4d] h-[230px] md:h-[210px] md:w-[100%] rounded-[10px] flex items-center justify-center">
                         <div className=' absolute transition-transform duration-500 group-hover:translate-y-0  translate-y-[200%] flex flex-col items-center justify-center'>
                                 <Image alt="" src={Certificate2} className='h-[100%] w-[100%]'  />
                             </div>
@@ -188,7 +188,7 @@ const Certification = () => {
                             </div>
                         </div>
 
-                        <div className="cursor-pointer certification3 relative group bg-[#000] overflow-hidden w-[100%] ring-[0.5px] ring-[#4d4d4d] h-[195px] rounded-[10px] flex items-center justify-center">
+                        <div className="cursor-pointer certification3 relative group bg-[#000] overflow-hidden w-[320px] ring-[0.5px] ring-[#4d4d4d] h-[230px] md:h-[210px] md:w-[100%] rounded-[10px] flex items-center justify-center">
                         <div className=' absolute transition-transform duration-500 group-hover:translate-y-0  translate-y-[200%] flex flex-col items-center justify-center'>
                                 <Image alt="" src={Certificate3} className='h-[100%] w-[100%]'  />
                             </div>
@@ -200,7 +200,7 @@ const Certification = () => {
                             </div>
                         </div>
 
-                        <div className="cursor-pointer certification3 relative group bg-[#000] overflow-hidden w-[100%] ring-[0.5px] ring-[#4d4d4d] h-[195px] rounded-[10px] flex items-center justify-center">
+                        <div className="cursor-pointer certification3 relative group bg-[#000] overflow-hidden w-[320px] ring-[0.5px] ring-[#4d4d4d] h-[230px] md:h-[210px] md:w-[100%] rounded-[10px] flex items-center justify-center">
                         <div className=' absolute transition-transform duration-500 group-hover:translate-y-0  translate-y-[200%] flex flex-col items-center justify-center'>
                                 <Image alt="" src={Certificate4} className='h-[100%] w-[100%]'  />
                             </div>
@@ -212,7 +212,7 @@ const Certification = () => {
                             </div>
                         </div>
 
-                        <div className="cursor-pointer certification2 relative group bg-[#000] overflow-hidden w-[100%] ring-[0.5px] ring-[#4d4d4d] h-[195px] rounded-[10px] flex items-center justify-center">
+                        <div className="cursor-pointer certification2 relative group bg-[#000] overflow-hidden w-[320px] ring-[0.5px] ring-[#4d4d4d] h-[230px] md:h-[210px] md:w-[100%] rounded-[10px] flex items-center justify-center">
                         <div className=' absolute transition-transform duration-500 group-hover:translate-y-0  translate-y-[200%] flex flex-col items-center justify-center'>
                                 <Image alt="" src={Certificate5} className='h-[100%] w-[100%]'  />
                             </div>
@@ -226,7 +226,7 @@ const Certification = () => {
 
                         
 
-                        <div className="cursor-pointer certification3 relative group bg-[#000] overflow-hidden w-[100%] ring-[0.5px] ring-[#4d4d4d] h-[195px] rounded-[10px] flex items-center justify-center">
+                        <div className="cursor-pointer certification3 relative group bg-[#000] overflow-hidden w-[320px] ring-[0.5px] ring-[#4d4d4d] h-[230px] md:h-[210px] md:w-[100%] rounded-[10px] flex items-center justify-center">
                         <div className=' absolute transition-transform duration-500 group-hover:translate-y-0  translate-y-[200%] flex flex-col items-center justify-center'>
                                 <Image alt="" src={Certificate7} className='h-[100%] w-[100%]'  />
                             </div>

@@ -18,7 +18,7 @@ const ContactModel: React.FC<ContactModelProps> = ({ onMessageSuccess, onContact
     const onContactFormSubmit = async () => {
       try {
 
-        const response = await axios.post('https://new-portfolio-backend-roan.vercel.app/contact/', {
+        const response = await axios.post('https://portfolio-backend-new-2.vercel.app/contact/', {
             name: name,
             email: email,
             title: title,

@@ -32,7 +32,7 @@ const Footer = () => {
 
         try {
             console.log('Email to subscribe:', email)
-            const response = await axios.post('https://new-portfolio-backend-roan.vercel.app/newsletter', {
+            const response = await axios.post('https://portfolio-backend-new-2.vercel.app/subscription', {
                 email: email
             })
             
