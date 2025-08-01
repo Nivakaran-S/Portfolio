@@ -15,7 +15,7 @@ const Contact : React.FC<ContactModelProps> = ({onContactClick}) => {
 
     
     return(
-        <div className="  ring-[2px] ring-[#808080] sm:h-[85vh] flex items-center justify-center w-screen">
+        <div className=" h-[90vh] ring-[2px] ring-[#808080] sm:h-[85vh] flex items-center justify-center w-screen">
             <StarBackground/>
             <div className="w-[75%] flex flex-row items-center justify-center">
                 <div className=" sm:w-[60%]">

@@ -452,7 +452,7 @@ const About = () => {
             </div>
         </div>
       <div className="min-h-[100vh] bg-[#101010] flex flex-col items-center justify-center">
-        <p className=" text-[70px] md:text-[85px] aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Education</p>
+        <p className=" text-[60px] md:text-[85px] aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Education</p>
         <div className="flex flex-row  items-center min-h-[60vh] w-[100vw] justify-center">
           <div className=" w-[45%] md:w-[29%] flex text-[17px] sm:text-[18px] leading-[20px] sm:leading-[24px]  flex-col space-y-[90px] ">
 
@@ -525,7 +525,7 @@ const About = () => {
 
           <div className="flex flex-col  space-y-[30px]  ">
             <div className="flex flex-row  items-center justify-center space-x-[13px] sm:space-x-[20px] ">
-              <div className="w-[5px] sm:w-[7px] min-h-[39vh] sm:min-h-[36vh] md:min-h-[32vh] rounded-full bg-white">
+              <div className="w-[5px] sm:w-[7px] min-h-[49vh] sm:min-h-[36vh] md:min-h-[32vh] rounded-full bg-white">
 
               </div>
 
@@ -560,7 +560,7 @@ const About = () => {
               </div>
             </div>
             <div className="flex flex-row  items-center justify-center space-x-[13px] sm:space-x-[20px] ">
-              <div className="w-[5px] sm:w-[7px] min-h-[71vh] sm:min-h-[53vh] md:min-h-[47vh] rounded-full bg-white">
+              <div className="w-[5px] sm:w-[7px] min-h-[76vh] sm:min-h-[53vh] md:min-h-[47vh] rounded-full bg-white">
 
               </div>
 
@@ -598,7 +598,7 @@ const About = () => {
               </div>
             </div>
             <div className="flex flex-row  items-center justify-center space-x-[13px] sm:space-x-[20px] ">
-              <div className="w-[5px] sm:w-[7px] min-h-[45vh] sm:min-h-[33vh] rounded-full bg-white">
+              <div className="w-[5px] sm:w-[7px] min-h-[49vh] sm:min-h-[33vh] rounded-full bg-white">
 
               </div>
 
