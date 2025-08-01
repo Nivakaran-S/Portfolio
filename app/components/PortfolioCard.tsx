@@ -3,7 +3,7 @@
 import Image from "next/image";
 import Newspaper from '../images/news.jpeg';
 
-interface PortfolioCardProps {
+interface PortfolioCardProps<T extends Element = HTMLDivElement> {
     text: string;
     text2: string;
     lang1: string;
@@ -12,8 +12,10 @@ interface PortfolioCardProps {
     lang4: string;
     lang5: string;
     lang6: string;
-    onClick: (e: React.MouseEvent) => void; // Updated type
+     onClick: (e: React.MouseEvent<HTMLDivElement>) => void;
+
 }
+
 
 const PortfolioCard: React.FC<PortfolioCardProps> = ({
     text,
