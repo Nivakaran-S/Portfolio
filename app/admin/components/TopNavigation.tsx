@@ -11,7 +11,7 @@ const TopNavigation = () => {
 
     const handleLogout = async () => {
         try {
-            const response = await fetch('https://new-portfolio-backend-roan.vercel.app/logout', {
+            const response = await fetch('https://portfolio-backend-new-2.vercel.app/logout', {
                 method: 'POST',
                 credentials: 'include',
             });

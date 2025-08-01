@@ -273,7 +273,7 @@ const Portfolio = () => {
                 
                 <div className="w-[100%] md:w-[50%] text-center h-[10px] sm:h-[160px]"></div>
 
-                <div className="w-[100%] md:w-[50%] text-center">
+                <div className="w-[100%] md:w-[60%] text-center">
                     <p className="aboutTitle3">Welcome to a showcase of my work, a curated collection of projects that reflect my passion for building smart, user-focused, and scalable digital solutions.</p>
                 </div>
                 </div>
