@@ -79,7 +79,7 @@ export default function Home() {
       <Navigation navClick={navClick} handleNavClick={handleNavClick} />
       <div className="w-[100vw]  h-[100vh]">
         <TopNavigation />
-        <div className="flex flex-col items-center justify-center ">
+        <div className="flex flex-col bg-white items-center justify-center ">
           <div className="h-[90vh] w-[100%] overflow-y-scroll">
             {renderContent()}
           </div>

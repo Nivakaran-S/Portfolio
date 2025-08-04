@@ -41,6 +41,7 @@ const BlogsManagement: React.FC = () => {
   const [activeTab, setActiveTab] = useState<"create" | "categories" | "manage">("create");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
+  const [imageLink, setImageLink] = useState<string>("");
 
   const API_BASE_URL = "https://portfolio-backend-new-2.vercel.app";
 
@@ -161,48 +162,77 @@ const BlogsManagement: React.FC = () => {
     }
   };
 
-  const handleSubmitBlog = async () => {
-    if (!blogTitle || !editorState.getCurrentContent().hasText() || !blogImageUrl || !blogCategory) {
-      alert("Please fill all required fields (title, content, image URL, category)");
+  const handleInsertImage = () => {
+    if (!imageLink.trim()) {
+      alert("Please enter an image URL");
       return;
     }
-    setIsSubmitting(true);
-    try {
-      const contentState = editorState.getCurrentContent();
-      const rawContent = convertToRaw(contentState);
-      const htmlContent = draftToHtml(rawContent);
-      const blogData = {
-        title: blogTitle,
-        subtitle: blogSubtitle,
-        content: htmlContent,
-        blogsCategory: blogCategory,
-        imageUrl: blogImageUrl,
-      };
-      let response: AxiosResponse<BlogPost>;
-      if (editingPostId) {
-        response = await axios.put(
-          `${API_BASE_URL}/blogs/${editingPostId}`,
-          blogData,
-          { withCredentials: true }
-        );
-        setBlogPosts(blogPosts.map(post => post._id === editingPostId ? response.data : post));
-      } else {
-        response = await axios.post(
-          `${API_BASE_URL}/blogs`,
-          blogData,
-          { withCredentials: true }
-        );
-        setBlogPosts([...blogPosts, { ...blogData, _id: response.data.id, createdAt: new Date().toISOString() }]);
-      }
-      setBlogSuccess(true);
-      resetBlogForm();
-      setTimeout(() => setBlogSuccess(false), 3000);
-    } catch (error: any) {
-      alert("Failed to submit blog post. Please try again.");
-    } finally {
-      setIsSubmitting(false);
-    }
+    const contentState = editorState.getCurrentContent();
+    const contentStateWithEntity = contentState.createEntity(
+      'IMAGE',
+      'IMMUTABLE',
+      { src: imageLink, alt: 'Blog Image', style: { maxWidth: '100%' } }
+    );
+    const entityKey = contentStateWithEntity.getLastCreatedEntityKey();
+    const selection = editorState.getSelection();
+    const newContentState = Modifier.insertText(
+      contentStateWithEntity,
+      selection,
+      ' ',
+      undefined,
+      entityKey
+    );
+    const newEditorState = EditorState.push(
+      editorState,
+      newContentState,
+      'insert-characters'
+    );
+    setEditorState(newEditorState);
+    setImageLink("");
   };
+
+  const handleSubmitBlog = async () => {
+  if (!blogTitle || !editorState.getCurrentContent().hasText() || !blogImageUrl || !blogCategory) {
+    alert("Please fill all required fields (title, content, image URL, category)");
+    return;
+  }
+  setIsSubmitting(true);
+  try {
+    const contentState = editorState.getCurrentContent();
+    const rawContent = convertToRaw(contentState);
+    const htmlContent = draftToHtml(rawContent);
+    const blogData = {
+      title: blogTitle,
+      subtitle: blogSubtitle,
+      content: htmlContent,
+      blogsCategory: blogCategory,
+      imageUrl: blogImageUrl,
+    };
+    let response: AxiosResponse<BlogPost>;
+    if (editingPostId) {
+      response = await axios.put(
+        `${API_BASE_URL}/blogs/${editingPostId}`,
+        blogData,
+        { withCredentials: true }
+      );
+      setBlogPosts(blogPosts.map(post => post._id === editingPostId ? response.data : post));
+    } else {
+      response = await axios.post(
+        `${API_BASE_URL}/blogs`,
+        blogData,
+        { withCredentials: true }
+      );
+      setBlogPosts([...blogPosts, { ...blogData, _id: response.data._id, createdAt: new Date().toISOString() }]);
+    }
+    setBlogSuccess(true);
+    resetBlogForm();
+    setTimeout(() => setBlogSuccess(false), 3000);
+  } catch (error: any) {
+    alert("Failed to submit blog post. Please try again.");
+  } finally {
+    setIsSubmitting(false);
+  }
+};
 
   const resetBlogForm = () => {
     setBlogTitle("");
@@ -211,6 +241,7 @@ const BlogsManagement: React.FC = () => {
     setBlogCategory("");
     setBlogImageUrl("");
     setEditingPostId(null);
+    setImageLink("");
   };
 
   const handleEditBlog = (post: BlogPost) => {
@@ -285,7 +316,6 @@ const BlogsManagement: React.FC = () => {
     });
   };
 
-  // Formatting handlers for Draft.js
   const handleKeyCommand = (command: string, editorState: EditorState): "handled" | "not-handled" => {
     const newState = RichUtils.handleKeyCommand(editorState, command);
     if (newState) {
@@ -321,7 +351,6 @@ const BlogsManagement: React.FC = () => {
     }
   };
 
-  // Toolbar options
   const fontSizes = [12, 14, 16, 18, 24, 36];
   const fontFamilies = ["Arial", "Times New Roman", "Courier New", "Georgia"];
   const colors = ["#000000", "#FF0000", "#00FF00", "#0000FF", "#FFFF00"];
@@ -405,6 +434,24 @@ const BlogsManagement: React.FC = () => {
                         </option>
                       ))}
                     </select>
+                  </div>
+                  <div>
+                    <label className="block text-sm font-medium text-gray-700 mb-1">Insert Image in Content</label>
+                    <div className="flex space-x-2">
+                      <input
+                        type="text"
+                        value={imageLink}
+                        onChange={(e: React.ChangeEvent<HTMLInputElement>) => setImageLink(e.target.value)}
+                        className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                        placeholder="Enter image URL"
+                      />
+                      <button
+                        onClick={handleInsertImage}
+                        className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                      >
+                        Insert
+                      </button>
+                    </div>
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">Content *</label>
