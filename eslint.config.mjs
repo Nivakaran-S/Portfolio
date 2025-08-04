@@ -21,6 +21,7 @@ const eslintConfig = [
       "@typescript-eslint/no-unused-expressions": "off",
       "no-unused-expressions": "off",
       "@typescript-eslint/no-explicit-any": "off",
+      '@next/next/no-img-element': "off",
     },
   },
 ];

@@ -1,9 +1,13 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
 import axios, { AxiosResponse } from "axios";
-import { Editor, EditorState, RichUtils, convertToRaw, ContentState, Modifier } from "draft-js";
-import draftToHtml from "draftjs-to-html";
-import htmlToDraft from "html-to-draftjs";
-import "draft-js/dist/Draft.css";
+import dynamic from "next/dynamic";
+import { EditorState, ContentState, convertToRaw, RichUtils, Modifier } from "draft-js";
+import "draft-js/dist/Draft.css"; // Correct CSS import
+
+// Dynamically import draft-js Editor component
+const Editor = dynamic(() => import("draft-js").then((mod) => mod.Editor), { ssr: false });
 
 interface BlogPost {
   _id: string;
@@ -25,7 +29,7 @@ const BlogsManagement: React.FC = () => {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [blogTitle, setBlogTitle] = useState<string>("");
   const [blogSubtitle, setBlogSubtitle] = useState<string>("");
-  const [editorState, setEditorState] = useState<EditorState>(EditorState.createEmpty());
+  const [editorState, setEditorState] = useState<EditorState | null>(null);
   const [blogCategory, setBlogCategory] = useState<string>("");
   const [blogImageUrl, setBlogImageUrl] = useState<string>("");
   const [blogSuccess, setBlogSuccess] = useState<boolean>(false);
@@ -45,6 +49,11 @@ const BlogsManagement: React.FC = () => {
 
   const API_BASE_URL = "https://portfolio-backend-new-2.vercel.app";
 
+  // Initialize EditorState on client side
+  useEffect(() => {
+    setEditorState(EditorState.createEmpty());
+  }, []);
+
   const fetchBlogs = async () => {
     try {
       setBlogError("");
@@ -60,9 +69,10 @@ const BlogsManagement: React.FC = () => {
   const searchBlogs = async (query: string) => {
     try {
       setBlogError("");
-      const response: AxiosResponse<BlogPost[]> = await axios.get(`${API_BASE_URL}/blogs/search?query=${encodeURIComponent(query)}`, {
-        withCredentials: true,
-      });
+      const response: AxiosResponse<BlogPost[]> = await axios.get(
+        `${API_BASE_URL}/blogs/search?query=${encodeURIComponent(query)}`,
+        { withCredentials: true }
+      );
       setBlogPosts(response.data);
     } catch (error: any) {
       setBlogError("Failed to search blog posts. Please try again.");
@@ -84,9 +94,10 @@ const BlogsManagement: React.FC = () => {
   const searchCategories = async (query: string) => {
     try {
       setCategoryError("");
-      const response: AxiosResponse<BlogCategory[]> = await axios.get(`${API_BASE_URL}/blogCategory/search?query=${encodeURIComponent(query)}`, {
-        withCredentials: true,
-      });
+      const response: AxiosResponse<BlogCategory[]> = await axios.get(
+        `${API_BASE_URL}/blogCategory/search?query=${encodeURIComponent(query)}`,
+        { withCredentials: true }
+      );
       setBlogCategories(response.data);
     } catch (error: any) {
       setCategoryError("Failed to search blog categories. Please try again.");
@@ -128,11 +139,10 @@ const BlogsManagement: React.FC = () => {
         { title: newCategoryTitle },
         { withCredentials: true }
       );
-      setBlogCategories(prev => [...prev, {
-        _id: response.data.id,
-        title: newCategoryTitle,
-        createdAt: new Date().toISOString(),
-      }]);
+      setBlogCategories((prev) => [
+        ...prev,
+        { _id: response.data.id, title: newCategoryTitle, createdAt: new Date().toISOString() },
+      ]);
       setNewCategoryTitle("");
       setCategorySuccess(true);
       setTimeout(() => setCategorySuccess(false), 3000);
@@ -152,7 +162,7 @@ const BlogsManagement: React.FC = () => {
         { title: editingCategoryTitle },
         { withCredentials: true }
       );
-      setBlogCategories(blogCategories.map(cat => cat._id === editingCategoryId ? response.data : cat));
+      setBlogCategories(blogCategories.map((cat) => (cat._id === editingCategoryId ? response.data : cat)));
       setEditingCategoryId(null);
       setEditingCategoryTitle("");
       setCategorySuccess(true);
@@ -167,72 +177,58 @@ const BlogsManagement: React.FC = () => {
       alert("Please enter an image URL");
       return;
     }
+    if (!editorState) return;
     const contentState = editorState.getCurrentContent();
-    const contentStateWithEntity = contentState.createEntity(
-      'IMAGE',
-      'IMMUTABLE',
-      { src: imageLink, alt: 'Blog Image', style: { maxWidth: '100%' } }
-    );
+    const contentStateWithEntity = contentState.createEntity("IMAGE", "IMMUTABLE", {
+      src: imageLink,
+      alt: "Blog Image",
+      style: { maxWidth: "100%" },
+    });
     const entityKey = contentStateWithEntity.getLastCreatedEntityKey();
     const selection = editorState.getSelection();
-    const newContentState = Modifier.insertText(
-      contentStateWithEntity,
-      selection,
-      ' ',
-      undefined,
-      entityKey
-    );
-    const newEditorState = EditorState.push(
-      editorState,
-      newContentState,
-      'insert-characters'
-    );
+    const newContentState = Modifier.insertText(contentStateWithEntity, selection, " ", undefined, entityKey);
+    const newEditorState = EditorState.push(editorState, newContentState, "insert-characters");
     setEditorState(newEditorState);
     setImageLink("");
   };
 
   const handleSubmitBlog = async () => {
-  if (!blogTitle || !editorState.getCurrentContent().hasText() || !blogImageUrl || !blogCategory) {
-    alert("Please fill all required fields (title, content, image URL, category)");
-    return;
-  }
-  setIsSubmitting(true);
-  try {
-    const contentState = editorState.getCurrentContent();
-    const rawContent = convertToRaw(contentState);
-    const htmlContent = draftToHtml(rawContent);
-    const blogData = {
-      title: blogTitle,
-      subtitle: blogSubtitle,
-      content: htmlContent,
-      blogsCategory: blogCategory,
-      imageUrl: blogImageUrl,
-    };
-    let response: AxiosResponse<BlogPost>;
-    if (editingPostId) {
-      response = await axios.put(
-        `${API_BASE_URL}/blogs/${editingPostId}`,
-        blogData,
-        { withCredentials: true }
-      );
-      setBlogPosts(blogPosts.map(post => post._id === editingPostId ? response.data : post));
-    } else {
-      response = await axios.post(
-        `${API_BASE_URL}/blogs`,
-        blogData,
-        { withCredentials: true }
-      );
-      setBlogPosts([...blogPosts, { ...blogData, _id: response.data._id, createdAt: new Date().toISOString() }]);
+    if (!editorState || !blogTitle || !editorState.getCurrentContent().hasText() || !blogImageUrl || !blogCategory) {
+      alert("Please fill all required fields (title, content, image URL, category)");
+      return;
     }
-    setBlogSuccess(true);
-    resetBlogForm();
-    setTimeout(() => setBlogSuccess(false), 3000);
-  } catch (error: any) {
-    alert("Failed to submit blog post. Please try again.");
-  } finally {
-    setIsSubmitting(false);
-  }
-};
+    setIsSubmitting(true);
+    try {
+      const { default: draftToHtml } = await import("draftjs-to-html");
+      const contentState = editorState.getCurrentContent();
+      const rawContent = convertToRaw(contentState);
+      const htmlContent = draftToHtml(rawContent);
+      const blogData = {
+        title: blogTitle,
+        subtitle: blogSubtitle,
+        content: htmlContent,
+        blogsCategory: blogCategory,
+        imageUrl: blogImageUrl,
+      };
+      let response: AxiosResponse<BlogPost>;
+      if (editingPostId) {
+        response = await axios.put(`${API_BASE_URL}/blogs/${editingPostId}`, blogData, {
+          withCredentials: true,
+        });
+        setBlogPosts(blogPosts.map((post) => (post._id === editingPostId ? response.data : post)));
+      } else {
+        response = await axios.post(`${API_BASE_URL}/blogs`, blogData, { withCredentials: true });
+        setBlogPosts([...blogPosts, { ...blogData, _id: response.data._id, createdAt: new Date().toISOString() }]);
+      }
+      setBlogSuccess(true);
+      resetBlogForm();
+      setTimeout(() => setBlogSuccess(false), 3000);
+    } catch (error: any) {
+      alert("Failed to submit blog post. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
 
   const resetBlogForm = () => {
     setBlogTitle("");
@@ -244,9 +240,10 @@ const BlogsManagement: React.FC = () => {
     setImageLink("");
   };
 
-  const handleEditBlog = (post: BlogPost) => {
+  const handleEditBlog = async (post: BlogPost) => {
     setBlogTitle(post.title);
     setBlogSubtitle(post.subtitle);
+    const { default: htmlToDraft } = await import("html-to-draftjs");
     const { contentBlocks, entityMap } = htmlToDraft(post.content);
     const contentState = ContentState.createFromBlockArray(contentBlocks, entityMap);
     setEditorState(EditorState.createWithContent(contentState));
@@ -254,15 +251,15 @@ const BlogsManagement: React.FC = () => {
     setBlogImageUrl(post.imageUrl);
     setEditingPostId(post._id);
     setActiveTab("create");
-    window.scrollTo(0, 0);
+    if (typeof window !== "undefined") {
+      window.scrollTo(0, 0);
+    }
   };
 
   const handleDeleteBlog = async (id: string) => {
     try {
-      await axios.delete(`${API_BASE_URL}/blogs/${id}`, {
-        withCredentials: true,
-      });
-      setBlogPosts(blogPosts.filter(post => post._id !== id));
+      await axios.delete(`${API_BASE_URL}/blogs/${id}`, { withCredentials: true });
+      setBlogPosts(blogPosts.filter((post) => post._id !== id));
     } catch (error: any) {
       alert("Failed to delete blog post. Please try again.");
     }
@@ -281,7 +278,7 @@ const BlogsManagement: React.FC = () => {
           }
         })
       );
-      setBlogCategories(blogCategories.filter(category => !selectedCategories.includes(category.title)));
+      setBlogCategories(blogCategories.filter((category) => !selectedCategories.includes(category.title)));
       setSelectedCategories([]);
     } catch (error: any) {
       alert("Failed to delete categories. Please try again.");
@@ -299,20 +296,18 @@ const BlogsManagement: React.FC = () => {
   };
 
   const toggleCategorySelection = (category: BlogCategory) => {
-    setSelectedCategories(prev =>
-      prev.includes(category.title)
-        ? prev.filter(t => t !== category.title)
-        : [...prev, category.title]
+    setSelectedCategories((prev) =>
+      prev.includes(category.title) ? prev.filter((t) => t !== category.title) : [...prev, category.title]
     );
   };
 
   const formatDate = (dateString: string): string => {
-    return new Date(dateString).toLocaleDateString('en-US', {
-      year: 'numeric',
-      month: 'short',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
+    return new Date(dateString).toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+      hour: "2-digit",
+      minute: "2-digit",
     });
   };
 
@@ -326,27 +321,27 @@ const BlogsManagement: React.FC = () => {
   };
 
   const toggleInlineStyle = (style: string) => {
+    if (!editorState) return;
     setEditorState(RichUtils.toggleInlineStyle(editorState, style));
   };
 
   const toggleBlockType = (blockType: string) => {
+    if (!editorState) return;
     setEditorState(RichUtils.toggleBlockType(editorState, blockType));
   };
 
   const getCurrentBlockType = (): string => {
+    if (!editorState) return "";
     const selection = editorState.getSelection();
     return editorState.getCurrentContent().getBlockForKey(selection.getStartKey()).getType();
   };
 
   const applyCustomStyle = (styleType: string, value: string) => {
+    if (!editorState) return;
     const selection = editorState.getSelection();
     if (!selection.isCollapsed()) {
       const contentState = editorState.getCurrentContent();
-      const newContentState = Modifier.applyInlineStyle(
-        contentState,
-        selection,
-        `${styleType}-${value}`
-      );
+      const newContentState = Modifier.applyInlineStyle(contentState, selection, `${styleType}-${value}`);
       setEditorState(EditorState.push(editorState, newContentState, "change-inline-style"));
     }
   };
@@ -361,7 +356,9 @@ const BlogsManagement: React.FC = () => {
       <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
         <div className="flex border-b">
           <button
-            className={`px-4 py-2 font-medium ${activeTab === "create" ? "text-blue-600 border-b-2 border-blue-600" : "cursor-pointer text-gray-600"}`}
+            className={`px-4 py-2 font-medium ${
+              activeTab === "create" ? "text-blue-600 border-b-2 border-blue-600" : "cursor-pointer text-gray-600"
+            }`}
             onClick={() => {
               setActiveTab("create");
               resetBlogForm();
@@ -370,20 +367,24 @@ const BlogsManagement: React.FC = () => {
             Create Blog Post
           </button>
           <button
-            className={`px-4 py-2 font-medium ${activeTab === "manage" ? "text-blue-600 border-b-2 border-blue-600" : "text-gray-600 cursor-pointer"}`}
+            className={`px-4 py-2 font-medium ${
+              activeTab === "manage" ? "text-blue-600 border-b-2 border-blue-600" : "text-gray-600 cursor-pointer"
+            }`}
             onClick={() => setActiveTab("manage")}
           >
             Manage Blog Posts
           </button>
           <button
-            className={`px-4 py-2 font-medium ${activeTab === "categories" ? "text-blue-600 border-b-2 border-blue-600" : "text-gray-600 cursor-pointer"}`}
+            className={`px-4 py-2 font-medium ${
+              activeTab === "categories" ? "text-blue-600 border-b-2 border-blue-600" : "text-gray-600 cursor-pointer"
+            }`}
             onClick={() => setActiveTab("categories")}
           >
             Manage Categories
           </button>
         </div>
         <div className="p-6">
-          {activeTab === "create" ? (
+          {activeTab === "create" && editorState ? (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               <div className="lg:col-span-2">
                 <h2 className="text-xl font-semibold mb-4">
@@ -455,20 +456,36 @@ const BlogsManagement: React.FC = () => {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">Content *</label>
-                    <div className="bg-white border border-gray-300 rounded-md shadow-sm p-1" style={{ backgroundImage: 'linear-gradient(#f5f5f5 1px, transparent 1px)', backgroundSize: '100% 1.5em' }}>
-                      <div className=" items-center space-x-[8px] space-y-[5px] gap-2 mb-2 bg-gray-100 p-2 rounded-t-md border-b border-gray-300">
+                    <div
+                      className="bg-white border border-gray-300 rounded-md shadow-sm p-1"
+                      style={{ backgroundImage: "linear-gradient(#f5f5f5 1px, transparent 1px)", backgroundSize: "100% 1.5em" }}
+                    >
+                      <div className="items-center space-x-[8px] space-y-[5px] gap-2 mb-2 bg-gray-100 p-2 rounded-t-md border-b border-gray-300">
                         <button
                           onClick={() => toggleInlineStyle("BOLD")}
-                          className={`p-1 rounded ${editorState.getCurrentInlineStyle().has("BOLD") ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}
+                          className={`p-1 rounded ${
+                            editorState.getCurrentInlineStyle().has("BOLD")
+                              ? "bg-blue-500 text-white"
+                              : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                          }`}
                           title="Bold"
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 11h3.5a3.5 3.5 0 110 7H9v-7m0-4h3a3 3 0 013 3H9V4z" />
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M9 11h3.5a3.5 3.5 0 110 7H9v-7m0-4h3a3 3 0 013 3H9V4z"
+                            />
                           </svg>
                         </button>
                         <button
                           onClick={() => toggleInlineStyle("ITALIC")}
-                          className={`p-1 rounded ${editorState.getCurrentInlineStyle().has("ITALIC") ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}
+                          className={`p-1 rounded ${
+                            editorState.getCurrentInlineStyle().has("ITALIC")
+                              ? "bg-blue-500 text-white"
+                              : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                          }`}
                           title="Italic"
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -477,7 +494,11 @@ const BlogsManagement: React.FC = () => {
                         </button>
                         <button
                           onClick={() => toggleInlineStyle("UNDERLINE")}
-                          className={`p-1 rounded ${editorState.getCurrentInlineStyle().has("UNDERLINE") ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}
+                          className={`p-1 rounded ${
+                            editorState.getCurrentInlineStyle().has("UNDERLINE")
+                              ? "bg-blue-500 text-white"
+                              : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                          }`}
                           title="Underline"
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -486,7 +507,11 @@ const BlogsManagement: React.FC = () => {
                         </button>
                         <button
                           onClick={() => toggleInlineStyle("STRIKETHROUGH")}
-                          className={`p-1 rounded ${editorState.getCurrentInlineStyle().has("STRIKETHROUGH") ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}
+                          className={`p-1 rounded ${
+                            editorState.getCurrentInlineStyle().has("STRIKETHROUGH")
+                              ? "bg-blue-500 text-white"
+                              : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                          }`}
                           title="Strikethrough"
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -499,8 +524,10 @@ const BlogsManagement: React.FC = () => {
                           title="Font Size"
                         >
                           <option value="">Size</option>
-                          {fontSizes.map(size => (
-                            <option key={size} value={size}>{size}px</option>
+                          {fontSizes.map((size) => (
+                            <option key={size} value={size}>
+                              {size}px
+                            </option>
                           ))}
                         </select>
                         <select
@@ -509,8 +536,10 @@ const BlogsManagement: React.FC = () => {
                           title="Font Family"
                         >
                           <option value="">Font</option>
-                          {fontFamilies.map(font => (
-                            <option key={font} value={font}>{font}</option>
+                          {fontFamilies.map((font) => (
+                            <option key={font} value={font}>
+                              {font}
+                            </option>
                           ))}
                         </select>
                         <select
@@ -519,8 +548,10 @@ const BlogsManagement: React.FC = () => {
                           title="Text Color"
                         >
                           <option value="">Color</option>
-                          {colors.map(color => (
-                            <option key={color} value={color} style={{ color }}>{color}</option>
+                          {colors.map((color) => (
+                            <option key={color} value={color} style={{ color }}>
+                              {color}
+                            </option>
                           ))}
                         </select>
                         <select
@@ -529,22 +560,37 @@ const BlogsManagement: React.FC = () => {
                           title="Background Color"
                         >
                           <option value="">Bg</option>
-                          {colors.map(color => (
-                            <option key={color} value={color} style={{ backgroundColor: color, color: color === "#FFFF00" ? "#000" : "#FFF" }}>{color}</option>
+                          {colors.map((color) => (
+                            <option key={color} value={color} style={{ backgroundColor: color, color: color === "#FFFF00" ? "#000" : "#FFF" }}>
+                              {color}
+                            </option>
                           ))}
                         </select>
                         <button
                           onClick={() => toggleBlockType("unordered-list-item")}
-                          className={`p-1 rounded ${getCurrentBlockType() === "unordered-list-item" ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}
+                          className={`p-1 rounded ${
+                            getCurrentBlockType() === "unordered-list-item"
+                              ? "bg-blue-500 text-white"
+                              : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                          }`}
                           title="Bulleted List"
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5h12m-12 7h12m-12 7h12m-15-14h-3m0 7h-3m0 7h-3" />
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M9 5h12m-12 7h12m-12 7h12m-15-14h-3m0 7h-3m0 7h-3"
+                            />
                           </svg>
                         </button>
                         <button
                           onClick={() => toggleBlockType("ordered-list-item")}
-                          className={`p-1 rounded ${getCurrentBlockType() === "ordered-list-item" ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}
+                          className={`p-1 rounded ${
+                            getCurrentBlockType() === "ordered-list-item"
+                              ? "bg-blue-500 text-white"
+                              : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                          }`}
                           title="Numbered List"
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -557,17 +603,30 @@ const BlogsManagement: React.FC = () => {
                           title="Headings"
                         >
                           <option value="">Heading</option>
-                          {["header-one", "header-two", "header-three", "header-four", "header-five", "header-six"].map((h, i) => (
-                            <option key={h} value={h}>H{i + 1}</option>
-                          ))}
+                          {["header-one", "header-two", "header-three", "header-four", "header-five", "header-six"].map(
+                            (h, i) => (
+                              <option key={h} value={h}>
+                                H{i + 1}
+                              </option>
+                            )
+                          )}
                         </select>
                         <button
                           onClick={() => toggleBlockType("blockquote")}
-                          className={`p-1 rounded ${getCurrentBlockType() === "blockquote" ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}
+                          className={`p-1 rounded ${
+                            getCurrentBlockType() === "blockquote"
+                              ? "bg-blue-500 text-white"
+                              : "bg-gray-200 text-gray-700 hover:bg-gray-300"
+                          }`}
                           title="Blockquote"
                         >
                           <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2h2" />
+                            <path
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                              strokeWidth="2"
+                              d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2h2"
+                            />
                           </svg>
                         </button>
                         <select
@@ -576,8 +635,10 @@ const BlogsManagement: React.FC = () => {
                           title="Alignment"
                         >
                           <option value="">Align</option>
-                          {alignments.map(align => (
-                            <option key={align} value={align}>{align.charAt(0).toUpperCase() + align.slice(1)}</option>
+                          {alignments.map((align) => (
+                            <option key={align} value={align}>
+                              {align.charAt(0).toUpperCase() + align.slice(1)}
+                            </option>
                           ))}
                         </select>
                       </div>
@@ -588,19 +649,28 @@ const BlogsManagement: React.FC = () => {
                           handleKeyCommand={handleKeyCommand}
                           placeholder="Write your blog content here..."
                           customStyleMap={{
-                            ...fontSizes.reduce((map, size) => ({
-                              ...map,
-                              [`FONTSIZE-${size}`]: { fontSize: `${size}px` },
-                            }), {}),
-                            ...fontFamilies.reduce((map, font) => ({
-                              ...map,
-                              [`FONTFAMILY-${font}`]: { fontFamily: font },
-                            }), {}),
-                            ...colors.reduce((map, color) => ({
-                              ...map,
-                              [`COLOR-${color}`]: { color },
-                              [`BACKGROUND-${color}`]: { backgroundColor: color },
-                            }), {}),
+                            ...fontSizes.reduce(
+                              (map, size) => ({
+                                ...map,
+                                [`FONTSIZE-${size}`]: { fontSize: `${size}px` },
+                              }),
+                              {}
+                            ),
+                            ...fontFamilies.reduce(
+                              (map, font) => ({
+                                ...map,
+                                [`FONTFAMILY-${font}`]: { fontFamily: font },
+                              }),
+                              {}
+                            ),
+                            ...colors.reduce(
+                              (map, color) => ({
+                                ...map,
+                                [`COLOR-${color}`]: { color },
+                                [`BACKGROUND-${color}`]: { backgroundColor: color },
+                              }),
+                              {}
+                            ),
                             "align-left": { textAlign: "left" },
                             "align-center": { textAlign: "center" },
                             "align-right": { textAlign: "right" },
@@ -614,9 +684,11 @@ const BlogsManagement: React.FC = () => {
                     <button
                       onClick={handleSubmitBlog}
                       disabled={isSubmitting}
-                      className={`px-4 py-2 rounded-md text-white ${isSubmitting ? 'bg-blue-400' : 'bg-blue-600 hover:bg-blue-700'} focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`}
+                      className={`px-4 py-2 rounded-md text-white ${
+                        isSubmitting ? "bg-blue-400" : "bg-blue-600 hover:bg-blue-700"
+                      } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2`}
                     >
-                      {isSubmitting ? 'Submitting...' : editingPostId ? 'Update Blog Post' : 'Publish Blog Post'}
+                      {isSubmitting ? "Submitting..." : editingPostId ? "Update Blog Post" : "Publish Blog Post"}
                     </button>
                     {editingPostId && (
                       <button
@@ -635,23 +707,24 @@ const BlogsManagement: React.FC = () => {
                   {blogTitle ? (
                     <>
                       {blogImageUrl && (
-                        <img
-                          src={blogImageUrl}
-                          alt="Blog preview"
-                          className="w-full h-48 object-cover rounded-md mb-4"
-                        />
+                        <img src={blogImageUrl} alt="Blog preview" className="w-full h-48 object-cover rounded-md mb-4" />
                       )}
                       <h3 className="text-lg font-medium mb-2">{blogTitle}</h3>
                       {blogSubtitle && <p className="text-gray-600 mb-3">{blogSubtitle}</p>}
                       {blogCategory && (
                         <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded mb-3">
-                          {blogCategories.find(cat => cat._id === blogCategory)?.title || 'Unknown Category'}
+                          {blogCategories.find((cat) => cat._id === blogCategory)?.title || "Unknown Category"}
                         </span>
                       )}
-                      {editorState.getCurrentContent().hasText() && (
+                      {editorState?.getCurrentContent().hasText() && (
                         <div
                           className="prose max-w-none"
-                          dangerouslySetInnerHTML={{ __html: draftToHtml(convertToRaw(editorState.getCurrentContent())) }}
+                          dangerouslySetInnerHTML={{
+                            __html: (async () => {
+                              const { default: draftToHtml } = await import("draftjs-to-html");
+                              return draftToHtml(convertToRaw(editorState.getCurrentContent()));
+                            })(),
+                          }}
                         />
                       )}
                     </>
@@ -668,7 +741,11 @@ const BlogsManagement: React.FC = () => {
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <svg className="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
+                      <path
+                        fillRule="evenodd"
+                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                   </div>
                   <input
@@ -685,7 +762,11 @@ const BlogsManagement: React.FC = () => {
                   <div className="flex">
                     <div className="flex-shrink-0">
                       <svg className="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-                        <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                        <path
+                          fillRule="evenodd"
+                          d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                          clipRule="evenodd"
+                        />
                       </svg>
                     </div>
                     <div className="ml-3">
@@ -702,17 +783,13 @@ const BlogsManagement: React.FC = () => {
                       <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                         <div className="flex items-start space-x-4">
                           {post.imageUrl && (
-                            <img
-                              src={post.imageUrl}
-                              alt={post.title}
-                              className="w-24 h-16 object-cover rounded-md"
-                            />
+                            <img src={post.imageUrl} alt={post.title} className="w-24 h-16 object-cover rounded-md" />
                           )}
                           <div>
                             <h3 className="font-medium">{post.title}</h3>
                             <p className="text-sm text-gray-600">{post.subtitle}</p>
                             <span className="inline-block bg-blue-100 text-blue-800 text-xs px-2 py-0.5 rounded mt-1">
-                              {blogCategories.find(cat => cat._id === post.blogsCategory)?.title || 'Unknown Category'}
+                              {blogCategories.find((cat) => cat._id === post.blogsCategory)?.title || "Unknown Category"}
                             </span>
                             <p className="text-sm text-gray-600 mt-1">{formatDate(post.createdAt)}</p>
                           </div>
@@ -744,7 +821,11 @@ const BlogsManagement: React.FC = () => {
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
                     <svg className="h-5 w-5 text-gray-400" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clipRule="evenodd" />
+                      <path
+                        fillRule="evenodd"
+                        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
+                        clipRule="evenodd"
+                      />
                     </svg>
                   </div>
                   <input
@@ -764,7 +845,9 @@ const BlogsManagement: React.FC = () => {
                     <input
                       type="text"
                       value={editingCategoryId ? editingCategoryTitle : newCategoryTitle}
-                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => editingCategoryId ? setEditingCategoryTitle(e.target.value) : setNewCategoryTitle(e.target.value)}
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                        editingCategoryId ? setEditingCategoryTitle(e.target.value) : setNewCategoryTitle(e.target.value)
+                      }
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                       placeholder="Enter category title"
                     />
@@ -774,7 +857,11 @@ const BlogsManagement: React.FC = () => {
                   <button
                     onClick={editingCategoryId ? handleUpdateCategory : handleAddCategory}
                     disabled={!(editingCategoryId ? editingCategoryTitle.trim() : newCategoryTitle.trim())}
-                    className={`px-4 py-2 rounded-md text-white ${!(editingCategoryId ? editingCategoryTitle.trim() : newCategoryTitle.trim()) ? 'bg-gray-400' : 'bg-green-600 hover:bg-green-700'} focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2`}
+                    className={`px-4 py-2 rounded-md text-white ${
+                      !(editingCategoryId ? editingCategoryTitle.trim() : newCategoryTitle.trim())
+                        ? "bg-gray-400"
+                        : "bg-green-600 hover:bg-green-700"
+                    } focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2`}
                   >
                     {editingCategoryId ? "Update Category" : "Add Category"}
                   </button>
@@ -805,7 +892,11 @@ const BlogsManagement: React.FC = () => {
                     <div className="flex">
                       <div className="flex-shrink-0">
                         <svg className="h-5 w-5 text-red-400" fill="currentColor" viewBox="0 0 20 20">
-                          <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z" clipRule="evenodd" />
+                          <path
+                            fillRule="evenodd"
+                            d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                            clipRule="evenodd"
+                          />
                         </svg>
                       </div>
                       <div className="ml-3">
@@ -820,7 +911,9 @@ const BlogsManagement: React.FC = () => {
                     {blogCategories.map((category) => (
                       <div
                         key={category._id}
-                        className={`p-3 rounded-lg border cursor-pointer flex flex-col items-center ${selectedCategories.includes(category.title) ? 'ring-2 ring-blue-500 bg-blue-50' : 'border-gray-200 bg-white'}`}
+                        className={`p-3 rounded-lg border cursor-pointer flex flex-col items-center ${
+                          selectedCategories.includes(category.title) ? "ring-2 ring-blue-500 bg-blue-50" : "border-gray-200 bg-white"
+                        }`}
                       >
                         <div className="flex justify-between w-full">
                           <span className="text-sm font-medium text-center">{category.title}</span>
@@ -855,7 +948,11 @@ const BlogsManagement: React.FC = () => {
               <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path>
               </svg>
-              {blogSuccess ? (editingPostId ? 'Blog post updated successfully!' : 'Blog post published successfully!') : 'Category operation successful!'}
+              {blogSuccess
+                ? editingPostId
+                  ? "Blog post updated successfully!"
+                  : "Blog post published successfully!"
+                : "Category operation successful!"}
             </div>
           </div>
         )}
