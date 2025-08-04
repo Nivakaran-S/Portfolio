@@ -25,6 +25,8 @@
     "@eslint/eslintrc": "^3",
     "@tailwindcss/postcss": "^4",
     "@types/draft-js": "^0.11.18",
+    "@types/draftjs-to-html": "^0.8.4",
+    "@types/html-to-draftjs": "^1.5.0",
     "@types/node": "20.19.4",
     "@types/react": "19.1.8",
     "@types/react-dom": "^19",
