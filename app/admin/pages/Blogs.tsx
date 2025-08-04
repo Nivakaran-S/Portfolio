@@ -1,5 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios, { AxiosResponse } from "axios";
+import { Editor, EditorState, RichUtils, convertToRaw, ContentState, Modifier } from "draft-js";
+import draftToHtml from "draftjs-to-html";
+import htmlToDraft from "html-to-draftjs";
+import "draft-js/dist/Draft.css";
 
 interface BlogPost {
   _id: string;
@@ -17,102 +21,82 @@ interface BlogCategory {
   createdAt: string;
 }
 
-const BlogsManagement = () => {
-  // Blog post states
+const BlogsManagement: React.FC = () => {
   const [blogPosts, setBlogPosts] = useState<BlogPost[]>([]);
   const [blogTitle, setBlogTitle] = useState<string>("");
   const [blogSubtitle, setBlogSubtitle] = useState<string>("");
-  const [blogContent, setBlogContent] = useState<string>("");
+  const [editorState, setEditorState] = useState<EditorState>(EditorState.createEmpty());
   const [blogCategory, setBlogCategory] = useState<string>("");
   const [blogImageUrl, setBlogImageUrl] = useState<string>("");
   const [blogSuccess, setBlogSuccess] = useState<boolean>(false);
   const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
   const [editingPostId, setEditingPostId] = useState<string | null>(null);
   const [blogError, setBlogError] = useState<string>("");
-
-  // Category states
   const [blogCategories, setBlogCategories] = useState<BlogCategory[]>([]);
   const [newCategoryTitle, setNewCategoryTitle] = useState<string>("");
   const [editingCategoryId, setEditingCategoryId] = useState<string | null>(null);
   const [editingCategoryTitle, setEditingCategoryTitle] = useState<string>("");
   const [categoryError, setCategoryError] = useState<string>("");
   const [categorySuccess, setCategorySuccess] = useState<boolean>(false);
-
-  // UI states
   const [activeTab, setActiveTab] = useState<"create" | "categories" | "manage">("create");
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
 
-  // Base URL for API requests
   const API_BASE_URL = "https://portfolio-backend-new-2.vercel.app";
 
-  // Fetch blog posts
   const fetchBlogs = async () => {
     try {
       setBlogError("");
-      const response = await axios.get(`${API_BASE_URL}/blogs`, {
+      const response: AxiosResponse<BlogPost[]> = await axios.get(`${API_BASE_URL}/blogs`, {
         withCredentials: true,
       });
       setBlogPosts(response.data);
-      console.log("Fetched blog posts:", response.data);
     } catch (error: any) {
-      console.error("Error fetching blog posts:", error.response ? error.response.data : error.message);
       setBlogError("Failed to load blog posts. Please try again.");
     }
   };
 
-  // Search blog posts
   const searchBlogs = async (query: string) => {
     try {
       setBlogError("");
-      const response = await axios.get(`${API_BASE_URL}/blogs/search?query=${encodeURIComponent(query)}`, {
+      const response: AxiosResponse<BlogPost[]> = await axios.get(`${API_BASE_URL}/blogs/search?query=${encodeURIComponent(query)}`, {
         withCredentials: true,
       });
       setBlogPosts(response.data);
-      console.log("Searched blog posts:", response.data);
     } catch (error: any) {
-      console.error("Error searching blog posts:", error.response ? error.response.data : error.message);
       setBlogError("Failed to search blog posts. Please try again.");
     }
   };
 
-  // Fetch blog categories
   const fetchCategories = async () => {
     try {
       setCategoryError("");
-      const response = await axios.get(`${API_BASE_URL}/blogCategory`, {
+      const response: AxiosResponse<BlogCategory[]> = await axios.get(`${API_BASE_URL}/blogCategory`, {
         withCredentials: true,
       });
       setBlogCategories(response.data);
-      console.log("Fetched blog categories:", response.data);
     } catch (error: any) {
-      console.error("Error fetching blog categories:", error.response ? error.response.data : error.message);
       setCategoryError("Failed to load blog categories. Please try again.");
     }
   };
 
-  // Search blog categories
   const searchCategories = async (query: string) => {
     try {
       setCategoryError("");
-      const response = await axios.get(`${API_BASE_URL}/blogCategory/search?query=${encodeURIComponent(query)}`, {
+      const response: AxiosResponse<BlogCategory[]> = await axios.get(`${API_BASE_URL}/blogCategory/search?query=${encodeURIComponent(query)}`, {
         withCredentials: true,
       });
       setBlogCategories(response.data);
-      console.log("Searched blog categories:", response.data);
     } catch (error: any) {
-      console.error("Error searching blog categories:", error.response ? error.response.data : error.message);
       setCategoryError("Failed to search blog categories. Please try again.");
     }
   };
 
-  // Initial data fetch
   useEffect(() => {
     fetchBlogs();
     fetchCategories();
   }, []);
 
-  // Handle search with debounce
   useEffect(() => {
     if (searchTerm) {
       const delayDebounceFn = setTimeout(() => {
@@ -132,43 +116,37 @@ const BlogsManagement = () => {
     }
   }, [searchTerm, activeTab]);
 
-  // Handle category creation
   const handleAddCategory = async () => {
     if (!newCategoryTitle.trim()) {
       alert("Please enter a category title");
       return;
     }
-
     try {
-      const response = await axios.post(
+      const response: AxiosResponse<{ id: string }> = await axios.post(
         `${API_BASE_URL}/blogCategory`,
         { title: newCategoryTitle },
         { withCredentials: true }
       );
-      const newCategory: BlogCategory = {
+      setBlogCategories(prev => [...prev, {
         _id: response.data.id,
         title: newCategoryTitle,
         createdAt: new Date().toISOString(),
-      };
-      setBlogCategories(prev => [...prev, newCategory]);
+      }]);
       setNewCategoryTitle("");
       setCategorySuccess(true);
       setTimeout(() => setCategorySuccess(false), 3000);
     } catch (error: any) {
-      console.error("Error adding category:", error.response ? error.response.data : error.message);
       alert("Failed to add category. Please try again.");
     }
   };
 
-  // Handle category update
   const handleUpdateCategory = async () => {
     if (!editingCategoryTitle.trim()) {
       alert("Please enter a category title");
       return;
     }
-
     try {
-      const response = await axios.put(
+      const response: AxiosResponse<BlogCategory> = await axios.put(
         `${API_BASE_URL}/blogCategory/${editingCategoryId}`,
         { title: editingCategoryTitle },
         { withCredentials: true }
@@ -179,28 +157,28 @@ const BlogsManagement = () => {
       setCategorySuccess(true);
       setTimeout(() => setCategorySuccess(false), 3000);
     } catch (error: any) {
-      console.error("Error updating category:", error.response ? error.response.data : error.message);
       alert("Failed to update category. Please try again.");
     }
   };
 
-  // Handle blog submission
   const handleSubmitBlog = async () => {
-    if (!blogTitle || !blogContent || !blogImageUrl || !blogCategory) {
+    if (!blogTitle || !editorState.getCurrentContent().hasText() || !blogImageUrl || !blogCategory) {
       alert("Please fill all required fields (title, content, image URL, category)");
       return;
     }
-
     setIsSubmitting(true);
     try {
+      const contentState = editorState.getCurrentContent();
+      const rawContent = convertToRaw(contentState);
+      const htmlContent = draftToHtml(rawContent);
       const blogData = {
         title: blogTitle,
         subtitle: blogSubtitle,
-        content: blogContent,
+        content: htmlContent,
         blogsCategory: blogCategory,
         imageUrl: blogImageUrl,
       };
-      let response: AxiosResponse<any, any>;
+      let response: AxiosResponse<BlogPost>;
       if (editingPostId) {
         response = await axios.put(
           `${API_BASE_URL}/blogs/${editingPostId}`,
@@ -220,28 +198,27 @@ const BlogsManagement = () => {
       resetBlogForm();
       setTimeout(() => setBlogSuccess(false), 3000);
     } catch (error: any) {
-      console.error("Error submitting blog post:", error.response ? error.response.data : error.message);
       alert("Failed to submit blog post. Please try again.");
     } finally {
       setIsSubmitting(false);
     }
   };
 
-  // Reset blog form
   const resetBlogForm = () => {
     setBlogTitle("");
     setBlogSubtitle("");
-    setBlogContent("");
+    setEditorState(EditorState.createEmpty());
     setBlogCategory("");
     setBlogImageUrl("");
     setEditingPostId(null);
   };
 
-  // Edit existing blog post
   const handleEditBlog = (post: BlogPost) => {
     setBlogTitle(post.title);
     setBlogSubtitle(post.subtitle);
-    setBlogContent(post.content);
+    const { contentBlocks, entityMap } = htmlToDraft(post.content);
+    const contentState = ContentState.createFromBlockArray(contentBlocks, entityMap);
+    setEditorState(EditorState.createWithContent(contentState));
     setBlogCategory(post.blogsCategory);
     setBlogImageUrl(post.imageUrl);
     setEditingPostId(post._id);
@@ -249,7 +226,6 @@ const BlogsManagement = () => {
     window.scrollTo(0, 0);
   };
 
-  // Delete blog post
   const handleDeleteBlog = async (id: string) => {
     try {
       await axios.delete(`${API_BASE_URL}/blogs/${id}`, {
@@ -257,15 +233,12 @@ const BlogsManagement = () => {
       });
       setBlogPosts(blogPosts.filter(post => post._id !== id));
     } catch (error: any) {
-      console.error("Error deleting blog post:", error.response ? error.response.data : error.message);
       alert("Failed to delete blog post. Please try again.");
     }
   };
 
-  // Handle category deletion
   const handleDeleteCategories = async () => {
     if (selectedCategories.length === 0) return;
-
     try {
       await Promise.all(
         selectedCategories.map(async (categoryTitle) => {
@@ -280,24 +253,20 @@ const BlogsManagement = () => {
       setBlogCategories(blogCategories.filter(category => !selectedCategories.includes(category.title)));
       setSelectedCategories([]);
     } catch (error: any) {
-      console.error("Error deleting categories:", error.response ? error.response.data : error.message);
       alert("Failed to delete categories. Please try again.");
     }
   };
 
-  // Edit existing category
   const handleEditCategory = (category: BlogCategory) => {
     setEditingCategoryId(category._id);
     setEditingCategoryTitle(category.title);
   };
 
-  // Cancel category edit
   const cancelEditCategory = () => {
     setEditingCategoryId(null);
     setEditingCategoryTitle("");
   };
 
-  // Toggle category selection
   const toggleCategorySelection = (category: BlogCategory) => {
     setSelectedCategories(prev =>
       prev.includes(category.title)
@@ -306,8 +275,7 @@ const BlogsManagement = () => {
     );
   };
 
-  // Format date
-  const formatDate = (dateString: string) => {
+  const formatDate = (dateString: string): string => {
     return new Date(dateString).toLocaleDateString('en-US', {
       year: 'numeric',
       month: 'short',
@@ -317,10 +285,51 @@ const BlogsManagement = () => {
     });
   };
 
+  // Formatting handlers for Draft.js
+  const handleKeyCommand = (command: string, editorState: EditorState): "handled" | "not-handled" => {
+    const newState = RichUtils.handleKeyCommand(editorState, command);
+    if (newState) {
+      setEditorState(newState);
+      return "handled";
+    }
+    return "not-handled";
+  };
+
+  const toggleInlineStyle = (style: string) => {
+    setEditorState(RichUtils.toggleInlineStyle(editorState, style));
+  };
+
+  const toggleBlockType = (blockType: string) => {
+    setEditorState(RichUtils.toggleBlockType(editorState, blockType));
+  };
+
+  const getCurrentBlockType = (): string => {
+    const selection = editorState.getSelection();
+    return editorState.getCurrentContent().getBlockForKey(selection.getStartKey()).getType();
+  };
+
+  const applyCustomStyle = (styleType: string, value: string) => {
+    const selection = editorState.getSelection();
+    if (!selection.isCollapsed()) {
+      const contentState = editorState.getCurrentContent();
+      const newContentState = Modifier.applyInlineStyle(
+        contentState,
+        selection,
+        `${styleType}-${value}`
+      );
+      setEditorState(EditorState.push(editorState, newContentState, "change-inline-style"));
+    }
+  };
+
+  // Toolbar options
+  const fontSizes = [12, 14, 16, 18, 24, 36];
+  const fontFamilies = ["Arial", "Times New Roman", "Courier New", "Georgia"];
+  const colors = ["#000000", "#FF0000", "#00FF00", "#0000FF", "#FFFF00"];
+  const alignments = ["left", "center", "right", "justify"];
+
   return (
     <div className="w-full text-black bg-gray-100 p-4">
       <div className="max-w-7xl mx-auto bg-white rounded-lg shadow-md overflow-hidden">
-        {/* Tabs */}
         <div className="flex border-b">
           <button
             className={`px-4 py-2 font-medium ${activeTab === "create" ? "text-blue-600 border-b-2 border-blue-600" : "cursor-pointer text-gray-600"}`}
@@ -344,12 +353,9 @@ const BlogsManagement = () => {
             Manage Categories
           </button>
         </div>
-
-        {/* Content Area */}
         <div className="p-6">
           {activeTab === "create" ? (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {/* Blog Form */}
               <div className="lg:col-span-2">
                 <h2 className="text-xl font-semibold mb-4">
                   {editingPostId ? "Edit Blog Post" : "Create New Blog Post"}
@@ -360,7 +366,7 @@ const BlogsManagement = () => {
                     <input
                       type="text"
                       value={blogImageUrl}
-                      onChange={(e) => setBlogImageUrl(e.target.value)}
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => setBlogImageUrl(e.target.value)}
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                       placeholder="Enter blog image URL"
                     />
@@ -370,7 +376,7 @@ const BlogsManagement = () => {
                     <input
                       type="text"
                       value={blogTitle}
-                      onChange={(e) => setBlogTitle(e.target.value)}
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => setBlogTitle(e.target.value)}
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                       placeholder="Enter blog title"
                     />
@@ -380,7 +386,7 @@ const BlogsManagement = () => {
                     <input
                       type="text"
                       value={blogSubtitle}
-                      onChange={(e) => setBlogSubtitle(e.target.value)}
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => setBlogSubtitle(e.target.value)}
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                       placeholder="Enter blog subtitle"
                     />
@@ -389,7 +395,7 @@ const BlogsManagement = () => {
                     <label className="block text-sm font-medium text-gray-700 mb-1">Category *</label>
                     <select
                       value={blogCategory}
-                      onChange={(e) => setBlogCategory(e.target.value)}
+                      onChange={(e: React.ChangeEvent<HTMLSelectElement>) => setBlogCategory(e.target.value)}
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                     >
                       <option value="">Select a category</option>
@@ -402,12 +408,160 @@ const BlogsManagement = () => {
                   </div>
                   <div>
                     <label className="block text-sm font-medium text-gray-700 mb-1">Content *</label>
-                    <textarea
-                      value={blogContent}
-                      onChange={(e) => setBlogContent(e.target.value)}
-                      className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 h-64"
-                      placeholder="Write your blog content here..."
-                    />
+                    <div className="bg-white border border-gray-300 rounded-md shadow-sm p-1" style={{ backgroundImage: 'linear-gradient(#f5f5f5 1px, transparent 1px)', backgroundSize: '100% 1.5em' }}>
+                      <div className=" items-center space-x-[8px] space-y-[5px] gap-2 mb-2 bg-gray-100 p-2 rounded-t-md border-b border-gray-300">
+                        <button
+                          onClick={() => toggleInlineStyle("BOLD")}
+                          className={`p-1 rounded ${editorState.getCurrentInlineStyle().has("BOLD") ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}
+                          title="Bold"
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 11h3.5a3.5 3.5 0 110 7H9v-7m0-4h3a3 3 0 013 3H9V4z" />
+                          </svg>
+                        </button>
+                        <button
+                          onClick={() => toggleInlineStyle("ITALIC")}
+                          className={`p-1 rounded ${editorState.getCurrentInlineStyle().has("ITALIC") ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}
+                          title="Italic"
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 4l-4 16m8-16l-4 16" />
+                          </svg>
+                        </button>
+                        <button
+                          onClick={() => toggleInlineStyle("UNDERLINE")}
+                          className={`p-1 rounded ${editorState.getCurrentInlineStyle().has("UNDERLINE") ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}
+                          title="Underline"
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5v6a3 3 0 006 0V5M6 19h12" />
+                          </svg>
+                        </button>
+                        <button
+                          onClick={() => toggleInlineStyle("STRIKETHROUGH")}
+                          className={`p-1 rounded ${editorState.getCurrentInlineStyle().has("STRIKETHROUGH") ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}
+                          title="Strikethrough"
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 12h8m-8 0H4" />
+                          </svg>
+                        </button>
+                        <select
+                          onChange={(e) => applyCustomStyle("FONTSIZE", e.target.value)}
+                          className="px-1 py-0.5 text-sm border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          title="Font Size"
+                        >
+                          <option value="">Size</option>
+                          {fontSizes.map(size => (
+                            <option key={size} value={size}>{size}px</option>
+                          ))}
+                        </select>
+                        <select
+                          onChange={(e) => applyCustomStyle("FONTFAMILY", e.target.value)}
+                          className="px-1 py-0.5 text-sm border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          title="Font Family"
+                        >
+                          <option value="">Font</option>
+                          {fontFamilies.map(font => (
+                            <option key={font} value={font}>{font}</option>
+                          ))}
+                        </select>
+                        <select
+                          onChange={(e) => applyCustomStyle("COLOR", e.target.value)}
+                          className="px-1 py-0.5 text-sm border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          title="Text Color"
+                        >
+                          <option value="">Color</option>
+                          {colors.map(color => (
+                            <option key={color} value={color} style={{ color }}>{color}</option>
+                          ))}
+                        </select>
+                        <select
+                          onChange={(e) => applyCustomStyle("BACKGROUND", e.target.value)}
+                          className="px-1 py-0.5 text-sm border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          title="Background Color"
+                        >
+                          <option value="">Bg</option>
+                          {colors.map(color => (
+                            <option key={color} value={color} style={{ backgroundColor: color, color: color === "#FFFF00" ? "#000" : "#FFF" }}>{color}</option>
+                          ))}
+                        </select>
+                        <button
+                          onClick={() => toggleBlockType("unordered-list-item")}
+                          className={`p-1 rounded ${getCurrentBlockType() === "unordered-list-item" ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}
+                          title="Bulleted List"
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5h12m-12 7h12m-12 7h12m-15-14h-3m0 7h-3m0 7h-3" />
+                          </svg>
+                        </button>
+                        <button
+                          onClick={() => toggleBlockType("ordered-list-item")}
+                          className={`p-1 rounded ${getCurrentBlockType() === "ordered-list-item" ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}
+                          title="Numbered List"
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M7 5h14M7 12h14M7 19h14M3 6h2M3 13h2M3 20h2" />
+                          </svg>
+                        </button>
+                        <select
+                          onChange={(e) => toggleBlockType(e.target.value)}
+                          className="px-1 py-0.5 text-sm border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          title="Headings"
+                        >
+                          <option value="">Heading</option>
+                          {["header-one", "header-two", "header-three", "header-four", "header-five", "header-six"].map((h, i) => (
+                            <option key={h} value={h}>H{i + 1}</option>
+                          ))}
+                        </select>
+                        <button
+                          onClick={() => toggleBlockType("blockquote")}
+                          className={`p-1 rounded ${getCurrentBlockType() === "blockquote" ? "bg-blue-500 text-white" : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}
+                          title="Blockquote"
+                        >
+                          <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2h2" />
+                          </svg>
+                        </button>
+                        <select
+                          onChange={(e) => toggleBlockType(`align-${e.target.value}`)}
+                          className="px-1 py-0.5 text-sm border border-gray-300 rounded-md bg-white focus:outline-none focus:ring-2 focus:ring-blue-500"
+                          title="Alignment"
+                        >
+                          <option value="">Align</option>
+                          {alignments.map(align => (
+                            <option key={align} value={align}>{align.charAt(0).toUpperCase() + align.slice(1)}</option>
+                          ))}
+                        </select>
+                      </div>
+                      <div className="p-4 min-h-[300px]">
+                        <Editor
+                          editorState={editorState}
+                          onChange={setEditorState}
+                          handleKeyCommand={handleKeyCommand}
+                          placeholder="Write your blog content here..."
+                          customStyleMap={{
+                            ...fontSizes.reduce((map, size) => ({
+                              ...map,
+                              [`FONTSIZE-${size}`]: { fontSize: `${size}px` },
+                            }), {}),
+                            ...fontFamilies.reduce((map, font) => ({
+                              ...map,
+                              [`FONTFAMILY-${font}`]: { fontFamily: font },
+                            }), {}),
+                            ...colors.reduce((map, color) => ({
+                              ...map,
+                              [`COLOR-${color}`]: { color },
+                              [`BACKGROUND-${color}`]: { backgroundColor: color },
+                            }), {}),
+                            "align-left": { textAlign: "left" },
+                            "align-center": { textAlign: "center" },
+                            "align-right": { textAlign: "right" },
+                            "align-justify": { textAlign: "justify" },
+                          }}
+                        />
+                      </div>
+                    </div>
                   </div>
                   <div className="pt-2 flex space-x-3">
                     <button
@@ -428,7 +582,6 @@ const BlogsManagement = () => {
                   </div>
                 </div>
               </div>
-              {/* Preview Section */}
               <div className="hidden lg:block">
                 <h2 className="text-xl font-semibold mb-4">Preview</h2>
                 <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
@@ -448,10 +601,11 @@ const BlogsManagement = () => {
                           {blogCategories.find(cat => cat._id === blogCategory)?.title || 'Unknown Category'}
                         </span>
                       )}
-                      {blogContent && (
-                        <div className="prose max-w-none">
-                          <p>{blogContent}</p>
-                        </div>
+                      {editorState.getCurrentContent().hasText() && (
+                        <div
+                          className="prose max-w-none"
+                          dangerouslySetInnerHTML={{ __html: draftToHtml(convertToRaw(editorState.getCurrentContent())) }}
+                        />
                       )}
                     </>
                   ) : (
@@ -463,7 +617,6 @@ const BlogsManagement = () => {
           ) : activeTab === "manage" ? (
             <div className="space-y-6 h-[70vh]">
               <h2 className="text-xl font-semibold">Manage Blog Posts</h2>
-              {/* Search Bar */}
               <div className="mb-6">
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -474,7 +627,7 @@ const BlogsManagement = () => {
                   <input
                     type="text"
                     value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value)}
                     className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                     placeholder="Search blog posts..."
                   />
@@ -540,7 +693,6 @@ const BlogsManagement = () => {
           ) : (
             <div className="space-y-6">
               <h2 className="text-xl font-semibold">Manage Categories</h2>
-              {/* Search Bar */}
               <div className="mb-6">
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
@@ -551,13 +703,12 @@ const BlogsManagement = () => {
                   <input
                     type="text"
                     value={searchTerm}
-                    onChange={(e) => setSearchTerm(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchTerm(e.target.value)}
                     className="block w-full pl-10 pr-3 py-2 border border-gray-300 rounded-md leading-5 bg-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm"
                     placeholder="Search blog categories..."
                   />
                 </div>
               </div>
-              {/* Add/Edit Category Form */}
               <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                 <h3 className="font-medium mb-3">{editingCategoryId ? "Edit Category" : "Add New Category"}</h3>
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -566,7 +717,7 @@ const BlogsManagement = () => {
                     <input
                       type="text"
                       value={editingCategoryId ? editingCategoryTitle : newCategoryTitle}
-                      onChange={(e) => editingCategoryId ? setEditingCategoryTitle(e.target.value) : setNewCategoryTitle(e.target.value)}
+                      onChange={(e: React.ChangeEvent<HTMLInputElement>) => editingCategoryId ? setEditingCategoryTitle(e.target.value) : setNewCategoryTitle(e.target.value)}
                       className="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                       placeholder="Enter category title"
                     />
@@ -590,7 +741,6 @@ const BlogsManagement = () => {
                   )}
                 </div>
               </div>
-              {/* Categories List */}
               <div>
                 <div className="flex justify-between items-center mb-3">
                   <h3 className="font-medium">Existing Categories</h3>
@@ -628,7 +778,7 @@ const BlogsManagement = () => {
                         <div className="flex justify-between w-full">
                           <span className="text-sm font-medium text-center">{category.title}</span>
                           <button
-                            onClick={(e) => {
+                            onClick={(e: React.MouseEvent) => {
                               e.stopPropagation();
                               handleEditCategory(category);
                             }}
@@ -652,8 +802,6 @@ const BlogsManagement = () => {
             </div>
           )}
         </div>
-
-        {/* Success Notification */}
         {(blogSuccess || categorySuccess) && (
           <div className="fixed top-4 right-4 z-50">
             <div className="bg-green-500 text-white px-4 py-2 rounded-md shadow-lg flex items-center">
