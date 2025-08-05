@@ -1,10 +1,11 @@
-"use client";
-
+'use client';
 import React, { useState, useEffect } from "react";
 import axios, { AxiosResponse } from "axios";
 import dynamic from "next/dynamic";
 import { EditorState, ContentState, convertToRaw, RichUtils, Modifier } from "draft-js";
-import "draft-js/dist/Draft.css"; // Correct CSS import
+import "draft-js/dist/Draft.css";
+import Image from "next/image";
+import DOMPurify from 'dompurify';
 
 // Dynamically import draft-js Editor component
 const Editor = dynamic(() => import("draft-js").then((mod) => mod.Editor), { ssr: false });
@@ -46,6 +47,7 @@ const BlogsManagement: React.FC = () => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [imageLink, setImageLink] = useState<string>("");
+  const [previewContent, setPreviewContent] = useState<string>("");
 
   const API_BASE_URL = "https://portfolio-backend-new-2.vercel.app";
 
@@ -53,6 +55,24 @@ const BlogsManagement: React.FC = () => {
   useEffect(() => {
     setEditorState(EditorState.createEmpty());
   }, []);
+
+  // Update preview content when editorState changes
+  useEffect(() => {
+    if (editorState?.getCurrentContent().hasText()) {
+      const handler = setTimeout(() => {
+        import("draftjs-to-html").then(({ default: draftToHtml }) => {
+          const htmlContent = draftToHtml(convertToRaw(editorState.getCurrentContent()));
+          setPreviewContent(DOMPurify.sanitize(htmlContent));
+        }).catch((error) => {
+          console.error("Failed to convert draft to HTML:", error);
+          setPreviewContent("");
+        });
+      }, 500); // Debounce to reduce re-renders
+      return () => clearTimeout(handler);
+    } else {
+      setPreviewContent("");
+    }
+  }, [editorState]);
 
   const fetchBlogs = async () => {
     try {
@@ -238,6 +258,7 @@ const BlogsManagement: React.FC = () => {
     setBlogImageUrl("");
     setEditingPostId(null);
     setImageLink("");
+    setPreviewContent("");
   };
 
   const handleEditBlog = async (post: BlogPost) => {
@@ -383,7 +404,7 @@ const BlogsManagement: React.FC = () => {
             Manage Categories
           </button>
         </div>
-        <div className="p-6">
+        <div className="p-6 overflow-y-scroll">
           {activeTab === "create" && editorState ? (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
               <div className="lg:col-span-2">
@@ -707,7 +728,7 @@ const BlogsManagement: React.FC = () => {
                   {blogTitle ? (
                     <>
                       {blogImageUrl && (
-                        <img src={blogImageUrl} alt="Blog preview" className="w-full h-48 object-cover rounded-md mb-4" />
+                        <Image src={blogImageUrl} quality={100} height={150} width={150} alt="Blog preview" className="w-full h-48 object-cover rounded-md mb-4" />
                       )}
                       <h3 className="text-lg font-medium mb-2">{blogTitle}</h3>
                       {blogSubtitle && <p className="text-gray-600 mb-3">{blogSubtitle}</p>}
@@ -716,16 +737,10 @@ const BlogsManagement: React.FC = () => {
                           {blogCategories.find((cat) => cat._id === blogCategory)?.title || "Unknown Category"}
                         </span>
                       )}
-                      {editorState?.getCurrentContent().hasText() && (
-                        <div
-                          className="prose max-w-none"
-                          dangerouslySetInnerHTML={{
-                            __html: (async () => {
-                              const { default: draftToHtml } = await import("draftjs-to-html");
-                              return draftToHtml(convertToRaw(editorState.getCurrentContent()));
-                            })(),
-                          }}
-                        />
+                      {previewContent ? (
+                        <div className="prose max-w-none" dangerouslySetInnerHTML={{ __html: previewContent }} />
+                      ) : (
+                        <p className="text-gray-500 italic">Start typing to see a preview</p>
                       )}
                     </>
                   ) : (
@@ -735,7 +750,7 @@ const BlogsManagement: React.FC = () => {
               </div>
             </div>
           ) : activeTab === "manage" ? (
-            <div className="space-y-6 h-[70vh]">
+            <div className="space-y-6  h-[70vh]">
               <h2 className="text-xl font-semibold">Manage Blog Posts</h2>
               <div className="mb-6">
                 <div className="relative">
@@ -777,13 +792,13 @@ const BlogsManagement: React.FC = () => {
               ) : blogPosts.length === 0 ? (
                 <p className="text-gray-500 italic">No blog posts yet. Create your first blog post.</p>
               ) : (
-                <div className="space-y-4">
+                <div className="space-y-4 ">
                   {blogPosts.map((post) => (
                     <div key={post._id} className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow">
                       <div className="flex flex-col md:flex-row md:items-center md:justify-between">
                         <div className="flex items-start space-x-4">
                           {post.imageUrl && (
-                            <img src={post.imageUrl} alt={post.title} className="w-24 h-16 object-cover rounded-md" />
+                            <Image width={100} height={100} quality={100} src={post.imageUrl} alt={post.title} className="w-24 h-16 object-cover rounded-md" />
                           )}
                           <div>
                             <h3 className="font-medium">{post.title}</h3>

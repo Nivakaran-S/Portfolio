@@ -89,11 +89,11 @@ const Blogs = () => {
                 <div className="flex items-center  blogs4 mt-[40px] justify-center">
                       <div className="grid w-[95%] sm:w-[95%] md:w-[85%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px] md:gap-[0px] ">
                           
-                            <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
-                            <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
+                            <BlogCard image="" text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
+                            <BlogCard image="" text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
                           
-                            <BlogCard text="Blog 1" text1=" Blog Title Blog Title" onClick={onBlog1Click}/>
-                            <BlogCard text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
+                            <BlogCard image="" text="Blog 1" text1=" Blog Title Blog Title" onClick={onBlog1Click}/>
+                            <BlogCard image="" text="Blog 1" text1="Blog Title Blog Title" onClick={onBlog1Click}/>
 
                       </div>
                     </div>
