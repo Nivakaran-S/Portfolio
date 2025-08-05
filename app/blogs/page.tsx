@@ -68,8 +68,8 @@ const Blogs = () => {
             setComputerVisionBlogs(blogs.filter((blog: BlogPost) => blog.blogsCategory === "688c1add602363e313f55ca2"));
             setGenerativeAIBlogs(blogs.filter((blog: BlogPost) => blog.blogsCategory === "68918e790fe23ef198fc9955"));
             setAgenticAIBlogs(blogs.filter((blog: BlogPost) => blog.blogsCategory === "688c1ae9602363e313f55ca4"));
-            setDataEngineeringBlogs(blogs.filter((blog: BlogPost) => blog.blogsCategory === "Data Engineering"));
-            setBehindScenesBlogs(blogs.filter((blog: BlogPost) => blog.blogsCategory === "Behind the Scenes"));
+            setDataEngineeringBlogs(blogs.filter((blog: BlogPost) => blog.blogsCategory === "6890aab8b6f6853a5ed65479"));
+            setBehindScenesBlogs(blogs.filter((blog: BlogPost) => blog.blogsCategory === "6891ab75794ad168dc130ef5"));
         } catch (error) {
             console.error("Failed to fetch blogs:", error);
         }
