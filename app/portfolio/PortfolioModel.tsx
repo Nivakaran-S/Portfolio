@@ -2,19 +2,22 @@
 
 import React, { useEffect, useRef } from 'react';
 import './style.css';
-import News from '../images/news.jpeg';
 import Image from 'next/image';
+import placeholderImage from '../images/news.jpeg'; // Fallback image (StaticImport)
+import { Project } from './types'; // Import shared Project type
 
 interface ScrollContainerProps {
   onPortfolioClick?: boolean;
   resetPortfolioClick?: () => void;
   setOnPortfolioClick?: (value: boolean) => void;
+  project: Project | null;
 }
 
 const PortfolioModel: React.FC<ScrollContainerProps> = ({
   onPortfolioClick = false,
   resetPortfolioClick = () => {},
   setOnPortfolioClick = () => {},
+  project,
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
@@ -52,6 +55,45 @@ const PortfolioModel: React.FC<ScrollContainerProps> = ({
       };
     }
   }, [onPortfolioClick]);
+
+  // Validate URL
+  const isValidUrl = (url: string | undefined): url is string => {
+    if (!url || typeof url !== 'string' || url.trim() === '') return false;
+    try {
+      new URL(url);
+      return true;
+    } catch {
+      console.warn(`Invalid URL detected: ${url}`);
+      return false;
+    }
+  };
+
+  // Get available images with validation
+  const images = project?.images
+    ? [
+        project.images.imageUrl1,
+        project.images.imageUrl2,
+        project.images.imageUrl3,
+      ].map(url => (isValidUrl(url) ? url : placeholderImage)) // Use placeholderImage (StaticImport) for invalid URLs
+    : [placeholderImage, placeholderImage, placeholderImage]; // Fallback for no images
+
+  // Log images for debugging
+  useEffect(() => {
+    if (project?.images) {
+      console.log('Project images:', {
+        imageUrl1: project.images.imageUrl1,
+        imageUrl2: project.images.imageUrl2,
+        imageUrl3: project.images.imageUrl3,
+      });
+    }
+  }, [project]);
+
+  // Normalize techStack for display
+  const techStackDisplay = typeof project?.techStack === 'string'
+    ? project.techStack
+    : Array.isArray(project?.techStack)
+    ? project.techStack.join(', ')
+    : 'No tech stack provided';
 
   return (
     <div className="fixed flex custom-scrollbar flex-col overflow-y-auto h-[100vh] py-[5vh] inset-0 z-[50] items-center justify-start">
@@ -91,14 +133,16 @@ const PortfolioModel: React.FC<ScrollContainerProps> = ({
             <div className="flex w-full flex-row items-center justify-center pt-[50px] space-x-[20px]">
               <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-[60%] h-[580px] rounded-[10px] flex items-center justify-center relative">
                 <Image
-                  src={News}
-                  alt="Project Image"
+                  src={images[0]}
+                  alt={project?.title || 'Project Image'}
                   className="w-full h-full object-cover transition-transform duration-500 rounded-[10px]"
                   width={500}
                   height={350}
+                  placeholder="blur"
+                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGUrGwU6AAAAABJRU5ErkJggg=="
                 />
                 <p className="text-[40px] text-[#101010] absolute text-center sm:text-[50px] md:text-[70px] font-bold p-6">
-                  News Web App
+                  {project?.title || 'Project Title'}
                 </p>
               </div>
               <div className="w-[40%] h-full space-y-[20px]">
@@ -108,11 +152,13 @@ const PortfolioModel: React.FC<ScrollContainerProps> = ({
                     className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-full h-[280px] rounded-[10px] flex items-center justify-center"
                   >
                     <Image
-                      src={News}
-                      alt="Project Image"
+                      src={images[i]}
+                      alt={`Project Image ${i}`}
                       className="w-full h-full object-cover transition-transform duration-500 rounded-[10px]"
                       width={500}
                       height={350}
+                      placeholder="blur"
+                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGUrGwU6AAAAABJRU5ErkJggg=="
                     />
                   </div>
                 ))}
@@ -122,44 +168,42 @@ const PortfolioModel: React.FC<ScrollContainerProps> = ({
 
           {/* Sections */}
           {[
-            { title: 'Project Overview', imageLeft: true },
-            { title: 'The Problem', imageLeft: false },
-            { title: 'Tech Stack', imageLeft: false, textOnly: true },
-            { title: 'The Solution', imageLeft: true }
-          ].map(({ title, imageLeft, textOnly = false }) => (
+            { title: 'Project Overview', content: project?.projectOverview },
+            { title: 'The Problem', content: project?.problem },
+            { title: 'Tech Stack', content: techStackDisplay, textOnly: true },
+            { title: 'The Solution', content: project?.solution },
+          ].map(({ title, content, textOnly = false }, index) => (
             <div key={title}>
               <p className="text-[40px] text-center sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent p-6">
                 {title}
               </p>
               <div className="flex w-full flex-row items-center justify-center space-x-[20px]">
-                {imageLeft && !textOnly && (
+                {!textOnly && index % 2 === 0 && (
                   <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-[50%] h-[350px] rounded-[10px] flex items-center justify-center">
                     <Image
-                      src={News}
-                      alt="Project Image"
+                      src={images[index + 1] || placeholderImage}
+                      alt={`${title} Image`}
                       className="w-full h-full object-cover transition-transform duration-500 rounded-[10px]"
                       width={500}
                       height={350}
+                      placeholder="blur"
+                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGUrGwU6AAAAABJRU5ErkJggg=="
                     />
                   </div>
                 )}
                 <div className={`${textOnly ? 'w-full' : 'w-[50%]'} space-y-2 text-sm leading-relaxed text-white`}>
-                  {[...Array(4)].map((_, idx) => (
-                    <p key={idx}>
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum praesentium
-                      placeat labore, vitae voluptate tempora aspernatur dolorem voluptatum id
-                      reprehenderit maxime expedita molestiae ea.
-                    </p>
-                  ))}
+                  <p>{content || `No ${title.toLowerCase()} provided.`}</p>
                 </div>
-                {!imageLeft && !textOnly && (
+                {!textOnly && index % 2 !== 0 && (
                   <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-[50%] h-[350px] rounded-[10px] flex items-center justify-center">
                     <Image
-                      src={News}
-                      alt="Project Image"
+                      src={images[index + 1] || placeholderImage}
+                      alt={`${title} Image`}
                       className="w-full h-full object-cover transition-transform duration-500 rounded-[10px]"
                       width={500}
                       height={350}
+                      placeholder="blur"
+                      blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGUrGwU6AAAAABJRU5ErkJggg=="
                     />
                   </div>
                 )}

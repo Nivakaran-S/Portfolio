@@ -1,20 +1,44 @@
-import Image from "next/image";
-import NewsPaper from '../images/news.jpeg'
+'use client';
 
-const MiniProject = () => {
-    return (
-        <div className="hover:scale-[108%] transition-transform duration-500  w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
-                <div className="flex items-center justify-center bg-[#373435] rounded-t-[15px] h-[50%]">
-                    <Image className="h-[100%] w-[100%] rounded-t-[15px]" alt="test" src={NewsPaper}/>
-                </div>
-                <div className="flex flex-col h-[50%] rounded-b-[15px] bg-[#1D1D1D] w-full px-[15px] justify-center">
-                    <p className="leading-[25px]">Project Title Project Title Project Title</p>
-                <div className="text-[10px] ">
-                    <p>Lorem ipsum dolor! Perspiciatis officia sit nemo error necessitatibus, cupiditate magnam numquam! Fugiat, reprehenderit placeat? Neque animi officia minus praesentium?</p>
-                </div>
+import Image from "next/image";
+import NewsPaper from '../images/news.jpeg';
+
+interface MiniProjectProps {
+  title: string;
+  description: string;
+  imageUrl: string;
+  githubUrl: string;
+  demoUrl: string;
+  category: string;
+}
+
+const MiniProject: React.FC<MiniProjectProps> = ({ title, description, imageUrl, githubUrl, demoUrl, category }) => {
+  return (
+    <div className="hover:scale-[108%] transition-transform duration-500 w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+      <div className="flex items-center justify-center bg-[#373435] rounded-[15px] h-[100%]">
+        <Image
+          className="h-[100%]  w-[100%] rounded-[15px] object-cover"
+          alt={title}
+          src={imageUrl || NewsPaper}
+          width={220}
+          height={160}
+          onError={(e) => { e.currentTarget.src = NewsPaper.src; }}
+        />
+        <div className="flex flex-col absolute h-[230px] rounded-[0px] bg-[#1D1D1D] w-[220px] px-[15px] justify-between py-[15px]">
+            <div>
+            <p className="leading-[25px] text-[14px] font-medium truncate">{title}</p>
+            
+            <p className="text-[10px] line-clamp-3">{description}</p>
+            </div>
+            <div className="flex justify-between space-x-[13px] text-[10px] text-blue-400">
+            <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="hover:bg-black bg-[#101010] flex items-center justify-center text-[15px] w-[50%] rounded-[10px]">GitHub</a>
+            <a href={demoUrl} target="_blank" rel="noopener noreferrer" className="hover:bg-black bg-[#101010] py-2 px-3 flex items-center justify-center text-[15px] w-[50%] rounded-[10px]">Demo</a>
             </div>
         </div>
-    );
-}
+      </div>
+      
+    </div>
+  );
+};
 
 export default MiniProject;

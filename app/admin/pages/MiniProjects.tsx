@@ -1,6 +1,7 @@
 'use client'
 import React, { useState, useEffect } from "react";
 import axios, { AxiosResponse } from "axios";
+import Image from "next/image";
 
 interface MiniProject {
   _id?: string; // Made optional to fix TypeScript error
@@ -373,7 +374,9 @@ const MiniProjects: React.FC = () => {
                 <div className="bg-gray-50 p-4 rounded-lg border border-gray-200">
                   {projectTitle && imageUrl ? (
                     <>
-                      <img
+                      <Image
+                        width={200}
+                        height={300}
                         src={imageUrl}
                         alt={projectTitle}
                         className="w-full h-48 object-cover rounded-md mb-4"
@@ -430,7 +433,9 @@ const MiniProjects: React.FC = () => {
                       className="border border-gray-200 rounded-lg overflow-hidden hover:shadow-md transition-shadow"
                     >
                       {project.imageUrl && (
-                        <img
+                        <Image
+                          height={200}
+                          width={300}
                           src={project.imageUrl}
                           alt={project.title}
                           className="w-full h-48 object-cover"
