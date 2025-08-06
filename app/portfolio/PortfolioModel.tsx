@@ -6,17 +6,18 @@ import Image from 'next/image';
 import placeholderImage from '../images/news.jpeg'; // Fallback image (StaticImport)
 import { Project } from './types'; // Import shared Project type
 
-interface ScrollContainerProps {
-  onPortfolioClick?: boolean;
-  resetPortfolioClick?: () => void;
-  setOnPortfolioClick?: (value: boolean) => void;
-  project: Project | null;
+// Fix: Make the interface match what's being passed from the parent
+interface PortfolioModelProps {
+  onPortfolioClick: boolean;        // REQUIRED (no ? mark)
+  resetPortfolioClick: () => void;  // REQUIRED (no ? mark)
+  setOnPortfolioClick: React.Dispatch<React.SetStateAction<boolean>>; // REQUIRED (no ? mark)
+  project: Project | null;          // REQUIRED
 }
 
-const PortfolioModel: React.FC<ScrollContainerProps> = ({
-  onPortfolioClick = false,
-  resetPortfolioClick = () => {},
-  setOnPortfolioClick = () => {},
+const PortfolioModel: React.FC<PortfolioModelProps> = ({
+  onPortfolioClick,
+  resetPortfolioClick,
+  setOnPortfolioClick,
   project,
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);

@@ -15,6 +15,7 @@ import Certification from "./components/Certification";
 import Max from "./components/Max";
 import Loader from "./components/Loader";
 import PortfolioModel from "./portfolio/PortfolioModel";
+import { Project } from "./portfolio/types"; // Import the Project type
 
 export default function Home() {
   const [showContactModel, setShowContactModel] = useState(false);
@@ -23,6 +24,9 @@ export default function Home() {
   const [onPortfolioClick, setOnPortfolioClick] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [loading, setLoading] = useState(false);
+  
+  // Add state for selected project
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const onMessageSuccess = () => {
     setShowMessageSuccess(true);
@@ -44,11 +48,21 @@ export default function Home() {
     }, 2500);
   };
 
-  const onPortfolioCard1Click = (e: React.MouseEvent<Element>) => {
+  // Option 2: Use data attributes to get project info
+  const onPortfolioCard1Click = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
     e.stopPropagation();
     if (typeof window !== 'undefined') {
       setScrollPosition(window.scrollY);
+      
+      // Get project data from data attributes (if available)
+      const target = e.currentTarget;
+      const projectId = target.getAttribute('data-project-id');
+      
+      // You would need to fetch or find the project by ID
+      // For now, setting to null - you'll need to implement project lookup
+      setSelectedProject(null);
+      
       setOnPortfolioClick(true);
       document.body.style.position = 'fixed';
       document.body.style.top = `-${window.scrollY}px`;
@@ -56,16 +70,16 @@ export default function Home() {
   };
 
   const resetPortfolioClick = () => {
-  if (typeof window !== 'undefined') {
-    setOnPortfolioClick(false); // Hide modal or overlay
-    document.body.style.position = '';
-    document.body.style.top = '';
+    if (typeof window !== 'undefined') {
+      setOnPortfolioClick(false); // Hide modal or overlay
+      setSelectedProject(null); // Clear selected project
+      document.body.style.position = '';
+      document.body.style.top = '';
 
-    const scrollY = scrollPosition; // From your useState
-    window.scrollTo(0, scrollY);
-  }
-};
-
+      const scrollY = scrollPosition; // From your useState
+      window.scrollTo(0, scrollY);
+    }
+  };
 
   return (
     <div className="flex text-white w-[100vw] overflow-x-hidden flex-col">
@@ -95,6 +109,8 @@ export default function Home() {
           resetPortfolioClick={resetPortfolioClick}
           onPortfolioClick={onPortfolioClick}
           setOnPortfolioClick={setOnPortfolioClick}
+          project={selectedProject} 
+          
         />
       </div>
 

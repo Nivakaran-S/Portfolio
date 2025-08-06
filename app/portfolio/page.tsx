@@ -1,4 +1,3 @@
-
 'use client';
 
 import Navigation from "../components/Navigation";
@@ -14,6 +13,14 @@ import PortfolioModel from "./PortfolioModel";
 import axios from 'axios';
 import { Project, ProjectCategory, MiniProject } from './types';
 import Newspaper from '../images/news.jpeg';
+
+// Define ScrollContainerProps for PortfolioModel
+interface ScrollContainerProps {
+  resetPortfolioClick: () => void;
+  onPortfolioClick: boolean;
+  setOnPortfolioClick: React.Dispatch<React.SetStateAction<boolean>>;
+  project: Project | null;
+}
 
 const Portfolio = () => {
   const [showContactModel, setShowContactModel] = useState(false);
@@ -192,13 +199,14 @@ const Portfolio = () => {
             <p className="text-gray-500 italic text-center mt-6">No projects or mini projects found.</p>
           ) : (
             <>
-            {/* Software Engineering Section */}
+              {/* Software Engineering Section */}
               <div className="mt-[30px] flex flex-col items-center w-[80vw]">
                 <p className="portfolio2 w-[70vw] ml-[10px] font-bold text-[35px] sm:text-[45px]">Software Engineering</p>
                 {/* Main Projects */}
-                <div className="portfolio2  grid gap-[20px] grid-cols-2  place-items-center  mt-[30px] flex md:flex-row flex-col space-y-[40px] md:space-y-[0px]  items-center justify-center">
+                <div className="portfolio2 grid gap-[20px] grid-cols-2 place-items-center mt-[30px] md:flex md:flex-row md:space-y-[0px] md:space-x-[20px] items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Software Engineering')
+                    .slice(0, 2)
                     .map((project) => {
                       const techs = normalizeTechStack(project.techStack);
                       return (
@@ -223,6 +231,7 @@ const Portfolio = () => {
                 <div className="portfolio2 mt-[30px] grid grid-cols-2 gap-[10px] sm:grid-cols-4 md:grid-cols-4 lg:flex lg:flex-row lg:space-x-[20px] items-center justify-center">
                   {miniProjects
                     .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Software Engineering')
+                    .slice(0, 4)
                     .map((miniProject) => (
                       <MiniProjectCard
                         key={miniProject._id}
@@ -236,14 +245,15 @@ const Portfolio = () => {
                     ))}
                 </div>
               </div>
+
               {/* Data Science Section */}
-              
               <div className="mt-[30px] flex flex-col items-center w-[80vw]">
-              <p className="portfolio1 w-[70vw]  ml-[10px] font-bold text-[35px] sm:text-[45px]">Data Science</p>  
+                <p className="portfolio3 w-[70vw] ml-[10px] font-bold text-[35px] sm:text-[45px]">Data Science</p>
                 {/* Main Projects */}
-                <div className="portfolio2  grid gap-[20px] grid-cols-2  place-items-center  mt-[30px] flex md:flex-row flex-col space-y-[40px] md:space-y-[0px]  items-center justify-center">
+                <div className="portfolio3 grid gap-[20px] grid-cols-2 place-items-center mt-[30px] md:flex md:flex-row md:space-y-[0px] md:space-x-[20px] items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Data Science')
+                    .slice(0, 2)
                     .map((project) => {
                       const techs = normalizeTechStack(project.techStack);
                       return (
@@ -264,8 +274,8 @@ const Portfolio = () => {
                     })}
                 </div>
                 {/* Mini Projects */}
-                <p className="portfolio1 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
-                <div className="portfolio1 mt-[30px] grid grid-cols-2 gap-[10px] sm:grid-cols-4 md:grid-cols-4 lg:flex lg:flex-row lg:space-x-[20px] items-center justify-center">
+                <p className="portfolio3 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
+                <div className="portfolio3 mt-[30px] grid grid-cols-2 gap-[10px] sm:grid-cols-4 md:grid-cols-4 lg:flex lg:flex-row lg:space-x-[20px] items-center justify-center">
                   {miniProjects
                     .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Data Science')
                     .slice(0, 4)
@@ -284,13 +294,13 @@ const Portfolio = () => {
               </div>
 
               {/* Computer Vision Section */}
-              
               <div className="mt-[30px] flex flex-col items-center w-[80vw]">
-              <p className="portfolio1 w-[70vw]  ml-[10px] font-bold text-[35px] sm:text-[45px]">Computer Vision</p>  
+                <p className="portfolio4 w-[70vw] ml-[10px] font-bold text-[35px] sm:text-[45px]">Computer Vision</p>
                 {/* Main Projects */}
-                <div className="portfolio2  grid gap-[20px] grid-cols-2  place-items-center  mt-[30px] flex md:flex-row flex-col space-y-[40px] md:space-y-[0px]  items-center justify-center">
+                <div className="portfolio4 grid gap-[20px] grid-cols-2 place-items-center mt-[30px] md:flex md:flex-row md:space-y-[0px] md:space-x-[20px] items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Computer Vision')
+                    .slice(0, 2)
                     .map((project) => {
                       const techs = normalizeTechStack(project.techStack);
                       return (
@@ -311,8 +321,8 @@ const Portfolio = () => {
                     })}
                 </div>
                 {/* Mini Projects */}
-                <p className="portfolio1 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
-                <div className="portfolio1 mt-[30px] grid grid-cols-2 gap-[10px] sm:grid-cols-4 md:grid-cols-4 lg:flex lg:flex-row lg:space-x-[20px] items-center justify-center">
+                <p className="portfolio4 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
+                <div className="portfolio4 mt-[30px] grid grid-cols-2 gap-[10px] sm:grid-cols-4 md:grid-cols-4 lg:flex lg:flex-row lg:space-x-[20px] items-center justify-center">
                   {miniProjects
                     .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Computer Vision')
                     .slice(0, 4)
@@ -330,14 +340,14 @@ const Portfolio = () => {
                 </div>
               </div>
 
-{/* Genearative AI Section */}
-              
+              {/* Generative AI Section */}
               <div className="mt-[30px] flex flex-col items-center w-[80vw]">
-              <p className="portfolio1 w-[70vw]  ml-[10px] font-bold text-[35px] sm:text-[45px]">Generative AI</p>  
+                <p className="portfolio5 w-[70vw] ml-[10px] font-bold text-[35px] sm:text-[45px]">Generative AI</p>
                 {/* Main Projects */}
-                <div className="portfolio2  grid gap-[20px] grid-cols-2  place-items-center  mt-[30px] flex md:flex-row flex-col space-y-[40px] md:space-y-[0px]  items-center justify-center">
+                <div className="portfolio5 grid gap-[20px] grid-cols-2 place-items-center mt-[30px] md:flex md:flex-row md:space-y-[0px] md:space-x-[20px] items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Generative AI')
+                    .slice(0, 2)
                     .map((project) => {
                       const techs = normalizeTechStack(project.techStack);
                       return (
@@ -358,8 +368,8 @@ const Portfolio = () => {
                     })}
                 </div>
                 {/* Mini Projects */}
-                <p className="portfolio1 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
-                <div className="portfolio1 mt-[30px] grid grid-cols-2 gap-[10px] sm:grid-cols-4 md:grid-cols-4 lg:flex lg:flex-row lg:space-x-[20px] items-center justify-center">
+                <p className="portfolio5 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
+                <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[10px] sm:grid-cols-4 md:grid-cols-4 lg:flex lg:flex-row lg:space-x-[20px] items-center justify-center">
                   {miniProjects
                     .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Generative AI')
                     .slice(0, 4)
@@ -376,17 +386,15 @@ const Portfolio = () => {
                     ))}
                 </div>
               </div>
-              
 
-
-{/* Agentic AI Section */}
-              
+              {/* Agentic AI Section */}
               <div className="mt-[30px] flex flex-col items-center w-[80vw]">
-              <p className="portfolio1 w-[70vw]  ml-[10px] font-bold text-[35px] sm:text-[45px]">Agentic AI</p>  
+                <p className="portfolio6 w-[70vw] ml-[10px] font-bold text-[35px] sm:text-[45px]">Agentic AI</p>
                 {/* Main Projects */}
-                <div className="portfolio2  grid gap-[20px] grid-cols-2  place-items-center  mt-[30px] flex md:flex-row flex-col space-y-[40px] md:space-y-[0px]  items-center justify-center">
+                <div className="portfolio6 grid gap-[20px] grid-cols-2 place-items-center mt-[30px] md:flex md:flex-row md:space-y-[0px] md:space-x-[20px] items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Agentic AI')
+                    .slice(0, 2)
                     .map((project) => {
                       const techs = normalizeTechStack(project.techStack);
                       return (
@@ -407,8 +415,8 @@ const Portfolio = () => {
                     })}
                 </div>
                 {/* Mini Projects */}
-                <p className="portfolio1 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
-                <div className="portfolio1 mt-[30px] grid grid-cols-2 gap-[10px] sm:grid-cols-4 md:grid-cols-4 lg:flex lg:flex-row lg:space-x-[20px] items-center justify-center">
+                <p className="portfolio6 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
+                <div className="portfolio6 mt-[30px] grid grid-cols-2 gap-[10px] sm:grid-cols-4 md:grid-cols-4 lg:flex lg:flex-row lg:space-x-[20px] items-center justify-center">
                   {miniProjects
                     .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Agentic AI')
                     .slice(0, 4)
@@ -425,7 +433,6 @@ const Portfolio = () => {
                     ))}
                 </div>
               </div>
-
             </>
           )}
         </div>
