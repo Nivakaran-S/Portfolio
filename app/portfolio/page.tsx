@@ -1,3 +1,5 @@
+
+
 'use client';
 
 import Navigation from "../components/Navigation";
@@ -14,8 +16,8 @@ import axios from 'axios';
 import { Project, ProjectCategory, MiniProject } from './types';
 import Newspaper from '../images/news.jpeg';
 
-// Define ScrollContainerProps for PortfolioModel
-interface ScrollContainerProps {
+// Fix: Rename the interface to match what PortfolioModel expects
+interface PortfolioModelProps {
   resetPortfolioClick: () => void;
   onPortfolioClick: boolean;
   setOnPortfolioClick: React.Dispatch<React.SetStateAction<boolean>>;
@@ -36,7 +38,6 @@ const Portfolio = () => {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState('');
-
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://portfolio-backend-new-2.vercel.app';
 
   const onMessageSuccess = () => {
@@ -203,10 +204,9 @@ const Portfolio = () => {
               <div className="mt-[30px] flex flex-col items-center w-[80vw]">
                 <p className="portfolio2 w-[70vw] ml-[10px] font-bold text-[35px] sm:text-[45px]">Software Engineering</p>
                 {/* Main Projects */}
-                <div className="portfolio2 grid gap-[20px] grid-cols-2 place-items-center mt-[30px] md:flex md:flex-row md:space-y-[0px] md:space-x-[20px] items-center justify-center">
+                <div className="portfolio2 grid gap-[20px] grid-cols-2 place-items-center mt-[30px]  md:space-y-[0px] md:space-x-[0px] items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Software Engineering')
-                    .slice(0, 2)
                     .map((project) => {
                       const techs = normalizeTechStack(project.techStack);
                       return (
@@ -231,7 +231,6 @@ const Portfolio = () => {
                 <div className="portfolio2 mt-[30px] grid grid-cols-2 gap-[10px] sm:grid-cols-4 md:grid-cols-4 lg:flex lg:flex-row lg:space-x-[20px] items-center justify-center">
                   {miniProjects
                     .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Software Engineering')
-                    .slice(0, 4)
                     .map((miniProject) => (
                       <MiniProjectCard
                         key={miniProject._id}
@@ -250,10 +249,9 @@ const Portfolio = () => {
               <div className="mt-[30px] flex flex-col items-center w-[80vw]">
                 <p className="portfolio3 w-[70vw] ml-[10px] font-bold text-[35px] sm:text-[45px]">Data Science</p>
                 {/* Main Projects */}
-                <div className="portfolio3 grid gap-[20px] grid-cols-2 place-items-center mt-[30px] md:flex md:flex-row md:space-y-[0px] md:space-x-[20px] items-center justify-center">
+                <div className="portfolio2 grid gap-[20px] grid-cols-2 place-items-center mt-[30px]  md:space-y-[0px] md:space-x-[0px] items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Data Science')
-                    .slice(0, 2)
                     .map((project) => {
                       const techs = normalizeTechStack(project.techStack);
                       return (
@@ -278,7 +276,6 @@ const Portfolio = () => {
                 <div className="portfolio3 mt-[30px] grid grid-cols-2 gap-[10px] sm:grid-cols-4 md:grid-cols-4 lg:flex lg:flex-row lg:space-x-[20px] items-center justify-center">
                   {miniProjects
                     .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Data Science')
-                    .slice(0, 4)
                     .map((miniProject) => (
                       <MiniProjectCard
                         key={miniProject._id}
@@ -297,10 +294,9 @@ const Portfolio = () => {
               <div className="mt-[30px] flex flex-col items-center w-[80vw]">
                 <p className="portfolio4 w-[70vw] ml-[10px] font-bold text-[35px] sm:text-[45px]">Computer Vision</p>
                 {/* Main Projects */}
-                <div className="portfolio4 grid gap-[20px] grid-cols-2 place-items-center mt-[30px] md:flex md:flex-row md:space-y-[0px] md:space-x-[20px] items-center justify-center">
+                <div className="portfolio2 grid gap-[20px] grid-cols-2 place-items-center mt-[30px]  md:space-y-[0px] md:space-x-[0px] items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Computer Vision')
-                    .slice(0, 2)
                     .map((project) => {
                       const techs = normalizeTechStack(project.techStack);
                       return (
@@ -325,7 +321,6 @@ const Portfolio = () => {
                 <div className="portfolio4 mt-[30px] grid grid-cols-2 gap-[10px] sm:grid-cols-4 md:grid-cols-4 lg:flex lg:flex-row lg:space-x-[20px] items-center justify-center">
                   {miniProjects
                     .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Computer Vision')
-                    .slice(0, 4)
                     .map((miniProject) => (
                       <MiniProjectCard
                         key={miniProject._id}
@@ -344,10 +339,9 @@ const Portfolio = () => {
               <div className="mt-[30px] flex flex-col items-center w-[80vw]">
                 <p className="portfolio5 w-[70vw] ml-[10px] font-bold text-[35px] sm:text-[45px]">Generative AI</p>
                 {/* Main Projects */}
-                <div className="portfolio5 grid gap-[20px] grid-cols-2 place-items-center mt-[30px] md:flex md:flex-row md:space-y-[0px] md:space-x-[20px] items-center justify-center">
+                <div className="portfolio2 grid gap-[20px] grid-cols-2 place-items-center mt-[30px]  md:space-y-[0px] md:space-x-[0px] items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Generative AI')
-                    .slice(0, 2)
                     .map((project) => {
                       const techs = normalizeTechStack(project.techStack);
                       return (
@@ -372,7 +366,6 @@ const Portfolio = () => {
                 <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[10px] sm:grid-cols-4 md:grid-cols-4 lg:flex lg:flex-row lg:space-x-[20px] items-center justify-center">
                   {miniProjects
                     .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Generative AI')
-                    .slice(0, 4)
                     .map((miniProject) => (
                       <MiniProjectCard
                         key={miniProject._id}
@@ -391,10 +384,9 @@ const Portfolio = () => {
               <div className="mt-[30px] flex flex-col items-center w-[80vw]">
                 <p className="portfolio6 w-[70vw] ml-[10px] font-bold text-[35px] sm:text-[45px]">Agentic AI</p>
                 {/* Main Projects */}
-                <div className="portfolio6 grid gap-[20px] grid-cols-2 place-items-center mt-[30px] md:flex md:flex-row md:space-y-[0px] md:space-x-[20px] items-center justify-center">
+                <div className="portfolio2 grid gap-[20px] grid-cols-2 place-items-center mt-[30px]  md:space-y-[0px] md:space-x-[0px] items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Agentic AI')
-                    .slice(0, 2)
                     .map((project) => {
                       const techs = normalizeTechStack(project.techStack);
                       return (
@@ -419,7 +411,6 @@ const Portfolio = () => {
                 <div className="portfolio6 mt-[30px] grid grid-cols-2 gap-[10px] sm:grid-cols-4 md:grid-cols-4 lg:flex lg:flex-row lg:space-x-[20px] items-center justify-center">
                   {miniProjects
                     .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Agentic AI')
-                    .slice(0, 4)
                     .map((miniProject) => (
                       <MiniProjectCard
                         key={miniProject._id}
