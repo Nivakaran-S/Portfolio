@@ -177,7 +177,7 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#101010] py-[15vh] min-h-[200vh] flex items-center justify-center w-screen">
+      <div className="bg-[#101010] py-[15vh] min-h-[200vh] flex  justify-center w-screen">
         <div className="w-[93%] sm:w-[80%]">
           <div className="portfolio1 leading-[40px] md:leading-[60px] text-center">
             <p className="text-[45px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Explore the</p>
