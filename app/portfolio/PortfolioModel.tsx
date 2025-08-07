@@ -142,7 +142,7 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
                   placeholder="blur"
                   blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGUrGwU6AAAAABJRU5ErkJggg=="
                 />
-                <p className="text-[40px] text-[#101010] absolute text-center sm:text-[50px] md:text-[70px] font-bold p-6">
+                <p className="text-[40px] text-white absolute text-center sm:text-[50px] md:text-[70px] font-bold p-6">
                   {project?.title || 'Project Title'}
                 </p>
               </div>
