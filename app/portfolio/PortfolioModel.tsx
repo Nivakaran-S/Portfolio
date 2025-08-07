@@ -3,15 +3,55 @@
 import React, { useEffect, useRef } from 'react';
 import './style.css';
 import Image from 'next/image';
-import placeholderImage from '../images/news.jpeg'; // Fallback image (StaticImport)
-import { Project } from './types'; // Import shared Project type
+import placeholderImage from '../images/news.jpeg';
+import { Project } from './types';
 
-// Fix: Make the interface match what's being passed from the parent
+// Tech stack logo mapping
+const techStackLogos: Record<string, string> = {
+  'python': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
+  'pandas': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg',
+  'node.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+  'nodejs': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+  'react': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
+  'javascript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
+  'typescript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
+  'html': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg',
+  'css': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg',
+  'next.js': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+  'nextjs': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+  'django': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg',
+  'flask': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg',
+  'mongodb': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+  'postgresql': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg',
+  'mysql': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg',
+  'git': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
+  'docker': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg',
+  'aws': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-original.svg',
+  'azure': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg',
+  'firebase': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg',
+  'graphql': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/graphql/graphql-plain.svg',
+  'redux': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg',
+  'tailwind': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg',
+  'tailwindcss': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg',
+  'sass': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sass/sass-original.svg',
+  'express': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/express/express-original.svg',
+  'nestjs': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nestjs/nestjs-plain.svg',
+  'java': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg',
+  'c++': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg',
+  'c#': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg',
+  'kotlin': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg',
+  'swift': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/swift/swift-original.svg',
+  'android': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/android/android-original.svg',
+  'ios': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apple/apple-original.svg',
+  'linux': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linux/linux-original.svg',
+  'windows': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/windows8/windows8-original.svg',
+};
+
 interface PortfolioModelProps {
-  onPortfolioClick: boolean;        // REQUIRED (no ? mark)
-  resetPortfolioClick: () => void;  // REQUIRED (no ? mark)
-  setOnPortfolioClick: React.Dispatch<React.SetStateAction<boolean>>; // REQUIRED (no ? mark)
-  project: Project | null;          // REQUIRED
+  onPortfolioClick: boolean;
+  resetPortfolioClick: () => void;
+  setOnPortfolioClick: React.Dispatch<React.SetStateAction<boolean>>;
+  project: Project | null;
 }
 
 const PortfolioModel: React.FC<PortfolioModelProps> = ({
@@ -75,26 +115,40 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
         project.images.imageUrl1,
         project.images.imageUrl2,
         project.images.imageUrl3,
-      ].map(url => (isValidUrl(url) ? url : placeholderImage)) // Use placeholderImage (StaticImport) for invalid URLs
-    : [placeholderImage, placeholderImage, placeholderImage]; // Fallback for no images
+      ].map(url => (isValidUrl(url) ? url : placeholderImage))
+    : [placeholderImage, placeholderImage, placeholderImage];
 
-  // Log images for debugging
-  useEffect(() => {
-    if (project?.images) {
-      console.log('Project images:', {
-        imageUrl1: project.images.imageUrl1,
-        imageUrl2: project.images.imageUrl2,
-        imageUrl3: project.images.imageUrl3,
-      });
+  // Process tech stack for logo display
+  const getTechStackLogos = () => {
+    if (!project?.techStack) return [];
+    
+    let techItems: string[] = [];
+    
+    if (typeof project.techStack[0] === 'string') {
+      techItems = project.techStack[0]
+        .split(', ')
+        .map(item => item.trim().toLowerCase())
+        .filter(item => item.length > 0);
+    } else if (Array.isArray(project.techStack)) {
+      techItems = project.techStack
+        .map(item => typeof item === 'string' ? item.trim().toLowerCase() : '')
+        .filter(item => item.length > 0);
     }
-  }, [project]);
+    
+    return techItems.map(tech => ({
+      name: tech,
+      logo: techStackLogos[tech] || null
+    }));
+  };
 
-  // Normalize techStack for display
-  const techStackDisplay = typeof project?.techStack === 'string'
-    ? project.techStack
-    : Array.isArray(project?.techStack)
-    ? project.techStack.join(', ')
-    : 'No tech stack provided';
+  const handleLinkClick = (e: React.MouseEvent<HTMLDivElement>, url: string | undefined) => {
+    e.stopPropagation();
+    if (url && isValidUrl(url)) {
+      window.open(url, '_blank', 'noopener,noreferrer');
+    }
+  };
+
+  const techStackItems = getTechStackLogos();
 
   return (
     <div className="fixed flex custom-scrollbar flex-col overflow-y-auto h-[100vh] py-[5vh] inset-0 z-[50] items-center justify-start">
@@ -103,7 +157,7 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
         onClick={() => {
           resetPortfolioClick();
         }}
-        className={`absolute top-0 left-0 h-[380%] w-full bg-[#101010] transition-opacity duration-500 ease-in-out ${
+        className={`absolute top-0 left-0 h-[340%] w-full bg-[#101010] transition-opacity duration-500 ease-in-out ${
           onPortfolioClick ? 'opacity-60' : 'opacity-0 pointer-events-none'
         }`}
       />
@@ -142,9 +196,17 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
                   placeholder="blur"
                   blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGUrGwU6AAAAABJRU5ErkJggg=="
                 />
-                <p className="text-[40px] text-white absolute text-center sm:text-[50px] md:text-[70px] font-bold p-6">
+                <p className="text-[40px] text-white leading-[70px] absolute text-center sm:text-[50px] md:text-[70px] font-bold p-6">
                   {project?.title || 'Project Title'}
                 </p>
+                <div className='absolute space-x-[20px] flex flex-row bottom-[20%]'>
+                  <div onClick={(e) => handleLinkClick(e, project?.githubLink)} className='bg-[#1D1D1D] hover:bg-[#101010] hover:ring-[1.5px] px-[20px] ring-[1px] ring-[#101010] rounded-[10px] cursor-pointer py-[8px]'>
+                    <p>Github Link</p>
+                  </div>
+                  <div onClick={(e) => handleLinkClick(e, project?.demoLink)} className='bg-[#1D1D1D] px-[20px] ring-[1px] ring-[#101010] rounded-[10px] cursor-pointer py-[8px]'>
+                    <p>Demo Link</p>
+                  </div>
+                </div>
               </div>
               <div className="w-[40%] h-full space-y-[20px]">
                 {[1, 2].map((i) => (
@@ -171,18 +233,17 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
           {[
             { title: 'Project Overview', content: project?.projectOverview },
             { title: 'The Problem', content: project?.problem },
-            { title: 'Tech Stack', content: techStackDisplay, textOnly: true },
             { title: 'The Solution', content: project?.solution },
-          ].map(({ title, content, textOnly = false }, index) => (
+          ].map(({ title, content }, index) => (
             <div key={title}>
               <p className="text-[40px] text-center sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent p-6">
                 {title}
               </p>
               <div className="flex w-full flex-row items-center justify-center space-x-[20px]">
-                {!textOnly && index % 2 === 0 && (
+                {index % 2 === 0 && (
                   <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-[50%] h-[350px] rounded-[10px] flex items-center justify-center">
                     <Image
-                      src={images[index + 1] || placeholderImage}
+                      src={images[index] || placeholderImage}
                       alt={`${title} Image`}
                       className="w-full h-full object-cover transition-transform duration-500 rounded-[10px]"
                       width={500}
@@ -192,13 +253,13 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
                     />
                   </div>
                 )}
-                <div className={`${textOnly ? 'w-full' : 'w-[50%]'} space-y-2 text-sm leading-relaxed text-white`}>
+                <div className={`w-[50%] space-y-2 leading-relaxed text-white`}>
                   <p>{content || `No ${title.toLowerCase()} provided.`}</p>
                 </div>
-                {!textOnly && index % 2 !== 0 && (
+                {index % 2 !== 0 && (
                   <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-[50%] h-[350px] rounded-[10px] flex items-center justify-center">
                     <Image
-                      src={images[index + 1] || placeholderImage}
+                      src={images[index-1] || placeholderImage}
                       alt={`${title} Image`}
                       className="w-full h-full object-cover transition-transform duration-500 rounded-[10px]"
                       width={500}
@@ -211,6 +272,40 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
               </div>
             </div>
           ))}
+
+          {/* Tech Stack Section */}
+          <div className="w-full">
+            <p className="text-[40px] text-center sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent p-6">
+              Tech Stack
+            </p>
+            <div className="flex flex-wrap justify-center gap-6 p-6 w-full">
+              {techStackItems.length > 0 ? (
+                techStackItems.map((item, index) => (
+                  <div key={index} className="flex flex-col items-center w-24">
+                    <div className="w-20 h-20 bg-[#1D1D1D] ring-[1px] ring-gray-600 rounded-lg flex items-center justify-center p-2 hover:scale-110 transition-transform duration-200">
+                      {item.logo ? (
+                        <Image
+                          src={item.logo}
+                          alt={item.name}
+                          width={64}
+                          height={64}
+                          className="object-contain w-full h-full"
+                          unoptimized
+                        />
+                      ) : (
+                        <span className="text-xs text-center text-white">{item.name}</span>
+                      )}
+                    </div>
+                    <span className="mt-2 text-sm text-white capitalize text-center">
+                      {item.name.replace('.js', '')}
+                    </span>
+                  </div>
+                ))
+              ) : (
+                <p className="text-white">No tech stack provided</p>
+              )}
+            </div>
+          </div>
         </div>
       </div>
     </div>

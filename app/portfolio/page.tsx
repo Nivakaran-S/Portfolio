@@ -219,6 +219,8 @@ const Portfolio = () => {
                           lang4={techs[3] || ''}
                           lang5={techs[4] || ''}
                           lang6={techs[5] || ''}
+                          githubLink={project.githubLink}
+                          demoLink={project.demoLink}
                           text={project.title}
                           text2={project.projectOverview}
                           imageUrl={isValidUrl(project.images?.imageUrl1) ? project.images?.imageUrl1 : Newspaper.src}
@@ -264,6 +266,8 @@ const Portfolio = () => {
                           lang4={techs[3] || ''}
                           lang5={techs[4] || ''}
                           lang6={techs[5] || ''}
+                          githubLink={project.githubLink}
+                          demoLink={project.demoLink}
                           text={project.title}
                           text2={project.projectOverview}
                           imageUrl={isValidUrl(project.images?.imageUrl1) ? project.images?.imageUrl1 : Newspaper.src}
@@ -309,6 +313,8 @@ const Portfolio = () => {
                           lang4={techs[3] || ''}
                           lang5={techs[4] || ''}
                           lang6={techs[5] || ''}
+                          githubLink={project.githubLink}
+                          demoLink={project.demoLink}
                           text={project.title}
                           text2={project.projectOverview}
                           imageUrl={isValidUrl(project.images?.imageUrl1) ? project.images?.imageUrl1 : Newspaper.src}
@@ -354,6 +360,8 @@ const Portfolio = () => {
                           lang4={techs[3] || ''}
                           lang5={techs[4] || ''}
                           lang6={techs[5] || ''}
+                          githubLink={project.githubLink}
+                          demoLink={project.demoLink}
                           text={project.title}
                           text2={project.projectOverview}
                           imageUrl={isValidUrl(project.images?.imageUrl1) ? project.images?.imageUrl1 : Newspaper.src}
@@ -400,6 +408,8 @@ const Portfolio = () => {
                           lang5={techs[4] || ''}
                           lang6={techs[5] || ''}
                           text={project.title}
+                          githubLink={project.githubLink}
+                          demoLink={project.demoLink}
                           text2={project.projectOverview}
                           imageUrl={isValidUrl(project.images?.imageUrl1) ? project.images?.imageUrl1 : Newspaper.src}
                         />

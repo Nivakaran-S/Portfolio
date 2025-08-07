@@ -11,6 +11,8 @@ export interface Project {
     imageUrl6?: string;
   };
   projectCategory: string;
+  githubLink: string;
+  demoLink: string;
   problem: string;
   solution: string;
   techStack: string | string[] | null | undefined;

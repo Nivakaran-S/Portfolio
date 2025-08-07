@@ -20,6 +20,8 @@ interface Project {
   problem: string;
   solution: string;
   techStack: string;
+  githubLink?: string;
+  demoLink?: string;
   createdAt?: string;
   updatedAt?: string;
 }
@@ -41,7 +43,7 @@ const Projects = () => {
 
   // State for projects
   const [projects, setProjects] = useState<Project[]>([]);
-  const [allProjects, setAllProjects] = useState<Project[]>([]); // Store all projects for local filtering
+  const [allProjects, setAllProjects] = useState<Project[]>([]);
   const [title, setTitle] = useState<string>('');
   const [projectOverview, setProjectOverview] = useState<string>('');
   const [imageUrl1, setImageUrl1] = useState<string>('');
@@ -50,6 +52,8 @@ const Projects = () => {
   const [imageUrl4, setImageUrl4] = useState<string>('');
   const [imageUrl5, setImageUrl5] = useState<string>('');
   const [imageUrl6, setImageUrl6] = useState<string>('');
+  const [githubLink, setGithubLink] = useState<string>('');
+  const [demoLink, setDemoLink] = useState<string>('');
   const [projectCategory, setProjectCategory] = useState<string>('');
   const [problem, setProblem] = useState<string>('');
   const [solution, setSolution] = useState<string>('');
@@ -59,7 +63,7 @@ const Projects = () => {
 
   // State for categories
   const [projectCategories, setProjectCategories] = useState<ProjectCategory[]>([]);
-  const [allCategories, setAllCategories] = useState<ProjectCategory[]>([]); // Store all categories for local filtering
+  const [allCategories, setAllCategories] = useState<ProjectCategory[]>([]);
   const [newCategoryTitle, setNewCategoryTitle] = useState<string>('');
   const [editingCategoryId, setEditingCategoryId] = useState<string | null>(null);
   const [editingCategoryTitle, setEditingCategoryTitle] = useState<string>('');
@@ -74,12 +78,10 @@ const Projects = () => {
   const [success, setSuccess] = useState<boolean>(false);
   const [searchTerm, setSearchTerm] = useState<string>('');
 
-  // Base URL from environment variable
   const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://portfolio-backend-new-2.vercel.app';
 
-  // Input validation
   const validateUrl = (url: string): boolean => {
-    if (!url) return true; // Allow empty optional fields
+    if (!url) return true;
     try {
       new URL(url);
       return true;
@@ -88,7 +90,6 @@ const Projects = () => {
     }
   };
 
-  // Fetch categories and projects sequentially
   useEffect(() => {
     const fetchData = async () => {
       try {
@@ -96,9 +97,9 @@ const Projects = () => {
         setCategoryError('');
         const categoriesResponse = await axios.get<ProjectCategory[]>(`${API_BASE_URL}/projectCategory`, { withCredentials: true });
         setProjectCategories(categoriesResponse.data);
-        setAllCategories(categoriesResponse.data); // Store for local filtering
+        setAllCategories(categoriesResponse.data);
       } catch (error: any) {
-        setCategoryError((error.response?.data as ApiError)?.message || 'Failed to load categories. Please try again.');
+        setCategoryError((error.response?.data as ApiError)?.message || 'Failed to load categories.');
         setProjectCategories([]);
         setAllCategories([]);
       } finally {
@@ -110,9 +111,9 @@ const Projects = () => {
         setProjectError('');
         const projectsResponse = await axios.get<Project[]>(`${API_BASE_URL}/projects`, { withCredentials: true });
         setProjects(projectsResponse.data);
-        setAllProjects(projectsResponse.data); // Store for local filtering
+        setAllProjects(projectsResponse.data);
       } catch (error: any) {
-        setProjectError((error.response?.data as ApiError)?.message || 'Failed to load projects. Please try again.');
+        setProjectError((error.response?.data as ApiError)?.message || 'Failed to load projects.');
         setProjects([]);
         setAllProjects([]);
       } finally {
@@ -123,19 +124,18 @@ const Projects = () => {
     fetchData();
   }, []);
 
-  // Reset search term on tab change
   useEffect(() => {
     setSearchTerm('');
     if (activeTab === 'manage') {
-      setProjects(allProjects); // Reset to all projects
+      setProjects(allProjects);
     } else if (activeTab === 'categories') {
-      setProjectCategories(allCategories); // Reset to all categories
+      setProjectCategories(allCategories);
     }
   }, [activeTab, allProjects, allCategories]);
 
-  // Handle search with debounce
   useEffect(() => {
-    const delayDebounceFn = setTimeout(() => {
+    if (timeoutIdRef.current) clearTimeout(timeoutIdRef.current);
+    timeoutIdRef.current = setTimeout(() => {
       if (searchTerm.trim()) {
         if (activeTab === 'manage') {
           searchProjects(searchTerm);
@@ -144,17 +144,18 @@ const Projects = () => {
         }
       } else {
         if (activeTab === 'manage') {
-          setProjects(allProjects); // Reset to all projects
+          setProjects(allProjects);
         } else if (activeTab === 'categories') {
-          setProjectCategories(allCategories); // Reset to all categories
+          setProjectCategories(allCategories);
         }
       }
     }, 500);
 
-    return () => clearTimeout(delayDebounceFn);
+    return () => {
+      if (timeoutIdRef.current) clearTimeout(timeoutIdRef.current);
+    };
   }, [searchTerm, activeTab, allProjects, allCategories]);
 
-  // Fetch projects
   const fetchProjects = async () => {
     try {
       setIsLoadingProjects(true);
@@ -163,7 +164,7 @@ const Projects = () => {
       setProjects(response.data);
       setAllProjects(response.data);
     } catch (error: any) {
-      setProjectError((error.response?.data as ApiError)?.message || 'Failed to load projects. Please try again.');
+      setProjectError((error.response?.data as ApiError)?.message || 'Failed to load projects.');
       setProjects([]);
       setAllProjects([]);
     } finally {
@@ -171,7 +172,6 @@ const Projects = () => {
     }
   };
 
-  // Search projects
   const searchProjects = async (query: string) => {
     try {
       setIsLoadingProjects(true);
@@ -181,8 +181,7 @@ const Projects = () => {
       });
       setProjects(response.data);
     } catch (error: any) {
-      setProjectError((error.response?.data as ApiError)?.message || 'Search endpoint unavailable. Filtering locally.');
-      // Fallback to local filtering
+      setProjectError((error.response?.data as ApiError)?.message || 'Search unavailable. Filtering locally.');
       const filtered = allProjects.filter(project =>
         project.title.toLowerCase().includes(query.toLowerCase()) ||
         project.projectOverview.toLowerCase().includes(query.toLowerCase()) ||
@@ -195,7 +194,6 @@ const Projects = () => {
     }
   };
 
-  // Fetch categories
   const fetchCategories = async () => {
     try {
       setIsLoadingCategories(true);
@@ -204,7 +202,7 @@ const Projects = () => {
       setProjectCategories(response.data);
       setAllCategories(response.data);
     } catch (error: any) {
-      setCategoryError((error.response?.data as ApiError)?.message || 'Failed to load categories. Please try again.');
+      setCategoryError((error.response?.data as ApiError)?.message || 'Failed to load categories.');
       setProjectCategories([]);
       setAllCategories([]);
     } finally {
@@ -212,7 +210,6 @@ const Projects = () => {
     }
   };
 
-  // Search categories
   const searchCategories = async (query: string) => {
     try {
       setIsLoadingCategories(true);
@@ -222,8 +219,7 @@ const Projects = () => {
       });
       setProjectCategories(response.data);
     } catch (error: any) {
-      setCategoryError((error.response?.data as ApiError)?.message || 'Search endpoint unavailable. Filtering locally.');
-      // Fallback to local filtering
+      setCategoryError((error.response?.data as ApiError)?.message || 'Search unavailable. Filtering locally.');
       const filtered = allCategories.filter(category =>
         category.title.toLowerCase().includes(query.toLowerCase())
       );
@@ -233,9 +229,8 @@ const Projects = () => {
     }
   };
 
-  // Reset project form
   const resetProjectForm = () => {
-    if (editingId && !window.confirm('Are you sure you want to cancel editing? Changes will be lost.')) {
+    if (editingId && !window.confirm('Are you sure you want to cancel editing?')) {
       return;
     }
     setTitle('');
@@ -246,6 +241,8 @@ const Projects = () => {
     setImageUrl4('');
     setImageUrl5('');
     setImageUrl6('');
+    setDemoLink('');
+    setGithubLink('');
     setProjectCategory('');
     setProblem('');
     setSolution('');
@@ -254,19 +251,19 @@ const Projects = () => {
     setProjectError('');
   };
 
-  // Add or update project
   const handleSubmitProject = async () => {
     if (!title.trim() || !projectOverview.trim() || !imageUrl1 || !projectCategory || !problem.trim() || !solution.trim() || !techStack.trim()) {
       setProjectError('Please fill all required fields.');
       return;
     }
     if (!validateUrl(imageUrl1) || (imageUrl2 && !validateUrl(imageUrl2)) || (imageUrl3 && !validateUrl(imageUrl3)) ||
-        (imageUrl4 && !validateUrl(imageUrl4)) || (imageUrl5 && !validateUrl(imageUrl5)) || (imageUrl6 && !validateUrl(imageUrl6))) {
-      setProjectError('Please provide valid URLs for all images.');
+        (imageUrl4 && !validateUrl(imageUrl4)) || (imageUrl5 && !validateUrl(imageUrl5)) || (imageUrl6 && !validateUrl(imageUrl6)) ||
+        (githubLink && !validateUrl(githubLink)) || (demoLink && !validateUrl(demoLink))) {
+      setProjectError('Please provide valid URLs.');
       return;
     }
     if (!projectCategories.find(c => c._id === projectCategory)) {
-      setProjectError('Selected category is invalid or no longer exists.');
+      setProjectError('Selected category is invalid.');
       return;
     }
 
@@ -286,6 +283,8 @@ const Projects = () => {
           imageUrl6: imageUrl6 || undefined,
         },
         projectCategory,
+        githubLink: githubLink || undefined,
+        demoLink: demoLink || undefined,
         problem: problem.trim(),
         solution: solution.trim(),
         techStack: techStack.trim(),
@@ -302,18 +301,16 @@ const Projects = () => {
         setAllProjects([...allProjects, response.data]);
       }
 
-      if (timeoutIdRef.current) clearTimeout(timeoutIdRef.current);
       setSuccess(true);
       resetProjectForm();
-      timeoutIdRef.current = setTimeout(() => setSuccess(false), 3000);
+      setTimeout(() => setSuccess(false), 3000);
     } catch (error: any) {
-      setProjectError((error.response?.data as ApiError)?.message || 'Failed to save project. Please try again.');
+      setProjectError((error.response?.data as ApiError)?.message || 'Failed to save project.');
     } finally {
       setIsSaving(false);
     }
   };
 
-  // Edit existing project
   const handleEditProject = (project: Project) => {
     setTitle(project.title);
     setProjectOverview(project.projectOverview);
@@ -324,6 +321,8 @@ const Projects = () => {
     setImageUrl5(project.images?.imageUrl5 || '');
     setImageUrl6(project.images?.imageUrl6 || '');
     setProjectCategory(project.projectCategory);
+    setGithubLink(project.githubLink || '');
+    setDemoLink(project.demoLink || '');
     setProblem(project.problem);
     setSolution(project.solution);
     setTechStack(project.techStack);
@@ -332,7 +331,6 @@ const Projects = () => {
     window.scrollTo(0, 0);
   };
 
-  // Delete project
   const handleDeleteProject = async (id: string) => {
     if (window.confirm('Are you sure you want to delete this project?')) {
       try {
@@ -340,12 +338,11 @@ const Projects = () => {
         setProjects(projects.filter(project => project._id !== id));
         setAllProjects(allProjects.filter(project => project._id !== id));
       } catch (error: any) {
-        setProjectError((error.response?.data as ApiError)?.message || 'Failed to delete project. Please try again.');
+        setProjectError((error.response?.data as ApiError)?.message || 'Failed to delete project.');
       }
     }
   };
 
-  // Add new category
   const handleAddCategory = async () => {
     if (!newCategoryTitle.trim()) {
       setCategoryError('Please enter a category title.');
@@ -362,17 +359,15 @@ const Projects = () => {
       setProjectCategories([...projectCategories, response.data]);
       setAllCategories([...allCategories, response.data]);
       setNewCategoryTitle('');
-      if (timeoutIdRef.current) clearTimeout(timeoutIdRef.current);
       setCategorySuccess(true);
-      timeoutIdRef.current = setTimeout(() => setCategorySuccess(false), 3000);
+      setTimeout(() => setCategorySuccess(false), 3000);
     } catch (error: any) {
-      setCategoryError((error.response?.data as ApiError)?.message || 'Failed to add category. Please try again.');
+      setCategoryError((error.response?.data as ApiError)?.message || 'Failed to add category.');
     } finally {
       setIsLoadingCategories(false);
     }
   };
 
-  // Update category
   const handleUpdateCategory = async () => {
     if (!editingCategoryTitle.trim()) {
       setCategoryError('Please enter a category title.');
@@ -390,21 +385,18 @@ const Projects = () => {
       setAllCategories(allCategories.map(cat => cat._id === editingCategoryId ? response.data : cat));
       setEditingCategoryId(null);
       setEditingCategoryTitle('');
-      if (timeoutIdRef.current) clearTimeout(timeoutIdRef.current);
       setCategorySuccess(true);
-      timeoutIdRef.current = setTimeout(() => setCategorySuccess(false), 3000);
+      setTimeout(() => setCategorySuccess(false), 3000);
     } catch (error: any) {
-      setCategoryError((error.response?.data as ApiError)?.message || 'Failed to update category. Please try again.');
+      setCategoryError((error.response?.data as ApiError)?.message || 'Failed to update category.');
     } finally {
       setIsLoadingCategories(false);
     }
   };
 
-  // Delete category
   const handleDeleteCategory = async (id: string) => {
-    const isCategoryUsed = projects.some(project => project.projectCategory === id);
-    if (isCategoryUsed) {
-      setCategoryError('Cannot delete category because it is used by one or more projects.');
+    if (projects.some(project => project.projectCategory === id)) {
+      setCategoryError('Cannot delete category used by projects.');
       return;
     }
 
@@ -415,21 +407,19 @@ const Projects = () => {
         setProjectCategories(projectCategories.filter(cat => cat._id !== id));
         setAllCategories(allCategories.filter(cat => cat._id !== id));
       } catch (error: any) {
-        setCategoryError((error.response?.data as ApiError)?.message || 'Failed to delete category. Please try again.');
+        setCategoryError((error.response?.data as ApiError)?.message || 'Failed to delete category.');
       } finally {
         setIsLoadingCategories(false);
       }
     }
   };
 
-  // Cancel category edit
   const cancelEditCategory = () => {
     setEditingCategoryId(null);
     setEditingCategoryTitle('');
     setCategoryError('');
   };
 
-  // Format date
   const formatDate = (dateString?: string) => {
     if (!dateString) return 'N/A';
     return new Date(dateString).toLocaleDateString('en-US', {
@@ -441,7 +431,6 @@ const Projects = () => {
     });
   };
 
-  // Get category title by ID
   const getCategoryTitle = (categoryId: string): string => {
     const category = projectCategories.find(c => c._id === categoryId);
     return category ? category.title : 'Unknown Category';
@@ -450,7 +439,6 @@ const Projects = () => {
   return (
     <div className="min-h-screen text-black bg-gray-50 p-6">
       <div className="max-w-7xl mx-auto bg-white rounded-2xl shadow-lg overflow-hidden">
-        {/* Tabs */}
         <div className="flex border-b border-gray-200">
           {(['create', 'manage', 'categories'] as const).map(tab => (
             <button
@@ -471,8 +459,6 @@ const Projects = () => {
             </button>
           ))}
         </div>
-
-        {/* Content Area */}
         <div className="p-6">
           {(isLoadingCategories || isLoadingProjects) ? (
             <div className="flex justify-center items-center h-64">
@@ -480,7 +466,6 @@ const Projects = () => {
             </div>
           ) : activeTab === 'create' ? (
             <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-              {/* Project Form */}
               <div className="lg:col-span-2 space-y-6">
                 <h2 className="text-2xl font-bold text-gray-800">
                   {editingId ? 'Edit Project' : 'Create New Project'}
@@ -523,6 +508,28 @@ const Projects = () => {
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 h-32"
                       placeholder="Project overview"
                       aria-required="true"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="demoLink" className="block text-sm font-medium text-gray-700 mb-1">Demo Link</label>
+                    <input
+                      id="demoLink"
+                      type="url"
+                      value={demoLink}
+                      onChange={(e) => setDemoLink(e.target.value)}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      placeholder="https://example.com/demo"
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="githubLink" className="block text-sm font-medium text-gray-700 mb-1">Github Link</label>
+                    <input
+                      id="githubLink"
+                      type="url"
+                      value={githubLink}
+                      onChange={(e) => setGithubLink(e.target.value)}
+                      className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
+                      placeholder="https://github.com/example"
                     />
                   </div>
                   <div>
@@ -601,7 +608,7 @@ const Projects = () => {
                       value={techStack}
                       onChange={(e) => setTechStack(e.target.value)}
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500"
-                      placeholder="Enter tech stack (e.g., React, Node.js)"
+                      placeholder="e.g., React, Node.js"
                       aria-required="true"
                     />
                   </div>
@@ -610,7 +617,7 @@ const Projects = () => {
                       onClick={handleSubmitProject}
                       disabled={isSaving || projectCategories.length === 0}
                       className={`px-6 py-2 rounded-lg text-white font-medium ${
-                        isSaving || projectCategories.length === 0 ? 'bg-blue-400 cursor-notalloway' : 'bg-blue-600 hover:bg-blue-700'
+                        isSaving || projectCategories.length === 0 ? 'bg-blue-400 cursor-not-allowed' : 'bg-blue-600 hover:bg-blue-700'
                       } focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-colors`}
                       aria-label={editingId ? 'Update project' : 'Create project'}
                     >
@@ -628,7 +635,6 @@ const Projects = () => {
                   </div>
                 </div>
               </div>
-              {/* Preview Section */}
               <div className="lg:col-span-1">
                 <h2 className="text-2xl font-bold text-gray-800 mb-4">Preview</h2>
                 <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
@@ -658,6 +664,18 @@ const Projects = () => {
                         <div className="mb-3">
                           <p className="text-sm font-medium text-gray-700 mb-1">Overview:</p>
                           <p className="text-sm text-gray-600 line-clamp-3">{projectOverview}</p>
+                        </div>
+                      )}
+                      {githubLink && (
+                        <div className="mb-3">
+                          <p className="text-sm font-medium text-gray-700 mb-1">Github Link:</p>
+                          <p className="text-sm text-gray-600 line-clamp-3">{githubLink}</p>
+                        </div>
+                      )}
+                      {demoLink && (
+                        <div className="mb-3">
+                          <p className="text-sm font-medium text-gray-700 mb-1">Demo Link:</p>
+                          <p className="text-sm text-gray-600 line-clamp-3">{demoLink}</p>
                         </div>
                       )}
                       {problem && (
@@ -792,7 +810,7 @@ const Projects = () => {
                 <div className="bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded-lg flex items-center">
                   <svg className="h-5 w-5 text-yellow-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm0-2a6 6 0 100-12 6 6 0 000 12zm0-9a1 1 0 011 1v4a1 1 0 11-2 0V8a1 1 0 011-1zm0 8a1 1 0 100-2 1 1 0 000 2z" clipRule="evenodd" />
-                    </svg>
+                  </svg>
                   <p className="text-sm text-yellow-700">Loading categories...</p>
                 </div>
               )}
@@ -800,7 +818,6 @@ const Projects = () => {
                 <p className="text-gray-500 italic text-center">No categories match your search.</p>
               ) : (
                 <>
-                  {/* Add/Edit Category Form */}
                   <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
                     <h3 className="text-lg font-semibold text-gray-800 mb-4">
                       {editingCategoryId ? 'Edit Category' : 'Add New Category'}
@@ -843,7 +860,6 @@ const Projects = () => {
                       )}
                     </div>
                   </div>
-                  {/* Categories List */}
                   <div>
                     <h3 className="text-lg font-semibold text-gray-800 mb-4">Existing Categories</h3>
                     {projectCategories.length === 0 && !isLoadingCategories ? (
@@ -897,8 +913,6 @@ const Projects = () => {
             </div>
           )}
         </div>
-
-        {/* Success Notification */}
         {(success || categorySuccess) && (
           <div className="fixed top-4 right-4 z-50 animate-slide-in">
             <div className="bg-green-500 text-white px-4 py-2 rounded-lg shadow-lg flex items-center">

@@ -129,6 +129,8 @@ const Portfolio = ({ onPortfolioCard1Click }: PortfolioProps) => {
                           lang4={techs[3] || ''}
                           lang5={techs[4] || ''}
                           lang6={techs[5] || ''}
+                          githubLink={project.githubLink}
+                          demoLink={project.demoLink}
                           text={project.title}
                           text2={project.projectOverview}
                           imageUrl={isValidUrl(project.images?.imageUrl1) ? project.images?.imageUrl1 : Newspaper}
