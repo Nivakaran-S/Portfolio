@@ -159,6 +159,21 @@ const About = () => {
     }
   }, [])
 
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
+        ScrollReveal.default().reveal('.aboutText6', {
+          origin: 'right',
+          distance: '40px',
+          duration: 800,
+          delay: 900,
+          easing: 'ease-in-out',
+          reset: false
+        })
+      })
+    }
+  }, [])
+
   return (
     <div className="flex text-white w-[100vw] overflow-x-hidden flex-col">
       <Navigation navSelection={navSelection} onContactClick={onContactClick} />
@@ -270,7 +285,7 @@ const About = () => {
                 </div>
 
                 {/* Tech Icons Section */}
-                <div className="w-full aboutText4 md:w-3/4 lg:w-2/3 text-center  h-[63vh] flex justify-center">
+                <div className="w-full aboutText6 md:w-3/4 lg:w-2/3 text-center  h-[63vh] flex justify-center">
                     <div
                         className={`${
                             techStack === 1 ? 'grid grid-cols-3 h-[40%] sm:h-[100%] py-[30px] sm:py-[0px] sm:pb-[300px] sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4' : 'hidden'
