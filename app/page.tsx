@@ -17,6 +17,8 @@ import Loader from "./components/Loader";
 import PortfolioModel from "./portfolio/PortfolioModel";
 import { Project } from "./portfolio/types"; // Import the Project type
 
+
+
 export default function Home() {
   const [showContactModel, setShowContactModel] = useState(false);
   const [navSelection, setNavSelection] = useState('Home');
@@ -49,20 +51,12 @@ export default function Home() {
   };
 
   // Option 2: Use data attributes to get project info
-  const onPortfolioCard1Click = (e: React.MouseEvent<HTMLDivElement>) => {
+  const onPortfolioCard1Click = (project: Project) => (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
     e.stopPropagation();
     if (typeof window !== 'undefined') {
       setScrollPosition(window.scrollY);
-      
-      // Get project data from data attributes (if available)
-      const target = e.currentTarget;
-      const projectId = target.getAttribute('data-project-id');
-      
-      // You would need to fetch or find the project by ID
-      // For now, setting to null - you'll need to implement project lookup
-      setSelectedProject(null);
-      
+      setSelectedProject(project); // Set the full Project object
       setOnPortfolioClick(true);
       document.body.style.position = 'fixed';
       document.body.style.top = `-${window.scrollY}px`;
