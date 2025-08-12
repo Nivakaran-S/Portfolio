@@ -24,11 +24,11 @@ const MiniProject: React.FC<MiniProjectProps> = ({ title, description, imageUrl,
           height={160}
           onError={(e) => { e.currentTarget.src = NewsPaper.src; }}
         />
-        <div className="flex flex-col absolute h-[230px] rounded-[0px] bg-[#1D1D1D] w-[220px] px-[15px] justify-between py-[15px]">
-            <div>
-            <p className="leading-[25px] text-[14px] font-medium truncate">{title}</p>
+        <div className="flex flex-col absolute h-[230px] rounded-[0px] bg-[#1D1D1D] w-[220px] px-[10px] justify-between py-[10px]">
+            <div className="h-[100%] w-[100%] ">
+            <p className="leading-[23px]  text-[18px] ">{title}</p>
             
-            <p className="text-[10px] line-clamp-3">{description}</p>
+            <p className="text-[12px] leading-[15.5px] line-clamp-6 mt-[2px]">{description}</p>
             </div>
             <div className="flex justify-between space-x-[13px] text-[10px] text-blue-400">
             <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="hover:bg-black bg-[#101010] flex items-center justify-center text-[15px] w-[50%] rounded-[10px]">GitHub</a>

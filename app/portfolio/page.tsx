@@ -229,8 +229,10 @@ const Portfolio = () => {
                     })}
                 </div>
                 {/* Mini Projects */}
-                <p className="portfolio2 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
-                <div className="portfolio2 mt-[30px] grid grid-cols-2 gap-[10px] sm:grid-cols-4 md:grid-cols-4 lg:flex lg:flex-row lg:space-x-[20px] items-center justify-center">
+                {miniProjects.filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Software Engineering').length > 0 && 
+                <div>
+                  <p className="portfolio2 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
+                <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] sm:grid-cols-4  items-center justify-center">
                   {miniProjects
                     .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Software Engineering')
                     .map((miniProject) => (
@@ -244,7 +246,7 @@ const Portfolio = () => {
                         category={getCategoryTitle(miniProject.miniProjectCategory)}
                       />
                     ))}
-                </div>
+                </div></div>}
               </div>
 
               {/* Data Science Section */}
@@ -276,22 +278,24 @@ const Portfolio = () => {
                     })}
                 </div>
                 {/* Mini Projects */}
-                <p className="portfolio3 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
-                <div className="portfolio3 mt-[30px] grid grid-cols-2 gap-[10px] sm:grid-cols-4 md:grid-cols-4 lg:flex lg:flex-row lg:space-x-[20px] items-center justify-center">
-                  {miniProjects
-                    .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Data Science')
-                    .map((miniProject) => (
-                      <MiniProjectCard
-                        key={miniProject._id}
-                        title={miniProject.title || 'Untitled'}
-                        description={miniProject.description || 'No description available'}
-                        imageUrl={isValidUrl(miniProject.imageUrl) ? miniProject.imageUrl : Newspaper.src}
-                        githubUrl={isValidUrl(miniProject.githubUrl) ? miniProject.githubUrl : '#'}
-                        demoUrl={isValidUrl(miniProject.demoUrl) ? miniProject.demoUrl : '#'}
-                        category={getCategoryTitle(miniProject.miniProjectCategory)}
-                      />
-                    ))}
-                </div>
+                {miniProjects.filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Data Science').length > 0 && <div>
+                  <p className="portfolio3 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
+                  <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] sm:grid-cols-4  items-center justify-center">
+                    {miniProjects
+                      .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Data Science')
+                      .map((miniProject) => (
+                        <MiniProjectCard
+                          key={miniProject._id}
+                          title={miniProject.title || 'Untitled'}
+                          description={miniProject.description || 'No description available'}
+                          imageUrl={isValidUrl(miniProject.imageUrl) ? miniProject.imageUrl : Newspaper.src}
+                          githubUrl={isValidUrl(miniProject.githubUrl) ? miniProject.githubUrl : '#'}
+                          demoUrl={isValidUrl(miniProject.demoUrl) ? miniProject.demoUrl : '#'}
+                          category={getCategoryTitle(miniProject.miniProjectCategory)}
+                        />
+                      ))}
+                  </div>
+                </div>}
               </div>
 
               {/* Computer Vision Section */}
@@ -323,22 +327,24 @@ const Portfolio = () => {
                     })}
                 </div>
                 {/* Mini Projects */}
-                <p className="portfolio4 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
-                <div className="portfolio4 mt-[30px] grid grid-cols-2 gap-[10px] sm:grid-cols-4 md:grid-cols-4 lg:flex lg:flex-row lg:space-x-[20px] items-center justify-center">
-                  {miniProjects
-                    .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Computer Vision')
-                    .map((miniProject) => (
-                      <MiniProjectCard
-                        key={miniProject._id}
-                        title={miniProject.title || 'Untitled'}
-                        description={miniProject.description || 'No description available'}
-                        imageUrl={isValidUrl(miniProject.imageUrl) ? miniProject.imageUrl : Newspaper.src}
-                        githubUrl={isValidUrl(miniProject.githubUrl) ? miniProject.githubUrl : '#'}
-                        demoUrl={isValidUrl(miniProject.demoUrl) ? miniProject.demoUrl : '#'}
-                        category={getCategoryTitle(miniProject.miniProjectCategory)}
-                      />
-                    ))}
-                </div>
+                {miniProjects.filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Computer Vision').length > 0 && <div>
+                  <p className="portfolio4 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
+                  <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] sm:grid-cols-4  items-center justify-center">
+                    {miniProjects
+                      .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Computer Vision')
+                      .map((miniProject) => (
+                        <MiniProjectCard
+                          key={miniProject._id}
+                          title={miniProject.title || 'Untitled'}
+                          description={miniProject.description || 'No description available'}
+                          imageUrl={isValidUrl(miniProject.imageUrl) ? miniProject.imageUrl : Newspaper.src}
+                          githubUrl={isValidUrl(miniProject.githubUrl) ? miniProject.githubUrl : '#'}
+                          demoUrl={isValidUrl(miniProject.demoUrl) ? miniProject.demoUrl : '#'}
+                          category={getCategoryTitle(miniProject.miniProjectCategory)}
+                        />
+                      ))}
+                  </div>
+                </div>}
               </div>
 
               {/* Generative AI Section */}
@@ -370,22 +376,25 @@ const Portfolio = () => {
                     })}
                 </div>
                 {/* Mini Projects */}
-                <p className="portfolio5 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
-                <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[10px] sm:grid-cols-4 md:grid-cols-4 lg:flex lg:flex-row lg:space-x-[20px] items-center justify-center">
-                  {miniProjects
-                    .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Generative AI')
-                    .map((miniProject) => (
-                      <MiniProjectCard
-                        key={miniProject._id}
-                        title={miniProject.title || 'Untitled'}
-                        description={miniProject.description || 'No description available'}
-                        imageUrl={isValidUrl(miniProject.imageUrl) ? miniProject.imageUrl : Newspaper.src}
-                        githubUrl={isValidUrl(miniProject.githubUrl) ? miniProject.githubUrl : '#'}
-                        demoUrl={isValidUrl(miniProject.demoUrl) ? miniProject.demoUrl : '#'}
-                        category={getCategoryTitle(miniProject.miniProjectCategory)}
-                      />
-                    ))}
-                </div>
+
+                {miniProjects.filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Generative AI').length > 0 && <div>
+                  <p className="portfolio5 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
+                  <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] sm:grid-cols-4  items-center justify-center">
+                    {miniProjects
+                      .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Generative AI')
+                      .map((miniProject) => (
+                        <MiniProjectCard
+                          key={miniProject._id}
+                          title={miniProject.title || 'Untitled'}
+                          description={miniProject.description || 'No description available'}
+                          imageUrl={isValidUrl(miniProject.imageUrl) ? miniProject.imageUrl : Newspaper.src}
+                          githubUrl={isValidUrl(miniProject.githubUrl) ? miniProject.githubUrl : '#'}
+                          demoUrl={isValidUrl(miniProject.demoUrl) ? miniProject.demoUrl : '#'}
+                          category={getCategoryTitle(miniProject.miniProjectCategory)}
+                        />
+                      ))}
+                  </div>
+                </div>}
               </div>
 
               {/* Agentic AI Section */}
@@ -417,22 +426,24 @@ const Portfolio = () => {
                     })}
                 </div>
                 {/* Mini Projects */}
-                <p className="portfolio6 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
-                <div className="portfolio6 mt-[30px] grid grid-cols-2 gap-[10px] sm:grid-cols-4 md:grid-cols-4 lg:flex lg:flex-row lg:space-x-[20px] items-center justify-center">
-                  {miniProjects
-                    .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Agentic AI')
-                    .map((miniProject) => (
-                      <MiniProjectCard
-                        key={miniProject._id}
-                        title={miniProject.title || 'Untitled'}
-                        description={miniProject.description || 'No description available'}
-                        imageUrl={isValidUrl(miniProject.imageUrl) ? miniProject.imageUrl : Newspaper.src}
-                        githubUrl={isValidUrl(miniProject.githubUrl) ? miniProject.githubUrl : '#'}
-                        demoUrl={isValidUrl(miniProject.demoUrl) ? miniProject.demoUrl : '#'}
-                        category={getCategoryTitle(miniProject.miniProjectCategory)}
-                      />
-                    ))}
-                </div>
+                {miniProjects.filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Agentic AI').length > 0 && <div>
+                  <p className="portfolio6 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
+                  <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] sm:grid-cols-4  items-center justify-center">
+                    {miniProjects
+                      .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Agentic AI')
+                      .map((miniProject) => (
+                        <MiniProjectCard
+                          key={miniProject._id}
+                          title={miniProject.title || 'Untitled'}
+                          description={miniProject.description || 'No description available'}
+                          imageUrl={isValidUrl(miniProject.imageUrl) ? miniProject.imageUrl : Newspaper.src}
+                          githubUrl={isValidUrl(miniProject.githubUrl) ? miniProject.githubUrl : '#'}
+                          demoUrl={isValidUrl(miniProject.demoUrl) ? miniProject.demoUrl : '#'}
+                          category={getCategoryTitle(miniProject.miniProjectCategory)}
+                        />
+                      ))}
+                  </div>
+                </div>}
               </div>
             </>
           )}
