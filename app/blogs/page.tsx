@@ -14,8 +14,8 @@ import StarBackground from "../components/StarBackground";
 import axios from "axios";
 import Portfolio from "../components/Portfolio";
 import PortfolioModel from "../portfolio/PortfolioModel";
-import { Project } from "../portfolio/types"; // Import the Project type
-
+import { Project } from "../portfolio/types";
+import CaseStudyModel from "../components/CaseStudyModel";
 
 interface BlogPost {
   _id: string;
@@ -24,6 +24,21 @@ interface BlogPost {
   subtitle: string;
   content: string;
   blogsCategory: string;
+  imageUrl: string;
+  createdAt: string;
+}
+
+interface CaseStudy {
+  _id: string;
+  title: string;
+  challenge: string;
+  challenges: string; // Add this property to match the imported type
+  demoUrl: string;
+  githubUrl: string;
+  learnings: string;
+  results: string;
+  solution: string;
+  technologies: string[]; // Add this property to match the imported type
   imageUrl: string;
   createdAt: string;
 }
@@ -39,25 +54,52 @@ const Blogs = () => {
     const [agenticAIBlogs, setAgenticAIBlogs] = useState<BlogPost[]>([]);
     const [dataEngineeringBlogs, setDataEngineeringBlogs] = useState<BlogPost[]>([]);
     const [behindScenesBlogs, setBehindScenesBlogs] = useState<BlogPost[]>([]);
-    
+    const [caseStudies, setCaseStudies] = useState<CaseStudy[]>([]);
+    const [loading, setLoading] = useState<boolean>(true);
+    const [error, setError] = useState<string | null>(null);
+    const [onPortfolioClick, setOnPortfolioClick] = useState(false);
+    const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+    const [onCaseStudyClick, setOnCaseStudyClick] = useState(false);
+    const [selectedCaseStudy, setSelectedCaseStudy] = useState<CaseStudy | null>(null);
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    useEffect(() => {
+        const fetchCaseStudies = async () => {
+            try {
+                const response = await axios.get(
+                    'https://portfolio-backend-new-2.vercel.app/caseStudies'
+                );
+                setCaseStudies(response.data);
+                console.log(response.data)
+            } catch (err) {
+                setError('Failed to fetch case studies');
+                console.error('Error fetching case studies:', err);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchCaseStudies();
+    }, []);
+
     const API_BASE_URL = "https://portfolio-backend-new-2.vercel.app";
 
     const onMessageSuccess = () => {
         setShowMessageSuccess(true);
         setTimeout(() => {
-          setShowMessageSuccess(false);
+            setShowMessageSuccess(false);
         }, 3000);
     };
     
     const onContactClick = () => {
         setShowContactModel(!showContactModel);
-    }
+    };
     
     const router = useRouter();
 
     const onBlogClick = (blog: BlogPost) => {
         router.push(`blogs/blogpage?_id=${encodeURIComponent(blog._id || '')}`);
-    }
+    };
 
     const fetchBlogs = async () => {
         try {
@@ -93,10 +135,10 @@ const Blogs = () => {
                     delay: 600,
                     easing: 'ease-in-out',
                     reset: false
-                })
-            })
+                });
+            });
         }
-    }, [])
+    }, []);
 
     useEffect(() => {
         if(typeof window !== 'undefined'){
@@ -108,10 +150,10 @@ const Blogs = () => {
                     delay: 800,
                     easing: 'ease-in-out',
                     reset: false
-                })
-            })
+                });
+            });
         }
-    }, [])
+    }, []);
 
     useEffect(() => {
         if(typeof window !== 'undefined'){
@@ -123,10 +165,10 @@ const Blogs = () => {
                     delay: 1000,
                     easing: 'ease-in-out',
                     reset: false
-                })
-            })
+                });
+            });
         }
-    }, [])
+    }, []);
 
     useEffect(() => {
         if(typeof window !== 'undefined'){
@@ -138,10 +180,10 @@ const Blogs = () => {
                     delay: 1000,
                     easing: 'ease-in-out',
                     reset: false
-                })
-            })
+                });
+            });
         }
-    }, [])
+    }, []);
 
     useEffect(() => {
         if(typeof window !== 'undefined'){
@@ -153,10 +195,10 @@ const Blogs = () => {
                     delay: 400,
                     easing: 'ease-in-out',
                     reset: false
-                })
-            })
+                });
+            });
         }
-    }, [])
+    }, []);
 
     useEffect(() => {
         if(typeof window !== 'undefined'){
@@ -168,10 +210,10 @@ const Blogs = () => {
                     delay: 600,
                     easing: 'ease-in-out',
                     reset: false
-                })
-            })
+                });
+            });
         }
-    }, [])
+    }, []);
 
     useEffect(() => {
         if(typeof window !== 'undefined'){
@@ -183,10 +225,10 @@ const Blogs = () => {
                     delay: 400,
                     easing: 'ease-in-out',
                     reset: false
-                })
-            })
+                });
+            });
         }
-    }, [])
+    }, []);
 
     useEffect(() => {
         if(typeof window !== 'undefined'){
@@ -198,10 +240,10 @@ const Blogs = () => {
                     delay: 600,
                     easing: 'ease-in-out',
                     reset: false
-                })
-            })
+                });
+            });
         }
-    }, [])
+    }, []);
 
     useEffect(() => {
         if(typeof window !== 'undefined'){
@@ -213,10 +255,10 @@ const Blogs = () => {
                     delay: 800,
                     easing: 'ease-in-out',
                     reset: false
-                })
-            })
+                });
+            });
         }
-    }, [])
+    }, []);
 
     useEffect(() => {
         if(typeof window !== 'undefined'){
@@ -228,10 +270,10 @@ const Blogs = () => {
                     delay: 400,
                     easing: 'ease-in-out',
                     reset: false
-                })
-            })
+                });
+            });
         }
-    }, [])
+    }, []);
 
     useEffect(() => {
         if(typeof window !== 'undefined'){
@@ -243,56 +285,71 @@ const Blogs = () => {
                     delay: 400,
                     easing: 'ease-in-out',
                     reset: false
-                })
-            })
+                });
+            });
         }
-    }, [])
-
-    const [onPortfolioClick, setOnPortfolioClick] = useState(false)
-    const [selectedProject, setSelectedProject] = useState<Project | null>(null);
-
-    const [scrollPosition, setScrollPosition] = useState(0);
+    }, []);
 
     const onPortfolioCard1Click = (project: Project) => (e: React.MouseEvent<HTMLDivElement>) => {
         e.preventDefault();
         e.stopPropagation();
         if (typeof window !== 'undefined') {
-          setScrollPosition(window.scrollY);
-          setSelectedProject(project); // Set the full Project object
-          setOnPortfolioClick(true);
-          document.body.style.position = 'fixed';
-          document.body.style.top = `-${window.scrollY}px`;
+            setScrollPosition(window.scrollY);
+            setSelectedProject(project);
+            setOnPortfolioClick(true);
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${window.scrollY}px`;
         }
-      };
-    
-      const resetPortfolioClick = () => {
-        if (typeof window !== 'undefined') {
-          setOnPortfolioClick(false); // Hide modal or overlay
-          setSelectedProject(null); // Clear selected project
-          document.body.style.position = '';
-          document.body.style.top = '';
-    
-          const scrollY = scrollPosition; // From your useState
-          window.scrollTo(0, scrollY);
-        }
-      };
+    };
 
-    return(
+    const onCaseStudyCardClick = (caseStudy: CaseStudy) => (e: React.MouseEvent<HTMLDivElement>) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (typeof window !== 'undefined') {
+            setScrollPosition(window.scrollY);
+            setSelectedCaseStudy(caseStudy);
+            setOnCaseStudyClick(true);
+            document.body.style.position = 'fixed';
+            document.body.style.top = `-${window.scrollY}px`;
+        }
+    };
+
+    const resetPortfolioClick = () => {
+        if (typeof window !== 'undefined') {
+            setOnPortfolioClick(false);
+            setSelectedProject(null);
+            document.body.style.position = '';
+            document.body.style.top = '';
+            window.scrollTo(0, scrollPosition);
+        }
+    };
+
+    const resetCaseStudyClick = () => {
+        if (typeof window !== 'undefined') {
+            setOnCaseStudyClick(false);
+            setSelectedCaseStudy(null);
+            document.body.style.position = '';
+            document.body.style.top = '';
+            window.scrollTo(0, scrollPosition);
+        }
+    };
+
+    return (
         <div className="flex text-white w-[100vw] overflow-x-hidden flex-col">
             <Navigation navSelection={navSelection} onContactClick={onContactClick}/>
             <ContactModel onMessageSuccess={onMessageSuccess} showContactModel={showContactModel} onContactClick={onContactClick}/>
             <div>
-              <StarBackground/>
-              <div className="text-white bg-contain bg-no-repeat bg-center sm:space-y-[30px] px-[10vw] flex flex-col items-center justify-center sm:pt-[20vh] min-h-[100vh]">
-                <div className="w-[100vw] text-center leading-[63px] sm:leading-[90px] h-[100%]">
-                  <p className="text-[40px] sm:text-[50px] md:text-[60px] aboutText4 aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] to-[#CAC8C6] bg-clip-text text-transparent">Look Into</p>
-                  <p className="text-[49px] sm:text-[75px] px-[20px] md:text-[80px] aboutTitle2 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent">Blogs & Insights</p>
+                <StarBackground/>
+                <div className="text-white bg-contain bg-no-repeat bg-center sm:space-y-[30px] px-[10vw] flex flex-col items-center justify-center sm:pt-[20vh] min-h-[100vh]">
+                    <div className="w-[100vw] text-center leading-[63px] sm:leading-[90px] h-[100%]">
+                        <p className="text-[40px] sm:text-[50px] md:text-[60px] aboutText4 aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] to-[#CAC8C6] bg-clip-text text-transparent">Look Into</p>
+                        <p className="text-[49px] sm:text-[75px] px-[20px] md:text-[80px] aboutTitle2 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent">Blogs & Insights</p>
+                    </div>
+                    <div className="w-[100%] md:w-[50%] text-center h-[10px] sm:h-[160px]"></div>
+                    <div className="w-[100%] md:w-[50%] text-center">
+                        <p className="aboutTitle3">Welcome to my digital journal, a space where I share my thoughts, experiences, and learnings from the world of technology.</p>
+                    </div>
                 </div>
-                <div className="w-[100%] md:w-[50%] text-center h-[10px] sm:h-[160px]"></div>
-                <div className="w-[100%] md:w-[50%] text-center">
-                  <p className="aboutTitle3">Welcome to my digital journal, a space where I share my thoughts, experiences, and learnings from the world of technology.</p>
-                </div>
-              </div>
             </div>
 
             <div className="min-h-[120vh] bg-[#0A0A0A] py-[10vh] w-screen flex items-center justify-center">
@@ -416,82 +473,65 @@ const Blogs = () => {
                         </>
                     )}
 
-                    <div className="w-[95%] sm:w-[80%] flex items-center justify-center">
-                        <div className="flex flex-row items-center justify-center space-x-[20px] mt-[30px]">
-                            <div className="w-[96%]">
-                                <p className="text-[40px] ml-[10px] sm:text-[50px] blogs3 font-bold">Case Studies</p>
-                                <div className="grid blogs2 px-[15px] md:px-[85px] md:grid-cols-2 gap-[25px] sm:gap-[30px] items-center justify-center space-x-[20px] mt-[30px]">
-                                    <CaseStudyCard onClick={() => setOnPortfolioClick(true)} text1="Case study title 01" text="test" />
-                                    <CaseStudyCard onClick={() => setOnPortfolioClick(true)} text1="Case study title 02" text="" />
-                                </div>
+                    <div className="w-[95%] sm:w-[100%] mt-[40px] flex items-center justify-center">
+                        <div className="flex flex-col items-center justify-center w-full">
+                            <p className="text-[40px] sm:text-[50px] blogs3 font-bold w-full text-center">Case Studies</p>
+                            <div className="grid blogs2 px-[15px] md:px-[85px] md:grid-cols-2 gap-[25px] sm:gap-[30px] items-center justify-center mt-[30px]">
+                                {caseStudies.map((caseStudy) => (
+                                    <CaseStudyCard
+                                        imageUrl={caseStudy.imageUrl}
+                                        key={caseStudy._id}
+                                        text1={caseStudy.title}
+                                        text={caseStudy.challenge}
+                                        onClick={onCaseStudyCardClick(caseStudy)}
+                                    />
+                                ))}
                             </div>
                         </div>
                     </div>
                 </div>
-                <div
-                    className={`fixed top-0 left-0 z-[9999] h-[100vh] w-[100vw] flex flex-col items-center justify-center
-                    transition-opacity duration-500 ease-in-out
-                    ${onPortfolioClick ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}
-                    `}
-                >
-                    <div
-                        onClick={() => setOnPortfolioClick(false)}
-                        className={`bg-[#101010] h-full w-full opacity-50 transition-opacity duration-500 ease-in-out
-                        ${onPortfolioClick ? 'opacity-60' : 'opacity-0 pointer-events-none'}
-                        `}
-                    ></div>
-                    <div
-                        className={`absolute lg:rounded-[20px] md:rounded-[10px] text-white bg-[#101010] ring-[1.5px] ring-[#373435] h-[95vh] w-[85vw] z-20
-                        transform transition-transform duration-500 ease-in-out
-                        ${onPortfolioClick ? 'scale-100 opacity-100' : 'scale-95 opacity-0 pointer-events-none'}
-                        `}
-                    >
-                        <div className="flex flex-row items-center justify-center">
-                            <p className="text-[40px] sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent p-6">
-                                Case Overview
-                            </p>
-                            <button
-                                className="cursor-pointer absolute right-0 top-0 pr-[40px] pt-[30px] text-[20px] font-semibold"
-                                onClick={() => setOnPortfolioClick(false)}
-                                aria-label="Close modal"
-                            >
-                                Close
-                            </button>
-                        </div>
-                    </div>
-                </div>
             </div>
+
             <Top/>
             <Portfolio onPortfolioCard1Click={onPortfolioCard1Click} />
-        
             <Contact onContactClick={onContactClick}/>
-            
             <Footer/>
 
             {/* Portfolio Modal */}
-      <div
-        className={`fixed top-0 left-0 z-[10000] h-[100vh] w-[100vw] flex flex-col items-center justify-center bg-black/80 transition-opacity duration-500 ease-in-out ${
-          onPortfolioClick ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}
-      >
-        <PortfolioModel
-          resetPortfolioClick={resetPortfolioClick}
-          onPortfolioClick={onPortfolioClick}
-          setOnPortfolioClick={setOnPortfolioClick}
-          project={selectedProject} 
-          
-        />
-      </div>
+            <div
+                className={`fixed top-0 left-0 z-[10000] h-[100vh] w-[100vw] flex flex-col items-center justify-center bg-black/80 transition-opacity duration-500 ease-in-out ${
+                onPortfolioClick ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+                }`}
+            >
+                <PortfolioModel
+                    resetPortfolioClick={resetPortfolioClick}
+                    onPortfolioClick={onPortfolioClick}
+                    setOnPortfolioClick={setOnPortfolioClick}
+                    project={selectedProject}
+                />
+            </div>
+
+            {/* Case Study Modal */}
+            <div
+                className={`fixed top-0 left-0 z-[10000] h-[100vh] w-[100vw] flex flex-col items-center justify-center bg-black/80 transition-opacity duration-500 ease-in-out ${
+                onCaseStudyClick ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+                }`}
+            >
+                <CaseStudyModel
+                    resetCaseStudyClick={resetCaseStudyClick}
+                    onCaseStudyClick={onCaseStudyClick}
+                    setOnCaseStudyClick={setOnCaseStudyClick}
+                    caseStudy={selectedCaseStudy}
+                />
+            </div>
 
             {showMessageSuccess && (
                 <div className="bg-[#101010] z-[40] w-[250px] fixed text-[13px] mb-[20px] ml-[30px] px-[20px] py-[20px] ring-white ring-[0.5px] rounded-[10px] text-white absolute left-0 bottom-0">
                     <p>Message saved successfully. Will get back to you soon:)</p>
                 </div>
             )}
-
-
         </div>
-    )
-}
+    );
+};
 
-export default Blogs
+export default Blogs;
