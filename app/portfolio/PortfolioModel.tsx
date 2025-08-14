@@ -187,7 +187,7 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
           {/* Top Section */}
           <div className="w-[100%] ">
             <div className="flex w-[100%]  flex-col sm:flex-row items-center justify-center pt-[50px] sm:space-x-[20px]">
-              <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-[100%]  sm:w-[60%] h-[580px] rounded-[10px] flex items-center justify-center relative">
+              <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-[100%]  sm:w-[60%]  sm:h-[580px] rounded-[10px] flex items-center justify-center relative">
                 <Image
                   src={images[0]}
                   alt={project?.title || 'Project Image'}
@@ -237,10 +237,10 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
             { title: 'The Solution', content: project?.solution },
           ].map(({ title, content }, index) => (
             <div className='space-y-[10px]' key={title}>
-              <p className="text-[45px] text-center sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent  sm:p-6">
-                {title}
+              <p className="text-[45px] leading-[53px] mb-[20px] sm:leading-[auto] text-center sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent  sm:p-6">
+                {title} 
               </p>
-              <div className="flex w-full flex-col sm:flex-row items-center justify-center space-x-[20px]">
+              <div className="flex w-full flex-col sm:flex-row items-center justify-center sm:space-x-[20px]">
                 {index % 2 === 0 && (
                   <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 sm:w-[50%] h-[350px] rounded-[10px] flex  items-center justify-center">
                     <Image
@@ -254,7 +254,7 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
                     />
                   </div>
                 )}
-                <div className={`w-[50%] my-[20px] sm:my-[0px] space-y-2 leading-relaxed text-white`}>
+                <div className={`sm:w-[50%] my-[20px] sm:my-[0px] space-y-2 leading-relaxed text-white`}>
                   <p>{content || `No ${title.toLowerCase()} provided.`}</p>
                 </div>
                 {index % 2 !== 0 && (
