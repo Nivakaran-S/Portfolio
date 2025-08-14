@@ -203,7 +203,7 @@ const Portfolio = () => {
             <>
               {/* Software Engineering Section */}
               <div className="mt-[30px] flex flex-col items-center sm:w-[80vw]">
-                <p className="portfolio2 w-[70vw] ml-[10px] font-bold text-[35px] sm:text-[45px]">Software Engineering</p>
+                <p className="portfolio2 sm:w-[70vw] sm:ml-[10px] font-bold text-[38px] sm:text-[45px]">Software Engineering</p>
                 {/* Main Projects */}
                 <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center sm:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
                   {projects
@@ -252,7 +252,7 @@ const Portfolio = () => {
 
               {/* Data Science Section */}
               <div className="mt-[30px] flex flex-col items-center sm:w-[80vw]">
-                <p className="portfolio3 w-[70vw] ml-[10px] font-bold text-[35px] sm:text-[45px]">Data Science</p>
+                <p className="portfolio2 sm:w-[70vw] sm:ml-[10px] font-bold text-[38px] sm:text-[45px]">Data Science</p>
                 {/* Main Projects */}
                 <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center sm:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
                   {projects
@@ -301,7 +301,7 @@ const Portfolio = () => {
 
               {/* Computer Vision Section */}
               <div className="mt-[30px] flex flex-col items-center sm:w-[80vw]">
-                <p className="portfolio4 w-[70vw] ml-[10px] font-bold text-[35px] sm:text-[45px]">Computer Vision</p>
+                <p className="portfolio2 sm:w-[70vw] sm:ml-[10px] font-bold text-[38px] sm:text-[45px]">Computer Vision</p>
                 {/* Main Projects */}
                 <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center sm:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
                   {projects
@@ -350,7 +350,7 @@ const Portfolio = () => {
 
               {/* Generative AI Section */}
               <div className="mt-[30px] flex flex-col items-center sm:w-[80vw]">
-                <p className="portfolio5 w-[70vw] ml-[10px] font-bold text-[35px] sm:text-[45px]">Generative AI</p>
+                <p className="portfolio2 sm:w-[70vw] sm:ml-[10px] font-bold text-[38px] sm:text-[45px]">Generative AI</p>
                 {/* Main Projects */}
                 <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center sm:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
                   {projects
@@ -400,7 +400,7 @@ const Portfolio = () => {
 
               {/* Agentic AI Section */}
               <div className="mt-[30px] flex flex-col items-center sm:w-[80vw]">
-                <p className="portfolio6 w-[70vw] ml-[10px] font-bold text-[35px] sm:text-[45px]">Agentic AI</p>
+                <p className="portfolio2 sm:w-[70vw] sm:ml-[10px] font-bold text-[38px] sm:text-[45px]">Agentic AI</p>
                 {/* Main Projects */}
                 <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center sm:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
                   {projects
@@ -449,7 +449,7 @@ const Portfolio = () => {
 
               {/* Data Engineering Section */}
               <div className="mt-[30px] flex flex-col items-center sm:w-[80vw]">
-                <p className="portfolio6 w-[70vw] ml-[10px] font-bold text-[35px] sm:text-[45px]">Data Engineering</p>
+                <p className="portfolio2 sm:w-[70vw] sm:ml-[10px] font-bold text-[38px] sm:text-[45px]">Data Engineering</p>
                 {/* Main Projects */}
                 <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center sm:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
                   {projects

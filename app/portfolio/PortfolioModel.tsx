@@ -166,13 +166,13 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
       {/* Modal Container */}
       <div
         ref={scrollRef}
-        className={`custom-scrollbar bg-[#101010] ring-[1.5px] ring-[#373435] lg:rounded-[20px] md:rounded-[10px] text-white w-[85vw] z-20 transform transition-transform duration-500 ease-in-out ${
+        className={`custom-scrollbar bg-[#101010] ring-[1.5px] rounded-[5px] ring-[#373435] lg:rounded-[20px] md:rounded-[10px] text-white w-[95vw] sm:w-[85vw] z-20 transform transition-transform duration-500 ease-in-out ${
           onPortfolioClick
             ? 'scale-100 opacity-100'
             : 'opacity-0 pointer-events-none'
         }`}
       >
-        <div className="relative flex px-[75px] w-full flex-col space-y-[20px] py-[30px] items-center justify-center">
+        <div className="relative  flex px-[25px] sm:px-[75px] w-full flex-col space-y-[20px] py-[30px] items-center justify-center">
           {/* Close Button */}
           <button
             className="cursor-pointer absolute right-0 top-0 pr-[40px] pt-[30px] text-[20px] font-semibold"
@@ -185,9 +185,9 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
           </button>
 
           {/* Top Section */}
-          <div className="w-full">
-            <div className="flex w-full flex-row items-center justify-center pt-[50px] space-x-[20px]">
-              <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-[60%] h-[580px] rounded-[10px] flex items-center justify-center relative">
+          <div className="w-[100%] ">
+            <div className="flex w-[100%]  flex-col sm:flex-row items-center justify-center pt-[50px] sm:space-x-[20px]">
+              <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-[100%]  sm:w-[60%] h-[580px] rounded-[10px] flex items-center justify-center relative">
                 <Image
                   src={images[0]}
                   alt={project?.title || 'Project Image'}
@@ -197,7 +197,7 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
                   placeholder="blur"
                   blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGUrGwU6AAAAABJRU5ErkJggg=="
                 />
-                <p className="text-[40px] text-white leading-[70px] absolute text-center sm:text-[50px] md:text-[70px] font-bold p-6">
+                <p className="text-[40px] text-white leading-[50px] sm:leading-[70px] absolute text-center sm:text-[50px] md:text-[70px] font-bold p-6">
                   {project?.title || 'Project Title'}
                 </p>
                 <div className='absolute space-x-[20px] flex flex-row bottom-[20%]'>
@@ -209,7 +209,7 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
                   </div>
                 </div>
               </div>
-              <div className="w-[40%] h-full space-y-[20px]">
+              <div className="w-[40%] hidden sm:flex flex-col h-full space-y-[20px]">
                 {[1, 2].map((i) => (
                   <div
                     key={i}
@@ -236,13 +236,13 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
             { title: 'The Problem', content: project?.problem },
             { title: 'The Solution', content: project?.solution },
           ].map(({ title, content }, index) => (
-            <div key={title}>
-              <p className="text-[40px] text-center sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent p-6">
+            <div className='space-y-[10px]' key={title}>
+              <p className="text-[45px] text-center sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent  sm:p-6">
                 {title}
               </p>
-              <div className="flex w-full flex-row items-center justify-center space-x-[20px]">
+              <div className="flex w-full flex-col sm:flex-row items-center justify-center space-x-[20px]">
                 {index % 2 === 0 && (
-                  <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-[50%] h-[350px] rounded-[10px] flex items-center justify-center">
+                  <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 sm:w-[50%] h-[350px] rounded-[10px] flex  items-center justify-center">
                     <Image
                       src={images[index] || placeholderImage}
                       alt={`${title} Image`}
@@ -254,11 +254,11 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
                     />
                   </div>
                 )}
-                <div className={`w-[50%] space-y-2 leading-relaxed text-white`}>
+                <div className={`w-[50%] my-[20px] sm:my-[0px] space-y-2 leading-relaxed text-white`}>
                   <p>{content || `No ${title.toLowerCase()} provided.`}</p>
                 </div>
                 {index % 2 !== 0 && (
-                  <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-[50%] h-[350px] rounded-[10px] flex items-center justify-center">
+                  <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 sm:w-[50%] h-[350px] rounded-[10px] flex items-center justify-center">
                     <Image
                       src={images[index-1] || placeholderImage}
                       alt={`${title} Image`}

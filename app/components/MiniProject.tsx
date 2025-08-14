@@ -24,7 +24,7 @@ const MiniProject: React.FC<MiniProjectProps> = ({ title, description, imageUrl,
           height={160}
           onError={(e) => { e.currentTarget.src = NewsPaper.src; }}
         />
-        <div className="flex flex-col absolute h-[230px] rounded-[0px] bg-[#1D1D1D] w-[220px] px-[10px] justify-between py-[10px]">
+        <div className="flex flex-col absolute h-[230px] rounded-[10px] sm:rounded-[0px] bg-[#1D1D1D] w-[200px] sm:w-[220px] px-[10px] justify-between py-[10px]">
             <div className="h-[100%] w-[100%] ">
             <p className="leading-[23px]  text-[18px] ">{title}</p>
             
