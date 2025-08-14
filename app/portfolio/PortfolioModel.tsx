@@ -187,7 +187,7 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
           {/* Top Section */}
           <div className="w-[100%] ">
             <div className="flex w-[100%]  flex-col sm:flex-row items-center justify-center pt-[50px] sm:space-x-[20px]">
-              <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-[100%]  sm:w-[60%]  sm:h-[580px] rounded-[10px] flex items-center justify-center relative">
+              <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-[100%]  sm:w-[60%] h-[400px] sm:h-[580px] rounded-[10px] flex items-center justify-center relative">
                 <Image
                   src={images[0]}
                   alt={project?.title || 'Project Image'}
