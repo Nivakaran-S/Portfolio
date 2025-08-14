@@ -445,6 +445,55 @@ const Portfolio = () => {
                   </div>
                 </div>}
               </div>
+
+              {/* Data Engineering Section */}
+              <div className="mt-[30px] flex flex-col items-center w-[80vw]">
+                <p className="portfolio6 w-[70vw] ml-[10px] font-bold text-[35px] sm:text-[45px]">Data Engineering</p>
+                {/* Main Projects */}
+                <div className="portfolio2 grid gap-[20px] grid-cols-2 place-items-center mt-[30px]  md:space-y-[0px] md:space-x-[0px] items-center justify-center">
+                  {projects
+                    .filter(project => getCategoryTitle(project.projectCategory) === 'Data Engineering')
+                    .map((project) => {
+                      const techs = normalizeTechStack(project.techStack);
+                      return (
+                        <PortfolioCard
+                          key={project._id}
+                          onClick={onPortfolioCardClick(project)}
+                          lang1={techs[0] || ''}
+                          lang2={techs[1] || ''}
+                          lang3={techs[2] || ''}
+                          lang4={techs[3] || ''}
+                          lang5={techs[4] || ''}
+                          lang6={techs[5] || ''}
+                          text={project.title}
+                          githubLink={project.githubLink}
+                          demoLink={project.demoLink}
+                          text2={project.projectOverview}
+                          imageUrl={isValidUrl(project.images?.imageUrl1) ? project.images?.imageUrl1 : Newspaper.src}
+                        />
+                      );
+                    })}
+                </div>
+                {/* Mini Projects */}
+                {miniProjects.filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Agentic AI').length > 0 && <div>
+                  <p className="portfolio6 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
+                  <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] sm:grid-cols-4  items-center justify-center">
+                    {miniProjects
+                      .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Agentic AI')
+                      .map((miniProject) => (
+                        <MiniProjectCard
+                          key={miniProject._id}
+                          title={miniProject.title || 'Untitled'}
+                          description={miniProject.description || 'No description available'}
+                          imageUrl={isValidUrl(miniProject.imageUrl) ? miniProject.imageUrl : Newspaper.src}
+                          githubUrl={isValidUrl(miniProject.githubUrl) ? miniProject.githubUrl : '#'}
+                          demoUrl={isValidUrl(miniProject.demoUrl) ? miniProject.demoUrl : '#'}
+                          category={getCategoryTitle(miniProject.miniProjectCategory)}
+                        />
+                      ))}
+                  </div>
+                </div>}
+              </div>
             </>
           )}
         </div>
