@@ -364,7 +364,7 @@ const Blogs = () => {
                             <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Data Science</p>
                             <div className="flex items-center blogs4 justify-center">
                                 <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px]">
-                                    {dataScienceBlogs.slice(0, 4).map((blog) => (
+                                    {dataScienceBlogs.map((blog) => (
                                         <BlogCard
                                             image={blog.imageUrl || null}
                                             key={blog._id}
@@ -383,7 +383,7 @@ const Blogs = () => {
                             <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Computer Vision</p>
                             <div className="flex items-center blogs4 justify-center">
                                 <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px]">
-                                    {computerVisionBlogs.slice(0, 4).map((blog) => (
+                                    {computerVisionBlogs.map((blog) => (
                                         <BlogCard
                                             image={blog.imageUrl || null}
                                             key={blog._id}
@@ -402,7 +402,7 @@ const Blogs = () => {
                             <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Generative AI</p>
                             <div className="flex items-center blogs4 justify-center">
                                 <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px]">
-                                    {generativeAIBlogs.slice(0, 4).map((blog) => (
+                                    {generativeAIBlogs.map((blog) => (
                                         <BlogCard
                                             image={blog.imageUrl || null}
                                             key={blog._id}
@@ -421,7 +421,7 @@ const Blogs = () => {
                             <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Agentic AI</p>
                             <div className="flex items-center blogs4 justify-center">
                                 <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px]">
-                                    {agenticAIBlogs.slice(0, 4).map((blog) => (
+                                    {agenticAIBlogs.map((blog) => (
                                         <BlogCard
                                             image={blog.imageUrl || null}
                                             key={blog._id}
@@ -440,7 +440,7 @@ const Blogs = () => {
                             <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Data Engineering</p>
                             <div className="flex items-center blogs4 justify-center">
                                 <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px]">
-                                    {dataEngineeringBlogs.slice(0, 4).map((blog) => (
+                                    {dataEngineeringBlogs.map((blog) => (
                                         <BlogCard
                                             image={blog.imageUrl || null}
                                             key={blog._id}
@@ -459,7 +459,7 @@ const Blogs = () => {
                             <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Behind the Scenes</p>
                             <div className="flex items-center blogs4 justify-center">
                                 <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px]">
-                                    {behindScenesBlogs.slice(0, 4).map((blog) => (
+                                    {behindScenesBlogs.map((blog) => (
                                         <BlogCard
                                             image={blog.imageUrl || null}
                                             key={blog._id}
