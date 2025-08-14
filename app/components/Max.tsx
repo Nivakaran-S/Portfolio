@@ -140,10 +140,10 @@ const Max = () => {
                 <p className="select-none text-white text-[20px]">Max</p>
             </div>
 
-            <div className={`${max ? 'scale-[100%] delay-200' : 'scale-0' } custom-scrollbar absolute bottom-[20px] right-[30px] origin-bottom-right transition-transform duration-500 ease-in-out flex flex-col bg-[#373435] ring-[0.5px] ring-[#727376] h-[580px] w-[400px] rounded-[10px] ring-[0.5px] justify-center mt-[5px]`}>
-                <div className="w-[100%]  select-none  px-[20px] bg-[#000000] text-white flex flex-row justify-between rounded-t-[10px] py-[10px] h-fit items-center">
+            <div className={`${max ? 'scale-[100%] delay-200' : 'scale-0' } custom-scrollbar absolute sm:bottom-[20px] sm:right-[30px] origin-bottom-right transition-transform duration-500 ease-in-out flex flex-col bg-[#373435] ring-[0.5px] ring-[#727376] h-[100vh] w-[100vw] sm:h-[580px] sm:w-[400px] sm:rounded-[10px] ring-[0.5px] justify-center sm:mt-[5px]`}>
+                <div className="w-[100%]  select-none px-[30px] sm:px-[20px] bg-[#000000] text-white flex flex-row justify-between sm:rounded-t-[10px] py-[15px] sm:py-[10px] h-fit items-center">
                     <div>
-                        <p className="text-[20px]">Max</p>
+                        <p className="text-[30px] sm:text-[20px]">Max</p>
                     </div>
                     <div onClick={handleMax} className="cursor-pointer">
                         <p>Close</p>
@@ -153,7 +153,7 @@ const Max = () => {
                 
                 {messageSubmitted ?
                         <div
-                            className="flex-1 overflow-y-auto py-4 ring-[1px] ring-[#373435] px-5 bg-[#101010]  scrollbar scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-800"
+                            className="flex flex-col h-[100%]  overflow-y-auto py-4 ring-[1px] ring-[#373435] px-5 bg-[#101010]  scrollbar scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-800"
                             ref={scrollContainerRef}
                             >
                             <div className="flex justify-center mt-[5px]">
@@ -182,7 +182,7 @@ const Max = () => {
                             
                         </div>
                         :
-                        <div className='h-[430px] ring-[1px] ring-[#373435] flex flex-col justify-center  items-center bg-[#101010] '>
+                        <div className='h-[100%] sm:h-[430px] ring-[1px] ring-[#373435] flex flex-col justify-center  items-center bg-[#101010] '>
                             <div className="mx-[30px] text-gray-300 px-[10px]  my-[20px] text-center">
                                 <p className="  text-[15px]" >Hello! I’m Max, an AI-powered assistant created by Nivakaran.</p>
                             
@@ -192,9 +192,9 @@ const Max = () => {
 
 
                 
-                <div className="w-[100%] ring-[1px] ring-[#373435] relative rounded-b-[10px] p-[10px] h-[130px] bg-[#000000]">
+                <div className="w-[100%] ring-[1px] ring-[#373435] relative rounded-b-[10px] py-[15px] px-[30px] sm:py-[5px] sm:px-[5px] h-[250px] sm:h-[130px] bg-[#000000]">
                     <textarea onKeyDown={handleKeyDown} onChange={(e) => setMessage(e.target.value)} value={message} className="w-[100%] focus:outline-none h-[100%] leading-[19px] rounded-[5px] bg-[#101010] text-black py-[8px] px-[8px] bg-white resize-none" placeholder="Ask Max"></textarea>
-                    <div onClick={() => onMessageSubmit(message)} className="w-[70px] ring-[0.5px] ring-[0.5px] ring-[#727376] cursor-pointer hover:bg-black absolute top-[5px] right-[-20px] h-[70px] rounded-full bg-[#373435] flex items-center justify-center cursor-pointer mt-[10px]">
+                    <div onClick={() => onMessageSubmit(message)} className="w-[70px] ring-[0.5px] ring-[0.5px] ring-[#727376] cursor-pointer hover:bg-black absolute top-[15px] sm:top-[5px] right-[10px] sm:right-[-20px]  h-[70px] rounded-full bg-[#373435] flex items-center justify-center cursor-pointer mt-[10px]">
                         <Image alt="" className="ml-[7px]" src={Send} height={35}  />
                     </div>
                 </div>
