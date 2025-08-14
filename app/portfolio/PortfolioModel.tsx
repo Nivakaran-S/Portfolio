@@ -152,7 +152,7 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
 
   console.log(techStackItems)
   return (
-    <div className="fixed flex custom-scrollbar flex-col overflow-y-auto h-[100vh] py-[5vh] inset-0 z-[50] items-center justify-start">
+    <div className="fixed flex custom-scrollbar flex-col overflow-y-auto h-[100vh] py-[2vh] sm:py-[5vh] inset-0 z-[50] items-center justify-start">
       {/* Backdrop */}
       <div
         onClick={() => {

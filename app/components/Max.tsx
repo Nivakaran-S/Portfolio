@@ -141,7 +141,7 @@ const Max = () => {
             </div>
 
             <div className={`${max ? 'scale-[100%] delay-200' : 'scale-0' } custom-scrollbar absolute sm:bottom-[20px] sm:right-[30px] origin-bottom-right transition-transform duration-500 ease-in-out flex flex-col bg-[#373435] ring-[0.5px] ring-[#727376] h-[100vh] w-[100vw] sm:h-[580px] sm:w-[400px] sm:rounded-[10px] ring-[0.5px] justify-center sm:mt-[5px]`}>
-                <div className="w-[100%] pt-[14%] select-none px-[30px] sm:px-[20px] bg-[#000000] text-white flex flex-row justify-between sm:rounded-t-[10px] py-[15px] sm:py-[10px] h-fit items-center">
+                <div className="w-[100%] pt-[15%] select-none px-[30px] sm:px-[20px] bg-[#000000] text-white flex flex-row justify-between sm:rounded-t-[10px] py-[15px] sm:py-[10px] h-fit items-center">
                     <div>
                         <p className="text-[30px] sm:text-[20px]">Max</p>
                     </div>
