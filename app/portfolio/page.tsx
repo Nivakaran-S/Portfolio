@@ -15,6 +15,7 @@ import PortfolioModel from "./PortfolioModel";
 import axios from 'axios';
 import { Project, ProjectCategory, MiniProject } from './types';
 import Newspaper from '../images/news.jpeg';
+import Blogs from "../components/Blogs";
 
 // Fix: Rename the interface to match what PortfolioModel expects
 interface PortfolioModelProps {
@@ -201,10 +202,10 @@ const Portfolio = () => {
           ) : (
             <>
               {/* Software Engineering Section */}
-              <div className="mt-[30px] flex flex-col items-center w-[80vw]">
+              <div className="mt-[30px] flex flex-col items-center sm:w-[80vw]">
                 <p className="portfolio2 w-[70vw] ml-[10px] font-bold text-[35px] sm:text-[45px]">Software Engineering</p>
                 {/* Main Projects */}
-                <div className="portfolio2 grid gap-[20px] grid-cols-2 place-items-center mt-[30px]  md:space-y-[0px] md:space-x-[0px] items-center justify-center">
+                <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center sm:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Software Engineering')
                     .map((project) => {
@@ -250,10 +251,10 @@ const Portfolio = () => {
               </div>
 
               {/* Data Science Section */}
-              <div className="mt-[30px] flex flex-col items-center w-[80vw]">
+              <div className="mt-[30px] flex flex-col items-center sm:w-[80vw]">
                 <p className="portfolio3 w-[70vw] ml-[10px] font-bold text-[35px] sm:text-[45px]">Data Science</p>
                 {/* Main Projects */}
-                <div className="portfolio2 grid gap-[20px] grid-cols-2 place-items-center mt-[30px]  md:space-y-[0px] md:space-x-[0px] items-center justify-center">
+                <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center sm:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Data Science')
                     .map((project) => {
@@ -299,10 +300,10 @@ const Portfolio = () => {
               </div>
 
               {/* Computer Vision Section */}
-              <div className="mt-[30px] flex flex-col items-center w-[80vw]">
+              <div className="mt-[30px] flex flex-col items-center sm:w-[80vw]">
                 <p className="portfolio4 w-[70vw] ml-[10px] font-bold text-[35px] sm:text-[45px]">Computer Vision</p>
                 {/* Main Projects */}
-                <div className="portfolio2 grid gap-[20px] grid-cols-2 place-items-center mt-[30px]  md:space-y-[0px] md:space-x-[0px] items-center justify-center">
+                <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center sm:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Computer Vision')
                     .map((project) => {
@@ -348,10 +349,10 @@ const Portfolio = () => {
               </div>
 
               {/* Generative AI Section */}
-              <div className="mt-[30px] flex flex-col items-center w-[80vw]">
+              <div className="mt-[30px] flex flex-col items-center sm:w-[80vw]">
                 <p className="portfolio5 w-[70vw] ml-[10px] font-bold text-[35px] sm:text-[45px]">Generative AI</p>
                 {/* Main Projects */}
-                <div className="portfolio2 grid gap-[20px] grid-cols-2 place-items-center mt-[30px]  md:space-y-[0px] md:space-x-[0px] items-center justify-center">
+                <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center sm:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Generative AI')
                     .map((project) => {
@@ -398,10 +399,10 @@ const Portfolio = () => {
               </div>
 
               {/* Agentic AI Section */}
-              <div className="mt-[30px] flex flex-col items-center w-[80vw]">
+              <div className="mt-[30px] flex flex-col items-center sm:w-[80vw]">
                 <p className="portfolio6 w-[70vw] ml-[10px] font-bold text-[35px] sm:text-[45px]">Agentic AI</p>
                 {/* Main Projects */}
-                <div className="portfolio2 grid gap-[20px] grid-cols-2 place-items-center mt-[30px]  md:space-y-[0px] md:space-x-[0px] items-center justify-center">
+                <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center sm:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Agentic AI')
                     .map((project) => {
@@ -447,10 +448,10 @@ const Portfolio = () => {
               </div>
 
               {/* Data Engineering Section */}
-              <div className="mt-[30px] flex flex-col items-center w-[80vw]">
+              <div className="mt-[30px] flex flex-col items-center sm:w-[80vw]">
                 <p className="portfolio6 w-[70vw] ml-[10px] font-bold text-[35px] sm:text-[45px]">Data Engineering</p>
                 {/* Main Projects */}
-                <div className="portfolio2 grid gap-[20px] grid-cols-2 place-items-center mt-[30px]  md:space-y-[0px] md:space-x-[0px] items-center justify-center">
+                <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center sm:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Data Engineering')
                     .map((project) => {
@@ -510,6 +511,7 @@ const Portfolio = () => {
           />
         </div>
       </div>
+      <Blogs/>
       <Top />
       <Contact onContactClick={onContactClick} />
       <Footer />

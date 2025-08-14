@@ -12,6 +12,10 @@ import Max from "../components/Max";
 import CaseStudyCard from "../components/CaseStudyCard";
 import StarBackground from "../components/StarBackground";
 import axios from "axios";
+import Portfolio from "../components/Portfolio";
+import PortfolioModel from "../portfolio/PortfolioModel";
+import { Project } from "../portfolio/types"; // Import the Project type
+
 
 interface BlogPost {
   _id: string;
@@ -245,6 +249,33 @@ const Blogs = () => {
     }, [])
 
     const [onPortfolioClick, setOnPortfolioClick] = useState(false)
+    const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+    const [scrollPosition, setScrollPosition] = useState(0);
+
+    const onPortfolioCard1Click = (project: Project) => (e: React.MouseEvent<HTMLDivElement>) => {
+        e.preventDefault();
+        e.stopPropagation();
+        if (typeof window !== 'undefined') {
+          setScrollPosition(window.scrollY);
+          setSelectedProject(project); // Set the full Project object
+          setOnPortfolioClick(true);
+          document.body.style.position = 'fixed';
+          document.body.style.top = `-${window.scrollY}px`;
+        }
+      };
+    
+      const resetPortfolioClick = () => {
+        if (typeof window !== 'undefined') {
+          setOnPortfolioClick(false); // Hide modal or overlay
+          setSelectedProject(null); // Clear selected project
+          document.body.style.position = '';
+          document.body.style.top = '';
+    
+          const scrollY = scrollPosition; // From your useState
+          window.scrollTo(0, scrollY);
+        }
+      };
 
     return(
         <div className="flex text-white w-[100vw] overflow-x-hidden flex-col">
@@ -431,13 +462,34 @@ const Blogs = () => {
                 </div>
             </div>
             <Top/>
+            <Portfolio onPortfolioCard1Click={onPortfolioCard1Click} />
+        
             <Contact onContactClick={onContactClick}/>
+            
             <Footer/>
+
+            {/* Portfolio Modal */}
+      <div
+        className={`fixed top-0 left-0 z-[10000] h-[100vh] w-[100vw] flex flex-col items-center justify-center bg-black/80 transition-opacity duration-500 ease-in-out ${
+          onPortfolioClick ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+      >
+        <PortfolioModel
+          resetPortfolioClick={resetPortfolioClick}
+          onPortfolioClick={onPortfolioClick}
+          setOnPortfolioClick={setOnPortfolioClick}
+          project={selectedProject} 
+          
+        />
+      </div>
+
             {showMessageSuccess && (
                 <div className="bg-[#101010] z-[40] w-[250px] fixed text-[13px] mb-[20px] ml-[30px] px-[20px] py-[20px] ring-white ring-[0.5px] rounded-[10px] text-white absolute left-0 bottom-0">
                     <p>Message saved successfully. Will get back to you soon:)</p>
                 </div>
             )}
+
+
         </div>
     )
 }
