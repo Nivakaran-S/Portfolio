@@ -162,13 +162,13 @@ const Portfolio = () => {
   };
 
   return (
-    <div className={`flex text-white w-[100vw] overflow-x-hidden flex-col ${onPortfolioClick ? 'fixed overflow-hidden' : ''}`}>
+    <div className={`flex text-white w-full max-w-[100vw] overflow-x-hidden flex-col ${onPortfolioClick ? 'fixed overflow-hidden' : ''}`}>
       <Navigation navSelection={navSelection} onContactClick={onContactClick} />
       <ContactModel onMessageSuccess={onMessageSuccess} showContactModel={showContactModel} onContactClick={onContactClick} />
       <div>
         <StarBackground />
         <div className="text-white bg-contain bg-no-repeat bg-center sm:space-y-[30px] px-[10vw] flex flex-col items-center justify-center sm:pt-[20vh] min-h-[100vh]">
-          <div className="w-[100vw] text-center leading-[71px] sm:leading-[90px] h-[100%]">
+          <div className="w-full max-w-[100vw] text-center leading-[71px] sm:leading-[90px] h-[100%]">
             <p className="text-[40px] sm:text-[50px] md:text-[60px] aboutText4 aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] to-[#CAC8C6] bg-clip-text text-transparent">Explore</p>
             <p className="text-[65px] sm:text-[75px] md:text-[80px] aboutTitle2 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent">My Projects</p>
           </div>
@@ -178,7 +178,7 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#101010] w-[100vw] overflow-x-hidden py-[15vh] min-h-[200vh] flex  justify-center">
+      <div className="bg-[#101010] w-full max-w-[100vw] overflow-x-hidden py-[15vh] min-h-[200vh] flex  justify-center">
         <div className="w-[93%] sm:w-[80%]">
           <div className="portfolio1 leading-[40px] md:leading-[60px] text-center">
             <p className="text-[45px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Explore the</p>
@@ -499,7 +499,7 @@ const Portfolio = () => {
           )}
         </div>
         <div
-          className={`fixed top-0 left-0 z-[9999] h-[100vh] w-[100vw] flex flex-col items-center justify-center transition-opacity duration-500 ease-in-out ${
+          className={`fixed top-0 left-0 z-[9999] h-[100vh] w-full max-w-[100vw] flex flex-col items-center justify-center transition-opacity duration-500 ease-in-out ${
             onPortfolioClick ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
           }`}
         >
