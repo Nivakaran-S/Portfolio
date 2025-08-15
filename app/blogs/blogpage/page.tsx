@@ -130,7 +130,7 @@ const BlogContent = () => {
             )}
             {blog && (
               <div
-                className="text-sm  sm:text-[20px] space-y-[20px] text-white leading-[30px] [p]:mb-4 [p:last-child]:mb-0"
+                className="text-sm  sm:text-[20px] space-y-[20px] text-white leading-[25px] sm:leading-[30px] [p]:mb-4 [p:last-child]:mb-0"
                 dangerouslySetInnerHTML={{ __html: sanitizedContent }}
               />
             )}
