@@ -26,7 +26,7 @@ const CaseStudyCard: React.FC<CaseStudyProps> = ({ text, text1, imageUrl, onClic
                 />
             </div>
             <div className=" sm:w-[70%] px-[30px] sm:px-[20px] h-[100%] bg-[#101010] rounded-[20px] sm:rounded-[0px] sm:rounded-r-[20px] flex flex-col items-center justify-center">
-                <p className="text-[34px] leading-[33px] sm:leading-[33px] sm:mb-[10px] sm:text-[30px]">{text1}</p>
+                <p className="text-[34px] leading-[34.5px] sm:leading-[33px] sm:mb-[10px] sm:text-[30px]">{text1}</p>
                 
                 { 
                 <div
