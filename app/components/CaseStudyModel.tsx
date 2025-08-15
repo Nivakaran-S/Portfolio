@@ -155,7 +155,7 @@ const CaseStudyModel: React.FC<CaseStudyModelProps> = ({
       title: 'The Challenges', 
       content: caseStudy ? (
         <div
-          className="text-sm sm:text-[20px] space-y-[20px] text-white leading-[25px] sm:leading-[30px] [p]:mb-4 [p:last-child]:mb-0"
+          className="text-[18px] sm:text-[20px] space-y-[20px] text-white leading-[25px] sm:leading-[30px] [p]:mb-4 [p:last-child]:mb-0"
           dangerouslySetInnerHTML={{ __html: sanitizedChallenge }}
         />
       ) : null
@@ -221,7 +221,7 @@ const CaseStudyModel: React.FC<CaseStudyModelProps> = ({
           {/* Top Section */}
           <div className="w-full">
             <div className="flex w-full flex-col sm:flex-row items-center justify-center pt-[50px] sm:space-x-[20px]">
-              <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-full sm:w-[60%] h-[400px] sm:h-[580px] rounded-[10px] flex items-center justify-center relative overflow-hidden">
+              <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-full sm:w-[60%] h-[350px] sm:h-[580px] rounded-[10px] flex items-center justify-center relative overflow-hidden">
                 <Image
                   src={caseStudy?.imageUrl || placeholderImage}
                   alt={caseStudy?.title || 'Project Image'}

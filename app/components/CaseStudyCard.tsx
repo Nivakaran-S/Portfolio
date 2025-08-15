@@ -15,7 +15,7 @@ const CaseStudyCard: React.FC<CaseStudyProps> = ({ text, text1, imageUrl, onClic
     const sanitizedOverview = text ? DOMPurify.sanitize(text) : '';
 
     return (
-        <div onClick={onClick} className="h-[350px] hover:ring-[1.6px] hover:ring-gray-300 hover:scale-[105%] transition duration-300 ease-in-out    flex flex-row items-center justify-center cursor-pointer ring-[#5F5F62] ring-[1.5px] rounded-[20px] w-[450px] bg-[#373435]" >
+        <div onClick={onClick} className="h-[350px] hover:ring-[1.6px] hover:ring-gray-300 hover:scale-[105%] transition duration-300 ease-in-out    flex flex-row items-center justify-center cursor-pointer ring-[#5F5F62] ring-[1.5px] rounded-[20px] w-[98%] sm:w-[450px] bg-[#373435]" >
             <div className="hidden sm:flex  w-[30%] h-[100%] rounded-l-[20px] ">
                 <Image 
                     src={imageUrl || News} 

@@ -24,8 +24,8 @@ const BlogCard: React.FC<BlogCardProps> = ({ text, image, text1, onClick }) => {
                 )}
             </div>
 
-            <div className="  flex flex-col  py-[13px] px-[13px] h-[100%] sm:h-[38.2%] rounded-b-[20px] rounded-t-[20px] sm:rounded-t-[0px] opacity-[0.8] sm:bg-[#101010]">
-                <p className="text-[18px] leading-[23px]">{text1}</p>
+            <div className="  flex flex-col items-center justify-center  py-[13px] px-[13px] h-[100%] sm:h-[38.2%] rounded-b-[20px] rounded-t-[20px] sm:rounded-t-[0px] opacity-[0.8] sm:bg-[#101010]">
+                <p className="text-[18px] text-center leading-[23px]">{text1}</p>
                
             </div>
         </div>
