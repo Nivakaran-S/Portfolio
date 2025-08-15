@@ -164,7 +164,7 @@ const CaseStudyModel: React.FC<CaseStudyModelProps> = ({
       title: 'The Solution', 
       content: caseStudy ? (
         <div
-          className="text-sm sm:text-[20px] space-y-[20px] text-white leading-[25px] sm:leading-[30px] [p]:mb-4 [p:last-child]:mb-0"
+          className="text-[18px] sm:text-[20px] space-y-[20px] text-white leading-[25px] sm:leading-[30px] [p]:mb-4 [p:last-child]:mb-0"
           dangerouslySetInnerHTML={{ __html: sanitizedSolution }}
         />
       ) : null
@@ -173,7 +173,7 @@ const CaseStudyModel: React.FC<CaseStudyModelProps> = ({
       title: 'The Learnings', 
       content: caseStudy ? (
         <div
-          className="text-sm sm:text-[20px] space-y-[20px] text-white leading-[25px] sm:leading-[30px] [p]:mb-4 [p:last-child]:mb-0"
+          className="text-[18px] sm:text-[20px] space-y-[20px] text-white leading-[25px] sm:leading-[30px] [p]:mb-4 [p:last-child]:mb-0"
           dangerouslySetInnerHTML={{ __html: sanitizedLearnings }}
         />
       ) : null
@@ -182,7 +182,7 @@ const CaseStudyModel: React.FC<CaseStudyModelProps> = ({
       title: 'The Results', 
       content: caseStudy ? (
         <div
-          className="text-sm sm:text-[20px] space-y-[20px] text-white leading-[25px] sm:leading-[30px] [p]:mb-4 [p:last-child]:mb-0"
+          className="text-[18px] sm:text-[20px] space-y-[20px] text-white leading-[25px] sm:leading-[30px] [p]:mb-4 [p:last-child]:mb-0"
           dangerouslySetInnerHTML={{ __html: sanitizedResults }}
         />
       ) : null
@@ -276,7 +276,7 @@ const CaseStudyModel: React.FC<CaseStudyModelProps> = ({
 
           {/* Content Sections */}
           {sections.map(({ title, content }, index) => (
-            <div className='w-[85%] space-y-[10px]' key={title}>
+            <div className='sm:w-[85%] space-y-[10px]' key={title}>
               <p className="text-[45px] leading-[53px] mb-[20px] sm:leading-[auto] text-center sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent sm:p-6">
                 {title}
               </p>
