@@ -114,19 +114,9 @@ const BlogContent = () => {
 
       {/* Content Section */}
       <div className="min-h-screen bg-[#101010] flex items-center justify-center px-4 sm:px-6 lg:px-8">
-        <div className="w-full max-w-5xl flex flex-col lg:flex-row justify-between py-10 sm:py-16 lg:py-20 gap-8">
-          <div className="w-full lg:hidden sm:flex sm:flex-col px-[20px] lg:w-[20%]">
-            <h2 className="text-3xl sm:text-2xl font-semibold">Content</h2>
-            <div className="mt-4 ml-[20px] text-base sm:text-lg space-y-1.5">
-              <p className="cursor-pointer hover:text-white">1. Introduction</p>
-              <p className="cursor-pointer hover:text-white">2. Main Points</p>
-              <p className="cursor-pointer hover:text-white">3. Key Insights</p>
-              <p className="cursor-pointer hover:text-white">4. Practical Applications</p>
-              <p className="cursor-pointer hover:text-white">5. Challenges</p>
-              <p className="cursor-pointer hover:text-white">6. Conclusion</p>
-            </div>
-          </div>
-          <div className="w-full lg:w-[75%] text-[#A19F9F] flex flex-col space-y-6 sm:space-y-8 px-4 sm:px-8">
+        <div className="w-full max-w-5xl flex flex-col lg:flex-row justify-between py-10 sm:py-16 lg:py-21 gap-8">
+          
+          <div className="w-full lg:w-[100%] text-[#A19F9F] flex flex-col px-4 sm:px-8">
             {error && <p className="text-red-500">{error}</p>}
             {blog?.imageUrl && (
               <Image
@@ -140,22 +130,12 @@ const BlogContent = () => {
             )}
             {blog && (
               <div
-                className="text-sm sm:text-base leading-relaxed"
+                className="text-sm  sm:text-[20px] space-y-[20px] text-white leading-[30px] [p]:mb-4 [p:last-child]:mb-0"
                 dangerouslySetInnerHTML={{ __html: sanitizedContent }}
               />
             )}
           </div>
-          <div className="w-full hidden lg:flex lg:flex-col lg:w-[20%]">
-            <h2 className="text-xl sm:text-3xl font-semibold">Content</h2>
-            <div className="mt-4 text-base ml-[20px] sm:text-lg space-y-1">
-              <p className="cursor-pointer hover:text-white">1. Introduction</p>
-              <p className="cursor-pointer hover:text-white">2. Main Points</p>
-              <p className="cursor-pointer hover:text-white">3. Key Insights</p>
-              <p className="cursor-pointer hover:text-white">4. Practical Applications</p>
-              <p className="cursor-pointer hover:text-white">5. Challenges</p>
-              <p className="cursor-pointer hover:text-white">6. Conclusion</p>
-            </div>
-          </div>
+          
         </div>
       </div>
 
