@@ -5,6 +5,7 @@ import './style.css';
 import Image from 'next/image';
 import placeholderImage from '../images/news.jpeg';
 import { CaseStudy } from './types';
+import DOMPurify from 'dompurify';
 
 // Tech stack logo mapping
 const techStackLogos: Record<string, string> = {
@@ -52,7 +53,6 @@ interface CaseStudyModelProps {
   setOnCaseStudyClick: React.Dispatch<React.SetStateAction<boolean>>;
   onCaseStudyClick: boolean;
   caseStudy: CaseStudy | null;
-  
 }
 
 const CaseStudyModel: React.FC<CaseStudyModelProps> = ({
@@ -63,6 +63,13 @@ const CaseStudyModel: React.FC<CaseStudyModelProps> = ({
 }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
+  // Sanitize HTML content
+  const sanitizedChallenge = caseStudy?.challenge ? DOMPurify.sanitize(caseStudy.challenge) : '';
+  const sanitizedSolution = caseStudy?.solution ? DOMPurify.sanitize(caseStudy.solution) : '';
+  const sanitizedLearnings = caseStudy?.learnings ? DOMPurify.sanitize(caseStudy.learnings) : '';
+  const sanitizedResults = caseStudy?.results ? DOMPurify.sanitize(caseStudy.results) : '';
+
+  // Scroll effect
   useEffect(() => {
     const scrollContainer = scrollRef.current;
     if (!scrollContainer) return;
@@ -110,16 +117,15 @@ const CaseStudyModel: React.FC<CaseStudyModelProps> = ({
     }
   };
 
-
   // Process tech stack for logo display
   const getTechStackLogos = () => {
     if (!caseStudy?.technologies) return [];
     
     let techItems: string[] = [];
     
-    if (typeof caseStudy.technologies[0] === 'string') {
-      techItems = caseStudy.technologies[0]
-        .split(', ')
+    if (typeof caseStudy.technologies === 'string') {
+      techItems = caseStudy.technologies
+        .split(',')
         .map(item => item.trim().toLowerCase())
         .filter(item => item.length > 0);
     } else if (Array.isArray(caseStudy.technologies)) {
@@ -143,14 +149,51 @@ const CaseStudyModel: React.FC<CaseStudyModelProps> = ({
 
   const techStackItems = getTechStackLogos();
 
-  console.log(techStackItems)
+  // Content sections
+  const sections = [
+    { 
+      title: 'The Challenges', 
+      content: caseStudy ? (
+        <div
+          className="text-sm sm:text-[20px] space-y-[20px] text-white leading-[25px] sm:leading-[30px] [p]:mb-4 [p:last-child]:mb-0"
+          dangerouslySetInnerHTML={{ __html: sanitizedChallenge }}
+        />
+      ) : null
+    },
+    { 
+      title: 'The Solution', 
+      content: caseStudy ? (
+        <div
+          className="text-sm sm:text-[20px] space-y-[20px] text-white leading-[25px] sm:leading-[30px] [p]:mb-4 [p:last-child]:mb-0"
+          dangerouslySetInnerHTML={{ __html: sanitizedSolution }}
+        />
+      ) : null
+    },
+    { 
+      title: 'The Learnings', 
+      content: caseStudy ? (
+        <div
+          className="text-sm sm:text-[20px] space-y-[20px] text-white leading-[25px] sm:leading-[30px] [p]:mb-4 [p:last-child]:mb-0"
+          dangerouslySetInnerHTML={{ __html: sanitizedLearnings }}
+        />
+      ) : null
+    },
+    { 
+      title: 'The Results', 
+      content: caseStudy ? (
+        <div
+          className="text-sm sm:text-[20px] space-y-[20px] text-white leading-[25px] sm:leading-[30px] [p]:mb-4 [p:last-child]:mb-0"
+          dangerouslySetInnerHTML={{ __html: sanitizedResults }}
+        />
+      ) : null
+    },
+  ];
+
   return (
     <div className="fixed flex custom-scrollbar flex-col overflow-y-auto h-[100vh] py-[2vh] sm:py-[5vh] inset-0 z-[50] items-center justify-start">
       {/* Backdrop */}
       <div
-        onClick={() => {
-          resetCaseStudyClick();
-        }}
+        onClick={resetCaseStudyClick}
         className={`absolute top-0 left-0 h-[340%] w-full bg-[#101010] transition-opacity duration-500 ease-in-out ${
           onCaseStudyClick ? 'opacity-60' : 'opacity-0 pointer-events-none'
         }`}
@@ -165,26 +208,24 @@ const CaseStudyModel: React.FC<CaseStudyModelProps> = ({
             : 'opacity-0 pointer-events-none'
         }`}
       >
-        <div className="relative  flex px-[25px] sm:px-[75px] w-full flex-col space-y-[20px] py-[30px] items-center justify-center">
+        <div className="relative flex px-[25px] sm:px-[75px] w-full flex-col space-y-[20px] py-[30px] items-center justify-center">
           {/* Close Button */}
           <button
-            className="cursor-pointer absolute right-0 top-0 pr-[40px] pt-[30px] text-[20px] font-semibold"
-            onClick={() => {
-              resetCaseStudyClick();
-            }}
+            className="cursor-pointer absolute right-0 top-0 pr-[40px] pt-[30px] text-[20px] font-semibold hover:text-gray-300 transition-colors"
+            onClick={resetCaseStudyClick}
             aria-label="Close modal"
           >
             Close
           </button>
 
           {/* Top Section */}
-          <div className="w-[100%] ">
-            <div className="flex w-[100%]  flex-col sm:flex-row items-center justify-center pt-[50px] sm:space-x-[20px]">
-              <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-[100%]  sm:w-[60%] h-[400px] sm:h-[580px] rounded-[10px] flex items-center justify-center relative">
+          <div className="w-full">
+            <div className="flex w-full flex-col sm:flex-row items-center justify-center pt-[50px] sm:space-x-[20px]">
+              <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-full sm:w-[60%] h-[400px] sm:h-[580px] rounded-[10px] flex items-center justify-center relative overflow-hidden">
                 <Image
                   src={caseStudy?.imageUrl || placeholderImage}
                   alt={caseStudy?.title || 'Project Image'}
-                  className="w-full h-full object-cover transition-transform duration-500 rounded-[10px]"
+                  className="w-full h-full object-cover transition-transform duration-500 rounded-[10px] hover:scale-105"
                   width={500}
                   height={350}
                   placeholder="blur"
@@ -194,10 +235,20 @@ const CaseStudyModel: React.FC<CaseStudyModelProps> = ({
                   {caseStudy?.title || 'Case Study Title'}
                 </p>
                 <div className='absolute space-x-[20px] flex flex-row bottom-[20%]'>
-                  <div onClick={(e) => handleLinkClick(e, caseStudy?.githubUrl)} className='bg-[#1D1D1D] hover:bg-[#101010] hover:ring-[1.5px] px-[20px] ring-[1px] ring-[#101010] rounded-[10px] cursor-pointer py-[8px]'>
-                    <p>Github Link</p>
+                  <div 
+                    onClick={(e) => handleLinkClick(e, caseStudy?.githubUrl)} 
+                    className={`bg-[#1D1D1D] hover:bg-[#101010] hover:ring-[1.5px] px-[20px] ring-[1px] ring-[#101010] rounded-[10px] cursor-pointer py-[8px] transition-all ${
+                      !isValidUrl(caseStudy?.githubUrl) ? 'opacity-50 cursor-not-allowed' : ''
+                    }`}
+                  >
+                    <p>GitHub Link</p>
                   </div>
-                  <div onClick={(e) => handleLinkClick(e, caseStudy?.demoUrl)} className='bg-[#1D1D1D] px-[20px] ring-[1px] ring-[#101010] rounded-[10px] cursor-pointer py-[8px]'>
+                  <div 
+                    onClick={(e) => handleLinkClick(e, caseStudy?.demoUrl)} 
+                    className={`bg-[#1D1D1D] hover:bg-[#101010] hover:ring-[1.5px] px-[20px] ring-[1px] ring-[#101010] rounded-[10px] cursor-pointer py-[8px] transition-all ${
+                      !isValidUrl(caseStudy?.demoUrl) ? 'opacity-50 cursor-not-allowed' : ''
+                    }`}
+                  >
                     <p>Demo Link</p>
                   </div>
                 </div>
@@ -206,12 +257,12 @@ const CaseStudyModel: React.FC<CaseStudyModelProps> = ({
                 {[1, 2].map((i) => (
                   <div
                     key={i}
-                    className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-full h-[280px] rounded-[10px] flex items-center justify-center"
+                    className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-full h-[280px] rounded-[10px] flex items-center justify-center overflow-hidden"
                   >
                     <Image
                       src={caseStudy?.imageUrl || placeholderImage}
                       alt={`Project Image ${i}`}
-                      className="w-full h-full object-cover transition-transform duration-500 rounded-[10px]"
+                      className="w-full h-full object-cover transition-transform duration-500 rounded-[10px] hover:scale-105"
                       width={500}
                       height={350}
                       placeholder="blur"
@@ -223,21 +274,15 @@ const CaseStudyModel: React.FC<CaseStudyModelProps> = ({
             </div>
           </div>
 
-          {/* Sections */}
-          {[
-            { title: 'The Challenges', content: caseStudy?.challenges },
-            { title: 'The Solution', content: caseStudy?.solution },
-            { title: 'The Learnings', content: caseStudy?.learnings },
-            { title: 'The Results', content: caseStudy?.results },
-          ].map(({ title, content }, index) => (
-            <div className='space-y-[10px]' key={title}>
-              <p className="text-[45px] leading-[53px] mb-[20px] sm:leading-[auto] text-center sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent  sm:p-6">
-                {title} 
+          {/* Content Sections */}
+          {sections.map(({ title, content }, index) => (
+            <div className='w-[85%] space-y-[10px]' key={title}>
+              <p className="text-[45px] leading-[53px] mb-[20px] sm:leading-[auto] text-center sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent sm:p-6">
+                {title}
               </p>
               <div className="flex w-full flex-col sm:flex-row items-center justify-center sm:space-x-[20px]">
-            
-                <div className={`sm:w-[50%] my-[20px] sm:my-[0px] space-y-2 leading-relaxed text-white`}>
-                  <p>{content || `No ${title.toLowerCase()} provided.`}</p>
+                <div className={`sm:w-full text-white`}>
+                  {content || <p className="text-gray-400">No {title.toLowerCase()} provided.</p>}
                 </div>
               </div>
             </div>
@@ -272,7 +317,7 @@ const CaseStudyModel: React.FC<CaseStudyModelProps> = ({
                   </div>
                 ))
               ) : (
-                <p className="text-white">No tech stack provided</p>
+                <p className="text-gray-400">No tech stack provided</p>
               )}
             </div>
           </div>

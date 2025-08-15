@@ -1,14 +1,16 @@
 import React, { useState, useEffect, useCallback } from "react";
-import axios from "axios";
+import axios, { AxiosResponse } from "axios";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Image
- from "next/image";
+import Image from "next/image";
+import Tiptap from "@/app/components/Tiptap";
+
 interface CaseStudy {
   _id?: string;
   title: string;
   challenge: string;
   solution: string;
+  overview: string;
   results: string;
   learnings?: string;
   technologies?: string[];
@@ -19,7 +21,7 @@ interface CaseStudy {
   updatedAt?: string;
 }
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "https://portfolio-backend-new-2.vercel.app";
+const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL || "https://portfolio-backend-new-2.vercel.app";
 
 const CaseStudies: React.FC = () => {
   // State management
@@ -30,6 +32,7 @@ const CaseStudies: React.FC = () => {
     solution: "",
     results: "",
     learnings: "",
+    overview: "",
     technologies: [],
     imageUrl: "",
     demoUrl: "",
@@ -41,6 +44,7 @@ const CaseStudies: React.FC = () => {
   const [searchTerm, setSearchTerm] = useState<string>("");
   const [activeTab, setActiveTab] = useState<"create" | "manage">("create");
   const [validationErrors, setValidationErrors] = useState<Record<string, string>>({});
+  const [content, setContent] = useState<string>("");
 
   // Fetch case studies
   const fetchCaseStudies = useCallback(async () => {
@@ -50,7 +54,7 @@ const CaseStudies: React.FC = () => {
         ? `${API_BASE_URL}/caseStudies/search?query=${encodeURIComponent(searchTerm)}`
         : `${API_BASE_URL}/caseStudies`;
       
-      const response = await axios.get<CaseStudy[]>(url, { withCredentials: true });
+      const response = await axios.get<CaseStudy[]>(url);
       setCaseStudies(response.data);
     } catch (error) {
       console.error("Error fetching case studies:", error);
@@ -81,13 +85,27 @@ const CaseStudies: React.FC = () => {
     } else {
       setFormData(prev => ({ ...prev, [name]: value }));
     }
+    
+    // Clear validation error when user types
+    if (validationErrors[name]) {
+      setValidationErrors(prev => {
+        const newErrors = { ...prev };
+        delete newErrors[name];
+        return newErrors;
+      });
+    }
+  };
+
+  // Handle rich text editor changes
+  const handleRichTextChange = (field: string, content: string) => {
+    setFormData(prev => ({ ...prev, [field]: content }));
   };
 
   // Validation
   const validateForm = (): boolean => {
     const errors: Record<string, string> = {};
     const requiredFields: Array<keyof typeof formData> = [
-      "title", "challenge", "solution", 
+      "title", "challenge", "solution", "overview",
       "results", "imageUrl", "demoUrl", "githubUrl"
     ];
 
@@ -97,8 +115,25 @@ const CaseStudies: React.FC = () => {
       }
     });
 
+    // URL validation
+    const urlFields = ["imageUrl", "demoUrl", "githubUrl"];
+    urlFields.forEach(field => {
+      if (formData[field as keyof typeof formData] && !isValidUrl(formData[field as keyof typeof formData] as string)) {
+        errors[field] = "Please enter a valid URL";
+      }
+    });
+
     setValidationErrors(errors);
     return Object.keys(errors).length === 0;
+  };
+
+  const isValidUrl = (url: string): boolean => {
+    try {
+      new URL(url);
+      return true;
+    } catch {
+      return false;
+    }
   };
 
   // Form submission
@@ -112,21 +147,19 @@ const CaseStudies: React.FC = () => {
 
     try {
       setIsSubmitting(true);
-      let response:any;
+      let response: AxiosResponse<CaseStudy>;
 
       if (editingId) {
         response = await axios.put<CaseStudy>(
           `${API_BASE_URL}/caseStudies/${editingId}`,
-          formData,
-          { withCredentials: true }
+          formData
         );
         setCaseStudies(caseStudies.map(cs => cs._id === editingId ? response.data : cs));
         toast.success("Case study updated successfully!");
       } else {
         response = await axios.post<CaseStudy>(
           `${API_BASE_URL}/caseStudies`,
-          formData,
-          { withCredentials: true }
+          formData
         );
         setCaseStudies([...caseStudies, response.data]);
         toast.success("Case study created successfully!");
@@ -134,9 +167,10 @@ const CaseStudies: React.FC = () => {
 
       resetForm();
       setActiveTab("manage");
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error submitting case study:", error);
-      toast.error("Failed to submit case study. Please try again.");
+      const errorMessage = error.response?.data?.message || "Failed to submit case study. Please try again.";
+      toast.error(errorMessage);
     } finally {
       setIsSubmitting(false);
     }
@@ -148,6 +182,7 @@ const CaseStudies: React.FC = () => {
 
     setFormData({
       title: caseStudy.title,
+      overview:caseStudy.overview,
       challenge: caseStudy.challenge,
       solution: caseStudy.solution,
       results: caseStudy.results,
@@ -168,7 +203,7 @@ const CaseStudies: React.FC = () => {
     if (!window.confirm("Are you sure you want to delete this case study?")) return;
 
     try {
-      await axios.delete(`${API_BASE_URL}/caseStudies/${id}`, { withCredentials: true });
+      await axios.delete(`${API_BASE_URL}/caseStudies/${id}`);
       setCaseStudies(caseStudies.filter(cs => cs._id !== id));
       toast.success("Case study deleted successfully!");
     } catch (error) {
@@ -184,6 +219,7 @@ const CaseStudies: React.FC = () => {
       challenge: "",
       solution: "",
       results: "",
+      overview: "",
       learnings: "",
       technologies: [],
       imageUrl: "",
@@ -192,6 +228,7 @@ const CaseStudies: React.FC = () => {
     });
     setEditingId(null);
     setValidationErrors({});
+    setContent("");
   };
 
   // Format date
@@ -220,14 +257,12 @@ const CaseStudies: React.FC = () => {
           {label} {isRequired && <span className="text-red-500">*</span>}
         </label>
         {isTextarea ? (
-          <textarea
-            name={name}
-            value={value as string}
-            onChange={handleInputChange}
-            className={`w-full px-3 py-2 border ${
-              validationErrors[name] ? "border-red-500" : "border-gray-300"
-            } rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 h-24`}
-          />
+          <div className="min-h-[200px]">
+            <Tiptap
+              description={value as string}
+              onChange={(richText: string) => handleRichTextChange(name, richText)}
+            />
+          </div>
         ) : (
           <input
             type={type}
@@ -290,6 +325,7 @@ const CaseStudies: React.FC = () => {
               
               <form onSubmit={handleSubmit} className="space-y-4">
                 {renderFormField("title", "Title")}
+                {renderFormField("overview", "Overview", "text", true, true)}
                 {renderFormField("challenge", "Challenge", "text", true, true)}
                 {renderFormField("solution", "Solution", "text", true, true)}
                 {renderFormField("results", "Results", "text", true, true)}
@@ -402,13 +438,14 @@ const CaseStudies: React.FC = () => {
                         {/* Case Study Info */}
                         <div className="flex items-start space-x-4 flex-grow">
                           {caseStudy.imageUrl && (
-                            <Image
-                              width={500}
-                              height={500}
-                              src={caseStudy.imageUrl}
-                              alt={caseStudy.title}
-                              className="w-24 h-16 object-cover rounded-md flex-shrink-0"
-                            />
+                            <div className="w-24 h-16 flex-shrink-0 relative">
+                              <Image
+                                src={caseStudy.imageUrl}
+                                alt={caseStudy.title}
+                                fill
+                                className="object-cover rounded-md"
+                              />
+                            </div>
                           )}
                           <div className="flex-grow">
                             <h3 className="font-medium">{caseStudy.title}</h3>
@@ -430,6 +467,9 @@ const CaseStudies: React.FC = () => {
                             {caseStudy.createdAt && (
                               <p className="text-xs text-gray-500 mt-2">
                                 Created: {formatDate(caseStudy.createdAt)}
+                                {caseStudy.updatedAt && caseStudy.updatedAt !== caseStudy.createdAt && (
+                                  <span> • Updated: {formatDate(caseStudy.updatedAt)}</span>
+                                )}
                               </p>
                             )}
                           </div>

@@ -31,14 +31,15 @@ interface BlogPost {
 interface CaseStudy {
   _id: string;
   title: string;
+  overview: string;
   challenge: string;
-  challenges: string; // Add this property to match the imported type
+  challenges: string; 
   demoUrl: string;
   githubUrl: string;
   learnings: string;
   results: string;
   solution: string;
-  technologies: string[]; // Add this property to match the imported type
+  technologies: string[]; 
   imageUrl: string;
   createdAt: string;
 }
@@ -482,7 +483,7 @@ const Blogs = () => {
                                         imageUrl={caseStudy.imageUrl}
                                         key={caseStudy._id}
                                         text1={caseStudy.title}
-                                        text={caseStudy.challenge}
+                                        text={caseStudy.overview}
                                         onClick={onCaseStudyCardClick(caseStudy)}
                                     />
                                 ))}

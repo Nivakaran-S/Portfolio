@@ -42,7 +42,7 @@ export interface MiniProject {
 export interface CaseStudy {
   _id?: string;
   title: string;
-  challenges: string;
+  challenge: string;
   imageUrl: string;
   githubUrl: string;
   demoUrl: string;
