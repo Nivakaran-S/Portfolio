@@ -129,7 +129,7 @@ const Navigation : React.FC<ContactModelProps> = ({navSelection, onContactClick}
                         </div>
                     </div>
                 </div>
-                <div onClick={onMenuClick} className={` ${isMenuOpen ? 'opacity-80 delay-300 duration-500 ' : 'opacity-0'}  md:hidden flex flex-col items-center w-[100%] h-[100vh] justify-center  bg-black ring-[0.5px] ring-[#727376]`}>
+                <div onClick={onMenuClick} className={` ${isMenuOpen ? 'opacity-80 delay-300 duration-500 ' : 'opacity-0'}  md:hidden flex flex-col items-center w-[50%] h-[100vh] justify-center  bg-black ring-[0.5px] ring-[#727376]`}>
 
                 </div>
             </div>
