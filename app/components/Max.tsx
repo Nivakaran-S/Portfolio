@@ -173,7 +173,7 @@ const Max = () => {
         </div>
     ))}
                             {typing==true?
-                            <div className="flex h-[80px] justify-start mb-3 px-5">
+                            <div className="flex h-[80px] py-[10px] justify-start mb-3 px-5">
                                 <div className=" rounded-lg p-3 flex items-center">
                                 <span className="loader"></span>
                                 </div>
@@ -192,8 +192,8 @@ const Max = () => {
 
 
                 
-                <div className="w-[100%] ring-[1px] ring-[#373435] relative rounded-b-[10px] py-[15px] px-[30px] sm:py-[5px] sm:px-[5px] h-[250px] sm:h-[130px] bg-[#000000]">
-                    <textarea onKeyDown={handleKeyDown} onChange={(e) => setMessage(e.target.value)} value={message} className="w-[100%] focus:outline-none h-[100%] leading-[19px] rounded-[5px] bg-[#101010] text-black py-[8px] px-[8px] bg-white resize-none" placeholder="Ask Max"></textarea>
+                <div className="w-[100%] ring-[1px] ring-[#373435] relative rounded-b-[10px] py-[15px] px-[30px] sm:py-[5px] sm:px-[5px] h-[250px] sm:h-[190px] bg-[#000000]">
+                    <textarea onKeyDown={handleKeyDown} onChange={(e) => setMessage(e.target.value)} value={message} className="w-[100%] focus:outline-none h-[100%]  leading-[19px] rounded-[5px] bg-[#101010] text-black py-[8px] px-[8px] bg-white resize-none" placeholder="Ask Max"></textarea>
                     <div onClick={() => onMessageSubmit(message)} className="w-[70px] ring-[0.5px] ring-[0.5px] ring-[#727376] cursor-pointer hover:bg-black absolute top-[15px] sm:top-[5px] right-[10px] sm:right-[-20px]  h-[70px] rounded-full bg-[#373435] flex items-center justify-center cursor-pointer mt-[10px]">
                         <Image alt="" className="ml-[7px]" src={Send} height={35}  />
                     </div>
