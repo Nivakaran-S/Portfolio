@@ -3,7 +3,7 @@ import { useRouter } from "next/navigation";
 import { MouseEvent } from "react";
 import Image from "next/image";
 import Menu from '../images/menu.png';
-import Logo from '../images/nivakaranLogo.png'
+import Logo from '../images/nivakaranLogo3.png'
 
 interface ContactModelProps {
     onContactClick: () => void;
