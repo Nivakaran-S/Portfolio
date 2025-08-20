@@ -17,6 +17,7 @@ import PortfolioModel from "../portfolio/PortfolioModel";
 import { Project } from "../portfolio/types";
 import CaseStudyModel from "../components/CaseStudyModel";
 
+
 interface BlogPost {
   _id: string;
   title: string;
@@ -42,7 +43,11 @@ interface CaseStudy {
   technologies: string[]; 
   imageUrl: string;
   createdAt: string;
+
+  
 }
+
+
 
 const Blogs = () => {
     const [showContactModel, setShowContactModel] = useState(false);

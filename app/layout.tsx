@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { Analytics } from "@vercel/analytics/next"
-import { SpeedInsights } from "@vercel/speed-insights/next"
+import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 import Max from "./components/Max";
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,18 +29,25 @@ export default function RootLayout({
     <html lang="en">
       <head>
         <meta name="apple-mobile-web-app-title" content="Nivakaran" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "url": "https://nivakaran.dev", 
+              "name": "Nivakaran S. Portfolio",
+            }),
+          }}
+        />
       </head>
       <body
-      
-      
-        className={`${geistSans.variable} ${geistMono.variable} antialiased text-[18px] select-none  overflow-x-hidden
-        `}>
-          
-      
+        className={`${geistSans.variable} ${geistMono.variable} antialiased text-[18px] select-none overflow-x-hidden`}
+      >
         {children}
-         <Analytics />
-         <SpeedInsights/>
-         <Max/>
+        <Analytics />
+        <SpeedInsights />
+        <Max />
       </body>
     </html>
   );

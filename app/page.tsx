@@ -19,6 +19,7 @@ import { Project } from "./portfolio/types"; // Import the Project type
 
 
 
+
 export default function Home() {
   const [showContactModel, setShowContactModel] = useState(false);
   const [navSelection, setNavSelection] = useState('Home');
