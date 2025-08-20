@@ -133,7 +133,7 @@ const About = () => {
             <div className="w-[80%]  flex  flex-col   ">
                 <div className="about1 text-[40px] leading-[50px]">
                     <p className="text-[24.72px] sm:text-[35px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Turning Ideas into Intelligent</p>
-                    <p className="text-[35px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent leading-[43px] sm:leading-[auto] font-bold sm:text-[48px]">Scalable, and Impactful Digital Solutions</p>
+                    <p className="text-[35px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent leading-[43px] sm:leading-[55px] font-bold sm:text-[48px]">Scalable, and Impactful Digital Solutions</p>
                 </div>
                 <div className="w-[60%] mt-[10px]">
                     <p className="about2  w-[170%] sm:text-left text-[15.27px]">I'm currently pursuing a B.Sc in Information Technology, at 
