@@ -205,7 +205,7 @@ const Portfolio = () => {
               <div className="mt-[30px] flex flex-col items-center sm:w-[80vw]">
                 <p className="portfolio2 sm:w-[70vw] sm:ml-[10px] font-bold text-[38px] sm:text-[45px]">Software Engineering</p>
                 {/* Main Projects */}
-                <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center sm:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
+                <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center lg:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Software Engineering')
                     .map((project) => {
@@ -233,7 +233,7 @@ const Portfolio = () => {
                 {miniProjects.filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Software Engineering').length > 0 && 
                 <div>
                   <p className="portfolio2 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
-                <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] sm:grid-cols-4  items-center justify-center">
+                <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] sm:grid-cols-3 lg:grid-cols-4  items-center justify-center">
                   {miniProjects
                     .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Software Engineering')
                     .map((miniProject) => (
@@ -254,7 +254,7 @@ const Portfolio = () => {
               <div className="mt-[30px] flex flex-col items-center sm:w-[80vw]">
                 <p className="portfolio2 sm:w-[70vw] sm:ml-[10px] font-bold text-[38px] sm:text-[45px]">Data Science</p>
                 {/* Main Projects */}
-                <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center sm:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
+                <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center lg:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Data Science')
                     .map((project) => {
@@ -281,7 +281,7 @@ const Portfolio = () => {
                 {/* Mini Projects */}
                 {miniProjects.filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Data Science').length > 0 && <div>
                   <p className="portfolio3 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
-                  <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] sm:grid-cols-4  items-center justify-center">
+                  <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] sm:grid-cols-3 lg:grid-cols-4  items-center justify-center">
                     {miniProjects
                       .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Data Science')
                       .map((miniProject) => (
@@ -303,7 +303,7 @@ const Portfolio = () => {
               <div className="mt-[30px] flex flex-col items-center sm:w-[80vw]">
                 <p className="portfolio2 sm:w-[70vw] sm:ml-[10px] font-bold text-[38px] sm:text-[45px]">Computer Vision</p>
                 {/* Main Projects */}
-                <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center sm:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
+                <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center lg:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Computer Vision')
                     .map((project) => {
@@ -330,7 +330,7 @@ const Portfolio = () => {
                 {/* Mini Projects */}
                 {miniProjects.filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Computer Vision').length > 0 && <div>
                   <p className="portfolio4 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
-                  <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] sm:grid-cols-4  items-center justify-center">
+                  <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] sm:grid-cols-3 lg:grid-cols-4  items-center justify-center">
                     {miniProjects
                       .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Computer Vision')
                       .map((miniProject) => (
@@ -352,7 +352,7 @@ const Portfolio = () => {
               <div className="mt-[30px] flex flex-col items-center sm:w-[80vw]">
                 <p className="portfolio2 sm:w-[70vw] sm:ml-[10px] font-bold text-[38px] sm:text-[45px]">Generative AI</p>
                 {/* Main Projects */}
-                <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center sm:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
+                <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center lg:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Generative AI')
                     .map((project) => {
@@ -380,7 +380,7 @@ const Portfolio = () => {
 
                 {miniProjects.filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Generative AI').length > 0 && <div>
                   <p className="portfolio5 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
-                  <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] sm:grid-cols-4  items-center justify-center">
+                  <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] sm:grid-cols-3 lg:grid-cols-4  items-center justify-center">
                     {miniProjects
                       .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Generative AI')
                       .map((miniProject) => (
@@ -402,7 +402,7 @@ const Portfolio = () => {
               <div className="mt-[30px] flex flex-col items-center sm:w-[80vw]">
                 <p className="portfolio2 sm:w-[70vw] sm:ml-[10px] font-bold text-[38px] sm:text-[45px]">Agentic AI</p>
                 {/* Main Projects */}
-                <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center sm:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
+                <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center lg:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Agentic AI')
                     .map((project) => {
@@ -429,7 +429,7 @@ const Portfolio = () => {
                 {/* Mini Projects */}
                 {miniProjects.filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Agentic AI').length > 0 && <div>
                   <p className="portfolio6 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
-                  <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] sm:grid-cols-4  items-center justify-center">
+                  <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] sm:grid-cols-3 lg:grid-cols-4  items-center justify-center">
                     {miniProjects
                       .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Agentic AI')
                       .map((miniProject) => (
@@ -451,7 +451,7 @@ const Portfolio = () => {
               <div className="mt-[30px] flex flex-col items-center sm:w-[80vw]">
                 <p className="portfolio2 sm:w-[70vw] sm:ml-[10px] font-bold text-[38px] sm:text-[45px]">Data Engineering</p>
                 {/* Main Projects */}
-                <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center sm:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
+                <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center lg:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Data Engineering')
                     .map((project) => {
@@ -478,7 +478,7 @@ const Portfolio = () => {
                 {/* Mini Projects */}
                 {miniProjects.filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Agentic AI').length > 0 && <div>
                   <p className="portfolio6 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
-                  <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] sm:grid-cols-4  items-center justify-center">
+                  <div className="portfolio5 mt-[30px] grid  grid-cols-2 gap-[25px] sm:grid-cols-3 lg:grid-cols-4  items-center justify-center">
                     {miniProjects
                       .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Agentic AI')
                       .map((miniProject) => (

@@ -11,6 +11,7 @@ import React, { useState, useEffect, Suspense } from 'react';
 import axios from 'axios';
 import Image from "next/image";
 import DOMPurify from 'dompurify';
+import Blogs from "@/app/components/Blogs";
 
 interface Blog {
   _id: string;
@@ -138,7 +139,7 @@ const BlogContent = () => {
           
         </div>
       </div>
-
+      <Blogs/>
       <Contact onContactClick={onContactClick} />
       <Footer />
       <Top />

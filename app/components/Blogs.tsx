@@ -12,8 +12,6 @@ import CaseStudyCard from "../components/CaseStudyCard";
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import axios from "axios";
-import { StaticImageData } from "next/image";
-import Newspaper from '../images/news.jpeg'; // Fallback image (StaticImageData)
 
 // Define blog and category interfaces based on API response
 interface Blog {
@@ -195,7 +193,7 @@ const Blogs = () => {
             ((
               <div  className="mt-[30px]">
                 <div className={`blogs flex items-center justify-center`}>
-                  <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px]">
+                  <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-[20px] sm:gap-[20px]">
                     {blogs
                       .slice(0, 4)
                       .map((blog) => (

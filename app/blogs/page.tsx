@@ -369,7 +369,7 @@ const Blogs = () => {
                         <>
                             <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Data Science</p>
                             <div className="flex items-center blogs4 justify-center">
-                                <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px]">
+                                <div className="grid w-[95%] sm:w-[100%] grid-cols-2 lg:grid-cols-4 gap-[20px] sm:gap-[20px]">
                                     {dataScienceBlogs.map((blog) => (
                                         <BlogCard
                                             image={blog.imageUrl || null}
@@ -388,7 +388,7 @@ const Blogs = () => {
                         <>
                             <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Computer Vision</p>
                             <div className="flex items-center blogs4 justify-center">
-                                <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px]">
+                                <div className="grid w-[95%] sm:w-[100%] grid-cols-2 lg:grid-cols-4 gap-[20px] sm:gap-[20px]">
                                     {computerVisionBlogs.map((blog) => (
                                         <BlogCard
                                             image={blog.imageUrl || null}
@@ -407,7 +407,7 @@ const Blogs = () => {
                         <>
                             <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Generative AI</p>
                             <div className="flex items-center blogs4 justify-center">
-                                <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px]">
+                                <div className="grid w-[95%] sm:w-[100%] grid-cols-2 lg:grid-cols-4 gap-[20px] sm:gap-[20px]">
                                     {generativeAIBlogs.map((blog) => (
                                         <BlogCard
                                             image={blog.imageUrl || null}
@@ -426,7 +426,7 @@ const Blogs = () => {
                         <>
                             <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Agentic AI</p>
                             <div className="flex items-center blogs4 justify-center">
-                                <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px]">
+                                <div className="grid w-[95%] sm:w-[100%] grid-cols-2 lg:grid-cols-4 gap-[20px] sm:gap-[20px]">
                                     {agenticAIBlogs.map((blog) => (
                                         <BlogCard
                                             image={blog.imageUrl || null}
@@ -445,7 +445,7 @@ const Blogs = () => {
                         <>
                             <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Data Engineering</p>
                             <div className="flex items-center blogs4 justify-center">
-                                <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px]">
+                                <div className="grid w-[95%] sm:w-[100%] grid-cols-2 lg:grid-cols-4 gap-[20px] sm:gap-[20px]">
                                     {dataEngineeringBlogs.map((blog) => (
                                         <BlogCard
                                             image={blog.imageUrl || null}
@@ -464,7 +464,7 @@ const Blogs = () => {
                         <>
                             <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Behind the Scenes</p>
                             <div className="flex items-center blogs4 justify-center">
-                                <div className="grid w-[95%] sm:w-[100%] grid-cols-2 md:grid-cols-4 gap-[20px] sm:gap-[20px]">
+                                <div className="grid w-[95%] sm:w-[100%] grid-cols-2 lg:grid-cols-4 gap-[20px] sm:gap-[20px]">
                                     {behindScenesBlogs.map((blog) => (
                                         <BlogCard
                                             image={blog.imageUrl || null}
@@ -482,7 +482,7 @@ const Blogs = () => {
                     <div className="w-[95%] sm:w-[100%] mt-[40px] flex items-center justify-center">
                         <div className="flex flex-col items-center justify-center w-full">
                             <p className="text-[40px] sm:text-[50px] blogs3 font-bold w-full text-center">Case Studies</p>
-                            <div className="grid blogs2 px-[15px] md:px-[85px] md:grid-cols-2 gap-[25px] sm:gap-[30px] items-center justify-center mt-[30px]">
+                            <div className="grid blogs2 px-[15px] md:px-[85px] lg:grid-cols-2 gap-[25px] sm:gap-[30px] items-center justify-center mt-[30px]">
                                 {caseStudies.map((caseStudy) => (
                                     <CaseStudyCard
                                         imageUrl={caseStudy.imageUrl}

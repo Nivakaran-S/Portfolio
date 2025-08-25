@@ -9,12 +9,15 @@ import Phone from '../images/phone.png';
 import axios from "axios";
 import { useState } from "react";
 import StarBackground from "./StarBackground";
+import { useRouter } from "next/navigation";
 
 
 const Footer = () => {
     const [email, setEmail] = useState('')
     const [showSubcriptionSuccess, setSubcriptionSuccess] = useState(false)
     const [showInvalidEmail, setShowInvalidEmail] = useState(false)
+
+    const router = useRouter()
 
     const subcribeNewsLetter = async () => {
 
@@ -88,11 +91,21 @@ const Footer = () => {
                     <div className="w-[100%] flex flex-col ">
                         <p className="text-[24.72px] text-[#96989A]">Quick Links</p>
                         <div className="flex flex-col space-y-[10px] mt-[10px]">
-                            <p>Home</p>
-                            <p>About</p>
-                            <p>Portfolio</p>
-                            <p>Services</p>
-                            <p>Contact</p>
+                            <div className="cursor-pointer" onClick={() => router.push('/')}>
+                                <p>Home</p>
+                            </div>
+                            <div className="cursor-pointer" onClick={() => router.push('/about')}>
+                                <p>About</p>
+                            </div>
+                            <div className="cursor-pointer" onClick={() => router.push('/portfolio')}>
+                                <p>Portfolio</p>
+                            </div>
+                            <div className="cursor-pointer" onClick={() => router.push('/services')}>
+                                <p>Services</p>
+                            </div>
+                            <div className="cursor-pointer" onClick={() => router.push('/blogs')}>
+                                <p>Blogs</p>
+                            </div>
                         </div>
                     </div>
                     <div className="w-[100%] ">

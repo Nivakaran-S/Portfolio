@@ -113,7 +113,7 @@ const Portfolio = ({ onPortfolioCard1Click }: PortfolioProps) => {
             <div key={category._id} className="mt-[40px]">
               <p className={`portfolio${catIndex + 2} mb-[20px] font-bold text-[33px] sm:text-[45px]`}>{category.title}</p>
               <div className={`portfolio${catIndex + 2} flex items-center justify-center`}>
-                <div className="grid w-[95%] sm:w-[95%] md:w-[85%] grid-cols-1 place-items-center md:grid-cols-2 gap-[20px] sm:gap-[30px]">
+                <div className="grid w-[95%] sm:w-[95%] md:w-[85%] grid-cols-1 place-items-center lg:grid-cols-2 gap-[20px] sm:gap-[30px]">
                   {portfolio
                     .filter(project => project.projectCategory === category._id)
                     .slice(0, 2)
