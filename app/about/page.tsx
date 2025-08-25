@@ -613,7 +613,7 @@ const About = () => {
               </div>
             </div>
             <div className="flex flex-row  items-center justify-center space-x-[13px] sm:space-x-[20px] ">
-              <div className="w-[5px] sm:w-[7px] min-h-[49vh] sm:min-h-[33vh] rounded-full bg-white">
+              <div className="w-[5px] sm:w-[7px] min-h-[47vh] sm:min-h-[33vh] rounded-full bg-white">
 
               </div>
 
