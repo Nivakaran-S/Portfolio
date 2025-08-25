@@ -575,7 +575,7 @@ const About = () => {
               </div>
             </div>
             <div className="flex flex-row  items-center justify-center space-x-[13px] sm:space-x-[20px] ">
-              <div className="w-[5px] sm:w-[7px] min-h-[79vh] sm:min-h-[53vh] md:min-h-[47vh] rounded-full bg-white">
+              <div className="w-[5px] sm:w-[7px] min-h-[75vh] sm:min-h-[53vh] md:min-h-[47vh] rounded-full bg-white">
 
               </div>
 
