@@ -86,7 +86,7 @@ const Hero = () => {
     }
     
     return(
-        <div className="  w-[100vw] sm:bg-[url('./images/heroBackground10.png')] bg-contain bg-no-repeat bg-center h-[100vh] flex items-center justify-center">
+        <div className="  w-[100vw] lg:bg-[url('./images/heroBackground10.png')] bg-contain bg-no-repeat bg-center h-[100vh] flex items-center justify-center">
             <StarBackground/>
             <div className="flex pb-[30px] flex-col text-center">
                 <p className="hero1">Hello there!</p>

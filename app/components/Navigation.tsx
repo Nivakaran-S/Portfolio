@@ -19,7 +19,7 @@ const Navigation: React.FC<ContactModelProps> = ({ navSelection, onContactClick 
 
   return (
     <div className="flex items-center z-[47] fixed top-0 w-[100vw] justify-center">
-      <div className="md:flex hidden flex-row justify-between items-center px-[20px] h-[60px] 2xl:h-[55px] rounded-[8px] ring-[0.5px] ring-[#727376] w-[90vw] mt-[13px] bg-[#373435] text-black">
+      <div className="lg:flex hidden flex-row justify-between items-center px-[20px] h-[60px] 2xl:h-[55px] rounded-[8px] ring-[0.5px] ring-[#727376] w-[90vw] mt-[13px] bg-[#373435] text-black">
         <Link href="/" className="cursor-pointer flex flex-row items-center justify-center space-x-[5px] text-[20px] text-white">
           <Image alt="test" src={Logo} height={23} width={38} />
           <p>NivakaranS</p>
@@ -48,7 +48,7 @@ const Navigation: React.FC<ContactModelProps> = ({ navSelection, onContactClick 
         </div>
       </div>
 
-      <div className="md:hidden flex flex-row justify-between items-center px-[20px] h-[60px] 2xl:h-[55px] rounded-[8px] ring-[0.5px] ring-[#727376] w-[90vw] mt-[13px] z-[47] bg-[#373435] text-black">
+      <div className="lg:hidden flex flex-row justify-between items-center px-[20px] h-[60px] 2xl:h-[55px] rounded-[8px] ring-[0.5px] ring-[#727376] w-[90vw] mt-[13px] z-[47] bg-[#373435] text-black">
         <div onClick={onMenuClick} className="flex select-none flex-row items-center justify-center cursor-pointer">
           <Image alt="menu" className="select-none" src={Menu} height={23} />
         </div>
