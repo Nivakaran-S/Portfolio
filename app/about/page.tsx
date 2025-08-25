@@ -535,12 +535,12 @@ const About = () => {
         <div className="w-[100%] text-center leading-[55px] md:leading-[80px] h-[100%]">
           <p className="text-[55px] md:text-[85px] aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Work Experience</p>
         </div>
-        <div className="h-[100%]  md:px-[200px] space-x-[50px] flex flex-row items-center justify-center">
+        <div className="h-[100%]  lg:px-[150px] space-x-[50px] flex flex-row items-center justify-center">
 
 
           <div className="flex flex-col  space-y-[30px]  ">
-            <div className="flex flex-row  items-center justify-center space-x-[13px] sm:space-x-[20px] ">
-              <div className="w-[5px] sm:w-[7px] min-h-[49vh] sm:min-h-[36vh] md:min-h-[32vh] rounded-full bg-white">
+            <div className="flex flex-row  items-center justify-center space-x-[13px] sm:space-x-[10px] ">
+              <div className="w-[5px] sm:w-[7px] min-h-[49vh] md:min-h-[36vh] md:min-h-[40vh] lg:min-h-[32vh] rounded-full bg-white">
 
               </div>
 
