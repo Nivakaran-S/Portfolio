@@ -15,9 +15,9 @@ const Contact : React.FC<ContactModelProps> = ({onContactClick}) => {
 
     
     return(
-        <div className=" h-[90vh] ring-[2px] ring-[#808080] sm:h-[85vh] flex items-center justify-center w-screen">
+        <div className=" h-[90vh] ring-[2px] ring-[#808080] sm:h-[85vh] 2xl:h-[75vh] flex items-center justify-center w-screen">
             <StarBackground/>
-            <div className="w-[75%] flex flex-row items-center justify-center">
+            <div className="w-[75%] 2xl:w-[1100px] flex flex-row items-center justify-center">
                 <div className=" sm:w-[60%]">
                     <div className="w-[100%] flex sm:hidden py-[20px] items-center justify-center">
                         <Image src={PlayIcon} alt="" height={200} />

@@ -51,7 +51,7 @@ const Footer = () => {
     }
 
     return(
-        <div className="overflow-x-hidden ring-[2px] ring-[#808080] bg-[#101010]   w-screen">
+        <div className="overflow-x-hidden ring-[2px] ring-[#808080] bg-[#101010] flex flex-col items-center  w-screen">
             
             {showSubcriptionSuccess && <div className="flex bg-green-500 text-green-950 ring-green-300 ring-[1px] pl-[15px] opacity-75 pr-[20px] rounded-[5px] py-[10px]  fixed flex-row items-center justify-center mt-[20px] absolute bottom-[20px] left-[30px] ">
                 <div className="h-[30px] mr-[10px] w-[5px] bg-green-950"></div>
@@ -71,7 +71,7 @@ const Footer = () => {
 
 
         
-            <div className="grid grid-cols-1  gap-[20px]  sm:grid-cols-1 md:grid-cols-3  pb-[40px] mb-[20px] justify-center mx-[8%] ">
+            <div className="grid grid-cols-1  gap-[20px] 2xl:w-[1200px] sm:grid-cols-1 md:grid-cols-3  pb-[40px] mb-[20px] justify-center mx-[8%] ">
                 <div className="w-[100%] ">
                     
                     <p className="text-[13px] leading-[20px]">I'm currently pursuing a B.Sc in Information Technology, at Sri Lanka Institute of Information Technology (SLIIT). 

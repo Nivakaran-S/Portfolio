@@ -129,8 +129,8 @@ const About = () => {
 
 
     return(
-        <div id="about" ref={counterRef} className="bg-[#101010]  min-h-[110vh] w-screen flex flex-col items-center py-[115px] ">
-            <div className="w-[80%]  flex  flex-col   ">
+        <div id="about" ref={counterRef} className="bg-[#101010]  min-h-[110vh] xl:min-h-[81vh] w-screen flex flex-col items-center py-[115px] ">
+            <div className="w-[80%] 2xl:w-[1200px] flex  flex-col   ">
                 <div className="about1 text-[40px] leading-[50px]">
                     <p className="text-[24.72px] sm:text-[35px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Turning Ideas into Intelligent</p>
                     <p className="text-[35px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent leading-[43px] sm:leading-[55px] font-bold sm:text-[48px]">Scalable, and Impactful Digital Solutions</p>

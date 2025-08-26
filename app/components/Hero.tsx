@@ -95,7 +95,7 @@ const Hero = () => {
                 <p className="text-[35px] hero4">Developer</p>
                 <div className="flex flex-row hero4 absolute bottom-[30%] right-[45%] left-[45%] items-center justify-center ">
                    
-                    <div onClick={() => onKnowClick()} className="hero4 bg-[#1F120D] w-[800px] transition-all duration-300 shadow-md hover:shadow-lg ring-[1px] hover:ring-[3px] ring-[#D9CDBB] text-white hover:text-white hover:bg-[#5E3828] px-[25px] py-[8px] rounded-full cursor-pointer">
+                    <div onClick={() => onKnowClick()} className="hero4 bg-[#1F120D] w-[800px] xl:w-[auto] transition-all duration-300 shadow-md hover:shadow-lg ring-[1px] hover:ring-[3px] ring-[#D9CDBB] text-white hover:text-white hover:bg-[#5E3828] px-[25px] py-[8px] rounded-full cursor-pointer">
                         <div className="w-[100px]">Know More</div>
                     </div>
                 </div>

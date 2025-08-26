@@ -180,8 +180,8 @@ const About = () => {
       <ContactModel onMessageSuccess={onMessageSuccess} showContactModel={showContactModel} onContactClick={onContactClick} />
       
       <AboutHeroComponent/>
-      <div className="flex bg-[#101010] items-center justify-center py-[50px]  min-h-[100vh]">
-        <div className="w-[85%] h-[100%] flex flex-col md:flex-row items-center justify-center space-x-[20px] about2">
+      <div className="flex bg-[#101010] ] items-center justify-center py-[50px] 2xl:min-h-[75vh]  min-h-[100vh]">
+        <div className="w-[85%] 2xl:w-[1200px] h-[100%] flex flex-col md:flex-row items-center justify-center space-x-[20px] about2">
           <div className="w-[100%] md:w-[50%] h-[100%]  flex flex-col items-center justify-center">
             <p className=" text-[60px] sm:text-[80px] text-center md:text-left aboutText4 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >About Me</p>
           </div>
@@ -212,27 +212,31 @@ const About = () => {
         </div>
       </div>
       <div className="text-white space-y-[30px] bg-[#000] px-[10vw] flex flex-col py-[60px] py-[0px] md:flex-row items-center justify-center  min-h-[50vh]">
+        <div className="2xl:w-[1200px] flex flex-row ">
+          <div className="aboutText4 w-[100%] md:w-[55%] text-[17px] sm:text-[18px] text-center h-[100%]">
+            <p>To become a leading force in shaping the future of technology by blending curiosity with creativity. I envision a world where data and software empower people to solve real-world challenges, drive innovation, and unlock boundless possibilities for the generations to come.</p>
+          </div>
+          <div className=" w-[100%] sm:w-[45%] aboutText5 text-center leading-[60px] md:leading-[70px] h-[100%]">
+            <p className="text-[40px] md:text-[50px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >The</p>
+            <p className=" text-[80px] md:text-[100px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Vision</p>
+          </div>
+        </div>
 
-        <div className="aboutText4 w-[100%] md:w-[55%] text-[17px] sm:text-[18px] text-center h-[100%]">
-          <p>To become a leading force in shaping the future of technology by blending curiosity with creativity. I envision a world where data and software empower people to solve real-world challenges, drive innovation, and unlock boundless possibilities for the generations to come.</p>
-        </div>
-        <div className=" w-[100%] sm:w-[45%] aboutText5 text-center leading-[60px] md:leading-[70px] h-[100%]">
-          <p className="text-[40px] md:text-[50px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >The</p>
-          <p className=" text-[80px] md:text-[100px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Vision</p>
-        </div>
       </div>
       <div className="text-white bg-[#101010] space-y-[30px]  px-[10vw] flex flex-col py-[50px] md:py-[0px] md:flex-row items-center justify-center  min-h-[50vh]">
-        <div className="w-[100%] sm:w-[45%] aboutText4 text-center leading-[50px] md:leading-[70px] h-[100%]">
-          <p className="text-[40px] md:text-[50px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >The</p>
-          <p className="text-[68px] md:text-[100px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Mission</p>
+        <div className="2xl:w-[1200px] flex flex-row ">
+          <div className="w-[100%] sm:w-[45%] aboutText4 text-center leading-[50px] md:leading-[70px] h-[100%]">
+            <p className="text-[40px] md:text-[50px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >The</p>
+            <p className="text-[68px] md:text-[100px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Mission</p>
+          </div>
+          <div className=" w-[100%] text-[17px] sm:text-[18px] md:w-[55%] aboutText5 text-center h-[100%]">
+            <p>To leverage the power of data science and software engineering to build intelligent, impactful, and user-centric digital solutions. I strive to continuously learn, innovate, and collaborate, transforming ideas into reality through thoughtful design, clean code, and data-driven insights.</p>
+          </div>
         </div>
-        <div className=" w-[100%] text-[17px] sm:text-[18px] md:w-[55%] aboutText5 text-center h-[100%]">
-          <p>To leverage the power of data science and software engineering to build intelligent, impactful, and user-centric digital solutions. I strive to continuously learn, innovate, and collaborate, transforming ideas into reality through thoughtful design, clean code, and data-driven insights.</p>
-        </div>
-
       </div>
       <div>
             <div className="text-white  space-y-4 sm:space-y-6 py-6 sm:py-8 bg-[#000] px-4 sm:px-8 md:px-[10vw] flex flex-col items-center justify-center md:h-[100vh] min-h-screen">
+                <div className="flex flex-col 2xl:w-[1200px] items-center justify-center">
                 {/* Title Section */}
                 <div className="w-full  aboutText4 md:w-3/4 lg:w-1/2 pt-8 sm:pt-50 text-center">
                     <p className="text-5xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] to-[#CAC8C6] bg-clip-text text-transparent ">
@@ -463,12 +467,13 @@ const About = () => {
                             <Image src={Photoshop} height={80} width={80} alt="Photoshop" className="sm:h-24 sm:w-30" />
                         </div>
                     </div>
+                    </div>
                 </div>
             </div>
         </div>
       <div className="min-h-[100vh] bg-[#101010] flex flex-col items-center justify-center">
         <p className=" text-[60px] md:text-[85px] aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Education</p>
-        <div className="flex flex-row  items-center min-h-[60vh] w-[100vw] justify-center">
+        <div className="flex flex-row  items-center min-h-[60vh] w-[100vw] 2xl:w-[1200px] justify-center">
           <div className=" w-[45%] md:w-[29%] flex text-[17px] sm:text-[18px] leading-[20px] sm:leading-[24px]  flex-col space-y-[90px] ">
 
             <div className="flex aboutText4 flex-row items-center justify-end  ">
@@ -532,15 +537,16 @@ const About = () => {
       </div>
 
       <div className="text-white bg-[#000] space-y-[30px] py-[80px]  px-[10vw] flex flex-col items-center justify-center min-h-[100vh]">
-        <div className="w-[100%] text-center leading-[55px] md:leading-[80px] h-[100%]">
+        <div className="2xl:w-[1100px]">
+        <div className="w-[100%]  text-center leading-[55px] md:leading-[80px] h-[100%]">
           <p className="text-[55px] md:text-[85px] aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Work Experience</p>
         </div>
         <div className="h-[100%]  lg:px-[150px] space-x-[50px] flex flex-row items-center justify-center">
 
 
-          <div className="flex flex-col  space-y-[30px]  ">
-            <div className="flex flex-row  items-center justify-center space-x-[13px] sm:space-x-[10px] ">
-              <div className="w-[5px] sm:w-[7px] min-h-[49vh] md:min-h-[36vh] md:min-h-[40vh] lg:min-h-[32vh] rounded-full bg-white">
+          <div className="flex flex-col 2xl:mt-[30px] space-y-[30px]  ">
+            <div className="flex flex-row  items-center justify-center space-x-[13px] 2xl:space-x-[20px] sm:space-x-[10px] ">
+              <div className="w-[5px] sm:w-[7px] 2xl:min-h-[26vh] min-h-[49vh] md:min-h-[36vh] md:min-h-[40vh] lg:min-h-[32vh] rounded-full bg-white">
 
               </div>
 
@@ -548,7 +554,7 @@ const About = () => {
               <div className="w-[100%] flex flex-col  items-center justify-center aboutTitle2 h-[100%]">
                 <div className="flex  flex-col sm:flex-row sm:items-center  w-[100%]  sm:space-x-[130px]">
                   <div className="leading-[28px] sm:leading-[28px]">
-                    <p className=" text-[23px]  md:text-[23px]">+ Career Break - Freelancing and  Self Directed <br/>Learning </p>
+                    <p className=" text-[23px]  md:text-[23px]">+ Career Break - Freelancing and  Self Directed Learning </p>
                     <div className="py-[7px]">
                       <Image alt="codebug" src={Codebug2} height={30}/>
                     </div>
@@ -575,7 +581,7 @@ const About = () => {
               </div>
             </div>
             <div className="flex flex-row  items-center justify-center space-x-[13px] sm:space-x-[20px] ">
-              <div className="w-[5px] sm:w-[7px] min-h-[75vh] sm:min-h-[53vh] md:min-h-[47vh] rounded-full bg-white">
+              <div className="w-[5px] sm:w-[7px] min-h-[75vh] 2xl:min-h-[38vh] sm:min-h-[53vh] md:min-h-[47vh] rounded-full bg-white">
 
               </div>
 
@@ -585,7 +591,7 @@ const About = () => {
 
                 <div className="flex  flex-col sm:flex-row sm:items-center  w-[100%]  justtify-between sm:space-x-[100px] md:space-x-[210px]">
                   <div className="leading-[28px] sm:leading-[30px]">
-                    <p className=" text-[23px]  md:text-[23px]">+ Medical Documentation Specialist<br/> (Medical Scribe)</p>
+                    <p className=" text-[23px]  md:text-[23px]">+ Medical Documentation Specialist (Medical Scribe)</p>
                     <div className="">
                       <div className="h-[30px] flex items-center  overflow-hidden">
                         <Image height={65} className="" src={Medsource} alt=''/>
@@ -613,16 +619,12 @@ const About = () => {
               </div>
             </div>
             <div className="flex flex-row  items-center justify-center space-x-[13px] sm:space-x-[20px] ">
-              <div className="w-[5px] sm:w-[7px] min-h-[47vh] sm:min-h-[33vh] rounded-full bg-white">
+              <div className="w-[5px] sm:w-[7px] min-h-[47vh] 2xl:min-h-[29vh] sm:min-h-[33vh] rounded-full bg-white">
 
               </div>
-
-
               <div className="w-[100%] flex flex-col  items-center justify-center aboutTitle2 h-[100%]">
-
-
-                <div className="flex  flex-col sm:flex-row sm:items-center  w-[100%]  sm:space-x-[100px] md:space-x-[250px]">
-                  <div className="leading-[28px] sm:leading-[30px]">
+                <div className="flex  flex-col sm:flex-row sm:items-center  w-[100%]  sm:space-x-[100px] md:space-x-[250px] ">
+                  <div className="leading-[28px] sm:leading-[30px] 2xl:leading-[35px]">
                     <p className=" text-[23px]  md:text-[23px]">+ Customer Service Executive</p>
                     <div className="flex flex-row">
                         <Image src={CommercialBank} alt="commercialback" height={30} />
@@ -631,7 +633,7 @@ const About = () => {
                     <p className="text-[18px] md:text-[19px]">Startek - Commercial bank PLC </p>
                   </div>
 
-                  <div className="">
+                  <div className="2xl:w-[180px]">
                     <p>2022 February - 2022 June</p>
                   </div>
 
@@ -649,6 +651,7 @@ const About = () => {
             </div>
 
 
+          </div>
           </div>
         </div>
 

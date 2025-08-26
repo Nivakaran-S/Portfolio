@@ -238,7 +238,8 @@ useEffect(() => {
               </div>
             </div>
 
-            <div className="flex bg-[#101010] py-[70px] flex-col md:flex-row items-center px-[10vw] justify-center  min-h-[60vh]">
+            <div className="flex bg-[#101010] py-[70px] flex-col md:flex-row items-center  justify-center 2xl:min-h-[48vh] min-h-[60vh]">
+                <div className="flex flex-row items-center w-[80%] 2xl:w-[1200px]">
                 <div className="md:w-[60%] mb-[20px] md:mb-[0px] h-[100%]">
                     
                       <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[70px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Web Development</p>
@@ -263,13 +264,13 @@ useEffect(() => {
                     </div>
                   </div>
                 </div>
-                
+                </div>
             </div>
 
             
             
-            <div className="flex flex-col md:flex-row py-[70px] items-center px-[10vw] bg-[#000] justify-center  min-h-[60vh]">
-                
+            <div className="flex flex-col md:flex-row py-[70px] items-center px-[10vw] bg-[#000] justify-center 2xl:min-h-[48vh]  min-h-[60vh]">
+                <div className="flex flex-row w-[80%] items-center 2xl:w-[1200px]">
                 <div className="md:w-[60%] serviceLeft flex flex-col items-start h-[100%]">
                   <p className="md:w-[80%]">Delivering sleek, intuitive, and cross-platform mobile experiences. Whether it's iOS, Android, or both, I build mobile apps that users love.</p>
                   <div className="md:w-[80%] mt-[20px]">
@@ -287,9 +288,11 @@ useEffect(() => {
                       <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[60px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Mobile Application Development</p>
 
                 </div>
+                </div>
             </div>
 
-            <div className="flex bg-[#101010] py-[70px] flex-col md:flex-row items-center px-[10vw] justify-center  min-h-[60vh]">
+            <div className="flex bg-[#101010] py-[70px] flex-col md:flex-row items-center 2xl:min-h-[48vh] px-[10vw] justify-center  min-h-[60vh]">
+                <div className="flex flex-row w-[80%] items-center 2xl:w-[1200px]">
                 <div className="md:w-[60%] mb-[20px] md:mb-[0px] h-[100%]">
                     
                       <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[70px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">UI/UX Designing </p>
@@ -308,10 +311,11 @@ useEffect(() => {
                     </div>
                   </div>
                 </div>
+                </div>
                 
             </div>
-            <div className="flex flex-col md:flex-row py-[70px] items-center px-[10vw] bg-[#000] justify-center  min-h-[60vh]">
-                
+            <div className="flex flex-col md:flex-row py-[70px] items-center px-[10vw] bg-[#000] justify-center 2xl:min-h-[48vh]  min-h-[60vh]">
+                <div className="flex flex-row w-[80%] items-center 2xl:w-[1200px]">
                 <div className="md:w-[60%] serviceLeft flex flex-col items-start h-[100%]">
                   <p className="md:w-[80%]">Solving real-world problems with tailor-made software solutions. From internal tools to full scale system, I develop software that fits your workflows and scales with your business.</p>
                   <div className="md:w-[80%] mt-[20px]">
@@ -329,8 +333,10 @@ useEffect(() => {
                       <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[60px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Custom Software Development</p>
 
                 </div>
+                </div>
             </div>
-            <div className="flex bg-[#101010] flex-col py-[70px] md:flex-row items-center px-[10vw] justify-center  min-h-[60vh]">
+            <div className="flex bg-[#101010] flex-col py-[70px] md:flex-row items-center px-[10vw] 2xl:min-h-[48vh] justify-center  min-h-[60vh]">
+                <div className="flex flex-row w-[80%] items-center 2xl:w-[1200px]">
                 <div className="md:w-[60%] mb-[20px] md:mb-[0px] h-[100%]">
                     
                       <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[70px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Data Analysis & Visualization</p>
@@ -350,11 +356,12 @@ useEffect(() => {
                     </div>
                   </div>
                 </div>
+                </div>
                 
             </div>
 
-            <div className="flex flex-col md:flex-row py-[70px] items-center px-[10vw] bg-[#000] justify-center  min-h-[60vh]">
-                
+            <div className="flex flex-col md:flex-row py-[70px] items-center px-[10vw] 2xl:min-h-[48vh] bg-[#000] justify-center  min-h-[60vh]">
+                <div className="flex flex-row w-[80%] items-center 2xl:w-[1200px]">
                 <div className="md:w-[60%] serviceLeft flex flex-col items-start h-[100%]">
                   <p className="md:w-[80%]">Designing and training intelligent systems that can learn from data and make predictions or classifications.</p>
                   <p className="md:w-[80%]">Use cases: Recommendation systems, fraud detection, customer segmentation</p>
@@ -378,9 +385,11 @@ useEffect(() => {
                       <p className=" text-[46px] sm:text-[60px] text-center md:text-left serviceRight leading-[52px] sm:leading-[66px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Building Machine Learning Models</p>
 
                 </div>
+                </div>
             </div>
             
-            <div className="flex flex-col bg-[#101010] py-[70px] md:flex-row items-center px-[10vw] justify-center  min-h-[60vh]">
+            <div className="flex flex-col bg-[#101010] py-[70px] 2xl:min-h-[48vh] md:flex-row items-center px-[10vw] justify-center  min-h-[60vh]">
+                <div className="flex flex-row w-[80%] items-center 2xl:w-[1200px]">
                 <div className="md:w-[60%]  mb-[20px] md:mb-[0px] h-[100%]">
                     
                       <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[70px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">AI Agent Development</p>
@@ -399,6 +408,7 @@ useEffect(() => {
                       
                     </div>
                   </div>
+                </div>
                 </div>
                 
             </div>

@@ -65,7 +65,7 @@ const ContactModel: React.FC<ContactModelProps> = ({ onMessageSuccess, onContact
 
 
   <div className="w-[80%] h-screen flex justify-center py-2 bg-[#433D3A] transition-transform ease-in-out duration-700">
-    <div className="flex flex-col md:flex-row w-[90%] md:justify-between">
+    <div className="flex flex-col md:flex-row w-[90%] 2xl:w-[1200px] md:justify-between">
       <div>
         <div className="text-[18px] flex md:hidden mt-[15px] mr-[10px] flex justify-end  cursor-pointer" onClick={onContactClick}>
             <p>Close</p>
@@ -73,7 +73,7 @@ const ContactModel: React.FC<ContactModelProps> = ({ onMessageSuccess, onContact
       </div>
       <div className=" w-[100%] md:w-[50%] pt-[50px] md:h-[100%] flex flex-col items-center justify-center">
 
-        <p className="text-[35px] md:text-[45px]  md:leading-[45px] leading-[37px] w-[90%]">Let's Talk About <span className="text-[37px] md:text-[45px] font-[550] text-[#101010]">Your Next Project</span></p>
+        <p className="text-[35px] md:text-[45px] 2xl:text-[55px] 2xl:leading-[60px] md:leading-[45px] leading-[37px] w-[90%]">Let's Talk About <span className="text-[37px] 2xl:text-[55px] md:text-[45px] font-[550] text-[#101010]">Your Next Project</span></p>
         <div className="hidden md:flex ml-[40px]">
           <p className="w-[80%] hidden md:flex md:mt-[5px]" >We'd love to hear from you whether it's a project inquiry, feedback, or just a friendly hello, don't hesitate to reach out: Let's create something amazing.</p>
         </div>
