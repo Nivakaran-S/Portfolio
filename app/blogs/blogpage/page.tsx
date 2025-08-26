@@ -91,8 +91,8 @@ const BlogContent = () => {
       {/* Hero Section */}
       <div>
         <StarBackground />
-        <div className="min-h-[80vh] sm:min-h-[100vh] flex items-end justify-center px-4 pb-[20px] sm:px-6 lg:px-8">
-          <div className="w-full max-w-6xl flex flex-col justify-end py-10 sm:py-7">
+        <div className="min-h-[80vh] 2xl:min-h-[80vh] sm:min-h-[100vh] flex items-end justify-center px-4 pb-[20px] sm:px-6 lg:px-8">
+          <div className="w-full 2xl:w-[1200px] max-w-6xl flex flex-col justify-end py-10 sm:py-7">
             <h1 className="text-3xl sm:text-4xl md:text-xl lg:text-6xl w-full sm:w-[90%] lg:leading-[67px] font-bold">
               {blog?.title || 'Loading...'}
             </h1>
@@ -102,7 +102,7 @@ const BlogContent = () => {
             <div className="flex flex-row flex-wrap gap-4 sm:gap-6 ml-2 sm:ml-4 mt-6 sm:mt-8 w-full sm:w-[60%] lg:w-[60%]">
               {categories.map((category, index) => (
                 <div key={index} className="bg-white text-black px-4 py-1.5 rounded text-sm sm:text-base">
-                  <p>{category}</p>
+                  <p>15 mins</p>
                 </div>
               ))}
               <div className="ring-1 ring-white text-white px-4 py-1.5 rounded text-sm sm:text-base">
@@ -117,7 +117,7 @@ const BlogContent = () => {
       <div className="min-h-screen bg-[#101010] flex items-center justify-center px-4 sm:px-6 lg:px-8">
         <div className="w-full max-w-5xl flex flex-col lg:flex-row justify-between py-10 sm:py-16 lg:py-21 gap-8">
           
-          <div className="w-full lg:w-[100%] text-[#A19F9F] flex flex-col px-4 sm:px-8">
+          <div className="w-full 2xl:w-[1200px] lg:w-[100%] text-[#A19F9F] flex flex-col px-4 sm:px-8">
             {error && <p className="text-red-500">{error}</p>}
             {blog?.imageUrl && (
               <Image
