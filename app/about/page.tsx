@@ -546,7 +546,7 @@ const About = () => {
 
           <div className="flex flex-col 2xl:mt-[30px] space-y-[30px]  ">
             <div className="flex flex-row  items-center justify-center space-x-[13px] 2xl:space-x-[20px] sm:space-x-[10px] ">
-              <div className="w-[5px] sm:w-[7px] 2xl:min-h-[26vh] min-h-[49vh] md:min-h-[36vh] md:min-h-[40vh] lg:min-h-[32vh] rounded-full bg-white">
+              <div className="w-[5px] sm:w-[7px] 2xl:min-h-[30vh] min-h-[49vh] md:min-h-[36vh] md:min-h-[40vh] lg:min-h-[32vh] rounded-full bg-white">
 
               </div>
 

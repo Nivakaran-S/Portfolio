@@ -197,10 +197,10 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
                   placeholder="blur"
                   blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGUrGwU6AAAAABJRU5ErkJggg=="
                 />
-                <p className="text-[40px] text-white leading-[50px] sm:leading-[70px] absolute text-center sm:text-[50px] md:text-[70px] font-bold p-6">
+                <p className="text-[40px] bg-transparent opacity-80 rounded-[20px] bg-white text-[#1D1D1D] leading-[50px] sm:leading-[70px] absolute text-center sm:text-[50px] md:text-[70px] font-bold p-6">
                   {project?.title || 'Project Title'}
                 </p>
-                <div className='absolute space-x-[20px] flex flex-row bottom-[20%]'>
+                <div className='absolute space-x-[20px] flex flex-row bottom-[10%]'>
                   <div onClick={(e) => handleLinkClick(e, project?.githubLink)} className='bg-[#1D1D1D] hover:bg-[#101010] hover:ring-[1.5px] px-[20px] ring-[1px] ring-[#101010] rounded-[10px] cursor-pointer py-[8px]'>
                     <p>Github Link</p>
                   </div>
