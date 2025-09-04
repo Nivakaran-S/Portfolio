@@ -45,7 +45,7 @@ const About = () => {
             return () => clearInterval(interval);
             
         }
-    }, [isVisible])
+    }, [isVisible, count])
 
     useEffect(() => {
         if(isVisible && experience < targetExperience) {
