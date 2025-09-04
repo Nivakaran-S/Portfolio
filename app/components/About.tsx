@@ -45,7 +45,7 @@ const About = () => {
             return () => clearInterval(interval);
             
         }
-    }, [isVisible, count])
+    }, [isVisible])
 
     useEffect(() => {
         if(isVisible && experience < targetExperience) {
@@ -124,8 +124,14 @@ const About = () => {
     }
 
     const onDownloadResumeClick = () => {
-        console.log("Download resume clicked")
-    }
+    if (typeof window !== "undefined") {
+        window.open(
+            "https://drive.google.com/file/d/1sZIPdirxEffJgYLsf6vfs1jIAstESDp1/view?usp=drive_link",
+            "_blank"
+        );
+        }
+    };
+
 
 
     return(
