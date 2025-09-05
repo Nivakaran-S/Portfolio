@@ -164,10 +164,10 @@ const Blogs = () => {
   };
 
   return (
-    <div className="flex text-white w-[100vw] overflow-x-hidden flex-col">
+    <div className="flex  text-white w-[100vw] overflow-x-hidden flex-col">
       
 
-      <div className="min-h-[120vh] 2xl:min-h-[80vh] bg-[#0A0A0A] py-[10vh] w-screen flex items-center justify-center">
+      <div className="min-h-[120vh] 2xl:min-h-[80vh] bg-[#000000] py-[10vh] w-screen flex items-center justify-center">
         <div className="w-[95%] sm:w-[80%] flex items-center justify-center flex-col">
            <div className="leading-[50px] sm:leading-[64px] blogs1 text-center">
                     <p className="text-[44px] sm:text-[55px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Stay Updated</p>

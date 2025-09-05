@@ -64,6 +64,7 @@ import Medsource from '../images/download-removebg-preview.png'
 import Codebug from '../images/codebug.png';
 import Codebug2 from '../images/codebugfinal7.16115110.png'
 import CommercialBank from '../images/Commercial_Bank_logo.svg.png'
+import Achievements from "../components/Achievements";
 
 
 const About = () => {
@@ -656,6 +657,7 @@ const About = () => {
         </div>
 
       </div>
+      <Achievements/>
       <Certification />
       <Top />
       <Contact onContactClick={onContactClick} />

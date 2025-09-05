@@ -13,7 +13,7 @@ const About = () => {
     const counterRef = useRef(null);
 
     const [experience, setExperience] = useState(0);
-    const targetExperience = 2;
+    const targetExperience = 3;
     const router = useRouter();
     useEffect(() => {
         const observer = new IntersectionObserver(

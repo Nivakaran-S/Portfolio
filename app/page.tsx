@@ -16,6 +16,7 @@ import Max from "./components/Max";
 import Loader from "./components/Loader";
 import PortfolioModel from "./portfolio/PortfolioModel";
 import { Project } from "./portfolio/types"; // Import the Project type
+import Achievements from "./components/Achievements";
 
 
 
@@ -90,6 +91,7 @@ export default function Home() {
       <Portfolio onPortfolioCard1Click={onPortfolioCard1Click} />
       <Services />
       <Blogs />
+      <Achievements/>
       <Certification />
       <Contact onContactClick={onContactClick} />
       <Footer />
