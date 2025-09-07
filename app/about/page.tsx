@@ -215,7 +215,7 @@ const About = () => {
       <div className="text-white space-y-[30px] bg-[#000] px-[10vw] flex flex-col py-[60px] py-[0px] md:flex-row items-center justify-center  min-h-[50vh]">
         <div className="2xl:w-[1200px] flex flex-row ">
           <div className="aboutText4 w-[100%] md:w-[55%] text-[17px] sm:text-[18px] text-center h-[100%]">
-            <p>To become a leading force in shaping the future of technology by blending curiosity with creativity. I envision a world where data and software empower people to solve real-world challenges, drive innovation, and unlock boundless possibilities for the generations to come.</p>
+            <p>To be a creator whose work is inseparable from who I am—building software, systems, and technological solutions that are not just tools, but living reflections of my skill, creativity, and mindset. Every project I undertake should carry my imprint, pushing boundaries, solving real problems, and standing as a testament to my vision and identity.</p>
           </div>
           <div className=" w-[100%] sm:w-[45%] aboutText5 text-center leading-[60px] md:leading-[70px] h-[100%]">
             <p className="text-[40px] md:text-[50px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >The</p>
@@ -231,7 +231,7 @@ const About = () => {
             <p className="text-[68px] md:text-[100px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Mission</p>
           </div>
           <div className=" w-[100%] text-[17px] sm:text-[18px] md:w-[55%] aboutText5 text-center h-[100%]">
-            <p>To leverage the power of data science and software engineering to build intelligent, impactful, and user-centric digital solutions. I strive to continuously learn, innovate, and collaborate, transforming ideas into reality through thoughtful design, clean code, and data-driven insights.</p>
+            <p>To relentlessly master and apply cutting-edge technologies—AI, ML, full-stack development, cloud, and more—to design and implement solutions that are both functional and expressive. I aim to transform ideas into tangible systems that embody my ingenuity, craftsmanship, and personal philosophy, making every line of code and every architecture a reflection of my growth, precision, and creative essence.</p>
           </div>
         </div>
       </div>
