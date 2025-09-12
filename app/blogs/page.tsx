@@ -315,8 +315,8 @@ const Blogs = () => {
             setScrollPosition(window.scrollY);
             setSelectedCaseStudy(caseStudy);
             setOnCaseStudyClick(true);
-            document.body.style.position = 'fixed';
-            document.body.style.top = `-${window.scrollY}px`;
+            //document.body.style.position = 'fixed';
+            //document.body.style.top = `-${window.scrollY}px`;
         }
     };
 
@@ -324,9 +324,9 @@ const Blogs = () => {
         if (typeof window !== 'undefined') {
             setOnPortfolioClick(false);
             setSelectedProject(null);
-            document.body.style.position = '';
-            document.body.style.top = '';
-            window.scrollTo(0, scrollPosition);
+            //document.body.style.position = '';
+            //document.body.style.top = '';
+            //window.scrollTo(0, scrollPosition);
         }
     };
 
@@ -334,9 +334,9 @@ const Blogs = () => {
         if (typeof window !== 'undefined') {
             setOnCaseStudyClick(false);
             setSelectedCaseStudy(null);
-            document.body.style.position = '';
-            document.body.style.top = '';
-            window.scrollTo(0, scrollPosition);
+            //document.body.style.position = '';
+            //document.body.style.top = '';
+            //window.scrollTo(0, scrollPosition);
         }
     };
 

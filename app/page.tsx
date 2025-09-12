@@ -53,27 +53,23 @@ export default function Home() {
   };
 
   // Option 2: Use data attributes to get project info
-  const onPortfolioCard1Click = (project: Project) => (e: React.MouseEvent<HTMLDivElement>) => {
+  const onPortfolioCard1Click = (project: Project) => (e: React.MouseEvent) => {
     e.preventDefault();
     e.stopPropagation();
-    if (typeof window !== 'undefined') {
-      setScrollPosition(window.scrollY);
-      setSelectedProject(project); // Set the full Project object
-      setOnPortfolioClick(true);
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${window.scrollY}px`;
-    }
+    setScrollPosition(window.scrollY);
+    setSelectedProject(project);
+    setOnPortfolioClick(true);
+    //document.body.style.position = 'fixed';
+    //document.body.style.top = `-${window.scrollY}px`;
   };
 
   const resetPortfolioClick = () => {
     if (typeof window !== 'undefined') {
-      setOnPortfolioClick(false); // Hide modal or overlay
-      setSelectedProject(null); // Clear selected project
-      document.body.style.position = '';
-      document.body.style.top = '';
-
-      const scrollY = scrollPosition; // From your useState
-      window.scrollTo(0, scrollY);
+      setOnPortfolioClick(false);
+      setSelectedProject(null);
+      //document.body.style.position = '';
+      //document.body.style.top = '';
+      //window.scrollTo(0, 0);
     }
   };
 
@@ -98,8 +94,8 @@ export default function Home() {
 
       {/* Portfolio Modal */}
       <div
-        className={`fixed top-0 left-0 z-[10000] h-[100vh] w-[100vw] flex flex-col items-center justify-center bg-black/80 transition-opacity duration-500 ease-in-out ${
-          onPortfolioClick ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        className={`z-[9999] h-[100vh] w-[100vw] flex flex-col items-start justify-start transition-opacity duration-500 ease-in-out ${
+          onPortfolioClick ? 'opacity-100 fixed top-0 left-0' : 'opacity-0 pointer-events-none'
         }`}
       >
         <PortfolioModel

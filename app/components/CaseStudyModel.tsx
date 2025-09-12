@@ -70,23 +70,17 @@ const CaseStudyModel: React.FC<CaseStudyModelProps> = ({
   const sanitizedResults = caseStudy?.results ? DOMPurify.sanitize(caseStudy.results) : '';
 
   // Scroll effect
-  useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
+  // Scroll to top when modal opens
+    useEffect(() => {
+      if (onCaseStudyClick && scrollRef.current) {
+        // Scroll the modal container to top
+        scrollRef.current.scrollTo(0, 0);
+        
+        // Also scroll window to top for good measure
+        
+      }
+    }, [onCaseStudyClick]);
 
-    let timeout: NodeJS.Timeout;
-
-    const handleScroll = () => {
-      scrollContainer.classList.add('scrolling');
-      clearTimeout(timeout);
-      timeout = setTimeout(() => {
-        scrollContainer.classList.remove('scrolling');
-      }, 1000);
-    };
-
-    scrollContainer.addEventListener('scroll', handleScroll);
-    return () => scrollContainer.removeEventListener('scroll', handleScroll);
-  }, []);
 
   // Scroll lock effect
   useEffect(() => {
@@ -190,11 +184,13 @@ const CaseStudyModel: React.FC<CaseStudyModelProps> = ({
   ];
 
   return (
-    <div className="fixed flex custom-scrollbar flex-col overflow-y-auto h-[100vh] py-[2vh] sm:py-[5vh] inset-0 z-[50] items-center justify-start">
+    <div
+    ref={scrollRef} 
+    className="fixed flex custom-scrollbar flex-col overflow-y-auto  py-[2vh] sm:py-[5vh] inset-0 z-[50] items-center justify-start">
       {/* Backdrop */}
       <div
         onClick={resetCaseStudyClick}
-        className={`absolute top-0 left-0 h-[340%] w-full bg-[#101010] transition-opacity duration-500 ease-in-out ${
+        className={`fixed top-0 left-0 w-full h-screen bg-[#101010] transition-opacity duration-500 ease-in-out ${
           onCaseStudyClick ? 'opacity-60' : 'opacity-0 pointer-events-none'
         }`}
       />
