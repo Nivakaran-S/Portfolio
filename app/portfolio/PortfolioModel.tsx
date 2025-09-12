@@ -158,7 +158,7 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
         onClick={() => {
           resetPortfolioClick();
         }}
-        className={`absolute top-0 left-0 h-[340%] w-full bg-[#101010] transition-opacity duration-500 ease-in-out ${
+        className={`absolute top-0 left-0 h-[370%] w-full bg-[#101010] transition-opacity duration-500 ease-in-out ${
           onPortfolioClick ? 'opacity-60' : 'opacity-0 pointer-events-none'
         }`}
       />
@@ -188,23 +188,15 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
           <div className="w-[100%] ">
             <div className="flex w-[100%]  flex-col sm:flex-row items-center justify-center pt-[50px] sm:space-x-[20px]">
               <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-[100%]  sm:w-[60%] h-[400px] sm:h-[580px] rounded-[10px] flex items-center justify-center relative">
-                <Image
-                  src={images[0]}
-                  alt={project?.title || 'Project Image'}
-                  className="w-full h-full object-cover transition-transform duration-500 rounded-[10px]"
-                  width={500}
-                  height={350}
-                  placeholder="blur"
-                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGUrGwU6AAAAABJRU5ErkJggg=="
-                />
-                <p className="text-[40px] bg-transparent opacity-80 rounded-[20px] bg-white text-[#1D1D1D] leading-[50px] sm:leading-[70px] absolute text-center sm:text-[50px] md:text-[70px] font-bold p-6">
+             
+                <p className="text-[40px]  text-[#FFFF] leading-[50px] sm:leading-[70px] absolute text-center sm:text-[50px] md:text-[70px] font-bold p-6">
                   {project?.title || 'Project Title'}
                 </p>
                 <div className='absolute space-x-[20px] flex flex-row bottom-[10%]'>
-                  <div onClick={(e) => handleLinkClick(e, project?.githubLink)} className='bg-[#1D1D1D] hover:bg-[#101010] hover:ring-[1.5px] px-[20px] ring-[1px] ring-[#101010] rounded-[10px] cursor-pointer py-[8px]'>
+                  <div onClick={(e) => handleLinkClick(e, project?.githubLink)} className='bg-[#000000] hover:bg-[#000000] hover:ring-[0.5px] px-[20px] ring-[1px] ring-[#101010] hover:ring-gray-400 rounded-[10px] cursor-pointer py-[8px]'>
                     <p>Github Link</p>
                   </div>
-                  <div onClick={(e) => handleLinkClick(e, project?.demoLink)} className='bg-[#1D1D1D] px-[20px] ring-[1px] ring-[#101010] rounded-[10px] cursor-pointer py-[8px]'>
+                  <div onClick={(e) => handleLinkClick(e, project?.demoLink)} className='bg-[#000000] hover:bg-[#000000] hover:ring-[0.5px] px-[20px] ring-[1px] ring-[#101010] hover:ring-gray-400 rounded-[10px] cursor-pointer py-[8px]'>
                     <p>Demo Link</p>
                   </div>
                 </div>
