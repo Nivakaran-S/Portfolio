@@ -84,7 +84,7 @@ const BlogContent = () => {
   const categories = blog?.blogsCategory?.split(',').map(cat => cat.trim()) || ['Uncategorized'];
 
   return (
-    <div className="relative">
+    <div className="w-[100%] overflow-x-hidden ">
       <Navigation navSelection={navSelection} onContactClick={onContactClick} />
       <ContactModel onMessageSuccess={onMessageSuccess} showContactModel={showContactModel} onContactClick={onContactClick} />
 
