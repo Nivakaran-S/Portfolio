@@ -178,7 +178,7 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#101010]   w-[100vw]  overflow-x-hidden py-[15vh] min-h-[100vh] flex flex-col items-center justify-center">
+      <div className="bg-[#101010]   w-[100vw]  overflow-x-hidden py-[15vh]  flex flex-col items-center justify-center">
         
         <div className="w-[93%]  2xl:w-[1200px]  sm:w-[80%]">
           <div className="portfolio1 leading-[40px] md:leading-[60px] text-center">
@@ -500,10 +500,10 @@ const Portfolio = () => {
           )}
         </div>
         <div
-  className={`z-[9999] h-[100vh] w-[100vw] flex flex-col items-start justify-start transition-opacity duration-500 ease-in-out ${
-    onPortfolioClick ? 'opacity-100 fixed top-0 left-0' : 'opacity-0 pointer-events-none'
-  }`}
->
+    className={`z-[9999] h-[100vh] w-[100vw] flex flex-col items-start justify-start transition-opacity duration-500 ease-in-out ${
+      onPortfolioClick ? 'opacity-100 fixed top-0 left-0' : 'opacity-0 hidden pointer-events-none'
+    }`}
+  >
   <PortfolioModel
     resetPortfolioClick={resetPortfolioClick}
     onPortfolioClick={onPortfolioClick}
