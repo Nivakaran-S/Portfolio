@@ -60,44 +60,40 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
   setOnPortfolioClick,
   project,
 }) => {
-  const scrollRef = useRef<HTMLDivElement>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
 
+  // Scroll to top when modal opens
   useEffect(() => {
-    const scrollContainer = scrollRef.current;
-    if (!scrollContainer) return;
-
-    let timeout: NodeJS.Timeout;
-
-    const handleScroll = () => {
-      scrollContainer.classList.add('scrolling');
-      clearTimeout(timeout);
-      timeout = setTimeout(() => {
-        scrollContainer.classList.remove('scrolling');
-      }, 1000);
-    };
-
-    scrollContainer.addEventListener('scroll', handleScroll);
-    return () => scrollContainer.removeEventListener('scroll', handleScroll);
-  }, []);
+    if (onPortfolioClick && modalRef.current) {
+      // Scroll the modal container to top
+      modalRef.current.scrollTo(0, 0);
+      
+      // Also scroll window to top for good measure
+      
+    }
+  }, [onPortfolioClick]);
 
   // Scroll lock effect
   useEffect(() => {
     if (onPortfolioClick) {
+      // Store current scroll position
       const scrollY = window.scrollY;
       document.body.style.position = 'fixed';
       document.body.style.top = `-${scrollY}px`;
       document.body.style.width = '100%';
 
       return () => {
-        const y = document.body.style.top;
+        // Restore scroll position when modal closes
+        const scrollY = document.body.style.top;
         document.body.style.position = '';
         document.body.style.top = '';
-        window.scrollTo(0, parseInt(y || '0') * -1);
+        document.body.style.width = '';
+        window.scrollTo(0, parseInt(scrollY || '0') * -1);
       };
     }
   }, [onPortfolioClick]);
 
-  // Validate URL
+  // Validate URL (unchanged)
   const isValidUrl = (url: string | undefined): url is string => {
     if (!url || typeof url !== 'string' || url.trim() === '') return false;
     try {
@@ -109,7 +105,7 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
     }
   };
 
-  // Get available images with validation
+  // Get available images with validation (unchanged)
   const images = project?.images
     ? [
         project.images.imageUrl1,
@@ -118,7 +114,7 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
       ].map(url => (isValidUrl(url) ? url : placeholderImage))
     : [placeholderImage, placeholderImage, placeholderImage];
 
-  // Process tech stack for logo display
+  // Process tech stack for logo display (unchanged)
   const getTechStackLogos = () => {
     if (!project?.techStack) return [];
     
@@ -150,29 +146,29 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
 
   const techStackItems = getTechStackLogos();
 
-  console.log(techStackItems)
   return (
-    <div className="fixed flex custom-scrollbar flex-col overflow-y-auto h-[100vh] py-[2vh] sm:py-[5vh] inset-0 z-[50] items-center justify-start">
+    <div 
+      ref={modalRef}
+      className="fixed flex custom-scrollbar flex-col overflow-y-auto h-[100vh] py-[2vh] sm:py-[5vh] inset-0 z-[50] items-center justify-start"
+    >
       {/* Backdrop */}
       <div
-        onClick={() => {
-          resetPortfolioClick();
-        }}
-        className={`absolute top-0 left-0 h-[370%] w-full bg-[#101010] transition-opacity duration-500 ease-in-out ${
+        onClick={resetPortfolioClick}
+        className={`fixed top-0 left-0 w-full h-screen bg-[#101010] transition-opacity duration-500 ease-in-out ${
           onPortfolioClick ? 'opacity-60' : 'opacity-0 pointer-events-none'
         }`}
       />
 
       {/* Modal Container */}
       <div
-        ref={scrollRef}
-        className={`custom-scrollbar bg-[#101010] ring-[1.5px] rounded-[5px] ring-[#373435] lg:rounded-[20px] md:rounded-[10px] text-white w-[95vw] 2xl:w-[1200px] sm:w-[85vw] z-20 transform transition-transform duration-500 ease-in-out ${
+        className={`custom-scrollbar bg-[#101010] ring-[1.5px] rounded-[30px] ring-[#373435] lg:rounded-[20px] md:rounded-[10px] text-white w-[95vw] 2xl:w-[1200px] sm:w-[85vw] z-20 transform transition-transform duration-500 ease-in-out ${
           onPortfolioClick
             ? 'scale-100 opacity-100'
             : 'opacity-0 pointer-events-none'
         }`}
       >
-        <div className="relative  flex px-[25px] sm:px-[75px] w-full flex-col space-y-[20px] py-[30px] items-center justify-center">
+        {/* Rest of the modal content remains unchanged */}
+        <div className="relative flex px-[25px] sm:px-[75px] w-full flex-col space-y-[20px] py-[30px] items-center justify-center">
           {/* Close Button */}
           <button
             className="cursor-pointer absolute right-0 top-0 pr-[40px] pt-[30px] text-[20px] font-semibold"
@@ -186,10 +182,9 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
 
           {/* Top Section */}
           <div className="w-[100%] ">
-            <div className="flex w-[100%]  flex-col sm:flex-row items-center justify-center pt-[50px] sm:space-x-[20px]">
-              <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-[100%]  sm:w-[60%] h-[400px] sm:h-[580px] rounded-[10px] flex items-center justify-center relative">
-             
-                <p className="text-[40px]  text-[#FFFF] leading-[50px] sm:leading-[70px] absolute text-center sm:text-[50px] md:text-[70px] font-bold p-6">
+            <div className="flex w-[100%] flex-col sm:flex-row items-center justify-center pt-[50px] sm:space-x-[20px]">
+              <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-[100%] sm:w-[60%] h-[400px] sm:h-[580px] rounded-[10px] flex items-center justify-center relative">
+                <p className="text-[40px] text-[#FFFF] leading-[50px] sm:leading-[70px] absolute text-center sm:text-[50px] md:text-[70px] font-bold p-6">
                   {project?.title || 'Project Title'}
                 </p>
                 <div className='absolute space-x-[20px] flex flex-row bottom-[10%]'>
@@ -229,12 +224,12 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
             { title: 'The Solution', content: project?.solution },
           ].map(({ title, content }, index) => (
             <div className='space-y-[10px]' key={title}>
-              <p className="text-[45px] leading-[53px] mb-[20px] sm:leading-[auto] text-center sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent  sm:p-6">
+              <p className="text-[45px] leading-[53px] mb-[20px] sm:leading-[auto] text-center sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent sm:p-6">
                 {title} 
               </p>
               <div className="flex w-full flex-col sm:flex-row items-center justify-center sm:space-x-[20px]">
                 {index % 2 === 0 && (
-                  <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 sm:w-[50%] h-[350px] rounded-[10px] flex  items-center justify-center">
+                  <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 sm:w-[50%] h-[350px] rounded-[10px] flex items-center justify-center">
                     <Image
                       src={images[index] || placeholderImage}
                       alt={`${title} Image`}
