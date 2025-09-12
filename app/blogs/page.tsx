@@ -296,17 +296,15 @@ const Blogs = () => {
         }
     }, []);
 
-    const onPortfolioCard1Click = (project: Project) => (e: React.MouseEvent<HTMLDivElement>) => {
+    const onPortfolioCard1Click = (project: Project) => (e: React.MouseEvent) => {
         e.preventDefault();
         e.stopPropagation();
-        if (typeof window !== 'undefined') {
-            setScrollPosition(window.scrollY);
-            setSelectedProject(project);
-            setOnPortfolioClick(true);
-            document.body.style.position = 'fixed';
-            document.body.style.top = `-${window.scrollY}px`;
-        }
-    };
+        setScrollPosition(window.scrollY);
+        setSelectedProject(project);
+        setOnPortfolioClick(true);
+        //document.body.style.position = 'fixed';
+        //document.body.style.top = `-${window.scrollY}px`;
+      };
 
     const onCaseStudyCardClick = (caseStudy: CaseStudy) => (e: React.MouseEvent<HTMLDivElement>) => {
         e.preventDefault();
