@@ -183,8 +183,8 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
           {/* Top Section */}
           <div className="w-[100%] ">
             <div className="flex w-[100%] flex-col sm:flex-row items-center justify-center pt-[50px] sm:space-x-[20px]">
-              <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-[100%] sm:w-[60%] h-[400px] sm:h-[580px] rounded-[10px] flex items-center justify-center relative">
-                <p className="text-[40px] text-[#FFFF] leading-[50px] sm:leading-[70px] absolute text-center sm:text-[50px] md:text-[70px] font-bold p-6">
+              <div className="bg-[#1D1D1D]  ring-[1px] ring-gray-600 w-[100%] sm:w-[60%] h-[400px] sm:h-[580px] rounded-[10px] flex items-center justify-center relative">
+                <p className="text-[40px] text-[#FFFF] leading-[50px] sm:leading-[70px] absolute text-center sm:text-[50px] md:text-[70px] font-bold px-[50px]">
                   {project?.title || 'Project Title'}
                 </p>
                 <div className='absolute space-x-[20px] flex flex-row bottom-[10%]'>

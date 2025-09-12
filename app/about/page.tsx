@@ -213,7 +213,7 @@ const About = () => {
         </div>
       </div>
       <div className="text-white space-y-[30px] bg-[#000] px-[10vw] flex flex-col py-[60px] py-[0px] md:flex-row items-center justify-center  min-h-[50vh]">
-        <div className="2xl:w-[1200px] flex flex-col lg:flex-row ">
+        <div className="2xl:w-[1200px] flex flex-col items-center space-y-[20px] lg:flex-row ">
           <div className="aboutText4 w-[100%] md:w-[55%] text-[17px] sm:text-[18px] text-center h-[100%]">
             <p>To be a creator whose work is inseparable from who I am, building software, systems, and technological solutions that are not just tools, but living reflections of my skill, creativity, and mindset. Every project I undertake should carry my imprint, pushing boundaries, solving real problems, and standing as a testament to my vision and identity.</p>
           </div>
@@ -225,7 +225,7 @@ const About = () => {
 
       </div>
       <div className="text-white bg-[#101010] space-y-[30px]  px-[10vw] flex flex-col py-[50px] md:py-[0px] md:flex-row items-center justify-center  min-h-[50vh]">
-        <div className="2xl:w-[1200px] flex space-y-[20px] flex-col lg:flex-row">
+        <div className="2xl:w-[1200px] flex items-center  space-y-[20px] flex-col lg:flex-row">
           <div className="w-[100%] sm:w-[45%] aboutText4 text-center leading-[50px] md:leading-[70px] h-[100%]">
             <p className="text-[40px] md:text-[50px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >The</p>
             <p className="text-[68px] md:text-[100px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Mission</p>
@@ -545,9 +545,9 @@ const About = () => {
         <div className="h-[100%]  lg:px-[150px] space-x-[50px] flex flex-row items-center justify-center">
 
 
-          <div className="flex flex-col 2xl:mt-[30px] space-y-[30px]  ">
+          <div className="flex flex-col 2xl:mt-[30px] space-y-[30px]  mt-[30px] ">
             <div className="flex flex-row  items-center justify-center space-x-[13px] 2xl:space-x-[20px] sm:space-x-[10px] ">
-              <div className="w-[5px] sm:w-[7px] 2xl:min-h-[30vh] min-h-[49vh] md:min-h-[36vh] md:min-h-[40vh] lg:min-h-[32vh] rounded-full bg-white">
+              <div className="w-[5px] sm:w-[7px] 2xl:min-h-[25vh] min-h-[45vh]  md:min-h-[40vh] lg:min-h-[32vh] rounded-full bg-white">
 
               </div>
 
