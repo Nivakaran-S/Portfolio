@@ -50,7 +50,7 @@ const Portfolio = ({ onPortfolioCard1Click }: PortfolioProps) => {
       import('scrollreveal').then((ScrollReveal) => {
         const sr = ScrollReveal.default();
         categories.forEach((_, index) => {
-          sr.reveal(`.portfolio${index + 1}`, {
+          sr.reveal('.portfolio1', {
             origin: 'bottom',
             distance: '20px',
             duration: 800,
@@ -88,7 +88,7 @@ const Portfolio = ({ onPortfolioCard1Click }: PortfolioProps) => {
   return (
     <div className="bg-[#000] min-h-[120vh] pt-[50px] pb-[70px] w-screen flex items-center justify-center">
       <div className="w-[80%] 2xl:w-[1200px] mt-[40px] flex flex-col">
-        <div className="portfolio1 leading-[49px] md:leading-[65px] text-center">
+        <div className=" leading-[49px] md:leading-[65px] text-center">
                     <p className="text-[45px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Explore the</p>
                     <p className="text-[45px] sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Development Journey</p>
                 </div>

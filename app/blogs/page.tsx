@@ -341,7 +341,7 @@ const Blogs = () => {
     };
 
     return (
-        <div className="flex text-white w-[100vw] overflow-x-hidden flex-col">
+        <div className="flex text-white w-[100%] overflow-x-hidden flex-col">
             <Navigation navSelection={navSelection} onContactClick={onContactClick}/>
             <ContactModel onMessageSuccess={onMessageSuccess} showContactModel={showContactModel} onContactClick={onContactClick}/>
             <div>
@@ -481,8 +481,8 @@ const Blogs = () => {
 
                     <div className="w-[95%] sm:w-[100%] mt-[40px] flex items-center justify-center">
                         <div className="flex flex-col items-center justify-center w-full">
-                            <p className="text-[40px] sm:text-[50px] blogs3 font-bold w-full text-center">Case Studies</p>
-                            <div className="grid blogs2 px-[15px] md:px-[85px] lg:grid-cols-2 gap-[25px] sm:gap-[30px] items-center justify-center mt-[30px]">
+                            <p className="text-[40px] sm:text-[50px]  font-bold w-full text-center">Case Studies</p>
+                            <div className="grid  px-[15px] md:px-[85px] lg:grid-cols-2 gap-[25px] sm:gap-[30px] items-center justify-center mt-[30px]">
                                 {caseStudies.map((caseStudy) => (
                                     <CaseStudyCard
                                         imageUrl={caseStudy.imageUrl}

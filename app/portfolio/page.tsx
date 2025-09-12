@@ -256,13 +256,13 @@ const Portfolio = () => {
   };
 
   return (
-    <div className={`flex text-white w-[100vw] overflow-x-hidden flex-col ${onPortfolioClick ? '' : ''}`}>
+    <div className={`flex text-white w-[100%] overflow-x-hidden flex-col ${onPortfolioClick ? '' : ''}`}>
       <Navigation navSelection={navSelection} onContactClick={onContactClick} />
       <ContactModel onMessageSuccess={onMessageSuccess} showContactModel={showContactModel} onContactClick={onContactClick} />
       <div className="">
         <StarBackground />
         <div className="text-white bg-contain bg-no-repeat bg-center sm:space-y-[30px] px-[10vw] flex flex-col items-center justify-center sm:pt-[20vh] min-h-[100vh]">
-          <div className="w-[100vw] text-center leading-[71px] sm:leading-[90px] h-[100%]">
+          <div className="w-[100%] text-center leading-[71px] sm:leading-[90px] h-[100%]">
             <p className="text-[40px] sm:text-[50px] md:text-[60px] aboutText4 aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] to-[#CAC8C6] bg-clip-text text-transparent">Explore</p>
             <p className="text-[65px] sm:text-[75px] md:text-[80px] aboutTitle2 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent">My Projects</p>
           </div>

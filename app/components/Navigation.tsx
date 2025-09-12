@@ -25,8 +25,8 @@ const Navigation: React.FC<ContactModelProps> = ({
   // Handle scroll direction
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > lastScrollY) {
-        // scrolling down -> hide nav
+      if (window.scrollY > lastScrollY && window.scrollY > 50) {
+        // scrolling down and past a threshold -> hide nav
         setShowNav(false);
       } else {
         // scrolling up -> show nav
@@ -35,15 +35,42 @@ const Navigation: React.FC<ContactModelProps> = ({
       setLastScrollY(window.scrollY);
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
+  // Close menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (isMenuOpen && window.innerWidth < 1024) {
+        setIsMenuOpen(false);
+      }
+    };
+
+    // Add event listener for clicks
+    document.addEventListener("click", handleClickOutside as any);
+    return () => {
+      document.removeEventListener("click", handleClickOutside as any);
+    };
+  }, [isMenuOpen]);
+
+  // Prevent body scroll when menu is open on mobile
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [isMenuOpen]);
+
   return (
     <div
-      className={`flex items-center z-[47] fixed top-0 w-[100vw] justify-center transform transition-transform duration-500 ${
-        showNav ? "translate-y-0" : "-translate-y-full"
-      }`}
+      className={`flex  items-center z-[47] fixed top-0 w-[100%] justify-center transform transition-transform duration-500
+      ${showNav ? "translate-y-0" : "-translate-y-full"}`}
     >
       {/* Desktop Navbar */}
       <div className="lg:flex hidden flex-row justify-between items-center px-[20px] h-[60px] 2xl:h-[55px] rounded-[8px] ring-[0.5px] ring-[#727376] w-[90vw] mt-[13px] bg-[#373435] text-black">
@@ -59,7 +86,7 @@ const Navigation: React.FC<ContactModelProps> = ({
             href="/"
             className={`${
               navSelection === "Home" ? "text-[#FFD700]" : ""
-            } cursor-pointer hover:text-[#FFD700]`}
+            } cursor-pointer hover:text-[#FFD700] transition-colors`}
           >
             <p>Home</p>
           </Link>
@@ -67,7 +94,7 @@ const Navigation: React.FC<ContactModelProps> = ({
             href="/about"
             className={`${
               navSelection === "About" ? "text-[#FFD700]" : ""
-            } cursor-pointer hover:text-[#FFD700]`}
+            } cursor-pointer hover:text-[#FFD700] transition-colors`}
           >
             <p>About</p>
           </Link>
@@ -75,7 +102,7 @@ const Navigation: React.FC<ContactModelProps> = ({
             href="/services"
             className={`${
               navSelection === "Services" ? "text-[#FFD700]" : ""
-            } cursor-pointer hover:text-[#FFD700]`}
+            } cursor-pointer hover:text-[#FFD700] transition-colors`}
           >
             <p>Services</p>
           </Link>
@@ -83,7 +110,7 @@ const Navigation: React.FC<ContactModelProps> = ({
             href="/portfolio"
             className={`${
               navSelection === "Portfolio" ? "text-[#FFD700]" : ""
-            } cursor-pointer hover:text-[#FFD700]`}
+            } cursor-pointer hover:text-[#FFD700] transition-colors`}
           >
             <p>Portfolio</p>
           </Link>
@@ -91,18 +118,18 @@ const Navigation: React.FC<ContactModelProps> = ({
             href="/blogs"
             className={`${
               navSelection === "Blogs" ? "text-[#FFD700]" : ""
-            } cursor-pointer hover:text-[#FFD700]`}
+            } cursor-pointer hover:text-[#FFD700] transition-colors`}
           >
             <p>Blogs</p>
           </Link>
         </div>
         <div>
-          <div
+          <button
             onClick={onContactClick}
-            className="cursor-pointer bg-[#4B4B4D] text-white px-[18px] text-[15px] ring-[0.8px] ring-[#1D1D1D] hover:bg-[] hover:text-black py-[7px] rounded-[20px]"
+            className="cursor-pointer bg-[#4B4B4D] text-white px-[18px] text-[15px] ring-[0.8px] ring-[#1D1D1D] hover:bg-[#5a5a5c] transition-colors py-[7px] rounded-[20px]"
           >
-            <p>Let's talk</p>
-          </div>
+            Let&apos;s talk
+          </button>
         </div>
       </div>
 
@@ -111,19 +138,20 @@ const Navigation: React.FC<ContactModelProps> = ({
         <div
           onClick={onMenuClick}
           className="flex select-none flex-row items-center justify-center cursor-pointer"
+          aria-label="Toggle menu"
         >
-          <Image alt="menu" className="select-none" src={Menu} height={23} />
+          <Image alt="menu" className="select-none" src={Menu} height={23} width={23} />
         </div>
         <Link href="/" className="cursor-pointer text-[20px] text-white">
           <p>NivakaranS</p>
         </Link>
         <div>
-          <div
+          <button
             onClick={onContactClick}
-            className="cursor-pointer bg-[#4B4B4D] text-white px-[18px] text-[15px] ring-[0.8px] ring-gray-800 py-[7px] rounded-[20px]"
+            className="cursor-pointer bg-[#4B4B4D] text-white px-[18px] text-[15px] ring-[0.8px] ring-gray-800 py-[7px] rounded-[20px] hover:bg-[#5a5a5c] transition-colors"
           >
-            <p>Let's talk</p>
-          </div>
+            Let&apos;s talk
+          </button>
         </div>
       </div>
 
@@ -131,12 +159,12 @@ const Navigation: React.FC<ContactModelProps> = ({
       <div
         className={`${
           isMenuOpen ? "translate-x-0" : "translate-x-[-100vw]"
-        } duration-500 lg:hidden z-[50] flex flex-row items-center w-[100vw] absolute top-0 left-0 cursor-pointer`}
+        } duration-500 lg:hidden z-50 flex flex-row items-center w-full absolute top-0 left-0 cursor-pointer`}
       >
-        <div className="bg-[#373435] w-[70%] z-[9999] h-[100vh]">
+        <div className="bg-[#373435] border-r-[1px] w-[70%] z-50 h-screen fixed top-0">
           <div>
             <div className="cursor-pointer text-[30px] flex items-center justify-center pt-[40px] pb-[10px] text-white">
-              <p className="text-[35px] bg-gradient-to-t from-[#0000] ring-[0.5px] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">
+              <p className="text-[35px] bg-gradient-to-t from-transparent via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">
                 NivakaranS
               </p>
             </div>
@@ -147,8 +175,9 @@ const Navigation: React.FC<ContactModelProps> = ({
               className={`${
                 navSelection === "Home"
                   ? "text-[#FFD700] bg-[#808080] ring-[0.5px] ring-[#101010]"
-                  : ""
-              } w-[90%] rounded-[5px] py-[10px] px-[20px] cursor-pointer hover:text-[#FFD700]`}
+                  : "text-white"
+              } w-[90%] rounded-[5px] py-[10px] px-[20px] cursor-pointer hover:text-[#FFD700] transition-colors`}
+              onClick={() => setIsMenuOpen(false)}
             >
               <p>Home</p>
             </Link>
@@ -157,8 +186,9 @@ const Navigation: React.FC<ContactModelProps> = ({
               className={`${
                 navSelection === "About"
                   ? "text-[#FFD700] bg-[#808080] ring-[0.5px] ring-[#101010]"
-                  : ""
-              } w-[90%] rounded-[5px] py-[10px] px-[20px] cursor-pointer hover:text-[#FFD700]`}
+                  : "text-white"
+              } w-[90%] rounded-[5px] py-[10px] px-[20px] cursor-pointer hover:text-[#FFD700] transition-colors`}
+              onClick={() => setIsMenuOpen(false)}
             >
               <p>About</p>
             </Link>
@@ -167,8 +197,9 @@ const Navigation: React.FC<ContactModelProps> = ({
               className={`${
                 navSelection === "Services"
                   ? "text-[#FFD700] bg-[#808080] ring-[0.5px] ring-[#101010]"
-                  : ""
-              } w-[90%] rounded-[5px] py-[10px] px-[20px] cursor-pointer hover:text-[#FFD700]`}
+                  : "text-white"
+              } w-[90%] rounded-[5px] py-[10px] px-[20px] cursor-pointer hover:text-[#FFD700] transition-colors`}
+              onClick={() => setIsMenuOpen(false)}
             >
               <p>Services</p>
             </Link>
@@ -177,8 +208,9 @@ const Navigation: React.FC<ContactModelProps> = ({
               className={`${
                 navSelection === "Portfolio"
                   ? "text-[#FFD700] bg-[#808080] ring-[0.5px] ring-[#101010]"
-                  : ""
-              } w-[90%] rounded-[5px] py-[10px] px-[20px] cursor-pointer hover:text-[#FFD700]`}
+                  : "text-white"
+              } w-[90%] rounded-[5px] py-[10px] px-[20px] cursor-pointer hover:text-[#FFD700] transition-colors`}
+              onClick={() => setIsMenuOpen(false)}
             >
               <p>Portfolio</p>
             </Link>
@@ -187,18 +219,19 @@ const Navigation: React.FC<ContactModelProps> = ({
               className={`${
                 navSelection === "Blogs"
                   ? "text-[#FFD700] bg-[#808080] ring-[0.5px] ring-[#101010]"
-                  : ""
-              } w-[90%] rounded-[5px] py-[10px] px-[20px] cursor-pointer hover:text-[#FFD700]`}
+                  : "text-white"
+              } w-[90%] rounded-[5px] py-[10px] px-[20px] cursor-pointer hover:text-[#FFD700] transition-colors`}
+              onClick={() => setIsMenuOpen(false)}
             >
               <p>Blogs</p>
             </Link>
           </div>
         </div>
         <div
-          onClick={onMenuClick}
+          onClick={() => setIsMenuOpen(false)}
           className={`${
             isMenuOpen ? "opacity-80 delay-300 duration-500" : "opacity-0"
-          } md:hidden flex flex-col items-center w-[50%] h-[100vh] justify-center bg-black ring-[0.5px] ring-[#727376]`}
+          } flex w-[30%] h-screen justify-center bg-black bg-opacity-50`}
         ></div>
       </div>
     </div>
