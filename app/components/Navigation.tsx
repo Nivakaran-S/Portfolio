@@ -163,8 +163,9 @@ const Navigation: React.FC<ContactModelProps> = ({
       >
         <div className="bg-[#373435] border-r-[1px] w-[70%] z-50 h-screen fixed top-0">
           <div>
-            <div className="cursor-pointer text-[30px] flex items-center justify-center pt-[40px] pb-[10px] text-white">
-              <p className="text-[35px] bg-gradient-to-t from-transparent via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">
+            <div className="cursor-pointer  text-[30px] flex flex-col items-center justify-center pt-[40px] pb-[10px] text-white">
+              <Image alt="logo" src={Logo} height={25} width={60} />
+              <p className="text-[45px] bg-gradient-to-t from-transparent via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">
                 NivakaranS
               </p>
             </div>

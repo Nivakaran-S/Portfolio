@@ -218,33 +218,15 @@ const CaseStudyModel: React.FC<CaseStudyModelProps> = ({
           <div className="w-full">
             <div className="flex w-full flex-col sm:flex-row items-center justify-center pt-[50px] sm:space-x-[20px]">
               <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-full sm:w-[60%] h-[350px] sm:h-[580px] rounded-[10px] flex items-center justify-center relative overflow-hidden">
-                <Image
-                  src={caseStudy?.imageUrl || placeholderImage}
-                  alt={caseStudy?.title || 'Project Image'}
-                  className="w-full h-full object-cover transition-transform duration-500 rounded-[10px] hover:scale-105"
-                  width={500}
-                  height={350}
-                  placeholder="blur"
-                  blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGUrGwU6AAAAABJRU5ErkJggg=="
-                />
+                
                 <p className="text-[40px] text-white leading-[50px] sm:leading-[70px] absolute text-center sm:text-[50px] md:text-[70px] font-bold p-6">
                   {caseStudy?.title || 'Case Study Title'}
                 </p>
-                <div className='absolute space-x-[20px] flex flex-row bottom-[20%]'>
-                  <div 
-                    onClick={(e) => handleLinkClick(e, caseStudy?.githubUrl)} 
-                    className={`bg-[#1D1D1D] hover:bg-[#101010] hover:ring-[1.5px] px-[20px] ring-[1px] ring-[#101010] rounded-[10px] cursor-pointer py-[8px] transition-all ${
-                      !isValidUrl(caseStudy?.githubUrl) ? 'opacity-50 cursor-not-allowed' : ''
-                    }`}
-                  >
-                    <p>GitHub Link</p>
+                <div className='absolute space-x-[20px] flex flex-row bottom-[10%]'>
+                  <div onClick={(e) => handleLinkClick(e, caseStudy?.githubUrl)} className='bg-[#000000] hover:bg-[#000000] hover:ring-[0.5px] px-[20px] ring-[1px] ring-[#101010] hover:ring-gray-400 rounded-[10px] cursor-pointer py-[8px]'>
+                    <p>Github Link</p>
                   </div>
-                  <div 
-                    onClick={(e) => handleLinkClick(e, caseStudy?.demoUrl)} 
-                    className={`bg-[#1D1D1D] hover:bg-[#101010] hover:ring-[1.5px] px-[20px] ring-[1px] ring-[#101010] rounded-[10px] cursor-pointer py-[8px] transition-all ${
-                      !isValidUrl(caseStudy?.demoUrl) ? 'opacity-50 cursor-not-allowed' : ''
-                    }`}
-                  >
+                  <div onClick={(e) => handleLinkClick(e, caseStudy?.demoUrl)} className='bg-[#000000] hover:bg-[#000000] hover:ring-[0.5px] px-[20px] ring-[1px] ring-[#101010] hover:ring-gray-400 rounded-[10px] cursor-pointer py-[8px]'>
                     <p>Demo Link</p>
                   </div>
                 </div>
