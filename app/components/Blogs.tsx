@@ -164,7 +164,7 @@ const Blogs = () => {
   };
 
   return (
-    <div className="flex  text-white w-[100vw] overflow-x-hidden flex-col">
+    <div className="flex border-b-[1px] border-t-[1px] border-white text-white w-[100vw] overflow-x-hidden flex-col">
       
 
       <div className="min-h-[120vh] 2xl:min-h-[80vh] bg-[#000000] py-[10vh] w-screen flex items-center justify-center">

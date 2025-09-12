@@ -95,18 +95,112 @@ const Portfolio = () => {
     if (typeof window !== 'undefined') {
       import('scrollreveal').then((ScrollReveal) => {
         ScrollReveal.default().reveal('.portfolioTitle1', { origin: 'left', distance: '40px', duration: 800, delay: 400, easing: 'ease-in-out', reset: false });
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
         ScrollReveal.default().reveal('.portfolioTitle2', { origin: 'bottom', distance: '40px', duration: 800, delay: 600, easing: 'ease-in-out', reset: false });
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
         ScrollReveal.default().reveal('.portfolioTitle3', { origin: 'bottom', distance: '40px', duration: 800, delay: 800, easing: 'ease-in-out', reset: false });
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
         ScrollReveal.default().reveal('.portfolio1', { origin: 'bottom', distance: '20px', duration: 800, delay: 200, easing: 'ease-in-out', reset: false });
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
         ScrollReveal.default().reveal('.portfolio2', { origin: 'bottom', distance: '20px', duration: 800, delay: 400, easing: 'ease-in-out', reset: false });
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
         ScrollReveal.default().reveal('.portfolio3', { origin: 'bottom', distance: '20px', duration: 800, delay: 600, easing: 'ease-in-out', reset: false });
+      });
+    }
+  }, []);
+
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
         ScrollReveal.default().reveal('.portfolio4', { origin: 'bottom', distance: '20px', duration: 800, delay: 800, easing: 'ease-in-out', reset: false });
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
         ScrollReveal.default().reveal('.portfolio5', { origin: 'bottom', distance: '20px', duration: 800, delay: 1000, easing: 'ease-in-out', reset: false });
+      });
+    }
+  }, []);
+
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
         ScrollReveal.default().reveal('.portfolio6', { origin: 'bottom', distance: '20px', duration: 800, delay: 1200, easing: 'ease-in-out', reset: false });
+        });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
         ScrollReveal.default().reveal('.aboutTitle1', { origin: 'bottom', distance: '40px', duration: 800, delay: 400, easing: 'ease-in-out', reset: false });
+        });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
         ScrollReveal.default().reveal('.aboutTitle2', { origin: 'bottom', distance: '40px', duration: 800, delay: 600, easing: 'ease-in-out', reset: false });
+        });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
         ScrollReveal.default().reveal('.aboutTitle3', { origin: 'bottom', distance: '40px', duration: 800, delay: 800, easing: 'ease-in-out', reset: false });
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
         ScrollReveal.default().reveal('.aboutText4', { origin: 'left', distance: '40px', duration: 800, delay: 400, easing: 'ease-in-out', reset: false });
+        
+      });
+    }
+  }, []);
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
         ScrollReveal.default().reveal('.aboutText5', { origin: 'right', distance: '40px', duration: 800, delay: 400, easing: 'ease-in-out', reset: false });
       });
     }

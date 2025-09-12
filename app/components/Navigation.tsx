@@ -99,7 +99,7 @@ const Navigation: React.FC<ContactModelProps> = ({
         <div>
           <div
             onClick={onContactClick}
-            className="cursor-pointer bg-[#4B4B4D] text-white px-[18px] text-[15px] ring-[0.8px] ring-gray-800 py-[7px] rounded-[20px]"
+            className="cursor-pointer bg-[#4B4B4D] text-white px-[18px] text-[15px] ring-[0.8px] ring-[#1D1D1D] hover:bg-[] hover:text-black py-[7px] rounded-[20px]"
           >
             <p>Let's talk</p>
           </div>
