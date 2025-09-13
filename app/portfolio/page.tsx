@@ -328,7 +328,7 @@ const Portfolio = () => {
                 {miniProjects.filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Software Engineering').length > 0 && 
                 <div>
                   <p className="portfolio2 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
-                <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] sm:grid-cols-3 lg:grid-cols-4  items-center justify-center">
+                <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] lg:grid-cols-4  items-center justify-center">
                   {miniProjects
                     .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Software Engineering')
                     .map((miniProject) => (
@@ -376,7 +376,7 @@ const Portfolio = () => {
                 {/* Mini Projects */}
                 {miniProjects.filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Data Science').length > 0 && <div>
                   <p className="portfolio3 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
-                  <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] sm:grid-cols-3 lg:grid-cols-4  items-center justify-center">
+                  <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px]  lg:grid-cols-4  items-center justify-center">
                     {miniProjects
                       .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Data Science')
                       .map((miniProject) => (
@@ -425,7 +425,7 @@ const Portfolio = () => {
                 {/* Mini Projects */}
                 {miniProjects.filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Computer Vision').length > 0 && <div>
                   <p className="portfolio4 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
-                  <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] sm:grid-cols-3 lg:grid-cols-4  items-center justify-center">
+                  <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] lg:grid-cols-4  items-center justify-center">
                     {miniProjects
                       .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Computer Vision')
                       .map((miniProject) => (
@@ -475,7 +475,7 @@ const Portfolio = () => {
 
                 {miniProjects.filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Generative AI').length > 0 && <div>
                   <p className="portfolio5 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
-                  <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] sm:grid-cols-3 lg:grid-cols-4  items-center justify-center">
+                  <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px]  lg:grid-cols-4  items-center justify-center">
                     {miniProjects
                       .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Generative AI')
                       .map((miniProject) => (
@@ -524,7 +524,7 @@ const Portfolio = () => {
                 {/* Mini Projects */}
                 {miniProjects.filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Agentic AI').length > 0 && <div>
                   <p className="portfolio6 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
-                  <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] sm:grid-cols-3 lg:grid-cols-4  items-center justify-center">
+                  <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px]  lg:grid-cols-4  items-center justify-center">
                     {miniProjects
                       .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Agentic AI')
                       .map((miniProject) => (
@@ -573,7 +573,7 @@ const Portfolio = () => {
                 {/* Mini Projects */}
                 {miniProjects.filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Agentic AI').length > 0 && <div>
                   <p className="portfolio6 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
-                  <div className="portfolio5 mt-[30px] grid  grid-cols-2 gap-[25px] sm:grid-cols-3 lg:grid-cols-4  items-center justify-center">
+                  <div className="portfolio5 mt-[30px] grid  grid-cols-2 gap-[25px] lg:grid-cols-4  items-center justify-center">
                     {miniProjects
                       .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Agentic AI')
                       .map((miniProject) => (
