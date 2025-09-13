@@ -216,8 +216,8 @@ const CaseStudyModel: React.FC<CaseStudyModelProps> = ({
 
           {/* Top Section */}
           <div className="w-full">
-            <div className="flex w-full flex-col sm:flex-row items-center justify-center pt-[50px] sm:space-x-[20px]">
-              <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-full sm:w-[60%] h-[350px] sm:h-[580px] rounded-[10px] flex items-center justify-center relative overflow-hidden">
+            <div className="flex w-full flex-col lg:flex-row items-center justify-center pt-[50px] lg:space-x-[20px]">
+              <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 w-full lg:w-[60%] h-[350px] sm:h-[550px] lg:h-[580px] rounded-[10px] flex items-center justify-center relative overflow-hidden">
                 
                 <p className="text-[40px] text-white leading-[50px] sm:leading-[70px] absolute text-center sm:text-[50px] md:text-[70px] font-bold p-6">
                   {caseStudy?.title || 'Case Study Title'}
@@ -231,7 +231,7 @@ const CaseStudyModel: React.FC<CaseStudyModelProps> = ({
                   </div>
                 </div>
               </div>
-              <div className="w-[40%] hidden sm:flex flex-col h-full space-y-[20px]">
+              <div className="w-[40%] hidden lg:flex flex-col h-full space-y-[20px]">
                 {[1, 2].map((i) => (
                   <div
                     key={i}

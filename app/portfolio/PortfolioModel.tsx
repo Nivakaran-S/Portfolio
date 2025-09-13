@@ -182,9 +182,9 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
 
           {/* Top Section */}
           <div className="w-[100%] ">
-            <div className="flex w-[100%] flex-col sm:flex-row items-center justify-center pt-[50px] sm:space-x-[20px]">
-              <div className="bg-[#1D1D1D]  ring-[1px] ring-gray-600 w-[100%] sm:w-[60%] h-[400px] sm:h-[580px] rounded-[10px] flex items-center justify-center relative">
-                <p className="text-[40px] text-[#FFFF] leading-[50px] sm:leading-[70px] absolute text-center sm:text-[50px] md:text-[70px] font-bold px-[50px]">
+            <div className="flex w-[100%] flex-col lg:flex-row items-center justify-center pt-[50px] lg:space-x-[20px]">
+              <div className="bg-[#1D1D1D]  ring-[1px] ring-gray-600 w-[100%] lg:w-[60%] h-[400px] lg:h-[580px] md:h-[580px] rounded-[10px] flex items-center justify-center relative">
+                <p className="text-[40px] text-[#FFFF] leading-[50px] lg:leading-[70px] md:leading-[70px] absolute text-center lg:text-[50px] md:text-[60px] font-bold px-[50px]">
                   {project?.title || 'Project Title'}
                 </p>
                 <div className='absolute space-x-[20px] flex flex-row bottom-[10%]'>
@@ -196,7 +196,7 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
                   </div>
                 </div>
               </div>
-              <div className="w-[40%] hidden sm:flex flex-col h-full space-y-[20px]">
+              <div className="w-[40%] hidden lg:flex flex-col h-full space-y-[20px]">
                 {[1, 2].map((i) => (
                   <div
                     key={i}
@@ -224,12 +224,12 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
             { title: 'The Solution', content: project?.solution },
           ].map(({ title, content }, index) => (
             <div className='space-y-[10px]' key={title}>
-              <p className="text-[45px] leading-[53px] mb-[20px] sm:leading-[auto] text-center sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent sm:p-6">
+              <p className="text-[45px] leading-[53px] mb-[20px] lg:leading-[auto] text-center lg:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent lg:p-6">
                 {title} 
               </p>
-              <div className="flex w-full flex-col sm:flex-row items-center justify-center sm:space-x-[20px]">
+              <div className="flex w-full flex-col lg:flex-row items-center justify-center lg:space-x-[20px]">
                 {index % 2 === 0 && (
-                  <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 sm:w-[50%] h-[350px] rounded-[10px] flex items-center justify-center">
+                  <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 lg:w-[50%] h-[350px] rounded-[10px] flex items-center justify-center">
                     <Image
                       src={images[index] || placeholderImage}
                       alt={`${title} Image`}
@@ -241,11 +241,11 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
                     />
                   </div>
                 )}
-                <div className={`sm:w-[50%] my-[20px] sm:my-[0px] space-y-2 leading-relaxed text-white`}>
+                <div className={`lg:w-[50%] my-[20px] lg:my-[0px] space-y-2 leading-relaxed text-white`}>
                   <p>{content || `No ${title.toLowerCase()} provided.`}</p>
                 </div>
                 {index % 2 !== 0 && (
-                  <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 sm:w-[50%] h-[350px] rounded-[10px] flex items-center justify-center">
+                  <div className="bg-[#1D1D1D] ring-[1px] ring-gray-600 lg:w-[50%] h-[350px] rounded-[10px] flex items-center justify-center">
                     <Image
                       src={images[index-1] || placeholderImage}
                       alt={`${title} Image`}
@@ -263,7 +263,7 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
 
           {/* Tech Stack Section */}
           <div className="w-full">
-            <p className="text-[40px] text-center sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent p-6">
+            <p className="text-[40px] text-center lg:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent p-6">
               Tech Stack
             </p>
             <div className="flex flex-wrap justify-center gap-6 p-6 w-full">
