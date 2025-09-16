@@ -82,8 +82,13 @@ const Hero = () => {
       }, []);
 
     const onKnowClick = () => {
-        document.getElementById("about")?.scrollIntoView({ behavior: "smooth" });
-    }
+        const el = document.getElementById("about");
+        if (el) {
+            const y = el.getBoundingClientRect().top + window.scrollY + 50;
+            window.scrollTo({ top: y, behavior: "smooth" });
+        }
+        };
+
     
     return(
         <div className="  w-[100vw] lg:bg-[url('./images/heroBackground10.png')] bg-contain bg-no-repeat bg-center h-[100vh] flex items-center justify-center">

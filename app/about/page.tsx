@@ -182,11 +182,11 @@ const About = () => {
       
       <AboutHeroComponent/>
       <div className="flex bg-[#101010] ] items-center justify-center py-[50px] 2xl:min-h-[75vh]  min-h-[100vh]">
-        <div className="w-[85%] 2xl:w-[1200px] h-[100%] flex flex-col md:flex-row items-center justify-center space-x-[20px] about2">
-          <div className="w-[100%] md:w-[50%] h-[100%]  flex flex-col items-center justify-center">
-            <p className=" text-[60px] sm:text-[80px] text-center md:text-left aboutText4 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >About Me</p>
+        <div className="w-[85%] 2xl:w-[1200px] h-[100%] flex flex-col lg:flex-row items-center justify-center space-x-[20px] about2">
+          <div className="w-[100%] lg:w-[50%] h-[100%]  flex flex-col items-center justify-center">
+            <p className=" text-[60px] sm:text-[80px] text-center lg:text-left aboutText4 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >About Me</p>
           </div>
-          <div className="w-[100%] text-[17px] sm:text-[18px] md:w-[50%] aboutText5 h-[100%] flex flex-col space-y-[20px] items-center justify-center">
+          <div className="w-[100%] text-[17px] sm:text-[18px] lg:w-[50%] aboutText5 h-[100%] flex flex-col space-y-[20px] items-center justify-center">
             <p>
               Hello! I am Nivakaran, currently pursuing a B.Sc. in Information
               Technology at the Sri Lanka
@@ -214,12 +214,12 @@ const About = () => {
       </div>
       <div className="text-white space-y-[30px] bg-[#000] px-[10vw] flex flex-col py-[60px] py-[0px] md:flex-row items-center justify-center  min-h-[50vh]">
         <div className="2xl:w-[1200px] flex flex-col items-center space-y-[20px] lg:flex-row ">
-          <div className="aboutText4 w-[100%] md:w-[55%] text-[17px] sm:text-[18px] text-center h-[100%]">
+          <div className="aboutText4 w-[100%] lg:w-[55%] text-[17px] sm:text-[18px] text-center h-[100%]">
             <p>To be a creator whose work is inseparable from who I am, building software, systems, and technological solutions that are not just tools, but living reflections of my skill, creativity, and mindset. Every project I undertake should carry my imprint, pushing boundaries, solving real problems, and standing as a testament to my vision and identity.</p>
           </div>
           <div className=" w-[100%] sm:w-[45%] aboutText5 text-center leading-[60px] md:leading-[70px] h-[100%]">
-            <p className="text-[40px] md:text-[50px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >The</p>
-            <p className=" text-[80px] md:text-[100px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Vision</p>
+            <p className="text-[40px] lg:text-[50px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >The</p>
+            <p className=" text-[80px] lg:text-[100px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Vision</p>
           </div>
         </div>
 
@@ -227,10 +227,10 @@ const About = () => {
       <div className="text-white bg-[#101010] space-y-[30px]  px-[10vw] flex flex-col py-[50px] md:py-[0px] md:flex-row items-center justify-center  min-h-[50vh]">
         <div className="2xl:w-[1200px] flex items-center  space-y-[20px] flex-col lg:flex-row">
           <div className="w-[100%] sm:w-[45%] aboutText4 text-center leading-[50px] md:leading-[70px] h-[100%]">
-            <p className="text-[40px] md:text-[50px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >The</p>
-            <p className="text-[68px] md:text-[100px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Mission</p>
+            <p className="text-[40px] lg:text-[50px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >The</p>
+            <p className="text-[68px] lg:text-[100px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Mission</p>
           </div>
-          <div className=" w-[100%] text-[17px] sm:text-[18px] md:w-[55%] aboutText5 text-center h-[100%]">
+          <div className=" w-[100%] text-[17px] sm:text-[18px] lg:w-[55%] aboutText5 text-center h-[100%]">
             <p>To relentlessly master and apply cutting-edge technologies, AI, ML, full-stack development, cloud, and more, to design and implement solutions that are both functional and expressive. I aim to transform ideas into tangible systems that embody my ingenuity, craftsmanship, and personal philosophy, making every line of code and every architecture a reflection of my growth, precision, and creative essence.</p>
           </div>
         </div>

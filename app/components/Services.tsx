@@ -54,7 +54,7 @@ const Services = () => {
             <div className="w-[80%] 2xl:w-[1200px] md:space-y-[50px]  flex flex-col ">
                 <p className="text-[40px] sm:text-[55px] leading-[48px] services1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] to-[#CAC8C6] bg-clip-text text-transparent">Discover the Services Provided</p>
 
-                <div className="flex flex-col md:flex-row items-center justify-center space-y-[30px] md:space-y-[0px] md:space-x-[70px] mt-[30px]">
+                <div className="flex flex-col lg:flex-row items-center justify-center space-y-[30px] lg:space-y-[0px] lg:space-x-[70px] mt-[30px]">
                     <div className=" services2 space-y-[20px] flex flex-col items-center justify-center">
                         <div className="bg-[#000] w-[340px] sm:w-[400px] ring-[0.5px] ring-[#4d4d4d] h-[90px] rounded-[15px] flex items-center justify-center">
                             <p className="text-[25px]">UI/UX Designing</p>

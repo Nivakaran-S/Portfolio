@@ -73,7 +73,7 @@ const Certification = () => {
                 </div>
 
                 <div className=" mt-[30px]">
-                    <div className=" grid grid-cols-1 place-items-center sm:grid-cols-2  md:grid-cols-4 gap-[15px] items-center justify-center">
+                    <div className=" grid grid-cols-1 place-items-center sm:grid-cols-2  lg:grid-cols-4 gap-[15px] items-center justify-center">
                         
                         <div className="cursor-pointer certification2 relative group bg-[#1D1D1D] overflow-hidden w-[320px] ring-[0.5px] ring-[#4d4d4d] h-[230px] md:h-[210px] md:w-[100%] rounded-[10px] flex items-center justify-center">
                             <div className=' absolute transition-transform duration-500 group-hover:translate-y-0  translate-y-[200%] flex flex-col items-center justify-center'>
