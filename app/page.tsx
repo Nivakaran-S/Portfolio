@@ -94,8 +94,8 @@ export default function Home() {
 
       {/* Portfolio Modal */}
       <div
-        className={`z-[9999] h-[100vh] w-[100vw] flex flex-col items-start justify-start transition-opacity duration-500 ease-in-out ${
-          onPortfolioClick ? 'opacity-100 fixed top-0 left-0' : 'opacity-0 pointer-events-none'
+        className={`z-[9999]  flex flex-col items-start justify-start transition-opacity duration-500 ease-in-out ${
+          onPortfolioClick ? 'opacity-100 h-[100vh] w-[100vw] fixed top-0 left-0' : 'opacity-0 pointer-events-none'
         }`}
       >
         <PortfolioModel
