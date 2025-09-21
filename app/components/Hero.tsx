@@ -84,7 +84,7 @@ const Hero = () => {
     const onKnowClick = () => {
         const el = document.getElementById("about");
         if (el) {
-            const y = el.getBoundingClientRect().top + window.scrollY + 50;
+            const y = el.getBoundingClientRect().top + window.scrollY + 0;
             window.scrollTo({ top: y, behavior: "smooth" });
         }
         };
