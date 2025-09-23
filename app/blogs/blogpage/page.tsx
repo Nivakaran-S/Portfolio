@@ -96,7 +96,7 @@ const BlogContent = () => {
             <h1 className="text-3xl sm:text-4xl md:text-xl lg:text-6xl w-full sm:w-[90%] lg:leading-[67px] text-white font-bold">
               {blog?.title || 'Loading...'}
             </h1>
-            <p className="text-base sm:text-lg md:text-xl w-full sm:w-[80%] mt-4 sm:mt-2">
+            <p className="text-base sm:text-lg md:text-xl text-gray-500 w-full sm:w-[80%] mt-4 sm:mt-2">
               {blog?.subtitle || 'Loading...'}
             </p>
             <div className="flex flex-row flex-wrap gap-4 sm:gap-6 ml-2 sm:ml-4 mt-6 sm:mt-8 w-full sm:w-[60%] lg:w-[60%]">
