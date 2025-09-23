@@ -161,7 +161,7 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
 
       {/* Modal Container */}
       <div
-        className={`custom-scrollbar bg-[#101010]  ring-[1.5px] sm:rounded-[30px] ring-[#373435] lg:rounded-[20px] md:rounded-[10px] text-white w-[100vw] 2xl:w-[1200px] sm:w-[85vw] z-20 transform transition-transform duration-500 ease-in-out ${
+        className={`custom-scrollbar bg-[#101010] overflow-x-hidden sm:overflow-x-visible ring-[1.5px] sm:rounded-[30px] ring-[#373435] lg:rounded-[20px] md:rounded-[10px] text-white w-[100vw] 2xl:w-[1200px] sm:w-[85vw] z-20 transform transition-transform duration-500 ease-in-out ${
           onPortfolioClick
             ? 'scale-100 opacity-100'
             : 'opacity-0 pointer-events-none'
