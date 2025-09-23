@@ -121,7 +121,7 @@ const Footer = () => {
                     </div>
 
                 </div>
-                <div className="w-[100%] px-[0px]">
+                <div className="w-[100%] px-[0px] sm:px-[20px]">
                     <div className="bg-[#101010] mb-[20px] rounded-[15px] py-[20px] px-[20px] ring-[0.5px] ring-[#4d4d4d]">
                         <p>Subscribe to our newsletter</p>
                         <div className="flex flex-row items-center  justify-center">
