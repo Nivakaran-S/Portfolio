@@ -60,10 +60,10 @@ const ContactModel: React.FC<ContactModelProps> = ({ onMessageSuccess, onContact
       showContactModel
         ? 'opacity-80 delay-500 duration-700' 
         : 'opacity-0 duration-100' 
-    } transition-opacity ease-in-out w-[20%] h-screen bg-black`}
+    } transition-opacity ease-in-out w-[5%] sm:w-[20%] h-screen bg-black`}
   ></div>
 
-  <div className="w-[80%] md:px-[80px] h-screen flex justify-center py-2 bg-[#433D3A] transition-transform ease-in-out duration-700 overflow-y-auto">
+  <div className=" w-[95%] sm:w-[80%] md:px-[80px] h-screen flex justify-center py-2 bg-[#433D3A] transition-transform ease-in-out duration-700 overflow-y-auto">
     <div className="flex flex-col md:flex-row w-[90%] 2xl:w-[1200px] md:justify-between">
       <div>
         <div className="text-[18px] flex md:hidden mt-[15px] mr-[10px] justify-end cursor-pointer" onClick={onContactClick}>
