@@ -30,7 +30,7 @@ const Top = () => {
 
   return (
     <div
-      className={`fixed z-[999] bottom-[80px] right-[50px] text-[15.27px] cursor-pointer w-fit flex flex-row rounded transform transition-all duration-500 ${
+      className={`fixed z-[999] bottom-[80px] right-[30px] sm:right-[50px] text-[15.27px] cursor-pointer w-fit flex flex-row rounded transform transition-all duration-500 ${
         isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
       }`}
       onClick={onTopClick}
