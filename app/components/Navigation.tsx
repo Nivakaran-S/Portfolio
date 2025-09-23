@@ -73,7 +73,7 @@ const Navigation: React.FC<ContactModelProps> = ({
       ${showNav ? "translate-y-0" : "-translate-y-full"}`}
     >
       {/* Desktop Navbar */}
-      <div className="lg:flex hidden flex-row justify-between items-center px-[20px] h-[60px] 2xl:h-[55px] rounded-[8px] ring-[0.5px] ring-[#727376] w-[90vw] mt-[13px] bg-[#373435] text-black">
+      <div className="lg:flex hidden flex-row justify-between  items-center px-[20px] h-[60px] 2xl:h-[55px] rounded-[8px] ring-[0.5px] ring-[#727376] w-[90vw] mt-[13px] bg-[#373435] text-black">
         <Link
           href="/"
           className="cursor-pointer flex flex-row items-center justify-center space-x-[5px] text-[20px] text-white"
@@ -84,7 +84,7 @@ const Navigation: React.FC<ContactModelProps> = ({
         </Link>
         
         <nav role="navigation" aria-label="Main navigation">
-          <div className="flex flex-row items-center text-[18.5px] justify-between text-white w-[35%]">
+          <div className="flex flex-row space-x-[50px] items-center text-[18.5px] justify-between text-white w-[35%]">
             <Link
               href="/"
               className={`${
