@@ -59,7 +59,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
     <div onClick={onClick}>
       <div className="bg-[#373435] flex  hover:ring-[1px] hover:ring-gray-300 hover:scale-[105%] transition-transform duration-500 text-[15.27px] sm:h-[350px] ring-[1px] ring-[#373435] sm:w-[500px] w-[380px] cursor-pointer flex flex-col sm:flex-row rounded-[20px] overflow-hidden">
         {/* Image wrapper for proper scaling */}
-        <div className="sm:w-[100%] w-[100%] flex justify-end w-full h-[400px] sm:h-auto overflow-hidden">
+        <div className="sm:w-[100%] w-[100%] flex justify-end  h-[400px] sm:h-auto overflow-hidden">
           <Image
             src={imageSrc}
             alt="Project Image"
