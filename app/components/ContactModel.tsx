@@ -51,7 +51,7 @@ const ContactModel: React.FC<ContactModelProps> = ({ onMessageSuccess, onContact
         <div
   className={`${
     showContactModel ? 'translate-x-0' : 'translate-x-full'
-  } transition-transform z-[9999]  ease-in-out duration-700 flex flex-row items-center justify-center absolute fixed z-[100] h-screen w-screen`}
+  } transition-transform z-[9999] ease-in-out duration-700 flex flex-row items-center justify-center absolute fixed z-[100] h-screen w-screen`}
 >
 
   <div
@@ -63,57 +63,88 @@ const ContactModel: React.FC<ContactModelProps> = ({ onMessageSuccess, onContact
     } transition-opacity ease-in-out w-[20%] h-screen bg-black`}
   ></div>
 
-
-  <div className="w-[80%] md:px-[80px] h-screen flex justify-center py-2 bg-[#433D3A] transition-transform ease-in-out duration-700">
+  <div className="w-[80%] md:px-[80px] h-screen flex justify-center py-2 bg-[#433D3A] transition-transform ease-in-out duration-700 overflow-y-auto">
     <div className="flex flex-col md:flex-row w-[90%] 2xl:w-[1200px] md:justify-between">
       <div>
-        <div className="text-[18px] flex md:hidden mt-[15px] mr-[10px] flex justify-end  cursor-pointer" onClick={onContactClick}>
+        <div className="text-[18px] flex md:hidden mt-[15px] mr-[10px] justify-end cursor-pointer" onClick={onContactClick}>
             <p>Close</p>
         </div>
       </div>
-      <div className=" w-[100%] md:w-[50%] pt-[50px] md:h-[100%] flex flex-col items-center justify-center">
-
-        <p className="text-[35px] md:text-[45px] 2xl:text-[55px] sm:text-[55px] 2xl:leading-[60px] md:leading-[45px] sm:leading-[60px] leading-[37px] w-[90%]">Let's Talk About <span className="text-[37px] sm:text-[55px] 2xl:text-[55px] md:text-[45px] font-[550] text-[#101010]">Your Next Project</span></p>
+      
+      {/* Mobile: Header section - reduced padding and better spacing */}
+      <div className="w-[100%] md:w-[50%] pt-[20px] md:pt-[50px] md:h-[100%] flex flex-col items-center justify-center px-4 md:px-0">
+        <p className="text-[28px] md:text-[45px] 2xl:text-[55px] sm:text-[55px] 2xl:leading-[60px] md:leading-[45px] sm:leading-[60px] leading-[32px] w-[100%] md:w-[90%] text-center md:text-left mb-4 md:mb-0">
+          Let's Talk About <span className="text-[30px] sm:text-[55px] 2xl:text-[55px] md:text-[45px] font-[550] text-[#101010]">Your Next Project</span>
+        </p>
         <div className="hidden md:flex ml-[40px]">
-          <p className="w-[80%] hidden md:flex md:mt-[5px]" >We'd love to hear from you whether it's a project inquiry, feedback, or just a friendly hello, don't hesitate to reach out: Let's create something amazing.</p>
+          <p className="w-[80%] hidden md:flex md:mt-[5px]">We'd love to hear from you whether it's a project inquiry, feedback, or just a friendly hello, don't hesitate to reach out: Let's create something amazing.</p>
+        </div>
+        
+        {/* Mobile: Show description text */}
+        <div className="flex md:hidden mt-2 px-2">
+          <p className="text-[14px] text-center leading-relaxed">We'd love to hear from you whether it's a project inquiry, feedback, or just a friendly hello, don't hesitate to reach out.</p>
         </div>
       </div>
-      <div className="text-[45px] md:mt-[20px] sm:leading-[50px] w-[100%] md:w-[50%]">
-        <div className="text-[18px]  hidden md:flex justify-end  cursor-pointer" onClick={onContactClick}>
+      
+      {/* Form section - improved mobile layout */}
+      <div className="text-[45px] md:mt-[20px] w-[100%] md:w-[50%]">
+        <div className="text-[18px] hidden md:flex justify-end cursor-pointer" onClick={onContactClick}>
             <p>Close</p>
         </div>
-        <div className="text-[18px] flex flex-col px-[10px] items-center justify-center h-[100%] sm:h-[100%]">
-            <div className="flex mt-[10px] flex-col sm:flex-row items-center justify-center  w-[100%]  sm:space-x-[20px]">
-                <div className=" w-[100%] leading-[30px]">
-                    <p>Name</p>
-                    <input value={name} onChange={(e) => setName(e.target.value)} type="text" className="w-[100%] focus:outline-none px-[13px] h-[40px] bg-[#101010] text-[#96989A] border-[1px] border-[#96989A] rounded-[8px]"/>
-                </div>
-                <div className="w-[100%] mt-[10px] sm:mt-[0px] leading-[30px]">
-                    <p>Email</p>
-                    <input value={email} onChange={(e) => setEmail(e.target.value)} type="text" className="w-[100%] focus:outline-none px-[13px] h-[40px] bg-[#101010] text-[#96989A] border-[1px] border-[#96989A] rounded-[8px] "/>
-                </div>
-            </div>
-            <div className="w-[100%] mt-[10px]  ">
-                <div className=" leading-[30px] ">
-                    <p>Title</p>
-                    <input value={title} onChange={(e) => setTitle(e.target.value)} type="text" className="w-[100%] focus:outline-none px-[13px] h-[40px] bg-[#101010] text-[#96989A] border-[1px] border-[#96989A] rounded-[8px] "/>
-                </div>
-               
-            </div>
-            <div className="w-[100%]  mt-[10px]">
-                <div className="leading-[30px]">
-                    <p>Message</p>
-                    <textarea value={message} onChange={(e) => setMessage(e.target.value)} className="bg-[#101010] focus:outline-none px-[13px] py-[3px] h-[200px] w-[100%] text-[#96989A] border-[1px] border-[#96989A] rounded-[8px] "/>
-                </div>
-
-            </div>
-            <div className="leading-[30px]">
-                <PrimaryBtn onClick={onContactFormSubmit} text="Submit"/>
-            </div>
-
-            
+        
+        <div className="text-[16px] flex flex-col px-[15px] md:px-[10px] items-center justify-center h-[100%] pb-8 md:pb-0">
+          {/* Name and Email row - better mobile spacing */}
+          <div className="flex mt-[15px] md:mt-[10px] flex-col sm:flex-row items-center justify-center w-[100%] space-y-4 sm:space-y-0 sm:space-x-[20px]">
+              <div className="w-[100%] leading-[28px]">
+                  <p className="mb-1">Name</p>
+                  <input 
+                    value={name} 
+                    onChange={(e) => setName(e.target.value)} 
+                    type="text" 
+                    className="w-[100%] focus:outline-none px-[13px] h-[45px] md:h-[40px] bg-[#101010] text-[#96989A] border-[1px] border-[#96989A] rounded-[8px] text-[16px]"
+                  />
+              </div>
+              <div className="w-[100%] leading-[28px]">
+                  <p className="mb-1">Email</p>
+                  <input 
+                    value={email} 
+                    onChange={(e) => setEmail(e.target.value)} 
+                    type="email" 
+                    className="w-[100%] focus:outline-none px-[13px] h-[45px] md:h-[40px] bg-[#101010] text-[#96989A] border-[1px] border-[#96989A] rounded-[8px] text-[16px]"
+                  />
+              </div>
+          </div>
           
-            
+          {/* Title field - improved mobile spacing */}
+          <div className="w-[100%] mt-[20px] md:mt-[10px]">
+              <div className="leading-[28px]">
+                  <p className="mb-1">Title</p>
+                  <input 
+                    value={title} 
+                    onChange={(e) => setTitle(e.target.value)} 
+                    type="text" 
+                    className="w-[100%] focus:outline-none px-[13px] h-[45px] md:h-[40px] bg-[#101010] text-[#96989A] border-[1px] border-[#96989A] rounded-[8px] text-[16px]"
+                  />
+              </div>
+          </div>
+          
+          {/* Message field - better mobile height */}
+          <div className="w-[100%] mt-[20px] md:mt-[10px]">
+              <div className="leading-[28px]">
+                  <p className="mb-1">Message</p>
+                  <textarea 
+                    value={message} 
+                    onChange={(e) => setMessage(e.target.value)} 
+                    className="bg-[#101010] focus:outline-none px-[13px] py-[8px] h-[140px] md:h-[200px] w-[100%] text-[#96989A] border-[1px] border-[#96989A] rounded-[8px] text-[16px] resize-none"
+                    placeholder="Tell us about your project..."
+                  />
+              </div>
+          </div>
+          
+          {/* Submit button - better mobile spacing */}
+          <div className="leading-[28px] mt-[25px] md:mt-[15px] w-[100%] flex justify-center">
+              <PrimaryBtn onClick={onContactFormSubmit} text="Submit"/>
+          </div>
         </div>
       </div>
     </div>
