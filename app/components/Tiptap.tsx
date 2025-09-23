@@ -55,6 +55,7 @@ export default function Tiptap({
         editor={editor} 
         className="[&_.tiptap]:outline-none [&_.tiptap]:min-h-[150px]"
       />
+      
     </div>
   );
 }
