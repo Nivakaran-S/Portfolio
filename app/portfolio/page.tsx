@@ -16,6 +16,9 @@ export const metadata: Metadata = {
 
 export default function PortfolioPage() {
   return(
-    <PortfolioCLientWrapper/>
-  )
+    <div className="overflow-x-hidden">
+      <PortfolioCLientWrapper/>
+  
+    </div>
+)    
 } 
