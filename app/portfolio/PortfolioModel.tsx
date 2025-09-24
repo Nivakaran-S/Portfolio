@@ -226,11 +226,11 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
 
           {/* Sections */}
           {[
-            { title: 'Project Overview', content: project?.projectOverview },
+            { title: 'Overview', content: project?.projectOverview },
             { title: 'The Problem', content: project?.problem },
             { title: 'The Solution', content: project?.solution },
           ].map(({ title, content }, index) => (
-            <div className='space-y-[10px] w-[100vw] px-[40px] py-[40px]  ring-[0.5px] ring-gray-500 sm:ring-[0px] sm:rounded-[0px] sm:py-[0px] sm:px-[0px] sm:w-[100%] sm:bg-[#101010] bg-[#1D1D1D]' key={title}>
+            <div className='space-y-[10px] w-[100vw] px-[20px] sm:px-[40px] py-[40px]  ring-[0.5px] ring-gray-500 sm:ring-[0px] sm:rounded-[0px] sm:py-[0px] sm:px-[0px] sm:w-[100%] sm:bg-[#101010] bg-[#1D1D1D]' key={title}>
               <p className="text-[45px] leading-[53px] mb-[20px] lg:leading-[auto] text-center lg:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent lg:p-6">
                 {title} 
               </p>
@@ -270,7 +270,7 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
 
           {/* Tech Stack Section */}
           <div className="w-full">
-            <p className="text-[40px] text-center lg:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent p-6">
+            <p className=" text-[50px] sm:text-[40px] text-center lg:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent p-6">
               Tech Stack
             </p>
             <div className="flex flex-wrap justify-center gap-6 p-6 w-full">
