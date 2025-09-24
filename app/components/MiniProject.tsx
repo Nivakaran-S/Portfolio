@@ -24,15 +24,15 @@ const MiniProject: React.FC<MiniProjectProps> = ({ title, description, imageUrl,
           height={160}
           onError={(e) => { e.currentTarget.src = NewsPaper.src; }}
         />
-        <div className="flex flex-col absolute h-[230px] rounded-[10px] sm:rounded-[0px] bg-[#1D1D1D] w-[200px] sm:w-[220px] px-[10px] justify-between py-[10px]">
+        <div className="flex flex-col ring-[0.8px] ring-[#808080] absolute h-[230px] rounded-[10px] sm:rounded-[0px] bg-[#1D1D1D] w-[200px] sm:w-[220px] px-[10px] justify-between py-[10px]">
             <div className="h-[100%] w-[100%] ">
-            <p className="leading-[23px]  text-[18px] ">{title}</p>
+            <p className="leading-[23px]  text-[20px] pb-[3px] ">{title}</p>
             
             <p className="text-[12px] leading-[15.5px] line-clamp-6 mt-[2px]">{description}</p>
             </div>
             <div className="flex justify-between space-x-[13px] text-[10px] text-blue-400">
-            <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="hover:bg-black bg-[#101010] flex items-center justify-center text-[15px] w-[50%] rounded-[10px]">GitHub</a>
-            <a href={demoUrl} target="_blank" rel="noopener noreferrer" className="hover:bg-black bg-[#101010] py-2 px-3 flex items-center justify-center text-[15px] w-[50%] rounded-[10px]">Demo</a>
+            <a href={githubUrl} target="_blank" rel="noopener noreferrer" className="hover:bg-black text-white ring-[#808080] ring-[0.5px] bg-[#101010] flex items-center justify-center text-[15px] w-[50%] rounded-[10px]">GitHub</a>
+            <a href={demoUrl} target="_blank" rel="noopener noreferrer" className="hover:bg-black text-white ring-[#808080] ring-[0.5px] bg-[#101010] py-2 px-3 flex items-center justify-center text-[15px] w-[50%] rounded-[10px]">Demo</a>
             </div>
         </div>
       </div>
