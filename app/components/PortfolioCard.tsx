@@ -70,7 +70,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGUrGwU6AAAAABJRU5ErkJggg=="
           />
           {/* Text content */}
-          <div className="  rounded-[20px] ring-[1px] ring-[#373435] absolute  z-[19] py-[10px] sm:py-[20px] sm:py-[0px] px-[8px] w-[380px] mt-[80px] sm:mt-[0px] h-[320px] sm:w-[350px] sm:h-[350px] flex flex-col items-center justify-center bg-[#101010] sm:bg-[#1D1D1D]">
+          <div className="  rounded-[20px] ring-[1px] ring-[#373435] absolute  z-[19] py-[10px] sm:py-[20px] sm:py-[0px] px-[8px] w-[380px] mt-[80px] sm:mt-[0px] h-[320px] sm:w-[350px] sm:h-[350px] flex flex-col items-center pt-[30px] sm:pt-[0px] sm:justify-center bg-[#101010] sm:bg-[#1D1D1D]">
             <p className=" pb-[5px] sm:py-[5px] text-[28px] leading-[32px] pl-[10px] pr-[7px]">{text}</p>
             <p className="text-[14px] leading-[19px] line-clamp-6 sm:line-clamp-none px-[10px]">{text2}</p>
 
