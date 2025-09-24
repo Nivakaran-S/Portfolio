@@ -70,9 +70,9 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGUrGwU6AAAAABJRU5ErkJggg=="
           />
           {/* Text content */}
-          <div className="  rounded-[20px] ring-[1px] ring-[#373435] absolute  z-[19] py-[20px] sm:py-[0px] px-[8px] w-[380px] mt-[80px] sm:mt-[0px] h-[320px] sm:w-[350px] sm:h-[350px] flex flex-col items-center justify-center bg-[#101010] sm:bg-[#1D1D1D]">
-            <p className="py-[5px] text-[28px] leading-[32px] pl-[10px] pr-[7px]">{text}</p>
-            <p className="text-[14px] leading-[19px] px-[10px]">{text2}</p>
+          <div className="  rounded-[20px] ring-[1px] ring-[#373435] absolute  z-[19] py-[10px] sm:py-[20px] sm:py-[0px] px-[8px] w-[380px] mt-[80px] sm:mt-[0px] h-[320px] sm:w-[350px] sm:h-[350px] flex flex-col items-center justify-center bg-[#101010] sm:bg-[#1D1D1D]">
+            <p className=" pb-[5px] sm:py-[5px] text-[28px] leading-[32px] pl-[10px] pr-[7px]">{text}</p>
+            <p className="text-[14px] leading-[19px] line-clamp-6 sm:line-clamp-none px-[10px]">{text2}</p>
 
             <div className="sm:w-[38.2%] hidden sm:flex px-[10px] flex sm:hidden items-center justify-center">
               <div className="grid grid-cols-3 gap-[10px] pt-[15px] pb-[10px]">
@@ -85,7 +85,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
               </div>
             </div>
 
-            <div className="flex absolute sm:static bottom-[15px] flex-row items-center justify-center space-x-[10px] pt-[10px]">
+            <div className="flex absolute sm:static bottom-[25px] flex-row items-center justify-center space-x-[10px] pt-[10px]">
               <div
                 onClick={(e) => handleLinkClick(e, githubLink)}
                 className="bg-[#000] ring-[1px] ring-[#808080] hover:bg-[#101010] flex flex-row items-center justify-center space-x-[5px] px-[20px] py-[8px] hover:ring-[0.5px] ring-gray-500 rounded-[20px] text-white"
