@@ -70,7 +70,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
             blurDataURL="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAADUlEQVR42mNk+M9QDwADhgGUrGwU6AAAAABJRU5ErkJggg=="
           />
           {/* Text content */}
-          <div className="rounded-[20px] ring-[1px] ring-[#373435] absolute  z-[19] py-[20px] sm:py-[0px] px-[8px] w-[380px] mt-[80px] sm:mt-[0px] h-[320px] sm:w-[350px] sm:h-[350px] flex flex-col items-center justify-center bg-[#101010] sm:bg-[#1D1D1D]">
+          <div className="  rounded-[20px] ring-[1px] ring-[#373435] absolute  z-[19] py-[20px] sm:py-[0px] px-[8px] w-[380px] mt-[80px] sm:mt-[0px] h-[320px] sm:w-[350px] sm:h-[350px] flex flex-col items-center justify-center bg-[#101010] sm:bg-[#1D1D1D]">
             <p className="py-[5px] text-[28px] leading-[32px] pl-[10px] pr-[7px]">{text}</p>
             <p className="text-[14px] leading-[19px] px-[10px]">{text2}</p>
 
@@ -85,7 +85,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
               </div>
             </div>
 
-            <div className="flex flex-row items-center justify-center space-x-[10px] pt-[10px]">
+            <div className="flex absolute sm:static bottom-[15px] flex-row items-center justify-center space-x-[10px] pt-[10px]">
               <div
                 onClick={(e) => handleLinkClick(e, githubLink)}
                 className="bg-[#000] ring-[1px] ring-[#808080] hover:bg-[#101010] flex flex-row items-center justify-center space-x-[5px] px-[20px] py-[8px] hover:ring-[0.5px] ring-gray-500 rounded-[20px] text-white"
