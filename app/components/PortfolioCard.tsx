@@ -71,7 +71,7 @@ const PortfolioCard: React.FC<PortfolioCardProps> = ({
           />
           {/* Text content */}
           <div className="  rounded-[20px] ring-[1px] ring-[#373435] absolute  z-[19] py-[10px] sm:py-[20px] sm:py-[0px] px-[8px] w-[380px] mt-[80px] sm:mt-[0px] h-[320px] sm:w-[350px] sm:h-[350px] flex flex-col items-center pt-[30px] sm:pt-[0px] sm:justify-center bg-[#101010] sm:bg-[#1D1D1D]">
-            <p className=" pb-[5px] sm:py-[5px] text-[30px] sm:text-[28px] leading-[35px] sm:leading-[32px] pl-[10px] pr-[7px]">{text}</p>
+            <p className=" pb-[5px] sm:py-[5px] text-[30px] sm:text-[28px] text-center leading-[35px] sm:leading-[32px] pl-[10px] pr-[7px]">{text}</p>
             <p className="text-[14px] leading-[19px] line-clamp-6 sm:line-clamp-none px-[10px]">{text2}</p>
 
             <div className="sm:w-[38.2%] hidden sm:flex px-[10px] flex sm:hidden items-center justify-center">
