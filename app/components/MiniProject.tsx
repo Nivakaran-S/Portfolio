@@ -14,7 +14,7 @@ interface MiniProjectProps {
 
 const MiniProject: React.FC<MiniProjectProps> = ({ title, description, imageUrl, githubUrl, demoUrl, category }) => {
   return (
-    <div className="hover:scale-[108%] relative  transition-transform duration-500 w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#808080] ring-[1px] cursor-pointer h-[320px]">
+    <div className="hover:scale-[108%] relative  transition-transform duration-500 w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#808080] ring-[1px] cursor-pointer h-[300px] sm:h-[320px]">
       <div className="flex items-center justify-center bg-[#373435] rounded-[15px] h-[100%]">
         <Image
           className="h-[100%]  w-[100%] rounded-[15px] object-cover"
@@ -24,7 +24,7 @@ const MiniProject: React.FC<MiniProjectProps> = ({ title, description, imageUrl,
           height={160}
           onError={(e) => { e.currentTarget.src = NewsPaper.src; }}
         />
-        <div className="flex flex-col ring-[0.8px] ring-[#808080] absolute h-[250px] rounded-[10px] sm:rounded-[10px] bottom-0  bg-[#1D1D1D] w-[195px] sm:w-[220px] px-[10px] justify-between py-[10px]">
+        <div className="flex flex-col ring-[0.8px] ring-[#808080] absolute h-[230px] sm:h-[250px] rounded-[10px] sm:rounded-[10px] bottom-0  bg-[#1D1D1D] w-[195px] sm:w-[220px] px-[10px] justify-between py-[10px]">
             <div className="h-[100%] w-[100%] ">
             <p className="leading-[23px]  text-[20px] pb-[3px] font-bold ">{title}</p>
             
