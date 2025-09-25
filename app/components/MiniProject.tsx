@@ -14,7 +14,7 @@ interface MiniProjectProps {
 
 const MiniProject: React.FC<MiniProjectProps> = ({ title, description, imageUrl, githubUrl, demoUrl, category }) => {
   return (
-    <div className="hover:scale-[108%] relative  transition-transform duration-500 w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#373435] ring-[1px] cursor-pointer h-[320px]">
+    <div className="hover:scale-[108%] relative  transition-transform duration-500 w-[190px] sm:w-[220px] rounded-[15px] bg-black ring-[#808080] ring-[1px] cursor-pointer h-[320px]">
       <div className="flex items-center justify-center bg-[#373435] rounded-[15px] h-[100%]">
         <Image
           className="h-[100%]  w-[100%] rounded-[15px] object-cover"
