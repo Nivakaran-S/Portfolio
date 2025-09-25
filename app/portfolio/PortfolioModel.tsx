@@ -64,34 +64,41 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
 
   // Scroll to top when modal opens
   useEffect(() => {
-    if (onPortfolioClick && modalRef.current) {
-      // Scroll the modal container to top
-      modalRef.current.scrollTo(0, 0);
-      
-      // Also scroll window to top for good measure
-      
-    }
-  }, [onPortfolioClick]);
+  if (onPortfolioClick && modalRef.current) {
+    setTimeout(() => {
+      if (modalRef.current) {
+        modalRef.current.scrollTop = 0; // works on iOS
+      }
+      // window.scrollTo is optional, not reliable on iOS
+    }, 50);
+  }
+}, [onPortfolioClick]);
+
 
   // Scroll lock effect
   useEffect(() => {
-    if (onPortfolioClick) {
-      // Store current scroll position
-      const scrollY = window.scrollY;
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.width = '100%';
+  if (onPortfolioClick) {
+    // Store current scroll position
+    const scrollY = window.scrollY;
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.width = "100%";
 
-      return () => {
-        // Restore scroll position when modal closes
-        const scrollY = document.body.style.top;
-        document.body.style.position = '';
-        document.body.style.top = '';
-        document.body.style.width = '';
-        window.scrollTo(0, parseInt(scrollY || '0') * -1);
-      };
-    }
-  }, [onPortfolioClick]);
+    return () => {
+      // Restore scroll position when modal closes
+      const storedY = document.body.style.top;
+      const y = storedY ? parseInt(storedY.replace("px", ""), 10) : 0;
+
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.width = "";
+
+      window.scrollTo(0, -y);
+    };
+  }
+}, [onPortfolioClick]);
+
+
 
   // Validate URL (unchanged)
   const isValidUrl = (url: string | undefined): url is string => {
@@ -301,13 +308,7 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
               )}
               
             </div>
-            <button
-              className="flex sm:hidden cursor-pointer  text-black top-4 right-4 z-30 px-[20px] py-[5px] hover:text-white  rounded-full bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center hover:bg-black hover:ring-[0.5px] hover:ring-[#808080] transition-colors duration-200"
-              onClick={resetPortfolioClick}
-              aria-label="Close modal"
-            >
-              Close 
-            </button>
+           
           </div>
         </div>
       </div>
