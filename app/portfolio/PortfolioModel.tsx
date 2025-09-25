@@ -269,11 +269,11 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
           ))}
 
           {/* Tech Stack Section */}
-          <div className="w-full">
+          <div className="w-full flex flex-col items-center justify-center">
             <p className=" text-[50px] sm:text-[40px] text-center lg:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent p-6">
               Tech Stack
             </p>
-            <div className="flex flex-wrap justify-center gap-6 p-6 w-full">
+            <div className="flex  flex-wrap justify-center gap-6 p-6 w-full">
               {techStackItems.length > 0 ? (
                 techStackItems.map((item, index) => (
                   <div key={index} className="flex flex-col items-center w-24">
@@ -299,14 +299,15 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
               ) : (
                 <p className="text-white">No tech stack provided</p>
               )}
-              <button
-          className="flex sm:hidden cursor-pointer  text-black top-4 right-4 z-30 px-[20px] py-[5px] hover:text-white  rounded-full bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center hover:bg-black hover:ring-[0.5px] hover:ring-[#808080] transition-colors duration-200"
-          onClick={resetPortfolioClick}
-          aria-label="Close modal"
-        >
-          Close 
-        </button>
+              
             </div>
+            <button
+              className="flex sm:hidden cursor-pointer  text-black top-4 right-4 z-30 px-[20px] py-[5px] hover:text-white  rounded-full bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center hover:bg-black hover:ring-[0.5px] hover:ring-[#808080] transition-colors duration-200"
+              onClick={resetPortfolioClick}
+              aria-label="Close modal"
+            >
+              Close 
+            </button>
           </div>
         </div>
       </div>
