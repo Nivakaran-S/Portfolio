@@ -269,7 +269,7 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
           ))}
 
           {/* Tech Stack Section */}
-          <div className="w-full flex flex-col items-center justify-center">
+          <div className="w-full pb-[20px] flex flex-col items-center justify-center">
             <p className=" text-[50px] sm:text-[40px] text-center lg:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent p-6">
               Tech Stack
             </p>
