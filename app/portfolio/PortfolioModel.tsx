@@ -300,7 +300,7 @@ const PortfolioModel: React.FC<PortfolioModelProps> = ({
                 <p className="text-white">No tech stack provided</p>
               )}
               <button
-          className="flex sm:hidden cursor-pointer mt-[10px] text-black top-4 right-4 z-30 px-[20px] py-[5px] hover:text-white  rounded-full bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center hover:bg-black hover:ring-[0.5px] hover:ring-[#808080] transition-colors duration-200"
+          className="flex sm:hidden cursor-pointer  text-black top-4 right-4 z-30 px-[20px] py-[5px] hover:text-white  rounded-full bg-white/90 backdrop-blur-sm shadow-lg flex items-center justify-center hover:bg-black hover:ring-[0.5px] hover:ring-[#808080] transition-colors duration-200"
           onClick={resetPortfolioClick}
           aria-label="Close modal"
         >
