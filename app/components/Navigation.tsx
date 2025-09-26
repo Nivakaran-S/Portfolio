@@ -130,7 +130,7 @@ const Navigation: React.FC<ContactModelProps> = ({
             >
               <p>Blogs</p>
             </Link>
-            {/* <Link
+            <Link
               href="/events"
               className={`${
                 navSelection === "Events" ? "text-[#FFD700]" : ""
@@ -138,7 +138,7 @@ const Navigation: React.FC<ContactModelProps> = ({
               aria-current={navSelection === "Events" ? "page" : undefined}
             >
               <p>Events</p>
-            </Link> */}
+            </Link>
           </div>
         </nav>
         
@@ -263,6 +263,18 @@ const Navigation: React.FC<ContactModelProps> = ({
                 aria-current={navSelection === "Blogs" ? "page" : undefined}
               >
                 <p>Blogs</p>
+              </Link>
+              <Link
+                href="/events"
+                className={`${
+                  navSelection === "Events"
+                    ? "text-[#FFD700] bg-[#808080] ring-[0.5px] ring-[#101010]"
+                    : "text-white"
+                } w-[90%] rounded-[5px] py-[10px] px-[20px] cursor-pointer hover:text-[#FFD700] transition-colors`}
+                onClick={() => setIsMenuOpen(false)}
+                aria-current={navSelection === "Blogs" ? "page" : undefined}
+              >
+                <p>Events</p>
               </Link>
             </div>
           </nav>
