@@ -130,6 +130,15 @@ const Navigation: React.FC<ContactModelProps> = ({
             >
               <p>Blogs</p>
             </Link>
+            {/* <Link
+              href="/events"
+              className={`${
+                navSelection === "Events" ? "text-[#FFD700]" : ""
+              } cursor-pointer hover:text-[#FFD700] transition-colors`}
+              aria-current={navSelection === "Events" ? "page" : undefined}
+            >
+              <p>Events</p>
+            </Link> */}
           </div>
         </nav>
         
