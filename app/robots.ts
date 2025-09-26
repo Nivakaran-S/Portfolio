@@ -5,7 +5,15 @@ export default function robots(): MetadataRoute.Robots {
     rules: [
       {
         userAgent: '*',
-        allow: '/',
+        allow: [
+          '/',
+          '/about',
+          '/services', 
+          '/portfolio',
+          '/blogs',
+          '/events', // Make sure this is included
+          '/blogs/blogpage', // Allow blog pages
+        ],
         disallow: ['/api/', '/admin/', '/private/'],
       },
     ],
