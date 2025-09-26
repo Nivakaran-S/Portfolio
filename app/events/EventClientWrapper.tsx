@@ -25,10 +25,10 @@ import Event5 from '../event-images/1749062352931.jpeg'
 import Event6 from '../event-images/1751913627206.png'
 import Event7 from '../event-images/1739442055119.jpeg'
 const eventsData = [
-  { id: 1, image: Event6, date: "09/29/2025", role: "Participant", location: "Colombo, Sri Lanka", type: "Conference", title: "Google Devfest 2024", description:"Attended Devfest Sri Lanka 2024 organized by GDG, an incredible event packed with innovation and learning. Highlights included Rohan Jayaweera on democratizing human ability, Namrata More and Amey Nerkar on AI-driven payment innovations, Sajeetharan Sinnathurai on Angular efficiency, Thushan Ganegedara on LLM capabilities, Rishiraj Acharya on multimodal search with Gemini Vision and RAG, Dhaminda Siriwardena on responsible AI, and Abhishek Doshi on high-performance Flutter web apps with WASM. A day full of insights, practical knowledge, and connections with brilliant minds in tech!" },
-  { id: 2, image: Event7, date: "09/29/2025", role: "Finalist", location: "Colombo, Sri Lanka", type: "Competition", title: "Codefest Algothon 2024", description:"I was thrilled to be a finalist in Algothon 2024, part of CODEFEST 2024 organized by SLIIT, ranking 11th out of nearly 170 teams. The competition tested our skills through multiple challenging rounds, including an algorithm knowledge quiz and solving a complex logistics problem to determine the shortest delivery paths. Working alongside my teammates, Hariswara Sidambaram and Imadh Ifham, was an incredible experience, and I’m grateful to the organizers for providing such an inspiring platform. Participating in Algothon strengthened my abilities in algorithm development, problem-solving, and optimization, leaving me motivated to tackle future challenges." },
+  { id: 1, image: Event6, date: "12/08/2024", role: "Participant", location: "Colombo, Sri Lanka", type: "Conference", title: "Google Devfest 2024", description:"Attended Devfest Sri Lanka 2024 organized by GDG, an incredible event packed with innovation and learning. Highlights included Rohan Jayaweera on democratizing human ability, Namrata More and Amey Nerkar on AI-driven payment innovations, Sajeetharan Sinnathurai on Angular efficiency, Thushan Ganegedara on LLM capabilities, Rishiraj Acharya on multimodal search with Gemini Vision and RAG, Dhaminda Siriwardena on responsible AI, and Abhishek Doshi on high-performance Flutter web apps with WASM. A day full of insights, practical knowledge, and connections with brilliant minds in tech!" },
+  { id: 2, image: Event7, date: "01/24/2025", role: "Finalist", location: "Colombo, Sri Lanka", type: "Competition", title: "Codefest Algothon 2024", description:"I was thrilled to be a finalist in Algothon 2024, part of CODEFEST 2024 organized by SLIIT, ranking 11th out of nearly 170 teams. The competition tested our skills through multiple challenging rounds, including an algorithm knowledge quiz and solving a complex logistics problem to determine the shortest delivery paths. Working alongside my teammates, Hariswara Sidambaram and Imadh Ifham, was an incredible experience, and I’m grateful to the organizers for providing such an inspiring platform. Participating in Algothon strengthened my abilities in algorithm development, problem-solving, and optimization, leaving me motivated to tackle future challenges." },
   //{ id: 3, image: Event3, type: "Workshops", title: "Workshop A" ,description:""},
-  { id: 4, image: Event4, date: "09/29/2025", role: "Participant", location: "Colombo, Sri Lanka", type: "Conference", title: "iCIIT Conclave 2025", description:"Attended iCIIT Conclave 2025, a day of cutting-edge insights and inspiring discussions on AI, technology, and digital transformation in Sri Lanka. Highlights included Dr. Hans Wijayasuriya on accelerating the digital economy, Prof. Kerstin Bach on interpretable and sustainable AI, Prof. Emanuele Trucco on AI in precision medicine, and sessions on agentic AI, efficient LLM systems, and sustainable AI practices. The conclave offered a deep dive into practical AI applications, scalable solutions, and the future of technology." },
+  { id: 4, image: Event4, date: "06/04/2025", role: "Participant", location: "Colombo, Sri Lanka", type: "Conference", title: "iCIIT Conclave 2025", description:"Attended iCIIT Conclave 2025, a day of cutting-edge insights and inspiring discussions on AI, technology, and digital transformation in Sri Lanka. Highlights included Dr. Hans Wijayasuriya on accelerating the digital economy, Prof. Kerstin Bach on interpretable and sustainable AI, Prof. Emanuele Trucco on AI in precision medicine, and sessions on agentic AI, efficient LLM systems, and sustainable AI practices. The conclave offered a deep dive into practical AI applications, scalable solutions, and the future of technology." },
   
 ];
 
@@ -294,14 +294,14 @@ const EventsClientWrapper = () => {
             <p className="text-[38px] sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Journey Through Events</p>
           </div>
           
-          <div className="flex flex-row items-center space-y-0 space-x-3 bg-gray-300 px-4 py-3 rounded-full mt-6 max-w-full">
+          <div className="flex flex-row items-center space-y-0 space-x-3 bg-[#1D1D1D]  px-4 py-3 rounded-full mt-6 max-w-full">
   {["All", "Conference", "Competitions"].map((type) => (
     <div
       key={type}
       className={`px-5 py-2 cursor-pointer transition-colors duration-200 ${
         filter === type
-          ? "bg-white text-black shadow-md"
-          : "bg-gray-200 text-gray-700 hover:bg-gray-400 hover:text-black"
+          ? "bg-[#101010] ring-[0.5px] ring-[#808080] text-white shadow-md"
+          : "bg-gray-200 text-gray-600 hover:bg-[#808080] hover:text-black"
       } rounded-full flex-shrink-0`}
       onClick={() => handleFilter(type)}
     >
