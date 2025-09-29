@@ -176,7 +176,7 @@ const Max = () => {
                 </div>
 
                 {/* Messages Container - Mobile optimized scrolling */}
-                {!messageSubmitted ? (
+                {messageSubmitted ? (
                     <div
                         className="flex flex-col flex-1 overflow-y-auto py-4 ring-[1px] ring-[#373435] px-3 sm:px-5 bg-[#101010] scrollbar scrollbar-thin scrollbar-thumb-blue-500 scrollbar-track-gray-800 safe-area-content"
                         ref={scrollContainerRef}
