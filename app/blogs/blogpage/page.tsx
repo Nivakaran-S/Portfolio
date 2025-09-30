@@ -91,7 +91,7 @@ const BlogContent = () => {
       {/* Hero Section */}
       <div>
         <StarBackground />
-        <div className="min-h-[80vh] 2xl:min-h-[80vh] lg:min-h-[100vh]  sm:min-h-[100vh] flex items-end justify-center px-4 pb-[20px] sm:px-6 lg:px-8">
+        <div className="min-h-[80vh]  2xl:min-h-[100vh] lg:min-h-[100vh] xl:min-h-[100vh]  sm:min-h-[100vh] flex items-end justify-center px-4 pb-[20px] sm:px-6 lg:px-8">
           <div className="w-full 2xl:w-[1200px] max-w-6xl flex flex-col justify-end py-10 sm:py-7">
             <h1 className="text-3xl sm:text-4xl md:text-xl lg:text-6xl w-full sm:w-[90%] lg:leading-[67px] text-white font-bold">
               {blog?.title || 'Loading...'}
