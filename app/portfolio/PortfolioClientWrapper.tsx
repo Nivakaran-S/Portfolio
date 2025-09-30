@@ -273,7 +273,7 @@ const PortfolioCLientWrapper = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#101010]   w-[100vw]  overflow-x-hidden py-[15vh]  flex flex-col items-center justify-center">
+      <div className="bg-[#101010]  min-h-[100vh] w-[100vw]  overflow-x-hidden py-[15vh]  flex flex-col items-center ">
         
         <div className="w-[93%]  2xl:w-[1200px]  sm:w-[80%]">
           <div className="portfolio1 leading-[50px] sm:leading-[58px]  md:leading-[66px] text-center">
@@ -290,8 +290,8 @@ const PortfolioCLientWrapper = () => {
             </div>
           )}
           {isLoading ? (
-            <div className="flex justify-center items-center h-64">
-              <div className="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-blue-600"></div>
+            <div className="flex items-center justify-center h-[50vh] text-white">
+              <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-gray-200 border-solid"></div>
             </div>
           ) : projects.length === 0 && miniProjects.length === 0 ? (
             <p className="text-gray-500 italic text-center mt-6">No projects or mini projects found.</p>

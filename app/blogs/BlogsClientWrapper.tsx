@@ -68,6 +68,7 @@ const BlogsClientWrapper = () => {
     const [onCaseStudyClick, setOnCaseStudyClick] = useState(false);
     const [selectedCaseStudy, setSelectedCaseStudy] = useState<CaseStudy | null>(null);
     const [scrollPosition, setScrollPosition] = useState(0);
+    const [blogsLoading, setBlogsLoading] = useState<boolean>(true);
 
     useEffect(() => {
         const fetchCaseStudies = async () => {
@@ -122,8 +123,10 @@ const BlogsClientWrapper = () => {
             setAgenticAIBlogs(blogs.filter((blog: BlogPost) => blog.blogsCategory === "688c1ae9602363e313f55ca4"));
             setDataEngineeringBlogs(blogs.filter((blog: BlogPost) => blog.blogsCategory === "6890aab8b6f6853a5ed65479"));
             setBehindScenesBlogs(blogs.filter((blog: BlogPost) => blog.blogsCategory === "6891ab75794ad168dc130ef5"));
+            setBlogsLoading(false)
         } catch (error) {
             console.error("Failed to fetch blogs:", error);
+            setBlogsLoading(false)
         }
     };
 
@@ -363,6 +366,11 @@ const BlogsClientWrapper = () => {
                         <p className="text-[45px] sm:text-[55px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">with Latest Insights</p>
                     </div>
 
+                    {blogsLoading ? 
+                    <div className="flex items-center justify-center h-screen bg-[#0A0A0A] text-white">
+                        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-gray-200 border-solid"></div>
+                    </div> :
+                        <div>
                     {dataScienceBlogs.length > 0 && (
                         <>
                             <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Data Science</p>
@@ -476,11 +484,17 @@ const BlogsClientWrapper = () => {
                             </div>
                         </>
                     )}
+                    </div>
+                    }
 
                     <div className="w-[95%] sm:w-[100%] mt-[40px] flex items-center justify-center">
                         <div className="flex flex-col items-center justify-center w-full">
                             <p className="text-[40px] sm:text-[50px]  font-bold w-full text-center">Case Studies</p>
-                            <div className="grid  px-[15px] md:px-[85px] lg:grid-cols-2 gap-[25px] sm:gap-[30px] items-center justify-center mt-[30px]">
+                            {loading ? 
+                                <div className="flex items-center justify-center h-[50vh] text-white">
+                                    <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-gray-200 border-solid"></div>
+                                </div>
+                            :<div className="grid  px-[15px] md:px-[85px] lg:grid-cols-2 gap-[25px] sm:gap-[30px] items-center justify-center mt-[30px]">
                                 {caseStudies.map((caseStudy) => (
                                     <CaseStudyCard
                                         imageUrl={caseStudy.imageUrl}
@@ -490,7 +504,7 @@ const BlogsClientWrapper = () => {
                                         onClick={onCaseStudyCardClick(caseStudy)}
                                     />
                                 ))}
-                            </div>
+                            </div>}
                         </div>
                     </div>
                 </div>
