@@ -280,7 +280,10 @@ const PortfolioCLientWrapper = () => {
             <p className="text-[45px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Explore the</p>
             <p className="text-[38px] sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Development Journey</p>
           </div>
-          <p className="mt-[30px]">Please click on any project to explore a detailed overview.</p>
+          <p className="mt-[30px]">Please click on any project to explore a detailed overview. </p>
+          <div className="text-[14px] py-[10px] px-[20px] bg-[#1D1D1D] rounded-[5px] mt-[10px] ring-[0.5px] ring-[#808080]">
+            <p>Please note that while some applications are mobile-friendly, others are not yet fully optimized for mobile devices.</p>
+          </div>
           {error && (
             <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded-lg flex items-center mt-6">
               <svg className="h-5 w-5 text-red-500 mr-2" fill="currentColor" viewBox="0 0 20 20">
@@ -300,8 +303,10 @@ const PortfolioCLientWrapper = () => {
               {/* Software Engineering Section */}
               <div className="mt-[30px] 2xl:w-[100%]  flex flex-col items-center sm:w-[80vw]">
                 <p className="portfolio2  sm:w-[70vw] 2xl:w-[1200px]  sm:ml-[10px] font-bold text-[38px] sm:text-[45px]">Software Engineering</p>
+                
                 {/* Main Projects */}
                 <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center lg:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
+                  
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Software Engineering')
                     .map((project) => {
