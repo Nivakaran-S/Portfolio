@@ -115,7 +115,7 @@ const Max = () => {
         setMax(!max);
         // Prevent body scroll when chat is open on mobile
         if (!max) {
-            document.body.style.overflow = 'hidden';
+            document.body.style.overflowY = 'scroll';
         } else {
             document.body.style.overflow = 'unset';
         }
@@ -206,7 +206,7 @@ const Max = () => {
                             ))}
                         {typing === true ? (
                             <div className="flex py-[10px] items-center justify-start mb-3">
-                                <div className=" rounded-lg p-3 flex justify-center items-center ">
+                                <div className=" rounded-lg p-3 flex h-[50px] justify-center items-center ">
                                     <span className="loader"></span>
                                 </div>
                             </div>
