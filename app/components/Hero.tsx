@@ -30,7 +30,7 @@ const Hero = () => {
         visible: {
             y: 0,
             opacity: 1,
-            transition: { duration: 0.8, ease: "easeOut" },
+            transition: { duration: 0.8, ease: "easeOut" as const },
         },
     };
 
@@ -40,7 +40,7 @@ const Hero = () => {
             transition: {
                 duration: 4,
                 repeat: Infinity,
-                ease: "easeInOut",
+                ease: "easeInOut" as const,
             },
         },
     };

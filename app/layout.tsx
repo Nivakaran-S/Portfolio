@@ -74,9 +74,7 @@ export const metadata: Metadata = {
       'en-US': 'https://nivakaran.dev',
     },
   },
-  verification: {
-    google: "your-google-verification-code-here", // Add your Google verification code
-  },
+  // Note: Domain verified via DNS in Google Search Console
   category: 'technology',
   formatDetection: {
     email: false,
