@@ -135,14 +135,14 @@ const About = () => {
 
 
     return (
-        <div id="about" ref={counterRef} className="bg-[#101010]  min-h-[110vh] xl:min-h-[81vh] w-screen flex flex-col items-center py-[115px] ">
-            <div className="w-[80%] 2xl:w-[1200px] flex  flex-col   ">
-                <div className="about1 text-[40px] leading-[50px]">
-                    <p className="text-[24.72px] sm:text-[35px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Turning Ideas into Intelligent</p>
+        <div id="about" ref={counterRef} className="bg-[#101010]  min-h-[100vh] xl:min-h-[81vh] w-screen flex flex-col items-center py-[60px] sm:py-[115px] ">
+            <div className="w-[93%] sm:w-[80%] 2xl:w-[1200px] flex  flex-col   ">
+                <div className="about1 text-[32px] sm:text-[40px] leading-[40px] sm:leading-[50px]">
+                    <p className="text-[24px] sm:text-[35px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Turning Ideas into Intelligent</p>
                     <p className="text-[35px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent leading-[43px] sm:leading-[55px] font-bold sm:text-[48px]">Scalable, and Impactful Digital Solutions</p>
                 </div>
-                <div className="w-[90%] sm:w-[60%] mt-[10px]">
-                    <p className="about2 w-full sm:w-[170%] sm:text-left text-[15.27px]">I'm currently pursuing a B.Sc in Information Technology, at
+                <div className="w-full sm:w-[60%] mt-[10px]">
+                    <p className="about2 w-full sm:text-left text-[15.27px]">I'm currently pursuing a B.Sc in Information Technology, at
                         Sri Lanka Institute of Information Technology(SLIIT). I am passionate about data science,
                         software engineering, and AI, constantly exploring innovative solutions and building Impactful
                         solutions.
@@ -152,16 +152,16 @@ const About = () => {
                         <PrimaryBtn text="Learn more" onClick={onLearnMoreClick} />
                     </div>
                 </div>
-                <div className="about4 flex flex-row justify-center space-x-[40px] sm:space-x-[80px] mt-[75px]">
+                <div className="about4 flex flex-row justify-center space-x-[40px] sm:space-x-[80px] mt-[50px] sm:mt-[75px]">
                     <div className="text-center flex leading-[100px] sm:leading-[155px] flex-col items-center">
                         <p className="text-[80px] sm:text-[140px] lg:text-[169.43px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">{count}+</p>
-                        <div className="text-[18px] sm:text-[24.72px] leading-[22px] sm:leading-[30px] w-[50%] text-center  ">
+                        <div className="text-[18px] sm:text-[24.72px] leading-[22px] sm:leading-[30px] w-[80%] sm:w-[50%] text-center  ">
                             <p>Projects Completed</p>
                         </div>
                     </div>
                     <div className="text-center flex leading-[100px] sm:leading-[155px] flex-col items-center">
                         <p className="text-[80px] sm:text-[140px] lg:text-[169.43px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">{experience}+</p>
-                        <div className="text-[18px] sm:text-[24.72px] leading-[22px] sm:leading-[30px] w-[60%] text-center  ">
+                        <div className="text-[18px] sm:text-[24.72px] leading-[22px] sm:leading-[30px] w-[80%] sm:w-[60%] text-center  ">
                             <p>Years Experience</p>
                         </div>
                     </div>
