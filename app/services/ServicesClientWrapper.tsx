@@ -45,100 +45,100 @@ import StarBackground from "../components/StarBackground";
 
 
 const ServicesClientWrapper = () => {
-    const [showContactModel, setShowContactModel] = useState(false);
-      const [navSelection, setNavSelection] = useState('Services');
+  const [showContactModel, setShowContactModel] = useState(false);
+  const [navSelection, setNavSelection] = useState('Services');
 
-       const [showMessageSuccess, setShowMessageSuccess] = useState(false);
-      
-         const onMessageSuccess = () => {
-          setShowMessageSuccess(true);
-          setTimeout(() => {
-            setShowMessageSuccess(false);
-          }, 3000);
-        };
-    
-    const onContactClick = () => {
-      setShowContactModel(!showContactModel);
-    }
+  const [showMessageSuccess, setShowMessageSuccess] = useState(false);
+
+  const onMessageSuccess = () => {
+    setShowMessageSuccess(true);
+    setTimeout(() => {
+      setShowMessageSuccess(false);
+    }, 3000);
+  };
+
+  const onContactClick = () => {
+    setShowContactModel(!showContactModel);
+  }
 
 
 
-      
-      useEffect(() => {
-        if(typeof window !== 'undefined'){
-            import('scrollreveal').then((ScrollReveal) => { 
-                ScrollReveal.default().reveal('.serviceTitle1', {
-                origin: 'left',
-                distance: '40px',
-                duration: 800,
-                delay: 400,
-                easing: 'ease-in-out',
-                reset: false
-            })
-        })
-        }
-    }, [])
-
-    useEffect(() => {
-      if(typeof window !== 'undefined'){
-          import('scrollreveal').then((ScrollReveal) => { 
-              ScrollReveal.default().reveal('.serviceTitle2', {
-              origin: 'bottom',
-              distance: '40px',
-              duration: 800,
-              delay: 600,
-              easing: 'ease-in-out',
-              reset: false
-          })
-      })
-      }
-  }, [])
 
   useEffect(() => {
-    if(typeof window !== 'undefined'){
-        import('scrollreveal').then((ScrollReveal) => { 
-            ScrollReveal.default().reveal('.serviceTitle3', {
-            origin: 'bottom',
-            distance: '40px',
-            duration: 800,
-            delay: 800,
-            easing: 'ease-in-out',
-            reset: false
-        })
-    })
-    }
-}, [])
-
-
-useEffect(() => {
-  if(typeof window !== 'undefined'){
-      import('scrollreveal').then((ScrollReveal) => { 
-          ScrollReveal.default().reveal('.serviceLeft', {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
+        ScrollReveal.default().reveal('.serviceTitle1', {
           origin: 'left',
           distance: '40px',
           duration: 800,
           delay: 400,
           easing: 'ease-in-out',
           reset: false
+        })
       })
-  })
-  }
-}, [])
+    }
+  }, [])
 
-useEffect(() => {
-  if(typeof window !== 'undefined'){
-      import('scrollreveal').then((ScrollReveal) => { 
-          ScrollReveal.default().reveal('.serviceRight', {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
+        ScrollReveal.default().reveal('.serviceTitle2', {
+          origin: 'bottom',
+          distance: '40px',
+          duration: 800,
+          delay: 600,
+          easing: 'ease-in-out',
+          reset: false
+        })
+      })
+    }
+  }, [])
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
+        ScrollReveal.default().reveal('.serviceTitle3', {
+          origin: 'bottom',
+          distance: '40px',
+          duration: 800,
+          delay: 800,
+          easing: 'ease-in-out',
+          reset: false
+        })
+      })
+    }
+  }, [])
+
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
+        ScrollReveal.default().reveal('.serviceLeft', {
+          origin: 'left',
+          distance: '40px',
+          duration: 800,
+          delay: 400,
+          easing: 'ease-in-out',
+          reset: false
+        })
+      })
+    }
+  }, [])
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
+        ScrollReveal.default().reveal('.serviceRight', {
           origin: 'right',
           distance: '40px',
           duration: 800,
           delay: 400,
           easing: 'ease-in-out',
           reset: false
+        })
       })
-  })
-  }
-}, [])
+    }
+  }, [])
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -216,208 +216,208 @@ useEffect(() => {
     }
   }, [])
 
-    return(
-        <div className="flex text-white w-[100%] overflow-x-hidden flex-col"> 
-            <Navigation navSelection={navSelection} onContactClick={onContactClick}/>
-            <ContactModel onMessageSuccess={onMessageSuccess} showContactModel={showContactModel} onContactClick={onContactClick}/>
-            <div>
-              <StarBackground/>
-              <div className="text-white  bg-contain bg-no-repeat bg-center  sm:space-y-[30px]  px-[10vw] flex flex-col items-center justify-center sm:pt-[20vh] min-h-[100vh]">
-                <div className="w-[100vw]  text-center leading-[60px] sm:leading-[70px] h-[100%]">
-                  <p className=" text-[40px] sm:text-[50px] md:text-[60px] aboutText4 aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Discover the</p>
-                  <p className=" text-[65px] sm:text-[75px] md:text-[80px] aboutTitle2 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Service Provided</p>
-                </div>
-                <div className="w-[100%] md:w-[50%] text-center h-[10px] sm:h-[160px]">
+  return (
+    <div className="flex text-white w-[100%] overflow-x-hidden flex-col">
+      <Navigation navSelection={navSelection} onContactClick={onContactClick} />
+      <ContactModel onMessageSuccess={onMessageSuccess} showContactModel={showContactModel} onContactClick={onContactClick} />
+      <div>
+        <StarBackground />
+        <div className="text-white  bg-contain bg-no-repeat bg-center  sm:space-y-[30px]  px-[10vw] flex flex-col items-center justify-center sm:pt-[20vh] min-h-[100vh]">
+          <div className="w-[100vw]  text-center leading-[60px] sm:leading-[70px] h-[100%]">
+            <p className=" text-[40px] sm:text-[50px] md:text-[60px] aboutText4 aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Discover the</p>
+            <p className=" text-[45px] sm:text-[75px] md:text-[80px] aboutTitle2 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent" >Service Provided</p>
+          </div>
+          <div className="w-[100%] md:w-[50%] text-center h-[10px] sm:h-[160px]">
 
-                </div>
-                <div className="w-[100%]  md:w-[50%] text-center ">
-                  <p className=" aboutTitle3">Welcome to the heart of what I do.</p>
-                </div>
+          </div>
+          <div className="w-[100%]  md:w-[50%] text-center ">
+            <p className=" aboutTitle3">Welcome to the heart of what I do.</p>
+          </div>
+        </div>
+      </div>
+
+      <div className="flex bg-[#101010] py-[70px] flex-col md:flex-row items-center  justify-center 2xl:min-h-[48vh] min-h-[60vh]">
+        <div className="flex flex-col lg:flex-row items-center w-[80%] 2xl:w-[1200px]">
+          <div className="md:w-[60%] mb-[20px] md:mb-[0px] h-[100%]">
+
+            <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[70px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Web Development</p>
+
+          </div>
+          <div className="md:w-[60%] serviceLeft flex flex-col items-start h-[100%]">
+            <p className="md:w-[90%]">Crafting responsive, high-performance, and visually striking websites using latest technologies. From landing pages to complex web apps, I build scalable solutions optimized for speed and usability.</p>
+            <div className="md:w-[80%] mt-[20px]">
+              <p>Tools used </p>
+              <div className=" grid grid-cols-3 sm:grid-cols-5 gap-3 flex-row items-center  space-x-[13px] mt-[10px]">
+                <Image alt="" src={NextImage} height={50} width={50} />
+                <Image alt="" src={ReactImage} height={50} width={50} />
+                <Image alt="" src={ReduxImage} height={50} width={50} />
+                <Image alt="" src={MongoDbImage} height={50} width={50} />
+                <Image alt="" src={PostgresqlImage} height={50} width={50} />
+                <Image alt="" src={MysqlImage} height={50} width={50} />
+                <Image alt="" src={FirebaseImage} height={100} width={100} />
+                <Image alt="" src={DjangoImage} height={50} width={50} />
+                <Image alt="" src={FlaskImage} className="bg-white px-[5px] py-[5px] rounded-[5px] " height={80} width={80} />
+
+
               </div>
             </div>
-
-            <div className="flex bg-[#101010] py-[70px] flex-col md:flex-row items-center  justify-center 2xl:min-h-[48vh] min-h-[60vh]">
-                <div className="flex flex-col lg:flex-row items-center w-[80%] 2xl:w-[1200px]">
-                <div className="md:w-[60%] mb-[20px] md:mb-[0px] h-[100%]">
-                    
-                      <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[70px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Web Development</p>
-
-                </div>
-                <div className="md:w-[60%] serviceLeft flex flex-col items-start h-[100%]">
-                  <p className="md:w-[90%]">Crafting responsive, high-performance, and visually striking websites using latest technologies. From landing pages to complex web apps, I build scalable solutions optimized for speed and usability.</p>
-                  <div className="md:w-[80%] mt-[20px]">
-                    <p>Tools used </p>
-                    <div className=" grid grid-cols-5 gap-3 flex-row items-center  space-x-[13px] mt-[10px]">
-                      <Image alt="" src={NextImage} height={50} width={50}/>
-                      <Image alt="" src={ReactImage} height={50} width={50}/>
-                      <Image alt="" src={ReduxImage} height={50} width={50}/>
-                      <Image alt="" src={MongoDbImage} height={50} width={50}/>
-                      <Image alt="" src={PostgresqlImage} height={50} width={50}/>
-                      <Image alt="" src={MysqlImage} height={50} width={50}/>
-                      <Image alt="" src={FirebaseImage} height={100} width={100}/>
-                      <Image alt="" src={DjangoImage} height={50} width={50}/>
-                      <Image alt="" src={FlaskImage} className="bg-white px-[5px] py-[5px] rounded-[5px] " height={80} width={80}/>
-                      
-                      
-                    </div>
-                  </div>
-                </div>
-                </div>
-            </div>
-
-            
-            
-            <div className="flex bg-[#000] py-[70px] flex-col md:flex-row items-center  justify-center 2xl:min-h-[48vh] min-h-[60vh]">
-                <div className="flex flex-col lg:flex-row items-center w-[80%] 2xl:w-[1200px]">
-                <div className="md:w-[60%] mb-[20px] md:mb-[0px] h-[100%]">
-                  <p className="md:w-[80%]">Delivering sleek, intuitive, and cross-platform mobile experiences. Whether it's iOS, Android, or both, I build mobile apps that users love.</p>
-                  <div className="md:w-[80%] mt-[20px]">
-                    <p>Tech stack</p>
-                    <div className="flex flex-row items-center  space-x-[13px] mt-[10px]">
-                      <Image alt="" src={KotlinImage} height={50} width={50}/>
-                      <Image alt="" src={ReactNativeImage} height={50} width={50}/>
-                      
-                      
-                    </div>
-                  </div>
-                </div>
-                <div className="md:w-[40%] mt-[20px] mt-[0px] h-[100%]">
-                    
-                      <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[60px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Mobile Application Development</p>
-
-                </div>
-                </div>
-            </div>
-
-            <div className="flex bg-[#101010] py-[70px] flex-col md:flex-row items-center  justify-center 2xl:min-h-[48vh] min-h-[60vh]">
-                <div className="flex flex-col lg:flex-row items-center w-[80%] 2xl:w-[1200px]">
-                <div className="md:w-[60%] mb-[20px] md:mb-[0px] h-[100%]">
-                      <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[70px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">UI/UX Designing </p>
-
-                </div>
-                <div className="md:w-[60%] serviceLeft flex flex-col items-start h-[100%]">
-                  <p className="md:w-[90%]">Designing user-first interfaces that are both beautiful and functional. I focus on seamless user experiences, intuitive navigation, and design systems that bring your brand to life.</p>
-                  <div className="md:w-[80%] mt-[20px]">
-                    <p>Tools used </p>
-                    <div className="flex flex-row items-center  space-x-[13px] mt-[10px]">
-                      <Image alt="" src={FigmaImage} height={50} width={50}/>
-                      <Image alt="" src={PhotoshopImage} height={50} width={50}/>
-                      <Image alt="" src={CorelDrawImage} height={50} width={50}/>
-                      
-                      
-                    </div>
-                  </div>
-                </div>
-                </div>
-                
-            </div>
-            <div className="flex bg-[#000] py-[70px] flex-col md:flex-row items-center  justify-center 2xl:min-h-[48vh] min-h-[60vh]">
-                <div className="flex flex-col lg:flex-row items-center w-[80%] 2xl:w-[1200px]">
-                <div className="md:w-[60%] mb-[20px] md:mb-[0px] h-[100%]"><p className="md:w-[80%]">Solving real-world problems with tailor-made software solutions. From internal tools to full scale system, I develop software that fits your workflows and scales with your business.</p>
-                  <div className="md:w-[80%] mt-[20px]">
-                    <p>Tech stack</p>
-                    <div className="flex flex-row items-center  space-x-[13px] mt-[10px]">
-                      <Image alt="" src={JavaImage} height={50} width={50}/>
-                      <Image alt="" src={Langgraph} height={50} width={50}/>
-                      
-                      
-                    </div>
-                  </div>
-                </div>
-                <div className="md:w-[40%] mt-[20px] mt-[0px] h-[100%]">
-                    
-                      <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[60px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Custom Software Development</p>
-
-                </div>
-                </div>
-            </div>
-            <div className="flex bg-[#101010] py-[70px] flex-col md:flex-row items-center  justify-center 2xl:min-h-[48vh] min-h-[60vh]">
-                <div className="flex flex-col lg:flex-row items-center w-[80%] 2xl:w-[1200px]">
-                <div className="md:w-[60%] mb-[20px] md:mb-[0px] h-[100%]">
-                  <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[70px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Data Analysis & Visualization</p>
-
-                </div>
-                <div className="md:w-[60%] serviceLeft flex flex-col items-start h-[100%]">
-                  <p className="md:w-[90%]">Unlocking insights from your data through analysis and compelling visual storytelling. I turn raw numbers into meaningful narratives that guide decision making.</p>
-                  <div className="md:w-[80%] mt-[20px]">
-                    <p>Tools used </p>
-                    <div className="flex flex-row items-center  space-x-[13px] mt-[10px]">
-                      <Image alt="" src={ScikitlearnImage} height={50} width={50}/>
-                      <Image alt="" src={Langgraph} height={50} width={50}/>
-                      <Image alt="" src={MatplotlibImage} height={50} width={50}/>
-                      <Image alt="" src={RImage} height={50} width={50}/>
-                      
-                      
-                    </div>
-                  </div>
-                </div>
-                </div>
-                
-            </div>
-
-            <div className="flex bg-[#000] py-[70px] flex-col md:flex-row items-center  justify-center 2xl:min-h-[48vh] min-h-[60vh]">
-                <div className="flex flex-col lg:flex-row items-center w-[80%] 2xl:w-[1200px]">
-                <div className="md:w-[60%] mb-[20px] md:mb-[0px] h-[100%]">
-                  <p className="md:w-[80%]">Designing and training intelligent systems that can learn from data and make predictions or classifications.</p>
-                  <p className="md:w-[80%]">Use cases: Recommendation systems, fraud detection, customer segmentation</p>
-                  <div className="md:w-[80%] mt-[20px]">
-                    <p>Tech stack</p>
-                    <div className="grid grid-cols-6 gap-3 sm:flex flex-row items-center  space-x-[13px] mt-[10px]">
-                      <Image alt="" src={HuggingFaceImage} height={50} width={50}/>
-                      <Image alt="" src={FlaskImage} className="bg-white px-[5px] py-[5px] rounded-[5px] " height={80} width={80}/>
-                      <Image alt="" src={DockerImage} height={50} width={50}/>
-                      <Image alt="" src={GradioImage} height={50} width={50}/>
-                      <Image alt="" src={PytorchImage} height={50} width={50}/>
-                      <Image alt="" src={TensorFlowImage} height={50} width={50}/>
-                      <Image alt="" src={GradioImage} height={50} width={50}/>
-                      
-                      
-                    </div>
-                  </div>
-                </div>
-                <div className="md:w-[40%] mt-[20px] mt-[0px] h-[100%]">
-                    
-                      <p className=" text-[46px] sm:text-[60px] text-center md:text-left serviceRight leading-[52px] sm:leading-[66px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Building Machine Learning Models</p>
-
-                </div>
-                </div>
-            </div>
-            
-            <div className="flex bg-[#101010] py-[70px] flex-col md:flex-row items-center  justify-center 2xl:min-h-[48vh] min-h-[60vh]">
-                <div className="flex flex-col lg:flex-row items-center w-[80%] 2xl:w-[1200px]">
-                <div className="md:w-[60%] mb-[20px] md:mb-[0px] h-[100%]">
-                  <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[70px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">AI Agent Development</p>
-
-                </div>
-                <div className="md:w-[60%]  serviceLeft flex flex-col items-start h-[100%]">
-                  <p className="md:w-[90%]">Developing custom AI agents for workflows with natural language processing, computer vision and conversational agents.</p>
-                  <p className="md:w-[80%]">Use cases: Chatbots</p>
-                  <div className="md:w-[80%] mt-[20px]">
-                    <p>Tools used </p>
-                    <div className="flex flex-row items-center  space-x-[13px] mt-[10px]">
-                      <Image alt="" src={Langchain} height={80} width={80}/>
-                      <Image alt="" src={LanggraphImage} height={100} width={100}/>
-                      <Image alt="" src={Langgraph} height={50} width={50}/>
-                      
-                      
-                    </div>
-                  </div>
-                </div>
-                </div>
-                
-            </div>
-            
-
-            
-
-            
-            
-            <Top/> 
-   
-            <Contact onContactClick={onContactClick}/>
-            <Footer/>
+          </div>
         </div>
-    )
+      </div>
+
+
+
+      <div className="flex bg-[#000] py-[70px] flex-col md:flex-row items-center  justify-center 2xl:min-h-[48vh] min-h-[60vh]">
+        <div className="flex flex-col lg:flex-row items-center w-[80%] 2xl:w-[1200px]">
+          <div className="md:w-[60%] mb-[20px] md:mb-[0px] h-[100%]">
+            <p className="md:w-[80%]">Delivering sleek, intuitive, and cross-platform mobile experiences. Whether it's iOS, Android, or both, I build mobile apps that users love.</p>
+            <div className="md:w-[80%] mt-[20px]">
+              <p>Tech stack</p>
+              <div className="flex flex-row items-center  space-x-[13px] mt-[10px]">
+                <Image alt="" src={KotlinImage} height={50} width={50} />
+                <Image alt="" src={ReactNativeImage} height={50} width={50} />
+
+
+              </div>
+            </div>
+          </div>
+          <div className="md:w-[40%] mt-[20px] mt-[0px] h-[100%]">
+
+            <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[60px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Mobile Application Development</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div className="flex bg-[#101010] py-[70px] flex-col md:flex-row items-center  justify-center 2xl:min-h-[48vh] min-h-[60vh]">
+        <div className="flex flex-col lg:flex-row items-center w-[80%] 2xl:w-[1200px]">
+          <div className="md:w-[60%] mb-[20px] md:mb-[0px] h-[100%]">
+            <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[70px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">UI/UX Designing </p>
+
+          </div>
+          <div className="md:w-[60%] serviceLeft flex flex-col items-start h-[100%]">
+            <p className="md:w-[90%]">Designing user-first interfaces that are both beautiful and functional. I focus on seamless user experiences, intuitive navigation, and design systems that bring your brand to life.</p>
+            <div className="md:w-[80%] mt-[20px]">
+              <p>Tools used </p>
+              <div className="flex flex-row items-center  space-x-[13px] mt-[10px]">
+                <Image alt="" src={FigmaImage} height={50} width={50} />
+                <Image alt="" src={PhotoshopImage} height={50} width={50} />
+                <Image alt="" src={CorelDrawImage} height={50} width={50} />
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <div className="flex bg-[#000] py-[70px] flex-col md:flex-row items-center  justify-center 2xl:min-h-[48vh] min-h-[60vh]">
+        <div className="flex flex-col lg:flex-row items-center w-[80%] 2xl:w-[1200px]">
+          <div className="md:w-[60%] mb-[20px] md:mb-[0px] h-[100%]"><p className="md:w-[80%]">Solving real-world problems with tailor-made software solutions. From internal tools to full scale system, I develop software that fits your workflows and scales with your business.</p>
+            <div className="md:w-[80%] mt-[20px]">
+              <p>Tech stack</p>
+              <div className="flex flex-row items-center  space-x-[13px] mt-[10px]">
+                <Image alt="" src={JavaImage} height={50} width={50} />
+                <Image alt="" src={Langgraph} height={50} width={50} />
+
+
+              </div>
+            </div>
+          </div>
+          <div className="md:w-[40%] mt-[20px] mt-[0px] h-[100%]">
+
+            <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[60px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Custom Software Development</p>
+
+          </div>
+        </div>
+      </div>
+      <div className="flex bg-[#101010] py-[70px] flex-col md:flex-row items-center  justify-center 2xl:min-h-[48vh] min-h-[60vh]">
+        <div className="flex flex-col lg:flex-row items-center w-[80%] 2xl:w-[1200px]">
+          <div className="md:w-[60%] mb-[20px] md:mb-[0px] h-[100%]">
+            <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[70px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Data Analysis & Visualization</p>
+
+          </div>
+          <div className="md:w-[60%] serviceLeft flex flex-col items-start h-[100%]">
+            <p className="md:w-[90%]">Unlocking insights from your data through analysis and compelling visual storytelling. I turn raw numbers into meaningful narratives that guide decision making.</p>
+            <div className="md:w-[80%] mt-[20px]">
+              <p>Tools used </p>
+              <div className="flex flex-row items-center  space-x-[13px] mt-[10px]">
+                <Image alt="" src={ScikitlearnImage} height={50} width={50} />
+                <Image alt="" src={Langgraph} height={50} width={50} />
+                <Image alt="" src={MatplotlibImage} height={50} width={50} />
+                <Image alt="" src={RImage} height={50} width={50} />
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div className="flex bg-[#000] py-[70px] flex-col md:flex-row items-center  justify-center 2xl:min-h-[48vh] min-h-[60vh]">
+        <div className="flex flex-col lg:flex-row items-center w-[80%] 2xl:w-[1200px]">
+          <div className="md:w-[60%] mb-[20px] md:mb-[0px] h-[100%]">
+            <p className="md:w-[80%]">Designing and training intelligent systems that can learn from data and make predictions or classifications.</p>
+            <p className="md:w-[80%]">Use cases: Recommendation systems, fraud detection, customer segmentation</p>
+            <div className="md:w-[80%] mt-[20px]">
+              <p>Tech stack</p>
+              <div className="grid grid-cols-6 gap-3 sm:flex flex-row items-center  space-x-[13px] mt-[10px]">
+                <Image alt="" src={HuggingFaceImage} height={50} width={50} />
+                <Image alt="" src={FlaskImage} className="bg-white px-[5px] py-[5px] rounded-[5px] " height={80} width={80} />
+                <Image alt="" src={DockerImage} height={50} width={50} />
+                <Image alt="" src={GradioImage} height={50} width={50} />
+                <Image alt="" src={PytorchImage} height={50} width={50} />
+                <Image alt="" src={TensorFlowImage} height={50} width={50} />
+                <Image alt="" src={GradioImage} height={50} width={50} />
+
+
+              </div>
+            </div>
+          </div>
+          <div className="md:w-[40%] mt-[20px] mt-[0px] h-[100%]">
+
+            <p className=" text-[46px] sm:text-[60px] text-center md:text-left serviceRight leading-[52px] sm:leading-[66px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Building Machine Learning Models</p>
+
+          </div>
+        </div>
+      </div>
+
+      <div className="flex bg-[#101010] py-[70px] flex-col md:flex-row items-center  justify-center 2xl:min-h-[48vh] min-h-[60vh]">
+        <div className="flex flex-col lg:flex-row items-center w-[80%] 2xl:w-[1200px]">
+          <div className="md:w-[60%] mb-[20px] md:mb-[0px] h-[100%]">
+            <p className=" text-[45px] sm:text-[60px] text-center md:text-left serviceRight leading-[50px] sm:leading-[70px] font-[600] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">AI Agent Development</p>
+
+          </div>
+          <div className="md:w-[60%]  serviceLeft flex flex-col items-start h-[100%]">
+            <p className="md:w-[90%]">Developing custom AI agents for workflows with natural language processing, computer vision and conversational agents.</p>
+            <p className="md:w-[80%]">Use cases: Chatbots</p>
+            <div className="md:w-[80%] mt-[20px]">
+              <p>Tools used </p>
+              <div className="flex flex-row items-center  space-x-[13px] mt-[10px]">
+                <Image alt="" src={Langchain} height={80} width={80} />
+                <Image alt="" src={LanggraphImage} height={100} width={100} />
+                <Image alt="" src={Langgraph} height={50} width={50} />
+
+
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+
+
+
+
+      <Top />
+
+      <Contact onContactClick={onContactClick} />
+      <Footer />
+    </div>
+  )
 }
 
 export default ServicesClientWrapper

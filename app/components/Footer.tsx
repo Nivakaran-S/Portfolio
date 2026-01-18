@@ -78,11 +78,11 @@ const Footer = () => {
                         I am passionate about data science, software engineering, and AI,
                         constantly exploring innovative solutions and building impactful projects.
                     </p>
-                    <div className="text-[15.27px] ml-[20px] leading-[21px] flex flex-row space-x-[8px] items-center  mt-[20px]">
+                    <div className="text-[15.27px] ml-0 sm:ml-[20px] leading-[21px] flex flex-row space-x-[8px] items-center  mt-[20px]">
                         <Image alt="Phone icon" src={Phone} height={19} />
                         <p>+94 76 0015 755</p>
                     </div>
-                    <div className="text-[15.27px] ml-[20px] leading-[21px] space-x-[8px] flex flex-row items-center  mt-[4px]">
+                    <div className="text-[15.27px] ml-0 sm:ml-[20px] leading-[21px] space-x-[8px] flex flex-row items-center  mt-[4px]">
                         <Image alt="Email icon" src={Mail} height={14} />
                         <p>nivakaran@hotmail.com</p>
                     </div>

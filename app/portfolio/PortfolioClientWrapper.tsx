@@ -265,7 +265,7 @@ const PortfolioCLientWrapper = () => {
         <div className="text-white bg-contain bg-no-repeat bg-center sm:space-y-[30px] px-[10vw] flex flex-col items-center justify-center sm:pt-[20vh] min-h-[100vh]">
           <div className="w-[100%] text-center leading-[71px] sm:leading-[90px] h-[100%]">
             <p className="text-[40px] sm:text-[50px] md:text-[60px] aboutText4 aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] to-[#CAC8C6] bg-clip-text text-transparent">Explore</p>
-            <p className="text-[65px] sm:text-[75px] md:text-[80px] aboutTitle2 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent">My Projects</p>
+            <p className="text-[45px] sm:text-[75px] md:text-[80px] aboutTitle2 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-[600] to-[#CAC8C6] bg-clip-text text-transparent">My Projects</p>
           </div>
           <div className="w-[100%] md:w-[50%] text-center h-[10px] sm:h-[160px]"></div>
           <div className="w-[100%] md:w-[60%] text-center">
@@ -297,16 +297,18 @@ const PortfolioCLientWrapper = () => {
               <div className="skeleton h-[45px] w-[300px] mb-[20px]"></div>
               <div className="grid gap-[25px] grid-cols-1 place-items-center lg:grid-cols-2 mt-[30px]">
                 {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="bg-[#373435] ring-[1px] ring-[#808080] sm:w-[500px] w-[380px] sm:h-[350px] h-[400px] rounded-[20px] overflow-hidden flex flex-col sm:flex-row">
-                    <div className="sm:w-[50%] w-full h-[200px] sm:h-full skeleton"></div>
-                    <div className="sm:w-[70%] w-full h-full bg-[#101010] p-6 flex flex-col justify-center space-y-4">
-                      <div className="skeleton h-[30px] w-[80%]"></div>
-                      <div className="skeleton h-[16px] w-full"></div>
-                      <div className="skeleton h-[16px] w-[90%]"></div>
-                      <div className="skeleton h-[16px] w-[70%]"></div>
-                      <div className="flex space-x-3 mt-4">
-                        <div className="skeleton h-[40px] w-[100px] rounded-full"></div>
-                        <div className="skeleton h-[40px] w-[100px] rounded-[10px]"></div>
+                  <div key={i} className="w-full max-w-[500px]">
+                    <div className="bg-[#373435] ring-[1px] ring-[#808080] w-full max-w-[500px] sm:h-[350px] h-[400px] rounded-[20px] overflow-hidden flex flex-col sm:flex-row">
+                      <div className="sm:w-[50%] w-full h-[200px] sm:h-full skeleton"></div>
+                      <div className="sm:w-[70%] w-full h-full bg-[#101010] p-6 flex flex-col justify-center space-y-4">
+                        <div className="skeleton h-[30px] w-[80%]"></div>
+                        <div className="skeleton h-[16px] w-full"></div>
+                        <div className="skeleton h-[16px] w-[90%]"></div>
+                        <div className="skeleton h-[16px] w-[70%]"></div>
+                        <div className="flex space-x-3 mt-4">
+                          <div className="skeleton h-[40px] w-[100px] rounded-full"></div>
+                          <div className="skeleton h-[40px] w-[100px] rounded-[10px]"></div>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -318,11 +320,11 @@ const PortfolioCLientWrapper = () => {
           ) : (
             <>
               {/* Software Engineering Section */}
-              <div className="mt-[30px] 2xl:w-[100%]  flex flex-col items-center sm:w-[80vw]">
+              <div className="mt-[30px] 2xl:w-[100%]  flex flex-col items-center w-full">
                 <p className="portfolio2  sm:w-[70vw] 2xl:w-[1200px]  sm:ml-[10px] font-bold text-[38px] sm:text-[45px]">Software Engineering</p>
 
                 {/* Main Projects */}
-                <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center lg:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
+                <div className="portfolio2 grid w-[95%] sm:w-[95%] md:w-[85%] grid-cols-1 place-items-center lg:grid-cols-2 gap-[20px] sm:gap-[30px] mt-[30px] sm:items-center justify-center">
 
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Software Engineering')
@@ -369,10 +371,10 @@ const PortfolioCLientWrapper = () => {
               </div>
 
               {/* Data Science Section */}
-              <div className="mt-[30px] 2xl:w-[100%] flex flex-col items-center sm:w-[80vw]">
+              <div className="mt-[30px] 2xl:w-[100%] flex flex-col items-center w-full">
                 <p className="portfolio2 sm:w-[70vw] 2xl:w-[1200px] sm:ml-[10px] font-bold text-[38px] sm:text-[45px]">Data Science</p>
                 {/* Main Projects */}
-                <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center lg:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
+                <div className="portfolio2 grid w-[95%] sm:w-[95%] md:w-[85%] grid-cols-1 place-items-center lg:grid-cols-2 gap-[20px] sm:gap-[30px] mt-[30px] sm:items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Data Science')
                     .map((project) => {
@@ -418,10 +420,10 @@ const PortfolioCLientWrapper = () => {
               </div>
 
               {/* Computer Vision Section */}
-              <div className="mt-[30px] 2xl:w-[100%] flex flex-col items-center sm:w-[80vw]">
+              <div className="mt-[30px] 2xl:w-[100%] flex flex-col items-center w-full">
                 <p className="portfolio2 sm:w-[70vw] sm:ml-[10px] 2xl:w-[1200px] font-bold text-[38px] sm:text-[45px]">Computer Vision</p>
                 {/* Main Projects */}
-                <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center lg:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
+                <div className="portfolio2 grid w-[95%] sm:w-[95%] md:w-[85%] grid-cols-1 place-items-center lg:grid-cols-2 gap-[20px] sm:gap-[30px] mt-[30px] sm:items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Computer Vision')
                     .map((project) => {
@@ -467,10 +469,10 @@ const PortfolioCLientWrapper = () => {
               </div>
 
               {/* Generative AI Section */}
-              <div className="mt-[30px] 2xl:w-[100%] flex flex-col items-center sm:w-[80vw]">
+              <div className="mt-[30px] 2xl:w-[100%] flex flex-col items-center w-full">
                 <p className="portfolio2 sm:w-[70vw] sm:ml-[10px] 2xl:w-[1200px] font-bold text-[38px] sm:text-[45px]">Generative AI</p>
                 {/* Main Projects */}
-                <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center lg:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
+                <div className="portfolio2 grid w-[95%] sm:w-[95%] md:w-[85%] grid-cols-1 place-items-center lg:grid-cols-2 gap-[20px] sm:gap-[30px] mt-[30px] sm:items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Generative AI')
                     .map((project) => {
@@ -517,10 +519,10 @@ const PortfolioCLientWrapper = () => {
               </div>
 
               {/* Agentic AI Section */}
-              <div className="mt-[30px] flex 2xl:w-[100%] flex-col items-center sm:w-[80vw]">
+              <div className="mt-[30px] flex 2xl:w-[100%] flex-col items-center w-full">
                 <p className="portfolio2 sm:w-[70vw] sm:ml-[10px] 2xl:w-[1200px] font-bold text-[38px] sm:text-[45px]">Agentic AI</p>
                 {/* Main Projects */}
-                <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center lg:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
+                <div className="portfolio2 grid w-[95%] sm:w-[95%] md:w-[85%] grid-cols-1 place-items-center lg:grid-cols-2 gap-[20px] sm:gap-[30px] mt-[30px] sm:items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Agentic AI')
                     .map((project) => {
@@ -566,10 +568,10 @@ const PortfolioCLientWrapper = () => {
               </div>
 
               {/* Data Engineering Section  */}
-              <div className="mt-[30px] flex 2xl:w-[100%] flex-col items-center sm:w-[80vw]">
+              <div className="mt-[30px] flex 2xl:w-[100%] flex-col items-center w-full">
                 <p className="portfolio2 sm:w-[70vw] sm:ml-[10px] 2xl:w-[1200px] font-bold text-[38px] sm:text-[45px]">Data Engineering</p>
                 {/* Main Projects */}
-                <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center lg:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
+                <div className="portfolio2 grid w-[95%] sm:w-[95%] md:w-[85%] grid-cols-1 place-items-center lg:grid-cols-2 gap-[20px] sm:gap-[30px] mt-[30px] sm:items-center justify-center">
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Data Engineering')
                     .map((project) => {

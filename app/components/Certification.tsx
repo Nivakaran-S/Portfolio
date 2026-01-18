@@ -78,7 +78,7 @@ const Certification = () => {
                             key={index}
                             variants={cardVariants}
                             whileHover={{ scale: 1.03 }}
-                            className="cursor-pointer relative group bg-[#1D1D1D] overflow-hidden w-[320px] ring-[0.5px] ring-[#4d4d4d] h-[230px] md:h-[210px] md:w-[100%] rounded-[10px] flex items-center justify-center"
+                            className="cursor-pointer relative group bg-[#1D1D1D] overflow-hidden w-full max-w-[320px] ring-[0.5px] ring-[#4d4d4d] h-[230px] md:h-[210px] md:w-[100%] rounded-[10px] flex items-center justify-center"
                         >
                             <div className="absolute transition-transform duration-500 group-hover:translate-y-0 translate-y-[200%] flex flex-col items-center justify-center">
                                 <Image

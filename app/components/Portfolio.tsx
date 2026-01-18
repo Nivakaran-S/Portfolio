@@ -87,7 +87,7 @@ const Portfolio = ({ onPortfolioCard1Click }: PortfolioProps) => {
 
   return (
     <div className="bg-[#000] min-h-[120vh] pt-[50px] pb-[70px] w-screen flex items-center justify-center">
-      <div className="w-[80%] 2xl:w-[1200px] mt-[40px] flex flex-col">
+      <div className="w-[93%] sm:w-[80%] 2xl:w-[1200px] mt-[40px] flex flex-col">
         <div className=" leading-[49px] md:leading-[65px] text-center">
           <p className="text-[45px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Explore the</p>
           <p className="text-[45px] sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Development Journey</p>
@@ -108,16 +108,18 @@ const Portfolio = ({ onPortfolioCard1Click }: PortfolioProps) => {
             <div className="flex items-center justify-center">
               <div className="grid w-[95%] sm:w-[95%] md:w-[85%] grid-cols-1 place-items-center lg:grid-cols-2 gap-[20px] sm:gap-[30px]">
                 {[1, 2, 3, 4].map((i) => (
-                  <div key={i} className="bg-[#373435] ring-[1px] ring-[#808080] sm:w-[500px] w-[380px] sm:h-[350px] h-[400px] rounded-[20px] overflow-hidden flex flex-col sm:flex-row">
-                    <div className="sm:w-[50%] w-full h-[200px] sm:h-full skeleton"></div>
-                    <div className="sm:w-[70%] w-full h-full bg-[#101010] p-6 flex flex-col justify-center space-y-4">
-                      <div className="skeleton h-[30px] w-[80%]"></div>
-                      <div className="skeleton h-[16px] w-full"></div>
-                      <div className="skeleton h-[16px] w-[90%]"></div>
-                      <div className="skeleton h-[16px] w-[70%]"></div>
-                      <div className="flex space-x-3 mt-4">
-                        <div className="skeleton h-[40px] w-[100px] rounded-full"></div>
-                        <div className="skeleton h-[40px] w-[100px] rounded-[10px]"></div>
+                  <div key={i} className="w-full max-w-[500px]">
+                    <div className="bg-[#373435] ring-[1px] ring-[#808080] w-full max-w-[500px] sm:h-[350px] h-[400px] rounded-[20px] overflow-hidden flex flex-col sm:flex-row">
+                      <div className="sm:w-[50%] w-full h-[200px] sm:h-full skeleton"></div>
+                      <div className="sm:w-[70%] w-full h-full bg-[#101010] p-6 flex flex-col justify-center space-y-4">
+                        <div className="skeleton h-[30px] w-[80%]"></div>
+                        <div className="skeleton h-[16px] w-full"></div>
+                        <div className="skeleton h-[16px] w-[90%]"></div>
+                        <div className="skeleton h-[16px] w-[70%]"></div>
+                        <div className="flex space-x-3 mt-4">
+                          <div className="skeleton h-[40px] w-[100px] rounded-full"></div>
+                          <div className="skeleton h-[40px] w-[100px] rounded-[10px]"></div>
+                        </div>
                       </div>
                     </div>
                   </div>

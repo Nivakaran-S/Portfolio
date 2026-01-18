@@ -141,27 +141,27 @@ const About = () => {
                     <p className="text-[24.72px] sm:text-[35px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent">Turning Ideas into Intelligent</p>
                     <p className="text-[35px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent leading-[43px] sm:leading-[55px] font-bold sm:text-[48px]">Scalable, and Impactful Digital Solutions</p>
                 </div>
-                <div className="w-[60%] mt-[10px]">
+                <div className="w-[90%] sm:w-[60%] mt-[10px]">
                     <p className="about2 w-full sm:w-[170%] sm:text-left text-[15.27px]">I'm currently pursuing a B.Sc in Information Technology, at
                         Sri Lanka Institute of Information Technology(SLIIT). I am passionate about data science,
                         software engineering, and AI, constantly exploring innovative solutions and building Impactful
                         solutions.
                     </p>
-                    <div className="flex about3 flex-row space-x-[20px] w-[350px] mt-[20px]">
+                    <div className="flex about3 flex-row space-x-[20px] w-full max-w-[350px] mt-[20px]">
                         <SecondaryBtn text="Download Resume" onClick={onDownloadResumeClick} />
                         <PrimaryBtn text="Learn more" onClick={onLearnMoreClick} />
                     </div>
                 </div>
                 <div className="about4 flex flex-row justify-center space-x-[40px] sm:space-x-[80px] mt-[75px]">
-                    <div className="text-center flex leading-[155px] flex-col items-center">
-                        <p className="text-[140px] sm:text-[169.43px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">{count}+</p>
-                        <div className="text-[24.72px] leading-[30px] w-[50%] text-center  ">
+                    <div className="text-center flex leading-[100px] sm:leading-[155px] flex-col items-center">
+                        <p className="text-[80px] sm:text-[140px] lg:text-[169.43px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">{count}+</p>
+                        <div className="text-[18px] sm:text-[24.72px] leading-[22px] sm:leading-[30px] w-[50%] text-center  ">
                             <p>Projects Completed</p>
                         </div>
                     </div>
-                    <div className="text-center flex leading-[155px] flex-col items-center">
-                        <p className="text-[140px] sm:text-[169.43px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">{experience}+</p>
-                        <div className="text-[24.72px] leading-[30px] w-[60%] text-center  ">
+                    <div className="text-center flex leading-[100px] sm:leading-[155px] flex-col items-center">
+                        <p className="text-[80px] sm:text-[140px] lg:text-[169.43px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">{experience}+</p>
+                        <div className="text-[18px] sm:text-[24.72px] leading-[22px] sm:leading-[30px] w-[60%] text-center  ">
                             <p>Years Experience</p>
                         </div>
                     </div>

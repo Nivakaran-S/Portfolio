@@ -10,7 +10,7 @@ interface BlogCardProps {
 
 const BlogCard: React.FC<BlogCardProps> = ({ text, image, text1, onClick }) => {
     return (
-        <div className="bg-[#4b4b4d] relative hover:scale-[107%] transition-transform duration-500 ring-[0.5px] ring-[#4b4b4d] text-[15.27px] cursor-pointer h-[270px] sm:h-[360px] w-[180px] sm:w-[230px] flex flex-col rounded-[10px] sm:rounded-[20px]" onClick={onClick}>
+        <div className="bg-[#4b4b4d] relative hover:scale-[107%] transition-transform duration-500 ring-[0.5px] ring-[#4b4b4d] text-[15.27px] cursor-pointer h-[270px] sm:h-[360px] w-full max-w-[180px] sm:max-w-[230px] flex flex-col rounded-[10px] sm:rounded-[20px]" onClick={onClick}>
             <div className="sm:h-[61.80%] h-[100%] bg-[#373435] rounded-[10px] sm:rounded-b-[0px] sm:rounded-t-[20px]  sm:flex items-center justify-center overflow-hidden">
                 {image && (
                     <Image

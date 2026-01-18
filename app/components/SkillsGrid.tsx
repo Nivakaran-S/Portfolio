@@ -39,7 +39,7 @@ const SkillsGrid = () => {
 
     return (
         <section aria-labelledby="skills-heading" className="bg-[#0a0a0a] py-[60px] w-screen flex items-center justify-center">
-            <div className="w-[80%] 2xl:w-[1200px] flex flex-col items-center">
+            <div className="w-[90%] sm:w-[80%] 2xl:w-[1200px] flex flex-col items-center">
                 <motion.h2
                     id="skills-heading"
                     initial={{ opacity: 0, y: 20 }}
