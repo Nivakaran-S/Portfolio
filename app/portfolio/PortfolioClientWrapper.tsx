@@ -162,7 +162,7 @@ const PortfolioCLientWrapper = () => {
     if (typeof window !== 'undefined') {
       import('scrollreveal').then((ScrollReveal) => {
         ScrollReveal.default().reveal('.portfolio6', { origin: 'bottom', distance: '20px', duration: 800, delay: 1200, easing: 'ease-in-out', reset: false });
-        });
+      });
     }
   }, []);
 
@@ -170,7 +170,7 @@ const PortfolioCLientWrapper = () => {
     if (typeof window !== 'undefined') {
       import('scrollreveal').then((ScrollReveal) => {
         ScrollReveal.default().reveal('.aboutTitle1', { origin: 'bottom', distance: '40px', duration: 800, delay: 400, easing: 'ease-in-out', reset: false });
-        });
+      });
     }
   }, []);
 
@@ -178,7 +178,7 @@ const PortfolioCLientWrapper = () => {
     if (typeof window !== 'undefined') {
       import('scrollreveal').then((ScrollReveal) => {
         ScrollReveal.default().reveal('.aboutTitle2', { origin: 'bottom', distance: '40px', duration: 800, delay: 600, easing: 'ease-in-out', reset: false });
-        });
+      });
     }
   }, []);
 
@@ -194,7 +194,7 @@ const PortfolioCLientWrapper = () => {
     if (typeof window !== 'undefined') {
       import('scrollreveal').then((ScrollReveal) => {
         ScrollReveal.default().reveal('.aboutText4', { origin: 'left', distance: '40px', duration: 800, delay: 400, easing: 'ease-in-out', reset: false });
-        
+
       });
     }
   }, []);
@@ -274,7 +274,7 @@ const PortfolioCLientWrapper = () => {
         </div>
       </div>
       <div className="bg-[#101010]  min-h-[100vh] w-[100vw]  overflow-x-hidden py-[15vh]  flex flex-col items-center ">
-        
+
         <div className="w-[93%]  2xl:w-[1200px]  sm:w-[80%]">
           <div className="portfolio1 leading-[50px] sm:leading-[58px]  md:leading-[66px] text-center">
             <p className="text-[45px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Explore the</p>
@@ -293,8 +293,25 @@ const PortfolioCLientWrapper = () => {
             </div>
           )}
           {isLoading ? (
-            <div className="flex items-center justify-center h-[50vh] text-white">
-              <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-gray-200 border-solid"></div>
+            <div className="mt-[40px]">
+              <div className="skeleton h-[45px] w-[300px] mb-[20px]"></div>
+              <div className="grid gap-[25px] grid-cols-1 place-items-center lg:grid-cols-2 mt-[30px]">
+                {[1, 2, 3, 4].map((i) => (
+                  <div key={i} className="bg-[#373435] ring-[1px] ring-[#808080] sm:w-[500px] w-[380px] sm:h-[350px] h-[400px] rounded-[20px] overflow-hidden flex flex-col sm:flex-row">
+                    <div className="sm:w-[50%] w-full h-[200px] sm:h-full skeleton"></div>
+                    <div className="sm:w-[70%] w-full h-full bg-[#101010] p-6 flex flex-col justify-center space-y-4">
+                      <div className="skeleton h-[30px] w-[80%]"></div>
+                      <div className="skeleton h-[16px] w-full"></div>
+                      <div className="skeleton h-[16px] w-[90%]"></div>
+                      <div className="skeleton h-[16px] w-[70%]"></div>
+                      <div className="flex space-x-3 mt-4">
+                        <div className="skeleton h-[40px] w-[100px] rounded-full"></div>
+                        <div className="skeleton h-[40px] w-[100px] rounded-[10px]"></div>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
             </div>
           ) : projects.length === 0 && miniProjects.length === 0 ? (
             <p className="text-gray-500 italic text-center mt-6">No projects or mini projects found.</p>
@@ -303,10 +320,10 @@ const PortfolioCLientWrapper = () => {
               {/* Software Engineering Section */}
               <div className="mt-[30px] 2xl:w-[100%]  flex flex-col items-center sm:w-[80vw]">
                 <p className="portfolio2  sm:w-[70vw] 2xl:w-[1200px]  sm:ml-[10px] font-bold text-[38px] sm:text-[45px]">Software Engineering</p>
-                
+
                 {/* Main Projects */}
                 <div className="portfolio2 grid gap-[25px] grid-cols-1 place-items-center lg:grid-cols-2 mt-[30px]  md:space-y-[0px] md:space-x-[0px] sm:items-center justify-center">
-                  
+
                   {projects
                     .filter(project => getCategoryTitle(project.projectCategory) === 'Software Engineering')
                     .map((project) => {
@@ -331,24 +348,24 @@ const PortfolioCLientWrapper = () => {
                     })}
                 </div>
                 {/* Mini Projects */}
-                {miniProjects.filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Software Engineering').length > 0 && 
-                <div>
-                  <p className="portfolio2 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
-                <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] lg:grid-cols-4  items-center justify-center">
-                  {miniProjects
-                    .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Software Engineering')
-                    .map((miniProject) => (
-                      <MiniProjectCard
-                        key={miniProject._id}
-                        title={miniProject.title || 'Untitled'}
-                        description={miniProject.description || 'No description available'}
-                        imageUrl={isValidUrl(miniProject.imageUrl) ? miniProject.imageUrl : Newspaper.src}
-                        githubUrl={isValidUrl(miniProject.githubUrl) ? miniProject.githubUrl : '#'}
-                        demoUrl={isValidUrl(miniProject.demoUrl) ? miniProject.demoUrl : '#'}
-                        category={getCategoryTitle(miniProject.miniProjectCategory)}
-                      />
-                    ))}
-                </div></div>}
+                {miniProjects.filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Software Engineering').length > 0 &&
+                  <div>
+                    <p className="portfolio2 mt-[30px] text-[33px] text-center md:text-[30px]">Mini Projects</p>
+                    <div className="portfolio5 mt-[30px] grid grid-cols-2 gap-[25px] lg:grid-cols-4  items-center justify-center">
+                      {miniProjects
+                        .filter(miniProject => getCategoryTitle(miniProject.miniProjectCategory) === 'Software Engineering')
+                        .map((miniProject) => (
+                          <MiniProjectCard
+                            key={miniProject._id}
+                            title={miniProject.title || 'Untitled'}
+                            description={miniProject.description || 'No description available'}
+                            imageUrl={isValidUrl(miniProject.imageUrl) ? miniProject.imageUrl : Newspaper.src}
+                            githubUrl={isValidUrl(miniProject.githubUrl) ? miniProject.githubUrl : '#'}
+                            demoUrl={isValidUrl(miniProject.demoUrl) ? miniProject.demoUrl : '#'}
+                            category={getCategoryTitle(miniProject.miniProjectCategory)}
+                          />
+                        ))}
+                    </div></div>}
               </div>
 
               {/* Data Science Section */}
@@ -600,19 +617,18 @@ const PortfolioCLientWrapper = () => {
           )}
         </div>
         <div
-    className={`z-[9999] h-[100vh] w-[100vw] flex flex-col items-start justify-start transition-opacity duration-500 ease-in-out ${
-      onPortfolioClick ? 'opacity-100 fixed top-0 left-0' : 'opacity-0 hidden pointer-events-none'
-    }`}
-  >
-  <PortfolioModel
-    resetPortfolioClick={resetPortfolioClick}
-    onPortfolioClick={onPortfolioClick}
-    setOnPortfolioClick={setOnPortfolioClick}
-    project={selectedProject}
-  />
-</div>
+          className={`z-[9999] h-[100vh] w-[100vw] flex flex-col items-start justify-start transition-opacity duration-500 ease-in-out ${onPortfolioClick ? 'opacity-100 fixed top-0 left-0' : 'opacity-0 hidden pointer-events-none'
+            }`}
+        >
+          <PortfolioModel
+            resetPortfolioClick={resetPortfolioClick}
+            onPortfolioClick={onPortfolioClick}
+            setOnPortfolioClick={setOnPortfolioClick}
+            project={selectedProject}
+          />
+        </div>
       </div>
-      <Blogs/>
+      <Blogs />
       <Top />
       <Contact onContactClick={onContactClick} />
       <Footer />

@@ -1,18 +1,22 @@
-
-
-
+import React from "react";
+import { motion } from "framer-motion";
 
 interface SecondaryBtnProps {
     text: string;
     onClick: () => void;
-}0
+}
 
 const SecondaryBtn: React.FC<SecondaryBtnProps> = ({ text, onClick }) => {
     return (
-        <div className="bg-[#4b4b4d] hover:scale-[108%] transition-transform duration-500 text-[15.27px] cursor-pointer  flex flex-row items-center px-[20px]  rounded" onClick={onClick}>
-            <p className=" ">{text}</p>
-            
-        </div>
+        <motion.button
+            whileHover={{ scale: 1.05, boxShadow: "0px 0px 15px rgba(255, 255, 255, 0.1)" }}
+            whileTap={{ scale: 0.98 }}
+            className="bg-[#4b4b4d] hover:bg-[#5a5a5c] transition-colors duration-300 text-[15.27px] cursor-pointer flex flex-row items-center px-[20px] py-[8px] rounded border-0"
+            onClick={onClick}
+            aria-label={text}
+        >
+            <span>{text}</span>
+        </motion.button>
     );
 }
 

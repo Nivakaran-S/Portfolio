@@ -24,27 +24,28 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
 @keyframes swing-light {
   0% {
     background-position: -200% 0%;
   }
+
   50% {
     background-position: 200% 0%;
   }
+
   100% {
     background-position: -200% 0%;
   }
 }
 
 .spotlight-text {
-  background-image: linear-gradient(
-    90deg,
-    #433D3A 25%,
-    #C6C4C3 35%,
-    #ffffff 40%,
-    #C6C4C3 50%,
-    #433D3A 70%
-  );
+  background-image: linear-gradient(90deg,
+      #433D3A 25%,
+      #C6C4C3 35%,
+      #ffffff 40%,
+      #C6C4C3 50%,
+      #433D3A 70%);
   background-size: 122%;
   background-clip: text;
   -webkit-background-clip: text;
@@ -54,9 +55,63 @@ body {
 
 
 .firstLetter::first-letter {
-  font-size: 40px; 
+  font-size: 40px;
   line-height: 1.2;
-  float: left; 
-  margin-right: 3px; 
-  font-weight: bold; 
+  float: left;
+  margin-right: 3px;
+  font-weight: bold;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #101010;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #4B4B4D;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #727376;
+}
+
+/* Text Selection */
+::selection {
+  background: rgba(255, 215, 0, 0.3);
+  /* Gold with opacity */
+  color: #ffffff;
+}
+
+/* Skeleton Loader Animation */
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.skeleton {
+  background: linear-gradient(90deg,
+      #1a1a1a 25%,
+      #2a2a2a 50%,
+      #1a1a1a 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite ease-in-out;
+  border-radius: 10px;
+}
+
+/* Focus visible styles for accessibility */
+button:focus-visible,
+a:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid #FFD700;
+  outline-offset: 2px;
 }

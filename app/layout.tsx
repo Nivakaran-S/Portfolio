@@ -17,14 +17,34 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://nivakaran.dev'),
   title: {
     default: "Nivakaran S. | Turning Code & Data Into Impactful Products",
     template: "%s | Nivakaran S."
   },
   description: "Portfolio of Nivakaran Shanmugabavan — building impactful software with full-stack engineering, data science, and AI. Explore projects, blog posts, and technical skills.",
-  keywords: ["Full-Stack Developer", "Data Scientist", "AI Engineer", "Web Development", "Machine Learning", "Portfolio"],
-  authors: [{ name: "Nivakaran Shanmugabavan" }],
+  keywords: [
+    "Full-Stack Developer", "Data Scientist", "AI Engineer", "Web Development",
+    "Machine Learning", "Portfolio", "React Developer", "Next.js Developer",
+    "Python Developer", "Software Engineer Sri Lanka", "Freelance Developer",
+    "Computer Vision", "Deep Learning", "Node.js", "TypeScript"
+  ],
+  authors: [{ name: "Nivakaran Shanmugabavan", url: "https://nivakaran.dev" }],
   creator: "Nivakaran Shanmugabavan",
+  publisher: "Nivakaran Shanmugabavan",
+  robots: {
+    index: true,
+    follow: true,
+    nocache: false,
+    googleBot: {
+      index: true,
+      follow: true,
+      noimageindex: false,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -32,17 +52,36 @@ export const metadata: Metadata = {
     title: "Nivakaran S. | Full-Stack Developer & Data Scientist",
     description: "Portfolio showcasing full-stack development, data science, and AI projects",
     siteName: "Nivakaran S. Portfolio",
+    images: [
+      {
+        url: '/og-image.png', // You should add this image to public/
+        width: 1200,
+        height: 630,
+        alt: 'Nivakaran S. Portfolio',
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Nivakaran S. | Full-Stack Developer & Data Scientist",
     description: "Portfolio showcasing full-stack development, data science, and AI projects",
+    creator: "@nivakarans", // Add your Twitter handle
+    images: ['/og-image.png'],
   },
   alternates: {
     canonical: "https://nivakaran.dev",
+    languages: {
+      'en-US': 'https://nivakaran.dev',
+    },
   },
   verification: {
     google: "your-google-verification-code-here", // Add your Google verification code
+  },
+  category: 'technology',
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
   },
 };
 
@@ -57,8 +96,8 @@ const structuredData = {
       "url": "https://nivakaran.dev",
       "image": "https://nivakaran.dev/images/profile.jpg", // Add your profile image URL
       "sameAs": [
-        "https://linkedin.com/in/yourprofile", // Add your actual social links
-        "https://github.com/yourprofile"
+        "https://linkedin.com/in/nivakarans",
+        "https://github.com/nivakaran"
       ],
       "jobTitle": ["Full-Stack Developer", "Data Scientist", "AI Engineer"],
       "worksFor": {
@@ -160,7 +199,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden text-[18px] select-none`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden text-[18px]`}
       >
         {children}
         <Analytics />

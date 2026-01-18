@@ -2,7 +2,7 @@
 
 import PrimaryBtn from "./PrimaryBtn";
 import SecondaryBtn from "./SecondaryBtn";
-import React, {useEffect, useRef, useState} from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 
 const About = () => {
@@ -37,31 +37,31 @@ const About = () => {
     }, [])
 
     useEffect(() => {
-        if(isVisible && count < targetCount) {
+        if (isVisible && count < targetCount) {
             const interval = setInterval(() => {
                 setCount((prev) => prev + 1);
-            }, 1000);
+            }, 150);
 
             return () => clearInterval(interval);
-            
+
         }
     }, [isVisible, count])
 
     useEffect(() => {
-        if(isVisible && experience < targetExperience) {
+        if (isVisible && experience < targetExperience) {
             const interval = setInterval(() => {
                 setExperience((prev) => prev + 1);
-            }, 1000);
+            }, 150);
 
             return () => clearInterval(interval);
-            
+
         }
     }, [isVisible, experience])
 
     useEffect(() => {
-            if(typeof window !== 'undefined'){
-                import('scrollreveal').then((ScrollReveal) => { 
-                    ScrollReveal.default().reveal('.about1', {
+        if (typeof window !== 'undefined') {
+            import('scrollreveal').then((ScrollReveal) => {
+                ScrollReveal.default().reveal('.about1', {
                     origin: 'bottom',
                     distance: '20px',
                     duration: 800,
@@ -70,13 +70,13 @@ const About = () => {
                     reset: false
                 })
             })
-            }
-        }, [])
+        }
+    }, [])
 
-        useEffect(() => {
-            if(typeof window !== 'undefined'){
-                import('scrollreveal').then((ScrollReveal) => { 
-                    ScrollReveal.default().reveal('.about2', {
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            import('scrollreveal').then((ScrollReveal) => {
+                ScrollReveal.default().reveal('.about2', {
                     origin: 'bottom',
                     distance: '20px',
                     duration: 800,
@@ -85,13 +85,13 @@ const About = () => {
                     reset: false
                 })
             })
-            }
-        }, [])
+        }
+    }, [])
 
-        useEffect(() => {
-            if(typeof window !== 'undefined'){
-                import('scrollreveal').then((ScrollReveal) => { 
-                    ScrollReveal.default().reveal('.about3', {
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            import('scrollreveal').then((ScrollReveal) => {
+                ScrollReveal.default().reveal('.about3', {
                     origin: 'bottom',
                     distance: '20px',
                     duration: 800,
@@ -100,13 +100,13 @@ const About = () => {
                     reset: false
                 })
             })
-            }
-        }, [])
+        }
+    }, [])
 
-        useEffect(() => {
-            if(typeof window !== 'undefined'){
-                import('scrollreveal').then((ScrollReveal) => { 
-                    ScrollReveal.default().reveal('.about4', {
+    useEffect(() => {
+        if (typeof window !== 'undefined') {
+            import('scrollreveal').then((ScrollReveal) => {
+                ScrollReveal.default().reveal('.about4', {
                     origin: 'bottom',
                     distance: '20px',
                     duration: 800,
@@ -115,26 +115,26 @@ const About = () => {
                     reset: false
                 })
             })
-            }
-        }, [])
+        }
+    }, [])
 
     const onLearnMoreClick = () => {
         router.push('/about')
-        
+
     }
 
     const onDownloadResumeClick = () => {
-    if (typeof window !== "undefined") {
-        window.open(
-            "https://drive.google.com/file/d/1sZIPdirxEffJgYLsf6vfs1jIAstESDp1/view?usp=drive_link",
-            "_blank"
-        );
+        if (typeof window !== "undefined") {
+            window.open(
+                "https://drive.google.com/file/d/1sZIPdirxEffJgYLsf6vfs1jIAstESDp1/view?usp=drive_link",
+                "_blank"
+            );
         }
     };
 
 
 
-    return(
+    return (
         <div id="about" ref={counterRef} className="bg-[#101010]  min-h-[110vh] xl:min-h-[81vh] w-screen flex flex-col items-center py-[115px] ">
             <div className="w-[80%] 2xl:w-[1200px] flex  flex-col   ">
                 <div className="about1 text-[40px] leading-[50px]">
@@ -142,14 +142,14 @@ const About = () => {
                     <p className="text-[35px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3]  to-[#CAC8C6] bg-clip-text text-transparent leading-[43px] sm:leading-[55px] font-bold sm:text-[48px]">Scalable, and Impactful Digital Solutions</p>
                 </div>
                 <div className="w-[60%] mt-[10px]">
-                    <p className="about2  w-[170%] sm:text-left text-[15.27px]">I'm currently pursuing a B.Sc in Information Technology, at 
+                    <p className="about2 w-full sm:w-[170%] sm:text-left text-[15.27px]">I'm currently pursuing a B.Sc in Information Technology, at
                         Sri Lanka Institute of Information Technology(SLIIT). I am passionate about data science,
                         software engineering, and AI, constantly exploring innovative solutions and building Impactful
                         solutions.
                     </p>
                     <div className="flex about3 flex-row space-x-[20px] w-[350px] mt-[20px]">
-                        <SecondaryBtn text="Download Resume" onClick={onDownloadResumeClick}/>
-                        <PrimaryBtn text="Learn more" onClick={onLearnMoreClick}  />
+                        <SecondaryBtn text="Download Resume" onClick={onDownloadResumeClick} />
+                        <PrimaryBtn text="Learn more" onClick={onLearnMoreClick} />
                     </div>
                 </div>
                 <div className="about4 flex flex-row justify-center space-x-[40px] sm:space-x-[80px] mt-[75px]">
@@ -166,7 +166,7 @@ const About = () => {
                         </div>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     )

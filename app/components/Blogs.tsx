@@ -73,64 +73,64 @@ const Blogs = () => {
 
   // Apply scrollreveal animations
   useEffect(() => {
-        if(typeof window !== 'undefined'){
-            import('scrollreveal').then((ScrollReveal) => { 
-                ScrollReveal.default().reveal('.blogs1', {
-                origin: 'bottom',
-                distance: '20px',
-                duration: 800,
-                delay: 200,
-                easing: 'ease-in-out',
-                reset: false
-            })
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
+        ScrollReveal.default().reveal('.blogs1', {
+          origin: 'bottom',
+          distance: '20px',
+          duration: 800,
+          delay: 200,
+          easing: 'ease-in-out',
+          reset: false
         })
-        }
-    }, [])
+      })
+    }
+  }, [])
 
-    useEffect(() => {
-        if(typeof window !== 'undefined'){
-            import('scrollreveal').then((ScrollReveal) => { 
-                ScrollReveal.default().reveal('.blogs2', {
-                origin: 'right',
-                distance: '20px',
-                duration: 800,
-                delay: 400,
-                easing: 'ease-in-out',
-                reset: false
-            })
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
+        ScrollReveal.default().reveal('.blogs2', {
+          origin: 'right',
+          distance: '20px',
+          duration: 800,
+          delay: 400,
+          easing: 'ease-in-out',
+          reset: false
         })
-        }
-    }, [])
+      })
+    }
+  }, [])
 
-    useEffect(() => {
-        if(typeof window !== 'undefined'){
-            import('scrollreveal').then((ScrollReveal) => { 
-                ScrollReveal.default().reveal('.blogs3', {
-                origin: 'left',
-                distance: '20px',
-                duration: 800,
-                delay: 600,
-                easing: 'ease-in-out',
-                reset: false
-            })
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
+        ScrollReveal.default().reveal('.blogs3', {
+          origin: 'left',
+          distance: '20px',
+          duration: 800,
+          delay: 600,
+          easing: 'ease-in-out',
+          reset: false
         })
-        }
-    }, [])
+      })
+    }
+  }, [])
 
-    useEffect(() => {
-        if(typeof window !== 'undefined'){
-            import('scrollreveal').then((ScrollReveal) => { 
-                ScrollReveal.default().reveal('.blogs4', {
-                origin: 'bottom',
-                distance: '20px',
-                duration: 800,
-                delay: 800,
-                easing: 'ease-in-out',
-                reset: false
-            })
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('scrollreveal').then((ScrollReveal) => {
+        ScrollReveal.default().reveal('.blogs4', {
+          origin: 'bottom',
+          distance: '20px',
+          duration: 800,
+          delay: 800,
+          easing: 'ease-in-out',
+          reset: false
         })
-        }
-    }, [])
+      })
+    }
+  }, [])
 
   const onMessageSuccess = () => {
     setShowMessageSuccess(true);
@@ -165,14 +165,14 @@ const Blogs = () => {
 
   return (
     <div className="flex border-b-[1px] border-t-[1px] border-white text-white w-[100vw] overflow-x-hidden flex-col">
-      
+
 
       <div className="min-h-[120vh] 2xl:min-h-[80vh] bg-[#000000] py-[10vh] w-screen flex items-center justify-center">
         <div className="w-[95%] sm:w-[80%] flex items-center justify-center flex-col">
-           <div className="leading-[50px] sm:leading-[64px] blogs1 text-center">
-                    <p className="text-[44px] sm:text-[55px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Stay Updated</p>
-                    <p className="text-[40px] sm:text-[55px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">with Latest Insights</p>
-                </div>
+          <div className="leading-[50px] sm:leading-[64px] blogs1 text-center">
+            <p className="text-[44px] sm:text-[55px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">Stay Updated</p>
+            <p className="text-[40px] sm:text-[55px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">with Latest Insights</p>
+          </div>
 
           {error && (
             <div className="bg-red-50 border-l-4 border-red-500 p-4 rounded-lg flex items-center mt-6">
@@ -184,14 +184,26 @@ const Blogs = () => {
           )}
 
           {isLoading ? (
-            <div className="flex items-center justify-center h-[50vh] text-white">
-              <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-gray-200 border-solid"></div>
+            <div className="mt-[30px]">
+              <div className="flex items-center justify-center">
+                <div className="grid w-[95%] sm:w-[100%] grid-cols-2 lg:grid-cols-4 gap-[20px] sm:gap-[20px]">
+                  {[1, 2, 3, 4].map((i) => (
+                    <div key={i} className="bg-[#4b4b4d] ring-[0.5px] ring-[#4b4b4d] h-[270px] sm:h-[360px] w-[180px] sm:w-[230px] flex flex-col rounded-[10px] sm:rounded-[20px] overflow-hidden">
+                      <div className="sm:h-[61.80%] h-[60%] skeleton"></div>
+                      <div className="flex flex-col p-4 space-y-3 h-[40%] sm:h-[38.2%] bg-[#101010]">
+                        <div className="skeleton h-[20px] w-[90%]"></div>
+                        <div className="skeleton h-[16px] w-[70%]"></div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           ) : categories.length === 0 ? (
             <p className="text-gray-500 italic text-center mt-6">No categories found.</p>
           ) : (
             ((
-              <div  className="mt-[30px]">
+              <div className="mt-[30px]">
                 <div className={`blogs flex items-center justify-center`}>
                   <div className="grid w-[95%] sm:w-[100%] grid-cols-2 lg:grid-cols-3 lg:grid-cols-4 gap-[20px] sm:gap-[20px]">
                     {blogs
@@ -211,7 +223,7 @@ const Blogs = () => {
             ))
           )}
 
-        
+
 
           <div className="flex blogs4 items-center justify-center mt-[30px]">
             <PrimaryBtn text="More Blogs" onClick={onAllBlogsClick} />
@@ -219,20 +231,17 @@ const Blogs = () => {
         </div>
 
         <div
-          className={`fixed top-0 left-0 z-[9999] h-[100vh] w-[100vw] flex flex-col items-center justify-center transition-opacity duration-500 ease-in-out ${
-            onPortfolioClick ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-          }`}
+          className={`fixed top-0 left-0 z-[9999] h-[100vh] w-[100vw] flex flex-col items-center justify-center transition-opacity duration-500 ease-in-out ${onPortfolioClick ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+            }`}
         >
           <div
             onClick={() => setOnPortfolioClick(false)}
-            className={`bg-[#101010] h-full w-full opacity-50 transition-opacity duration-500 ease-in-out ${
-              onPortfolioClick ? 'opacity-60' : 'opacity-0 pointer-events-none'
-            }`}
+            className={`bg-[#101010] h-full w-full opacity-50 transition-opacity duration-500 ease-in-out ${onPortfolioClick ? 'opacity-60' : 'opacity-0 pointer-events-none'
+              }`}
           ></div>
           <div
-            className={`absolute lg:rounded-[20px] md:rounded-[10px] text-white bg-[#101010] ring-[1.5px] ring-[#373435] h-[95vh] w-[85vw] z-20 transform transition-transform duration-500 ease-in-out ${
-              onPortfolioClick ? 'scale-100 opacity-100' : 'scale-95 opacity-0 pointer-events-none'
-            }`}
+            className={`absolute lg:rounded-[20px] md:rounded-[10px] text-white bg-[#101010] ring-[1.5px] ring-[#373435] h-[95vh] w-[85vw] z-20 transform transition-transform duration-500 ease-in-out ${onPortfolioClick ? 'scale-100 opacity-100' : 'scale-95 opacity-0 pointer-events-none'
+              }`}
           >
             <div className="flex flex-row items-center justify-center">
               <p className="text-[40px] sm:text-[50px] md:text-[60px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent p-6">

@@ -17,6 +17,7 @@ import Loader from "./components/Loader";
 import PortfolioModel from "./portfolio/PortfolioModel";
 import { Project } from "./portfolio/types"; // Import the Project type
 import Achievements from "./components/Achievements";
+import SkillsGrid from "./components/SkillsGrid";
 
 
 export default function HomePageClientWrapper() {
@@ -26,7 +27,7 @@ export default function HomePageClientWrapper() {
   const [onPortfolioClick, setOnPortfolioClick] = useState(false);
   const [scrollPosition, setScrollPosition] = useState(0);
   const [loading, setLoading] = useState(false);
-  
+
   // Add state for selected project
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
@@ -80,28 +81,28 @@ export default function HomePageClientWrapper() {
         onContactClick={onContactClick}
       />
       <Hero />
+      <SkillsGrid />
       <Top />
       <About />
       <Portfolio onPortfolioCard1Click={onPortfolioCard1Click} />
       <Services />
       <Blogs />
-      <Achievements/>
+      <Achievements />
       <Certification />
       <Contact onContactClick={onContactClick} />
       <Footer />
 
       {/* Portfolio Modal */}
       <div
-        className={`z-[9999]  flex flex-col items-start justify-start transition-opacity duration-500 ease-in-out ${
-          onPortfolioClick ? 'opacity-100 h-[100vh] w-[100vw] fixed top-0 left-0' : 'opacity-0 pointer-events-none'
-        }`}
+        className={`z-[9999]  flex flex-col items-start justify-start transition-opacity duration-500 ease-in-out ${onPortfolioClick ? 'opacity-100 h-[100vh] w-[100vw] fixed top-0 left-0' : 'opacity-0 pointer-events-none'
+          }`}
       >
         <PortfolioModel
           resetPortfolioClick={resetPortfolioClick}
           onPortfolioClick={onPortfolioClick}
           setOnPortfolioClick={setOnPortfolioClick}
-          project={selectedProject} 
-          
+          project={selectedProject}
+
         />
       </div>
 

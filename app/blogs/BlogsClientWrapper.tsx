@@ -19,32 +19,32 @@ import CaseStudyModel from "../components/CaseStudyModel";
 
 
 interface BlogPost {
-  _id: string;
-  title: string;
-  image: string;
-  subtitle: string;
-  content: string;
-  blogsCategory: string;
-  imageUrl: string;
-  createdAt: string;
+    _id: string;
+    title: string;
+    image: string;
+    subtitle: string;
+    content: string;
+    blogsCategory: string;
+    imageUrl: string;
+    createdAt: string;
 }
 
 interface CaseStudy {
-  _id: string;
-  title: string;
-  overview: string;
-  challenge: string;
-  challenges: string; 
-  demoUrl: string;
-  githubUrl: string;
-  learnings: string;
-  results: string;
-  solution: string;
-  technologies: string[]; 
-  imageUrl: string;
-  createdAt: string;
+    _id: string;
+    title: string;
+    overview: string;
+    challenge: string;
+    challenges: string;
+    demoUrl: string;
+    githubUrl: string;
+    learnings: string;
+    results: string;
+    solution: string;
+    technologies: string[];
+    imageUrl: string;
+    createdAt: string;
 
-  
+
 }
 
 
@@ -97,11 +97,11 @@ const BlogsClientWrapper = () => {
             setShowMessageSuccess(false);
         }, 3000);
     };
-    
+
     const onContactClick = () => {
         setShowContactModel(!showContactModel);
     };
-    
+
     const router = useRouter();
 
     const onBlogClick = (blog: BlogPost) => {
@@ -115,7 +115,7 @@ const BlogsClientWrapper = () => {
             });
             const blogs = response.data;
             setBlogPosts(blogs);
-            
+
             // Filter blogs by category
             setDataScienceBlogs(blogs.filter((blog: BlogPost) => blog.blogsCategory === "6890acb003a649d3da0baba4"));
             setComputerVisionBlogs(blogs.filter((blog: BlogPost) => blog.blogsCategory === "688c1add602363e313f55ca2"));
@@ -135,8 +135,8 @@ const BlogsClientWrapper = () => {
     }, []);
 
     useEffect(() => {
-        if(typeof window !== 'undefined'){
-            import('scrollreveal').then((ScrollReveal) => { 
+        if (typeof window !== 'undefined') {
+            import('scrollreveal').then((ScrollReveal) => {
                 ScrollReveal.default().reveal('.blogs1', {
                     origin: 'bottom',
                     distance: '20px',
@@ -150,8 +150,8 @@ const BlogsClientWrapper = () => {
     }, []);
 
     useEffect(() => {
-        if(typeof window !== 'undefined'){
-            import('scrollreveal').then((ScrollReveal) => { 
+        if (typeof window !== 'undefined') {
+            import('scrollreveal').then((ScrollReveal) => {
                 ScrollReveal.default().reveal('.blogs2', {
                     origin: 'right',
                     distance: '20px',
@@ -165,8 +165,8 @@ const BlogsClientWrapper = () => {
     }, []);
 
     useEffect(() => {
-        if(typeof window !== 'undefined'){
-            import('scrollreveal').then((ScrollReveal) => { 
+        if (typeof window !== 'undefined') {
+            import('scrollreveal').then((ScrollReveal) => {
                 ScrollReveal.default().reveal('.blogs3', {
                     origin: 'left',
                     distance: '20px',
@@ -180,8 +180,8 @@ const BlogsClientWrapper = () => {
     }, []);
 
     useEffect(() => {
-        if(typeof window !== 'undefined'){
-            import('scrollreveal').then((ScrollReveal) => { 
+        if (typeof window !== 'undefined') {
+            import('scrollreveal').then((ScrollReveal) => {
                 ScrollReveal.default().reveal('.blogs4', {
                     origin: 'bottom',
                     distance: '20px',
@@ -195,8 +195,8 @@ const BlogsClientWrapper = () => {
     }, []);
 
     useEffect(() => {
-        if(typeof window !== 'undefined'){
-            import('scrollreveal').then((ScrollReveal) => { 
+        if (typeof window !== 'undefined') {
+            import('scrollreveal').then((ScrollReveal) => {
                 ScrollReveal.default().reveal('.blogsTitle1', {
                     origin: 'bottom',
                     distance: '40px',
@@ -210,8 +210,8 @@ const BlogsClientWrapper = () => {
     }, []);
 
     useEffect(() => {
-        if(typeof window !== 'undefined'){
-            import('scrollreveal').then((ScrollReveal) => { 
+        if (typeof window !== 'undefined') {
+            import('scrollreveal').then((ScrollReveal) => {
                 ScrollReveal.default().reveal('.blogsTitle2', {
                     origin: 'bottom',
                     distance: '40px',
@@ -225,8 +225,8 @@ const BlogsClientWrapper = () => {
     }, []);
 
     useEffect(() => {
-        if(typeof window !== 'undefined'){
-            import('scrollreveal').then((ScrollReveal) => { 
+        if (typeof window !== 'undefined') {
+            import('scrollreveal').then((ScrollReveal) => {
                 ScrollReveal.default().reveal('.aboutTitle1', {
                     origin: 'bottom',
                     distance: '40px',
@@ -240,8 +240,8 @@ const BlogsClientWrapper = () => {
     }, []);
 
     useEffect(() => {
-        if(typeof window !== 'undefined'){
-            import('scrollreveal').then((ScrollReveal) => { 
+        if (typeof window !== 'undefined') {
+            import('scrollreveal').then((ScrollReveal) => {
                 ScrollReveal.default().reveal('.aboutTitle2', {
                     origin: 'bottom',
                     distance: '40px',
@@ -255,8 +255,8 @@ const BlogsClientWrapper = () => {
     }, []);
 
     useEffect(() => {
-        if(typeof window !== 'undefined'){
-            import('scrollreveal').then((ScrollReveal) => { 
+        if (typeof window !== 'undefined') {
+            import('scrollreveal').then((ScrollReveal) => {
                 ScrollReveal.default().reveal('.aboutTitle3', {
                     origin: 'bottom',
                     distance: '40px',
@@ -270,8 +270,8 @@ const BlogsClientWrapper = () => {
     }, []);
 
     useEffect(() => {
-        if(typeof window !== 'undefined'){
-            import('scrollreveal').then((ScrollReveal) => { 
+        if (typeof window !== 'undefined') {
+            import('scrollreveal').then((ScrollReveal) => {
                 ScrollReveal.default().reveal('.aboutText4', {
                     origin: 'left',
                     distance: '40px',
@@ -285,8 +285,8 @@ const BlogsClientWrapper = () => {
     }, []);
 
     useEffect(() => {
-        if(typeof window !== 'undefined'){
-            import('scrollreveal').then((ScrollReveal) => { 
+        if (typeof window !== 'undefined') {
+            import('scrollreveal').then((ScrollReveal) => {
                 ScrollReveal.default().reveal('.aboutText5', {
                     origin: 'right',
                     distance: '40px',
@@ -307,7 +307,7 @@ const BlogsClientWrapper = () => {
         setOnPortfolioClick(true);
         //document.body.style.position = 'fixed';
         //document.body.style.top = `-${window.scrollY}px`;
-      };
+    };
 
     const onCaseStudyCardClick = (caseStudy: CaseStudy) => (e: React.MouseEvent<HTMLDivElement>) => {
         e.preventDefault();
@@ -343,10 +343,10 @@ const BlogsClientWrapper = () => {
 
     return (
         <div className="flex text-white w-[100%] overflow-x-hidden flex-col">
-            <Navigation navSelection={navSelection} onContactClick={onContactClick}/>
-            <ContactModel onMessageSuccess={onMessageSuccess} showContactModel={showContactModel} onContactClick={onContactClick}/>
+            <Navigation navSelection={navSelection} onContactClick={onContactClick} />
+            <ContactModel onMessageSuccess={onMessageSuccess} showContactModel={showContactModel} onContactClick={onContactClick} />
             <div>
-                <StarBackground/>
+                <StarBackground />
                 <div className="text-white bg-contain bg-no-repeat bg-center sm:space-y-[30px] px-[10vw] flex flex-col items-center justify-center sm:pt-[20vh] min-h-[100vh]">
                     <div className="w-[100vw] text-center leading-[63px] sm:leading-[90px] h-[100%]">
                         <p className="text-[40px] sm:text-[50px] md:text-[60px] aboutText4 aboutTitle1 bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] to-[#CAC8C6] bg-clip-text text-transparent">Look Into</p>
@@ -366,160 +366,183 @@ const BlogsClientWrapper = () => {
                         <p className="text-[45px] sm:text-[55px] bg-gradient-to-t from-[#433D3A] via-[#C6C4C3] font-bold to-[#CAC8C6] bg-clip-text text-transparent">with Latest Insights</p>
                     </div>
 
-                    {blogsLoading ? 
-                    <div className="flex items-center justify-center h-screen bg-[#0A0A0A] text-white">
-                        <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-gray-200 border-solid"></div>
-                    </div> :
+                    {blogsLoading ?
+                        <div className="mt-[30px]">
+                            <div className="skeleton h-[45px] w-[200px] mb-[20px]"></div>
+                            <div className="flex items-center justify-center">
+                                <div className="grid w-[95%] sm:w-[100%] grid-cols-2 lg:grid-cols-4 gap-[20px] sm:gap-[20px]">
+                                    {[1, 2, 3, 4].map((i) => (
+                                        <div key={i} className="bg-[#4b4b4d] ring-[0.5px] ring-[#4b4b4d] h-[270px] sm:h-[360px] w-[180px] sm:w-[230px] flex flex-col rounded-[10px] sm:rounded-[20px] overflow-hidden">
+                                            <div className="sm:h-[61.80%] h-[60%] skeleton"></div>
+                                            <div className="flex flex-col p-4 space-y-3 h-[40%] sm:h-[38.2%] bg-[#101010]">
+                                                <div className="skeleton h-[20px] w-[90%]"></div>
+                                                <div className="skeleton h-[16px] w-[70%]"></div>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div> :
                         <div>
-                    {dataScienceBlogs.length > 0 && (
-                        <>
-                            <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Data Science</p>
-                            <div className="flex items-center blogs4 justify-center">
-                                <div className="grid w-[95%] sm:w-[100%] grid-cols-2 lg:grid-cols-4 gap-[20px] sm:gap-[20px]">
-                                    {dataScienceBlogs.map((blog) => (
-                                        <BlogCard
-                                            image={blog.imageUrl || null}
-                                            key={blog._id}
-                                            text={blog.subtitle}
-                                            text1={blog.title}
-                                            onClick={() => onBlogClick(blog)}
-                                        />
-                                    ))}
-                                </div>
-                            </div>
-                        </>
-                    )}
+                            {dataScienceBlogs.length > 0 && (
+                                <>
+                                    <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Data Science</p>
+                                    <div className="flex items-center blogs4 justify-center">
+                                        <div className="grid w-[95%] sm:w-[100%] grid-cols-2 lg:grid-cols-4 gap-[20px] sm:gap-[20px]">
+                                            {dataScienceBlogs.map((blog) => (
+                                                <BlogCard
+                                                    image={blog.imageUrl || null}
+                                                    key={blog._id}
+                                                    text={blog.subtitle}
+                                                    text1={blog.title}
+                                                    onClick={() => onBlogClick(blog)}
+                                                />
+                                            ))}
+                                        </div>
+                                    </div>
+                                </>
+                            )}
 
-                    {computerVisionBlogs.length > 0 && (
-                        <>
-                            <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Computer Vision</p>
-                            <div className="flex items-center blogs4 justify-center">
-                                <div className="grid w-[95%] sm:w-[100%] grid-cols-2 lg:grid-cols-4 gap-[20px] sm:gap-[20px]">
-                                    {computerVisionBlogs.map((blog) => (
-                                        <BlogCard
-                                            image={blog.imageUrl || null}
-                                            key={blog._id}
-                                            text={blog.subtitle}
-                                            text1={blog.title}
-                                            onClick={() => onBlogClick(blog)}
-                                        />
-                                    ))}
-                                </div>
-                            </div>
-                        </>
-                    )}
+                            {computerVisionBlogs.length > 0 && (
+                                <>
+                                    <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Computer Vision</p>
+                                    <div className="flex items-center blogs4 justify-center">
+                                        <div className="grid w-[95%] sm:w-[100%] grid-cols-2 lg:grid-cols-4 gap-[20px] sm:gap-[20px]">
+                                            {computerVisionBlogs.map((blog) => (
+                                                <BlogCard
+                                                    image={blog.imageUrl || null}
+                                                    key={blog._id}
+                                                    text={blog.subtitle}
+                                                    text1={blog.title}
+                                                    onClick={() => onBlogClick(blog)}
+                                                />
+                                            ))}
+                                        </div>
+                                    </div>
+                                </>
+                            )}
 
-                    {generativeAIBlogs.length > 0 && (
-                        <>
-                            <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Generative AI</p>
-                            <div className="flex items-center blogs4 justify-center">
-                                <div className="grid w-[95%] sm:w-[100%] grid-cols-2 lg:grid-cols-4 gap-[20px] sm:gap-[20px]">
-                                    {generativeAIBlogs.map((blog) => (
-                                        <BlogCard
-                                            image={blog.imageUrl || null}
-                                            key={blog._id}
-                                            text={blog.subtitle}
-                                            text1={blog.title}
-                                            onClick={() => onBlogClick(blog)}
-                                        />
-                                    ))}
-                                </div>
-                            </div>
-                        </>
-                    )}
+                            {generativeAIBlogs.length > 0 && (
+                                <>
+                                    <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Generative AI</p>
+                                    <div className="flex items-center blogs4 justify-center">
+                                        <div className="grid w-[95%] sm:w-[100%] grid-cols-2 lg:grid-cols-4 gap-[20px] sm:gap-[20px]">
+                                            {generativeAIBlogs.map((blog) => (
+                                                <BlogCard
+                                                    image={blog.imageUrl || null}
+                                                    key={blog._id}
+                                                    text={blog.subtitle}
+                                                    text1={blog.title}
+                                                    onClick={() => onBlogClick(blog)}
+                                                />
+                                            ))}
+                                        </div>
+                                    </div>
+                                </>
+                            )}
 
-                    {agenticAIBlogs.length > 0 && (
-                        <>
-                            <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Agentic AI</p>
-                            <div className="flex items-center blogs4 justify-center">
-                                <div className="grid w-[95%] sm:w-[100%] grid-cols-2 lg:grid-cols-4 gap-[20px] sm:gap-[20px]">
-                                    {agenticAIBlogs.map((blog) => (
-                                        <BlogCard
-                                            image={blog.imageUrl || null}
-                                            key={blog._id}
-                                            text={blog.subtitle}
-                                            text1={blog.title}
-                                            onClick={() => onBlogClick(blog)}
-                                        />
-                                    ))}
-                                </div>
-                            </div>
-                        </>
-                    )}
+                            {agenticAIBlogs.length > 0 && (
+                                <>
+                                    <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Agentic AI</p>
+                                    <div className="flex items-center blogs4 justify-center">
+                                        <div className="grid w-[95%] sm:w-[100%] grid-cols-2 lg:grid-cols-4 gap-[20px] sm:gap-[20px]">
+                                            {agenticAIBlogs.map((blog) => (
+                                                <BlogCard
+                                                    image={blog.imageUrl || null}
+                                                    key={blog._id}
+                                                    text={blog.subtitle}
+                                                    text1={blog.title}
+                                                    onClick={() => onBlogClick(blog)}
+                                                />
+                                            ))}
+                                        </div>
+                                    </div>
+                                </>
+                            )}
 
-                    {dataEngineeringBlogs.length > 0 && (
-                        <>
-                            <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Data Engineering</p>
-                            <div className="flex items-center blogs4 justify-center">
-                                <div className="grid w-[95%] sm:w-[100%] grid-cols-2 lg:grid-cols-4 gap-[20px] sm:gap-[20px]">
-                                    {dataEngineeringBlogs.map((blog) => (
-                                        <BlogCard
-                                            image={blog.imageUrl || null}
-                                            key={blog._id}
-                                            text={blog.subtitle}
-                                            text1={blog.title}
-                                            onClick={() => onBlogClick(blog)}
-                                        />
-                                    ))}
-                                </div>
-                            </div>
-                        </>
-                    )}
+                            {dataEngineeringBlogs.length > 0 && (
+                                <>
+                                    <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Data Engineering</p>
+                                    <div className="flex items-center blogs4 justify-center">
+                                        <div className="grid w-[95%] sm:w-[100%] grid-cols-2 lg:grid-cols-4 gap-[20px] sm:gap-[20px]">
+                                            {dataEngineeringBlogs.map((blog) => (
+                                                <BlogCard
+                                                    image={blog.imageUrl || null}
+                                                    key={blog._id}
+                                                    text={blog.subtitle}
+                                                    text1={blog.title}
+                                                    onClick={() => onBlogClick(blog)}
+                                                />
+                                            ))}
+                                        </div>
+                                    </div>
+                                </>
+                            )}
 
-                    {behindScenesBlogs.length > 0 && (
-                        <>
-                            <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Behind the Scenes</p>
-                            <div className="flex items-center blogs4 justify-center">
-                                <div className="grid w-[95%] sm:w-[100%] grid-cols-2 lg:grid-cols-4 gap-[20px] sm:gap-[20px]">
-                                    {behindScenesBlogs.map((blog) => (
-                                        <BlogCard
-                                            image={blog.imageUrl || null}
-                                            key={blog._id}
-                                            text={blog.subtitle}
-                                            text1={blog.title}
-                                            onClick={() => onBlogClick(blog)}
-                                        />
-                                    ))}
-                                </div>
-                            </div>
-                        </>
-                    )}
-                    </div>
+                            {behindScenesBlogs.length > 0 && (
+                                <>
+                                    <p className="mt-[30px] mb-[20px] blogs3 font-bold text-[35px] sm:text-[45px]">Behind the Scenes</p>
+                                    <div className="flex items-center blogs4 justify-center">
+                                        <div className="grid w-[95%] sm:w-[100%] grid-cols-2 lg:grid-cols-4 gap-[20px] sm:gap-[20px]">
+                                            {behindScenesBlogs.map((blog) => (
+                                                <BlogCard
+                                                    image={blog.imageUrl || null}
+                                                    key={blog._id}
+                                                    text={blog.subtitle}
+                                                    text1={blog.title}
+                                                    onClick={() => onBlogClick(blog)}
+                                                />
+                                            ))}
+                                        </div>
+                                    </div>
+                                </>
+                            )}
+                        </div>
                     }
 
                     <div className="w-[95%] sm:w-[100%] mt-[40px] flex items-center justify-center">
                         <div className="flex flex-col items-center justify-center w-full">
                             <p className="text-[40px] sm:text-[50px]  font-bold w-full text-center">Case Studies</p>
-                            {loading ? 
-                                <div className="flex items-center justify-center h-[50vh] text-white">
-                                    <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-gray-200 border-solid"></div>
+                            {loading ?
+                                <div className="grid px-[15px] md:px-[85px] lg:grid-cols-2 gap-[25px] sm:gap-[30px] items-center justify-center mt-[30px]">
+                                    {[1, 2].map((i) => (
+                                        <div key={i} className="bg-[#1D1D1D] ring-[0.5px] ring-[#4d4d4d] w-[350px] sm:w-[500px] h-[280px] rounded-[15px] overflow-hidden flex flex-col">
+                                            <div className="h-[60%] skeleton"></div>
+                                            <div className="h-[40%] p-4 space-y-3 bg-[#101010]">
+                                                <div className="skeleton h-[24px] w-[80%]"></div>
+                                                <div className="skeleton h-[16px] w-[100%]"></div>
+                                                <div className="skeleton h-[16px] w-[60%]"></div>
+                                            </div>
+                                        </div>
+                                    ))}
                                 </div>
-                            :<div className="grid  px-[15px] md:px-[85px] lg:grid-cols-2 gap-[25px] sm:gap-[30px] items-center justify-center mt-[30px]">
-                                {caseStudies.map((caseStudy) => (
-                                    <CaseStudyCard
-                                        imageUrl={caseStudy.imageUrl}
-                                        key={caseStudy._id}
-                                        text1={caseStudy.title}
-                                        text={caseStudy.overview}
-                                        onClick={onCaseStudyCardClick(caseStudy)}
-                                    />
-                                ))}
-                            </div>}
+                                : <div className="grid  px-[15px] md:px-[85px] lg:grid-cols-2 gap-[25px] sm:gap-[30px] items-center justify-center mt-[30px]">
+                                    {caseStudies
+                                        .filter((caseStudy) => caseStudy.title && caseStudy.title.trim() !== '' && caseStudy.overview && caseStudy.overview.trim() !== '')
+                                        .map((caseStudy) => (
+                                            <CaseStudyCard
+                                                imageUrl={caseStudy.imageUrl}
+                                                key={caseStudy._id}
+                                                text1={caseStudy.title}
+                                                text={caseStudy.overview}
+                                                onClick={onCaseStudyCardClick(caseStudy)}
+                                            />
+                                        ))}
+                                </div>}
                         </div>
                     </div>
                 </div>
             </div>
 
-            <Top/>
+            <Top />
             <Portfolio onPortfolioCard1Click={onPortfolioCard1Click} />
-            <Contact onContactClick={onContactClick}/>
-            <Footer/>
+            <Contact onContactClick={onContactClick} />
+            <Footer />
 
             {/* Portfolio Modal */}
             <div
-                className={`fixed top-0 left-0 z-[10000] h-[100vh] w-[100vw] flex flex-col items-center justify-center bg-black/80 transition-opacity duration-500 ease-in-out ${
-                onPortfolioClick ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-                }`}
+                className={`fixed top-0 left-0 z-[10000] h-[100vh] w-[100vw] flex flex-col items-center justify-center bg-black/80 transition-opacity duration-500 ease-in-out ${onPortfolioClick ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+                    }`}
             >
                 <PortfolioModel
                     resetPortfolioClick={resetPortfolioClick}
@@ -531,9 +554,8 @@ const BlogsClientWrapper = () => {
 
             {/* Case Study Modal */}
             <div
-                className={`fixed top-0 left-0 z-[10000] h-[100vh] w-[100vw] flex flex-col items-center justify-center bg-black/80 transition-opacity duration-500 ease-in-out ${
-                onCaseStudyClick ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-                }`}
+                className={`fixed top-0 left-0 z-[10000] h-[100vh] w-[100vw] flex flex-col items-center justify-center bg-black/80 transition-opacity duration-500 ease-in-out ${onCaseStudyClick ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+                    }`}
             >
                 <CaseStudyModel
                     resetCaseStudyClick={resetCaseStudyClick}
